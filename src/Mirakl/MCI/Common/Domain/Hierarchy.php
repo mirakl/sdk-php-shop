@@ -1,0 +1,26 @@
+<?php
+namespace Mirakl\MCI\Common\Domain;
+
+use Mirakl\Core\Domain\MiraklObject;
+use Mirakl\MCI\Common\Domain\Collection\ValueTranslationCollection;
+
+/**
+ * @method  string                      getCode()
+ * @method  $this                       setCode(string $code)
+ * @method  string                      getLabel()
+ * @method  $this                       setLabel(string $label)
+ * @method  ValueTranslationCollection  getLabelTranslations()
+ * @method  int                         getLevel()
+ * @method  $this                       setLevel(int $level)
+ * @method  string                      getParentCode()
+ * @method  $this                       setParentCode(string $parentCode)
+ */
+class Hierarchy extends MiraklObject
+{
+    /**
+     * @var array
+     */
+    protected static $dataTypes = [
+        'label_translations' => [ValueTranslationCollection::class, 'create'],
+    ];
+}
