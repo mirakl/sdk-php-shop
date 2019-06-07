@@ -11,6 +11,20 @@ use Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection;
  *
  * @method string getReasonType()
  * @method $this  setReasonType(string $reasonType)
+ *
+ * Example:
+ *
+ * <code>
+ * use Mirakl\MMP\Shop\Client\ShopApiClient;
+ * use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
+ *
+ * $api = new ShopApiClient('API_URL', 'API_KEY', SHOP_ID);
+ *
+ * $request = new GetTypeReasonsRequest();
+ *
+ * $result = $api->getTypeReasons($request);
+ * // $result => @see \Mirakl\MMP\FrontOperator\Domain\Collection\Reason\ReasonCollection
+ * </code>
  */
 class GetTypeReasonsRequest extends AbstractRequest
 {

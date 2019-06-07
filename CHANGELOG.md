@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.9.1 - 2018-10-10
+### Fixes
+ - Add the missing endpoints for the new API OF61 implementation
 
 ## v1.9.0 - 2018-08-27
 ### Features

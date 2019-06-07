@@ -25,6 +25,11 @@ class GetOfferStateListRequest extends AbstractRequest
     use LocalizableTrait;
 
     /**
+     * @var string
+     */
+    protected $endpoint = '/offers/states';
+
+    /**
      * @inheritdoc
      */
     public function getResponseDecorator()

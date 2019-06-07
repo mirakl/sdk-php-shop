@@ -19,21 +19,6 @@ use Mirakl\MCI\Common\Domain\Product\ProductImportStatus;
  * @method  string              getStatus()
  * @method  $this               setStatus(string $status)
  *
- * Example:
- *
- * <code>
- * use Mirakl\MCI\Front\Client\FrontApiClient;
- * use Mirakl\MCI\Front\Request\Product\UpdateProductImportStatusRequest;
- * use Mirakl\Core\Domain\FileWrapper;
- *
- * $api = new FrontApiClient('API_URL', 'API_KEY');
- * $request = new UpdateProductImportStatusRequest('IMPORT_ID');
- * $errorsFile = new \SplFileObject('/path/to/errors_file.csv');
- * $request->setErrorsFile(new FileWrapper($errorsFile)); // Optional
- * $productsFile = new \SplFileObject('/path/to/products_file.csv');
- * $request->setProductsFile(new FileWrapper($productsFile)); // Optional
- * $api->updateProductImportStatus($request);
- * </code>
  */
 abstract class AbstractUpdateProductImportStatusRequest extends AbstractImportRequest
 {
