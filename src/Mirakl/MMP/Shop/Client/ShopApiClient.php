@@ -11,6 +11,7 @@ use Mirakl\MMP\Common\Domain\Collection\Message\OrderMessageCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\State\OfferStateCollection as CommonOfferStateCollection;
 use Mirakl\MMP\Common\Domain\Collection\Order\Document\OrderDocumentCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shipping\CarrierCollection;
+use Mirakl\MMP\Common\Domain\Collection\Shipping\LogisticClassCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shipping\ShippingZoneDetailCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shop\Document\ShopDocumentCollection;
 use Mirakl\MMP\Common\Domain\Document\DocumentsUploadResult;
@@ -67,6 +68,7 @@ use Mirakl\MMP\Shop\Request\Product\GetProductsRequest;
 use Mirakl\MMP\Shop\Request\Product\Offer\GetOffersOnProductsRequest;
 use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
+use Mirakl\MMP\Shop\Request\Shipping\GetLogisticClassRequest;
 use Mirakl\MMP\Shop\Request\Shipping\GetShippingCarriersRequest;
 use Mirakl\MMP\Shop\Request\Shipping\GetShippingZonesRequest;
 use Mirakl\MMP\Shop\Request\Shop\Document\DeleteShopDocumentRequest;
@@ -140,6 +142,23 @@ class ShopApiClient extends CommonApiClient
     public function getAccount()
     {
         return (new GetAccountRequest())->run($this);
+    }
+
+    /**
+     * (SH31) List all logistic classes
+     *
+     * @param   null|string $locale
+     * @return  LogisticClassCollection
+     */
+    public function getLogisticClasses($locale = null)
+    {
+        $request = new GetLogisticClassRequest();
+
+        if (null !== $locale) {
+            $request->setLocale((string) $locale);
+        }
+
+        return $request->run($this);
     }
 
     /**

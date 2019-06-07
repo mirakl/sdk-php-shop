@@ -1,6 +1,8 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Offer;
 
+use Mirakl\Core\Domain\LocalizableTrait;
+
 /**
  * (OF22) Get information of an offer
  *
@@ -9,6 +11,8 @@ namespace Mirakl\MMP\Common\Request\Offer;
  */
 abstract class AbstractGetOfferRequest extends AbstractOfferRequest
 {
+    use LocalizableTrait;
+
     /**
      * @var string
      */

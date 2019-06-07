@@ -7,6 +7,7 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceDetailedItemCollection;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceTaxCollection;
 use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceAddress;
+use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoicePayment;
 use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceSummary;
 
 /**
@@ -22,6 +23,8 @@ use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceSummary;
  * @method  $this                           setId(string $id)
  * @method  string                          getInvoiceId()
  * @method  $this                           setInvoiceId(string $invoiceId)
+ * @method  InvoicePayment                  getPayment()
+ * @method  $this                           setPayment(array|InvoicePayment $payment)
  * @method  PaymentInfo                     getPaymentInfo()
  * @method  $this                           setPaymentInfo(array|PaymentInfo $paymentInfo)
  * @method  InvoiceAddress                  getShopAddress()
@@ -71,6 +74,7 @@ class Invoice extends MiraklObject
      */
     protected static $dataTypes = [
         'accounting_documents_items' => [InvoiceDetailedItemCollection::class, 'create'],
+        'payment'                    => [InvoicePayment::class, 'create'],
         'payment_info'               => [PaymentInfo::class, 'factory'],
         'shop_address'               => [InvoiceAddress::class, 'create'],
         'summary'                    => [InvoiceSummary::class, 'create'],

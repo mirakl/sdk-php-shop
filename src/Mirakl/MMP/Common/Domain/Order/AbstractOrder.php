@@ -15,6 +15,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setCommercialId(string $commercialId)
  * @method  \DateTime                       getCreatedDate()
  * @method  $this                           setCreatedDate(\DateTime $createdDate)
+ * @method  string                          getCurrencyIsoCode()
+ * @method  $this                           setCurrencyIsoCode(string $currencyCode)
  * @method  \DateTime                       getCustomerDebitedDate()
  * @method  $this                           setCustomerDebitedDate(\DateTime $customerDebitedDate)
  * @method  bool                            getHasCustomerMessage()

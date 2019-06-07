@@ -17,6 +17,8 @@ use Mirakl\Core\Request\SortableTrait;
  * @method  $this       setChannelCodes(array $channelCodes)
  * @method  bool        getCustomerDebited()
  * @method  $this       setCustomerDebited(bool $customerDebited)
+ * @method  bool        getHasIncident()
+ * @method  $this       setHasIncident(bool $hasIncident)
  * @method  bool        getOnlyNullChannel()
  * @method  $this       setOnlyNullChannel(bool $onlyNullChannel)
  * @method  array       getOrderIds()
@@ -51,5 +53,9 @@ abstract class AbstractGetOrdersRequest extends AbstractRequest
         'start_update_date',
         'end_update_date',
         'channel_codes',
+        'customer_debited',
+        'payment_workflow',
+        'only_null_channel',
+        'has_incident',
     ];
 }

@@ -2,6 +2,7 @@
 namespace Mirakl\Core\Request;
 
 use Mirakl\Core\Client\ApiClientInterface;
+use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\Core\Exception\RequestValidationException;
 use Mirakl\Core\Response\Decorator;
@@ -159,9 +160,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
                 'ALL';
         }
 
-        /**
-         * @see Pageable
-         */
+        /** @see PageableTrait */
         if (is_bool($this->getPaginate())) {
             $params['paginate'] = $this->getPaginate() ? 'true' : 'false';
             if ($this->getPaginate()) {
@@ -170,9 +169,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
             }
         }
 
-        /**
-         * @see Sortable
-         */
+        /** @see SortableTrait */
         if ($this->getSortBy()) {
             $params['sort'] = $this->getSortBy();
         }
@@ -180,9 +177,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
             $params['order'] = strtolower($this->getDir());
         }
 
-        /**
-         * @see DateRange
-         */
+        /** @see DateRangeTrait */
         if ($this->getStartDate()) {
             $params['start_date'] = $this->getStartDate();
         }
@@ -190,14 +185,12 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
             $params['end_date'] = $this->getEndDate();
         }
 
-        /**
-         * @see Localizable
-         */
+        /** @see LocalizableTrait */
         if ($this->getLocale()) {
             $params['locale'] = $this->getLocale();
         }
 
-        /** @see \Mirakl\Core\Request\ProductReferencesTrait */
+        /** @see ProductReferencesTrait */
         if ($this->getProductReferences()) {
             $params['product_references'] = \Mirakl\refs_to_query_param($this->getProductReferences());
         }

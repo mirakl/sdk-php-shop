@@ -15,6 +15,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceCollection;
  *
  * @method  string  getCurrency()
  * @method  $this   setCurrency(string $currency)   Currency ISO code for filtering
+ * @method  string  getPaymentStatus()
+ * @method  $this   setPaymentStatus(string $paymentStatus)
  * @method  array   getStates()
  * @method  $this   setStates(array $states)
  * @method  string  getType()

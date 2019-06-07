@@ -1,6 +1,7 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Offer;
 
+use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\Core\Request\PageableTrait;
 use Mirakl\Core\Request\SortableTrait;
@@ -18,6 +19,7 @@ abstract class AbstractGetOffersRequest extends AbstractRequest
 {
     use SortableTrait;
     use PageableTrait;
+    use LocalizableTrait;
 
     /**
      * (DEFAULT) Sort by total price

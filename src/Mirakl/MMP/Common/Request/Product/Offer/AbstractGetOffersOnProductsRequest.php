@@ -1,6 +1,7 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Product\Offer;
 
+use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\Core\Request\PageableTrait;
 use Mirakl\Core\Request\ProductReferencesTrait;
@@ -30,6 +31,7 @@ abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
     use PageableTrait;
     use SortableTrait;
     use ProductReferencesTrait;
+    use LocalizableTrait;
 
     // (DEFAULT) Sort by product sku and then by total price, premium information, shop grade
     const SORT_BY_BEST_PRICE = 'bestPrice';

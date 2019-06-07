@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.9.2 - 2019-03-25
+### Features
+ - Add "has_incident" query param to OR11 API
+
+
 ## v1.9.1 - 2018-10-10
 ### Fixes
  - Add the missing endpoints for the new API OF61 implementation

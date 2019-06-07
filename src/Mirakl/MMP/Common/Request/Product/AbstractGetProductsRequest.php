@@ -1,6 +1,7 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Product;
 
+use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\Core\Request\PageableTrait;
 use Mirakl\Core\Request\ProductReferencesTrait;
@@ -15,6 +16,7 @@ abstract class AbstractGetProductsRequest extends AbstractRequest
 {
     use PageableTrait;
     use ProductReferencesTrait;
+    use LocalizableTrait;
 
     /**
      * @var string

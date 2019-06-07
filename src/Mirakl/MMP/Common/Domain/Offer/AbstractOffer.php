@@ -23,13 +23,11 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  AdditionalFieldValueCollection  getAdditionalFields()
  * @method  $this                           setAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
  * @method  array                           getChannels()
- * @method  $this                           setChannels(array $channels)
  * @method  string                          getCurrencyIsoCode()
  * @method  $this                           setCurrencyIsoCode(string $currencyIsoCode)
  * @method  string                          getDescription()
  * @method  $this                           setDescription(string $description)
  * @method  Discount                        getDiscount()
- * @method  $this                           setDiscount(array|Discount $discount)
  * @method  int                             getFavoriteRank()
  * @method  $this                           setFavoriteRank(int $favoriteRank)
  * @method  int                             getLeadtimeToShip() (in days)
@@ -113,6 +111,35 @@ abstract class AbstractOffer extends MiraklObject
     public function getId()
     {
         return $this->getOfferId();
+    }
+
+    /**
+     * @param   array|string  $channels
+     * @return  $this
+     */
+    public function setChannels($channels)
+    {
+        if (!is_array($channels)) {
+            $channels = $channels ? explode('|', $channels) : [];
+        }
+
+        return $this->setData('channels', $channels);
+    }
+
+    /**
+     * @param   array|Discount  $discount
+     * @return  $this
+     */
+    public function setDiscount($discount)
+    {
+        if (is_array($discount) &&
+            !(isset($discount['discount_price']) && $discount['discount_price']) &&
+            !(isset($discount['ranges']) && $discount['ranges'])
+        ) {
+            $discount = null;
+        }
+
+        return $this->setData('discount', $discount);
     }
 
     /**

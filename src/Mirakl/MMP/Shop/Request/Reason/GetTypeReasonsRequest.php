@@ -1,6 +1,7 @@
 <?php
 namespace Mirakl\MMP\Shop\Request\Reason;
 
+use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MMP\Common\Domain\Reason\ReasonType;
 use Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection;
@@ -28,6 +29,8 @@ use Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection;
  */
 class GetTypeReasonsRequest extends AbstractRequest
 {
+    use LocalizableTrait;
+
     /**
      * @var string
      */

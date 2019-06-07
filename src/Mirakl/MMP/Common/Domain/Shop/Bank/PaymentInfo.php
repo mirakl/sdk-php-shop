@@ -24,6 +24,9 @@ class PaymentInfo extends MiraklObject
             case 'AUBSB':
                 $info = new AuBsbBankAccountInfo($info);
                 break;
+            case 'BRAZILIAN':
+                $info = new BrazilianBankAccountInfo($info);
+                break;
             case 'CANADIAN':
                 $info = new CanadianBankAccountInfo($info);
                 break;

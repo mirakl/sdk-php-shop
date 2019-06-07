@@ -6,7 +6,7 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @method  float       getPrice()
  * @method  $this       setPrice(float $price)
- * @method  \DateTime   getUnitDiscountPrice()
+ * @method  float       getUnitDiscountPrice()
  * @method  $this       setUnitDiscountPrice(float $unitDiscountPrice)
  * @method  float       getUnitOriginPrice()
  * @method  $this       setUnitOriginPrice(float $unitOriginPrice)
