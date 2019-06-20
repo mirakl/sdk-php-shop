@@ -1,8 +1,8 @@
 <?php
 namespace Mirakl\MMP\OperatorShop\Domain;
 
+use Mirakl\Core\Domain\DateRangeTrait;
 use Mirakl\Core\Domain\MiraklObject;
-use Mirakl\Core\Request\DateRangeTrait;
 use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceDetailedItemCollection;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceTaxCollection;

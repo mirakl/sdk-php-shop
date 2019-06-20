@@ -1,26 +1,11 @@
 <?php
-namespace Mirakl\Core\Request;
+namespace Mirakl\Core\Domain;
 
+/**
+ * @property array $data
+ */
 trait DateRangeTrait
 {
-    /**
-     * @var \DateTime
-     */
-    protected $startDate;
-
-    /**
-     * @var \DateTime
-     */
-    protected $endDate;
-
-    /**
-     * @return  \DateTime
-     */
-    public function getStartDate()
-    {
-        return $this->startDate;
-    }
-
     /**
      * @param   mixed   $startDate
      * @return  $this
@@ -31,18 +16,10 @@ trait DateRangeTrait
             if (is_string($startDate)) {
                 $startDate = new \DateTime($startDate);
             }
-            $this->startDate = $startDate;
+            $this->data['start_date'] = $startDate;
         }
 
         return $this;
-    }
-
-    /**
-     * @return  \DateTime
-     */
-    public function getEndDate()
-    {
-        return $this->endDate;
     }
 
     /**
@@ -55,7 +32,7 @@ trait DateRangeTrait
             if (is_string($endDate)) {
                 $endDate = new \DateTime($endDate);
             }
-            $this->endDate = $endDate;
+            $this->data['end_date'] = $endDate;
         }
 
         return $this;

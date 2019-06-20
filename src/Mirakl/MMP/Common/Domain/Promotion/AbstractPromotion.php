@@ -1,8 +1,8 @@
 <?php
 namespace Mirakl\MMP\Common\Domain\Promotion;
 
+use Mirakl\Core\Domain\DateRangeTrait;
 use Mirakl\Core\Domain\MiraklObject;
-use Mirakl\Core\Request\DateRangeTrait;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionMediaCollection;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionChannelCollection;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionPublicDescriptionCollection;

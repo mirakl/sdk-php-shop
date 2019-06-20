@@ -1,8 +1,8 @@
 <?php
 namespace Mirakl\MMP\OperatorShop\Domain\Offer;
 
+use Mirakl\Core\Domain\DateRangeTrait;
 use Mirakl\Core\Domain\MiraklObject;
-use Mirakl\Core\Request\DateRangeTrait;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
 use Mirakl\MMP\Common\Domain\Discount;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;

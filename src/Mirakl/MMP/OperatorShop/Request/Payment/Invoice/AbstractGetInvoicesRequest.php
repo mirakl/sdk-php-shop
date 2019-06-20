@@ -1,8 +1,8 @@
 <?php
 namespace Mirakl\MMP\OperatorShop\Request\Payment\Invoice;
 
+use Mirakl\Core\Domain\DateRangeTrait;
 use Mirakl\Core\Request\AbstractRequest;
-use Mirakl\Core\Request\DateRangeTrait;
 use Mirakl\Core\Request\PageableTrait;
 use Mirakl\Core\Request\SortableTrait;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceCollection;

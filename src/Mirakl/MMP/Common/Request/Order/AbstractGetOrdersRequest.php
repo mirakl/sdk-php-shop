@@ -1,9 +1,9 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Order;
 
+use Mirakl\Core\Domain\DateRangeTrait;
 use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Request\AbstractRequest;
-use Mirakl\Core\Request\DateRangeTrait;
 use Mirakl\Core\Request\PageableTrait;
 use Mirakl\Core\Request\SortableTrait;
 
