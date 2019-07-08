@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.9.4 - 2019-07-04
+### Fixes
+ - Fix API OR31 that generates error 400
+
 ## v1.9.3 - 2019-06-20
 ### Fixes
  - Fix bad discount declaration on UpdateOffer object for API OF24

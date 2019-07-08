@@ -47,16 +47,18 @@ use Psr\Http\Message\ResponseInterface;
  *      [
  *          'order_line_id' => '1000',
  *          'order_line_additional_fields' => [
- *              'type' => 'BOOLEAN',
- *              'code' => 'gift-wrap',
- *              'value' => 'true'
+ *              [
+ *                  'type' => 'BOOLEAN',
+ *                  'code' => 'gift-wrap',
+ *                  'value' => 'true'
+ *              ]
  *          ]
  *      ]
  *  ]
  * ];
  *
  * $update = new UpdateAdditionalFields();
- * $update->setAdditionalFields($input['order_additional_fields']);
+ * $update->setOrderAdditionalFields($input['order_additional_fields']);
  * $update->setOrderLines($input['order_lines']);
  *
  * // Building request with your order id
@@ -95,7 +97,7 @@ class UpdateAdditionalFieldsRequest extends AbstractOrderRequest
     /**
      * @var array
      */
-    public $bodyParams = ['order_additional_fields', 'order_lines'];
+    public $bodyParams = ['order_additional_fields'];
 
     /**
      * @var array
@@ -123,5 +125,13 @@ class UpdateAdditionalFieldsRequest extends AbstractOrderRequest
 
             return $result;
         });
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getBodyParams()
+    {
+        return $this->getOrderAdditionalFields()->toArray();
     }
 }
