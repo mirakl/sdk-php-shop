@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.10.0 - 2019-08-06
+### Features
+ - Add Thai, Taiwanese and Japanese Bank account information
+ - Add domains in Shop API outputs
+
+### Fixes
+ - Remove S03 customer sort fields
+ - Fix bad charset declaration in multipart requests header
+
 ## v1.9.4 - 2019-07-04
 ### Fixes
  - Fix API OR31 that generates error 400

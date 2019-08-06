@@ -22,9 +22,13 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  $this                           setContactInfo(array|ContactInfo $contactInfo)
  * @method  string                          getCurrencyIsoCode()
  * @method  $this                           setCurrencyIsoCode(string $currencyIsoCode)
+ * @method  string[]                        getDomains()
+ * @method  $this                           setDomains(string[] $domains)
  * @method  \DateTime                       getDateCreated()
  * @method  string                          getDescription()
  * @method  $this                           setDescription(string $description)
+ * @method  string[]                        getDomains()
+ * @method  $this                           setDomains(string[] $domains)
  * @method  float                           getGrade()
  * @method  $this                           setGrade(float $grade)              Average evaluations grade
  * @method  string                          getId()

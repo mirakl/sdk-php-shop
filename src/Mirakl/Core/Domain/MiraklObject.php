@@ -34,7 +34,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
      * Array of key => callable static method to call when setting data
      * For example:
      * [
-     *     'foo' => [MiraklObject::class, 'create'] // will transform an array into DataObject for key 'foo'
+     *     'foo' => [MiraklObject::class, 'create'] // will transform an array into MiraklObject for key 'foo'
      * ];
      *
      * @see setData()

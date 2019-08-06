@@ -36,6 +36,9 @@ class PaymentInfo extends MiraklObject
             case 'IBAN':
                 $info = new IbanBankAccountInfo($info);
                 break;
+            case 'JAPANESE':
+                $info = new JapaneseBankAccountInfo($info);
+                break;
             case 'MEXICAN':
                 $info = new MexicanBankAccountInfo($info);
                 break;
@@ -44,6 +47,13 @@ class PaymentInfo extends MiraklObject
                 break;
             case 'NZBSB':
                 $info = new NzBsbBankAccountInfo($info);
+                break;
+                break;
+            case 'TAIWANESE':
+                $info = new TaiwaneseBankAccountInfo($info);
+                break;
+            case 'THAI':
+                $info = new ThaiBankAccountInfo($info);
                 break;
             default:
                 $info = new PaymentInfo($info);
