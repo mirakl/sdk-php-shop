@@ -234,7 +234,7 @@ abstract class AbstractApiClient implements ApiClientInterface
             } elseif (is_array($value)) {
                 // Handle other array fields as JSON
                 $value = json_encode($value);
-                $headers['Content-Type'] = 'application/json;charset-UTF8';
+                $headers['Content-Type'] = 'application/json;charset=utf-8';
             } elseif (is_bool($value)) {
                 // Convert boolean values to string manually because of Guzzle casting them to '0' or '1'
                 $value = $value ? 'true' : 'false';

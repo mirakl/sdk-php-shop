@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.10.1 - 2019-08-12
+### Fixes
+ - Fix potential error 400 when Q01 is called
+
 ## v1.10.0 - 2019-08-06
 ### Features
  - Add Thai, Taiwanese and Japanese Bank account information
@@ -27,7 +31,7 @@
 
 ## v1.9.0 - 2018-08-27
 ### Features
- - Add S40 in SDK 
+ - Add S40 in SDK
  - Add S33 and OR76 in SDK
 
 ## v1.8.0 - 2018-03-16
@@ -42,7 +46,7 @@
 - Added Order conditions offer fields in OF01, OF24 and OF51
 - Added product tax code in OF21, OF22, OF51, P11
 - Added Mirakl Catalog Management API (CM51, CM21, CM22, CM23)
- 
+
 ## v1.7.2 - 2018-01-02
 
 ### Fixes
@@ -59,9 +63,9 @@
 ### Features
 
 - Added logging request and response
-- Added offerRanking to P11 
+- Added offerRanking to P11
 - Added channels to promotion in PR01 query params
-- Added include_inactive_offers to OF51 input 
+- Added include_inactive_offers to OF51 input
 - Added P13 API : Retrieve all products of the marketplace. The API supports JSON, XML and CSV.
 - Added taxes computation fields to SH02
 
