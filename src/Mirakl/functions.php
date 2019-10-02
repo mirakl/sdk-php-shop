@@ -9,19 +9,21 @@ use Psr\Http\Message\ResponseInterface;
  * @param   array   $a2
  * @return  array
  */
-function array_diff_key_recursive(array $a1, array $a2)
-{
-    $diff = array_diff_key($a1, $a2);
-    foreach (array_intersect_key($a1, $a2) as $k => $v) {
-        if (is_array($a1[$k]) && is_array($a2[$k])) {
-            $d = array_diff_key_recursive($a1[$k], $a2[$k]);
-            if ($d) {
-                $diff[$k] = $d;
+if (!function_exists('\Mirakl\array_diff_key_recursive')) {
+    function array_diff_key_recursive(array $a1, array $a2)
+    {
+        $diff = array_diff_key($a1, $a2);
+        foreach (array_intersect_key($a1, $a2) as $k => $v) {
+            if (is_array($a1[$k]) && is_array($a2[$k])) {
+                $d = array_diff_key_recursive($a1[$k], $a2[$k]);
+                if ($d) {
+                    $diff[$k] = $d;
+                }
             }
         }
-    }
 
-    return $diff;
+        return $diff;
+    }
 }
 
 /**
@@ -30,14 +32,16 @@ function array_diff_key_recursive(array $a1, array $a2)
  * @param   $array
  * @return  bool
  */
-function array_is_assoc($array)
-{
-    // Keys of the array
-    $keys = array_keys($array);
+if (!function_exists('\Mirakl\array_is_assoc')) {
+    function array_is_assoc($array)
+    {
+        // Keys of the array
+        $keys = array_keys($array);
 
-    // If the array keys of the keys match the keys, then the array must
-    // not be associative (e.g. the keys array looked like {0:0, 1:1...}).
-    return array_keys($keys) !== $keys;
+        // If the array keys of the keys match the keys, then the array must
+        // not be associative (e.g. the keys array looked like {0:0, 1:1...}).
+        return array_keys($keys) !== $keys;
+    }
 }
 
 /**
@@ -47,47 +51,49 @@ function array_is_assoc($array)
  * @param   array   $mapping
  * @return  array
  */
-function array_map_keys(array $data, array $mapping)
-{
-    if (empty($mapping)) {
-        return $data;
-    }
+if (!function_exists('\Mirakl\array_map_keys')) {
+    function array_map_keys(array $data, array $mapping)
+    {
+        if (empty($mapping)) {
+            return $data;
+        }
 
-    $values = $map = [];
-    foreach ($mapping as $src => $dest) {
-        // Handle sources
-        $value = $data;
-        $keys = explode('/', $src);
-        foreach ($keys as $key) {
-            if (!isset($value[$key])) {
-                continue 2;
+        $values = $map = [];
+        foreach ($mapping as $src => $dest) {
+            // Handle sources
+            $value = $data;
+            $keys = explode('/', $src);
+            foreach ($keys as $key) {
+                if (!isset($value[$key])) {
+                    continue 2;
+                }
+                $value = $value[$key];
             }
-            $value = $value[$key];
-        }
 
-        // Handle destinations
-        $keys = explode('/', $dest);
-        foreach (array_reverse($keys) as $key) {
-            $value = [$key => $value];
-        }
-        $values = array_merge_recursive($values, (array) $value);
-        unset($data[$src]);
-
-        // Build a map to make a diff later
-        $value = $dest;
-        $keys = explode('/', $src);
-        if (count($keys) > 1 || $keys[0] != $value) {
+            // Handle destinations
+            $keys = explode('/', $dest);
             foreach (array_reverse($keys) as $key) {
                 $value = [$key => $value];
             }
-            $map = array_merge_recursive($map, (array) $value);
+            $values = array_merge_recursive($values, (array) $value);
+            unset($data[$src]);
+
+            // Build a map to make a diff later
+            $value = $dest;
+            $keys = explode('/', $src);
+            if (count($keys) > 1 || $keys[0] != $value) {
+                foreach (array_reverse($keys) as $key) {
+                    $value = [$key => $value];
+                }
+                $map = array_merge_recursive($map, (array) $value);
+            }
         }
+
+        $data = array_merge_recursive($data, $values);
+        $data = array_diff_key_recursive($data, $map);
+
+        return $data;
     }
-
-    $data = array_merge_recursive($data, $values);
-    $data = array_diff_key_recursive($data, $map);
-
-    return $data;
 }
 
 /**
@@ -96,17 +102,19 @@ function array_map_keys(array $data, array $mapping)
  * @param   array   $array
  * @return  array
  */
-function array_format(array $array)
-{
-    foreach ($array as $key => $value) {
-        if ($value === 'true' || $value === 'false') {
-            $array[$key] = $value === 'true';
-        } elseif (is_string($value) && is_numeric($value) && ('0' !== $value[0] || !ctype_digit($value))) {
-            $array[$key] = $value + 0; // Converts string to numeric value (int or float)
+if (!function_exists('\Mirakl\array_format')) {
+    function array_format(array $array)
+    {
+        foreach ($array as $key => $value) {
+            if ($value === 'true' || $value === 'false') {
+                $array[$key] = $value === 'true';
+            } elseif (is_string($value) && is_numeric($value) && ('0' !== $value[0] || !ctype_digit($value))) {
+                $array[$key] = $value + 0; // Converts string to numeric value (int or float)
+            }
         }
-    }
 
-    return $array;
+        return $array;
+    }
 }
 
 /**
@@ -116,20 +124,22 @@ function array_format(array $array)
  * @return  \SplFileObject
  * @throws  \InvalidArgumentException
  */
-function create_file($file)
-{
-    if (is_string($file)) {
-        // File has been specified as file contents
-        $file = create_temp_file($file);
-    } elseif (is_array($file)) {
-        // File has been specified as CSV data array
-        $file = create_temp_csv_file($file);
-    } elseif (!$file instanceof \SplFileObject) {
-        // Otherwise, file has to be specified as \SplFileObject
-        throw new \InvalidArgumentException('Specified file is not valid');
-    }
+if (!function_exists('\Mirakl\create_file')) {
+    function create_file($file)
+    {
+        if (is_string($file)) {
+            // File has been specified as file contents
+            $file = create_temp_file($file);
+        } elseif (is_array($file)) {
+            // File has been specified as CSV data array
+            $file = create_temp_csv_file($file);
+        } elseif (!$file instanceof \SplFileObject) {
+            // Otherwise, file has to be specified as \SplFileObject
+            throw new \InvalidArgumentException('Specified file is not valid');
+        }
 
-    return $file;
+        return $file;
+    }
 }
 
 /**
@@ -138,13 +148,15 @@ function create_file($file)
  * @param   string  $contents
  * @return  \SplTempFileObject
  */
-function create_temp_file($contents)
-{
-    $file = new \SplTempFileObject();
-    $file->fwrite($contents);
-    $file->rewind();
+if (!function_exists('\Mirakl\create_temp_file')) {
+    function create_temp_file($contents)
+    {
+        $file = new \SplTempFileObject();
+        $file->fwrite($contents);
+        $file->rewind();
 
-    return $file;
+        return $file;
+    }
 }
 
 /**
@@ -156,27 +168,31 @@ function create_temp_file($contents)
  * @param   string  $enclosure
  * @return  \SplTempFileObject
  */
-function create_temp_csv_file(array $data, $separator = ';', $enclosure = '"')
-{
-    $file = new \SplTempFileObject();
-    $file->setFlags(\SplFileObject::READ_CSV);
-    $file->setCsvControl($separator, $enclosure);
-    foreach ($data as $fields) {
-        $file->fputcsv($fields);
-    }
-    $file->rewind();
+if (!function_exists('\Mirakl\create_temp_csv_file')) {
+    function create_temp_csv_file(array $data, $separator = ';', $enclosure = '"')
+    {
+        $file = new \SplTempFileObject();
+        $file->setFlags(\SplFileObject::READ_CSV);
+        $file->setCsvControl($separator, $enclosure);
+        foreach ($data as $fields) {
+            $file->fputcsv($fields);
+        }
+        $file->rewind();
 
-    return $file;
+        return $file;
+    }
 }
 
 /**
  * @param   \DateTime   $date
  * @return  string
  */
-function date_format(\DateTime $date)
-{
-    return $date->setTimezone(new \DateTimeZone('GMT'))
-        ->format(\DateTime::ISO8601);
+if (!function_exists('\Mirakl\date_format')) {
+    function date_format(\DateTime $date)
+    {
+        return $date->setTimezone(new \DateTimeZone('GMT'))
+            ->format(\DateTime::ISO8601);
+    }
 }
 
 /**
@@ -185,15 +201,17 @@ function date_format(\DateTime $date)
  * @param   string  $suffix
  * @return  string
  */
-function default_user_agent($suffix = '')
-{
-    $userAgent = 'Mirakl-PHP-SDK/' . get_version();
+if (!function_exists('\Mirakl\default_user_agent')) {
+    function default_user_agent($suffix = '')
+    {
+        $userAgent = 'Mirakl-PHP-SDK/' . get_version();
 
-    if ($suffix) {
-        $userAgent .= ' ' . ltrim($suffix, ' ');
+        if ($suffix) {
+            $userAgent .= ' ' . ltrim($suffix, ' ');
+        }
+
+        return $userAgent;
     }
-
-    return $userAgent;
 }
 
 /**
@@ -201,17 +219,19 @@ function default_user_agent($suffix = '')
  *
  * @return  string
  */
-function get_version()
-{
-    static $version;
+if (!function_exists('\Mirakl\get_version')) {
+    function get_version()
+    {
+        static $version;
 
-    if (!$version) {
-        $file = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'composer.json';
-        preg_match('#"version":\s+"(\d+\.\d+\.\d+-?.*)"#', file_get_contents($file), $matches);
-        $version = isset($matches[1]) ? $matches[1] : 'Unknown Version';
+        if (!$version) {
+            $file = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'composer.json';
+            preg_match('#"version":\s+"(\d+\.\d+\.\d+-?.*)"#', file_get_contents($file), $matches);
+            $version = isset($matches[1]) ? $matches[1] : 'Unknown Version';
+        }
+
+        return $version;
     }
-
-    return $version;
 }
 
 /**
@@ -221,9 +241,11 @@ function get_version()
  * @param   string  $str
  * @return  string
  */
-function pascalize($str)
-{
-    return str_replace(' ', '', ucwords(strtr($str, '_-', '  ')));
+if (!function_exists('\Mirakl\pascalize')) {
+    function pascalize($str)
+    {
+        return str_replace(' ', '', ucwords(strtr($str, '_-', '  ')));
+    }
 }
 
 /**
@@ -233,9 +255,11 @@ function pascalize($str)
  * @param   string  $str
  * @return  string
  */
-function underscorize($str)
-{
-    return strtolower(trim(preg_replace('/([A-Z]|[0-9]+)/', "_$1", $str), '_'));
+if (!function_exists('\Mirakl\underscorize')) {
+    function underscorize($str)
+    {
+        return strtolower(trim(preg_replace('/([A-Z]|[0-9]+)/', "_$1", $str), '_'));
+    }
 }
 
 /**
@@ -245,29 +269,31 @@ function underscorize($str)
  * @param   string              $extension
  * @return  FileWrapper
  */
-function parse_file_response(ResponseInterface $response, $extension)
-{
-    $contents = trim((string) $response->getBody());
+if (!function_exists('\Mirakl\parse_file_response')) {
+    function parse_file_response(ResponseInterface $response, $extension)
+    {
+        $contents = trim((string) $response->getBody());
 
-    $file = (new FileWrapper($contents))->setFileExtension($extension);
-    if ($extension == 'csv') {
-        $file->getFile()->setFlags(\SplFileObject::READ_CSV);
-        $file->getFile()->setCsvControl(';');
-    }
-
-    if ($contentType = $response->getHeaderLine('Content-Type')) {
-        $file->setContentType($contentType);
-    }
-
-    if ($contentDisposition = $response->getHeaderLine('Content-Disposition')) {
-        preg_match('#.*filename="(.*)"$#i', $contentDisposition, $matches);
-        if (!empty($matches) && isset($matches[1])) {
-            $file->setFileName($matches[1]);
-            $file->setFileExtension(pathinfo($matches[1], PATHINFO_EXTENSION), false);
+        $file = (new FileWrapper($contents))->setFileExtension($extension);
+        if ($extension == 'csv') {
+            $file->getFile()->setFlags(\SplFileObject::READ_CSV);
+            $file->getFile()->setCsvControl(';');
         }
-    }
 
-    return $file;
+        if ($contentType = $response->getHeaderLine('Content-Type')) {
+            $file->setContentType($contentType);
+        }
+
+        if ($contentDisposition = $response->getHeaderLine('Content-Disposition')) {
+            preg_match('#.*filename="(.*)"$#i', $contentDisposition, $matches);
+            if (!empty($matches) && isset($matches[1])) {
+                $file->setFileName($matches[1]);
+                $file->setFileExtension(pathinfo($matches[1], PATHINFO_EXTENSION), false);
+            }
+        }
+
+        return $file;
+    }
 }
 
 /**
@@ -278,9 +304,11 @@ function parse_file_response(ResponseInterface $response, $extension)
  * @return  array|\stdClass
  * @throws  \InvalidArgumentException
  */
-function parse_json_response(ResponseInterface $response, $assoc = true)
-{
-    return \GuzzleHttp\json_decode((string) $response->getBody(), $assoc);
+if (!function_exists('\Mirakl\parse_json_response')) {
+    function parse_json_response(ResponseInterface $response, $assoc = true)
+    {
+        return \GuzzleHttp\json_decode((string) $response->getBody(), $assoc);
+    }
 }
 
 /**
@@ -291,17 +319,19 @@ function parse_json_response(ResponseInterface $response, $assoc = true)
  * @param   string  $refSeperator
  * @return  string
  */
-function refs_to_query_param(array $data, $entrySeparator = '|', $refSeperator = ',')
-{
-    $params = [];
-    foreach ($data as $key => $values) {
-        $values = (array) $values;
-        foreach ($values as $value) {
-            $params[] = $key . $entrySeparator . $value;
+if (!function_exists('\Mirakl\refs_to_query_param')) {
+    function refs_to_query_param(array $data, $entrySeparator = '|', $refSeperator = ',')
+    {
+        $params = [];
+        foreach ($data as $key => $values) {
+            $values = (array) $values;
+            foreach ($values as $value) {
+                $params[] = $key . $entrySeparator . $value;
+            }
         }
-    }
 
-    return implode($refSeperator, $params);
+        return implode($refSeperator, $params);
+    }
 }
 
 /**
@@ -312,12 +342,14 @@ function refs_to_query_param(array $data, $entrySeparator = '|', $refSeperator =
  * @param   string  $refSeperator
  * @return  string
  */
-function tuples_to_query_param(array $data, $entrySeparator = '|', $refSeperator = ',')
-{
-    $params = [];
-    foreach ($data as $values) {
-        $params[] = implode($entrySeparator, (array) $values);
-    }
+if (!function_exists('\Mirakl\tuples_to_query_param')) {
+    function tuples_to_query_param(array $data, $entrySeparator = '|', $refSeperator = ',')
+    {
+        $params = [];
+        foreach ($data as $values) {
+            $params[] = implode($entrySeparator, (array) $values);
+        }
 
-    return implode($refSeperator, $params);
+        return implode($refSeperator, $params);
+    }
 }
