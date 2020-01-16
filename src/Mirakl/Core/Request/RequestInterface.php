@@ -48,6 +48,17 @@ interface RequestInterface
     public function isJSON();
 
     /**
+     * Returns true if query parameters can be duplicated if multiple values are specified, false otherwise.
+     * For example if true:
+     * order_id=ORD-123&order_id=ORD-456
+     * instead of:
+     * order_id[]=ORD-123&order_id[]=ORD-456
+     *
+     * @return  bool
+     */
+    public function areQueryParamsDuplicated();
+
+    /**
      * Executes request against provided API client
      *
      * @param   ApiClientInterface  $api

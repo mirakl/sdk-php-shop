@@ -1,7 +1,7 @@
 <?php
 namespace Mirakl\MMP\Shop\Request\Order\Evaluation;
 
-use Mirakl\MMP\FrontShop\Request\Order\Evaluation\AbstractGetOrderEvaluationRequest;
+use Mirakl\MMP\Common\Request\Order\Evaluation\AbstractGetOrderEvaluationRequest;
 
 /**
  * (OR51) Get the evaluation of an order

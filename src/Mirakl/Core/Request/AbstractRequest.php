@@ -13,6 +13,7 @@ use Psr\Http\Message\ResponseInterface;
  * @method string    getSortBy()
  * @method int       getMax()
  * @method int       getOffset()
+ * @method string    getPageToken()
  * @method bool      getPaginate()
  * @method array     getProductReferences()
  * @method \DateTime getStartDate()
@@ -54,6 +55,11 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     protected $uriVars = [];
 
     /**
+     * @var bool
+     */
+    protected $queryParamsDuplicated = false;
+
+    /**
      * Array of query string parameters
      *
      * @var array
@@ -80,6 +86,14 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
      * @var array
      */
     protected $options = ['headers' => ['Accept' => 'application/json']];
+
+    /**
+     * @return  bool
+     */
+    public function areQueryParamsDuplicated()
+    {
+        return $this->queryParamsDuplicated;
+    }
 
     /**
      * @param   array   $params
@@ -169,11 +183,20 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
             }
         }
 
+        if ($this->getPageToken()) {
+            /** @see SeekableTrait */
+            $params['page_token'] = $this->getPageToken();
+        }
+
         /** @see SortableTrait */
         if ($this->getSortBy()) {
             $params['sort'] = $this->getSortBy();
+            if ($this->getPageToken()) {
+                /** @see SeekableTrait */
+                $params['sort'] .= ',' . ($this->getDir() ?: 'ASC');
+            }
         }
-        if ($this->getDir()) {
+        if ($this->getDir() && !$this->getPageToken()) {
             $params['order'] = strtolower($this->getDir());
         }
 

@@ -19,12 +19,12 @@ use Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection;
  * use Mirakl\MMP\Shop\Client\ShopApiClient;
  * use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
  *
- * $api = new ShopApiClient('API_URL', 'API_KEY', SHOP_ID);
+ * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  *
  * $request = new GetTypeReasonsRequest();
  *
  * $result = $api->getTypeReasons($request);
- * // $result => @see \Mirakl\MMP\FrontOperator\Domain\Collection\Reason\ReasonCollection
+ * // $result => @see \Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection
  * </code>
  */
 class GetTypeReasonsRequest extends AbstractRequest

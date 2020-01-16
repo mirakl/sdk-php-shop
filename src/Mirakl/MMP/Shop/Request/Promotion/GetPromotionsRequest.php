@@ -38,7 +38,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Promotion\PromotionCollection;
  *  ->sortAsc();
  *
  * $result = $api->getPromotions($request);
- * // $result => @see \Mirakl\MMP\FrontOperator\Domain\Collection\Promotion\PromotionCollection
+ * // $result => @see \Mirakl\MMP\Shop\Domain\Collection\Promotion\PromotionCollection
  * </code>
  */
 class GetPromotionsRequest extends AbstractGetPromotionsRequest

@@ -47,6 +47,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setQuoteId(string $quoteId)
  * @method  OrderShipping                   getShipping()
  * @method  $this                           setShipping(array|OrderShipping $shipping)
+ * @method  \DateTime                       getShippingDeadline()
+ * @method  $this                           setShippingDeadline(\DateTime $shippingDeadline)
  * @method  OrderStatus                     getStatus()
  * @method  $this                           setStatus(array|OrderStatus $status)
  * @method  float                           getTotalCommission()

@@ -9,15 +9,14 @@ use Mirakl\MMP\Common\Request\Order\AbstractOrderRequest;
  * Example:
  *
  * <code>
- * use Mirakl\MMP\Front\Client\FrontApiClient;
- * use Mirakl\MMP\FrontOperator\Request\Order\Workflow\CancelOrderRequest;
+ * use Mirakl\MMP\Shop\Client\ShopApiClient;
+ * use Mirakl\MMP\Shop\Request\Order\Workflow\CancelOrderRequest;
  *
- * $api = new FrontApiClient('API_URL', 'API_KEY');
+ * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  *
  * $request = new CancelOrderRequest('ORDER_ID');
  *
  * $api->cancelOrder($request);
- *
  * </code>
  */
 class CancelOrderRequest extends AbstractOrderRequest

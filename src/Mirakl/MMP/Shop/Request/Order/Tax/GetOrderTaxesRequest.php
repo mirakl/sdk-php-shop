@@ -1,7 +1,7 @@
 <?php
 namespace Mirakl\MMP\Shop\Request\Order\Tax;
 
-use Mirakl\MMP\FrontShop\Request\Order\Tax\AbstractGetOrderTaxesRequest;
+use Mirakl\MMP\Common\Request\Order\Tax\AbstractGetOrderTaxesRequest;
 use Mirakl\MMP\Shop\Domain\Collection\Order\Tax\OrderTaxCollection;
 
 /**

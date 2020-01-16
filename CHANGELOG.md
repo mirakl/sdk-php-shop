@@ -1,5 +1,20 @@
 # Changelog
 
+## v1.11.0 - 2019-11-04
+### Features
+ - Add all multi shipments APIs
+ - Add operator classes on API OR75, SH21 and OR51
+ - Add unique_code field to API PM11
+ - Add incident reasons for MPS
+ - Add shipping deadline on API OR01, OR11 and Q07
+
+### Fixes
+ - Fix another backward compatibility for the method getOriginPrice()
+
+## v1.10.3 - 2019-11-04
+### Fixes
+ - Fix another backward compatibility for the method getOriginPrice()
+
 ## v1.10.2 - 2019-09-27
 ### Fixes
  - Fix different SDK roles could not be used together

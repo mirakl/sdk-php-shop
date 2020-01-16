@@ -1,5 +1,5 @@
 <?php
-namespace Mirakl\MMP\FrontShop\Request\Order\Evaluation;
+namespace Mirakl\MMP\Common\Request\Order\Evaluation;
 
 use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\MMP\Common\Domain\Evaluation;

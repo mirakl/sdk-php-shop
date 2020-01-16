@@ -1,5 +1,5 @@
 <?php
-namespace Mirakl\MMP\FrontShop\Domain\Order\Tax;
+namespace Mirakl\MMP\Common\Domain\Order\Tax;
 
 use Mirakl\Core\Domain\MiraklObject;
 

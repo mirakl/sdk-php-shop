@@ -10,6 +10,7 @@ use Mirakl\MMP\Common\Domain\Collection\Message\OfferMessageCollection;
 use Mirakl\MMP\Common\Domain\Collection\Message\OrderMessageCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\State\OfferStateCollection as CommonOfferStateCollection;
 use Mirakl\MMP\Common\Domain\Collection\Order\Document\OrderDocumentCollection;
+use Mirakl\MMP\Common\Domain\Collection\SeekableCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shipping\CarrierCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shipping\LogisticClassCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shipping\ShippingZoneDetailCollection;
@@ -18,6 +19,9 @@ use Mirakl\MMP\Common\Domain\Document\DocumentsUploadResult;
 use Mirakl\MMP\Common\Domain\Evaluation;
 use Mirakl\MMP\Common\Domain\Message\MessageCreated;
 use Mirakl\MMP\Common\Domain\Order\Document\OrderDocumentsUploadResult;
+use Mirakl\MMP\Common\Domain\Shipment\CreatedShipments;
+use Mirakl\MMP\Common\Domain\Shipment\UpdatedShipmentTrackings;
+use Mirakl\MMP\Common\Domain\Shipment\Workflow\ShipmentWorkflowResponse;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceCollection;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Order\Refund\RefundCreatedCollection;
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportResult;
@@ -68,6 +72,10 @@ use Mirakl\MMP\Shop\Request\Product\GetProductsRequest;
 use Mirakl\MMP\Shop\Request\Product\Offer\GetOffersOnProductsRequest;
 use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
+use Mirakl\MMP\Shop\Request\Shipment\CreateShipmentsRequest;
+use Mirakl\MMP\Shop\Request\Shipment\GetShipmentsRequest;
+use Mirakl\MMP\Shop\Request\Shipment\ShipShipmentsRequest;
+use Mirakl\MMP\Shop\Request\Shipment\UpdateShipmentTrackingsRequest;
 use Mirakl\MMP\Shop\Request\Shipping\GetLogisticClassRequest;
 use Mirakl\MMP\Shop\Request\Shipping\GetShippingCarriersRequest;
 use Mirakl\MMP\Shop\Request\Shipping\GetShippingZonesRequest;
@@ -81,6 +89,7 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  MessageCreated                      answerOfferMessage(AnswerOfferMessageRequest $request)
  * @method  void                                cancelOrder(CancelOrderRequest $request)
  * @method  MessageCreated                      createOrderMessage(CreateOrderMessageRequest $request)
+ * @method  CreatedShipments                    createShipments(CreateShipmentsRequest $request)
  * @method  void                                deleteOrderDocument(DeleteOrderDocumentRequest $request)
  * @method  void                                deleteShopDocument(DeleteShopDocumentRequest $request)
  * @method  FileWrapper                         downloadInvoice(DownloadInvoiceRequest $request)
@@ -104,17 +113,20 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  OrderTaxCollection                  getOrderTaxes(GetOrderTaxesRequest $request)
  * @method  ProductCollection                   getProducts(GetProductsRequest $request)
  * @method  PromotionCollection                 getPromotions(GetPromotionsRequest $request)
+ * @method  SeekableCollection                  getShipments(GetShipmentsRequest $request)
  * @method  ReasonCollection                    getTypeReasons(GetTypeReasonsRequest $request)
  * @method  ShippingZoneDetailCollection        getShippingZones(GetShippingZonesRequest $request)
  * @method  ShopDocumentCollection              getShopDocuments(GetShopDocumentsRequest $request)
  * @method  OfferProductImportTracking          importOffers(OfferImportRequest $request)
  * @method  RefundCreatedCollection             refundOrder(CreateRefundRequest $request)
  * @method  void                                shipOrder(ShipOrderRequest $request)
+ * @method  ShipmentWorkflowResponse            shipShipments(ShipShipmentsRequest $request)
  * @method  OfferImportTracking                 updateOffers(UpdateOffersRequest $request)
  * @method  void                                updateOrderTrackingInfo(UpdateOrderTrackingInfoRequest $request)
  * @method  OrderDocumentsUploadResult          uploadOrderDocuments(UploadOrdersDocumentsRequest $request)
  * @method  DocumentsUploadResult               uploadShopDocuments(UploadShopDocumentsRequest $request)
  * @method  UpdateAdditionalFieldsResult        updateOrderAdditionalFields(UpdateAdditionalFieldsRequest $request)
+ * @method  UpdatedShipmentTrackings            updateShipmentTrackings(UpdateShipmentTrackingsRequest $request)
  */
 class ShopApiClient extends CommonApiClient
 {

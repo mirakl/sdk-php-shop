@@ -11,7 +11,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  string      getId()
  * @method  $this       setId(string $id)
  * @method  string      getOrderId()
- * @method  $this       setOrderid(string $orderId)
+ * @method  $this       setOrderId(string $orderId)
  * @method  string      getTypeCode()
  * @method  $this       setTypeCode(string $typeCode)
  */

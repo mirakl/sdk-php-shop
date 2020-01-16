@@ -412,7 +412,14 @@ abstract class AbstractApiClient implements ApiClientInterface
     {
         // Build Guzzle request options
         $options = array_merge_recursive($this->options, $request->getOptions());
-        $options['query'] = $this->formatQueryParams($this->queryParams + $request->getQueryParams());
+
+        $queryParams = $this->queryParams + $request->getQueryParams();
+        if ($request->areQueryParamsDuplicated()) {
+            // If query params are duplicated, specify them as string to Guzzle
+            $options['query'] = GuzzleHttp\Psr7\build_query($queryParams);
+        } else {
+            $options['query'] = $this->formatQueryParams($queryParams);
+        }
 
         $bodyParams = $request->getBodyParams();
         if (!empty($bodyParams)) {

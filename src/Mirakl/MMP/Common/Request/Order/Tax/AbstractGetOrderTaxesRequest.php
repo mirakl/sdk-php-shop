@@ -1,5 +1,5 @@
 <?php
-namespace Mirakl\MMP\FrontShop\Request\Order\Tax;
+namespace Mirakl\MMP\Common\Request\Order\Tax;
 
 use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Request\AbstractRequest;

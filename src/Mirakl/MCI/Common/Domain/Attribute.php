@@ -31,6 +31,8 @@ use Mirakl\MCI\Common\Domain\Collection\ValueTranslationCollection;
  * @method  $this                       setTypeParameter(string $typeParameter)
  * @method  string                      getTransformations()
  * @method  $this                       setTransformations(string $transformations)
+ * @method  string                      getUniqueCode()
+ * @method  $this                       setUniqueCode(string $uniqueCode)
  * @method  string                      getValidations()
  * @method  $this                       setValidations(string $validations)
  * @method  bool                        getVariant()
