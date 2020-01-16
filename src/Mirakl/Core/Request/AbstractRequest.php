@@ -286,8 +286,10 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     public function getResponseDecorator()
     {
         return new Decorator\Closure(function (ResponseInterface $response) {
-            if (strpos($response->getHeaderLine('Content-Type'), 'application/json') === 0) {
-                return new Decorator\AssocArray(); // default is to transform JSON response to associative array
+
+            $contentType =  $response->getHeaderLine('Content-Type');
+            if (strpos($contentType, 'application/json') === 0 || strpos($contentType, 'application/xml') === 0) {
+                return new Decorator\AssocArray(); // default is to transform JSON or XML responses to associative array
             }
 
             return $response;

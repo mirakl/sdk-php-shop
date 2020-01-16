@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.11.1 - 2020-01-16
+### Fixes
+ - Fix XML responses that may not be parsed correctly
+
 ## v1.11.0 - 2019-11-04
 ### Features
  - Add all multi shipments APIs

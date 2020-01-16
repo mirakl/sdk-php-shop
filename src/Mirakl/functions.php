@@ -312,6 +312,29 @@ if (!function_exists('\Mirakl\parse_json_response')) {
 }
 
 /**
+ * Converts specified XML response to array
+ *
+ * @param   ResponseInterface   $response
+ * @param   bool                $assoc
+ * @return  array|\stdClass
+ * @throws  \InvalidArgumentException
+ */
+if (!function_exists('\Mirakl\parse_xml_response')) {
+    function parse_xml_response(ResponseInterface $response, $assoc = true)
+    {
+        $json = null;
+
+        $xml = simplexml_load_string($response->getBody(), 'SimpleXMLElement', LIBXML_NOCDATA);
+        if ($xml === false) {
+            throw new \InvalidArgumentException('XML can not be read');
+        }
+        $json = \GuzzleHttp\json_encode($xml);
+
+        return \GuzzleHttp\json_decode($json, $assoc);
+    }
+}
+
+/**
  * Formats references associative array to query parameter
  *
  * @param   array   $data
