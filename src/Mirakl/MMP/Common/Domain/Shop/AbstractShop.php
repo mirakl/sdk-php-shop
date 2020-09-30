@@ -31,6 +31,8 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  $this                           setGrade(float $grade)              Average evaluations grade
  * @method  string                          getId()
  * @method  $this                           setId(string $id)
+ * @method  ShopKyc                         getKyc()                            Shop KYC information.
+ * @method  $this                           setKyc(ShopKyc $kyc)
  * @method  \DateTime                       getLastUpdatedDate()                Last modification date on any attribute
  * @method  MediaInfo                       getMediaInfo()
  * @method  $this                           setMediaInfo(array|MediaInfo $mediaInfo)
@@ -83,6 +85,7 @@ abstract class AbstractShop extends MiraklObject
         'payment_info'            => [PaymentInfo::class, 'factory'],
         'professional_info'       => [ProfessionalInfo::class, 'create'],
         'shipping_info'           => [ShippingInfo::class, 'create'],
+        'kyc'                     => [ShopKyc::class, 'create'],
         'shop_stats'              => [ShopStats::class, 'create'],
     ];
 }
