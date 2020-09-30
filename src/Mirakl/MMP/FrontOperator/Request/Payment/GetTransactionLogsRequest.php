@@ -80,9 +80,16 @@ class GetTransactionLogsRequest extends AbstractRequest
      * @var array
      */
     public $queryParams = [
-        'shop_id', 'start_transaction_date', 'end_transaction_date', 'updated_since',
-        'payment_voucher', 'payment_states', 'transaction_types', 'accounting_document_number',
-        'order_ids', 'order_line_ids',
+        'shop_id' => 'shop_id',
+        'start_transaction_date' => 'start_transaction_date',
+        'end_transaction_date' => 'end_transaction_date',
+        'updated_since' => 'updated_since',
+        'payment_voucher_number' => 'payment_voucher',
+        'payment_states' => 'payment_states',
+        'transaction_types' => 'transaction_types',
+        'accounting_document_number' => 'accounting_document_number',
+        'order_ids' => 'order_ids',
+        'order_line_ids' => 'order_line_ids',
     ];
 
     /**
