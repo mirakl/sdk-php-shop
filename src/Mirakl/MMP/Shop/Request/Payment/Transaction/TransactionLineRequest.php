@@ -48,7 +48,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Payment\Transaction\TransactionLineCollect
  * // Loop on collection with $result->getCollection()
  *
  * // Get next results with token from response:
- * $request = new \Mirakl\MMP\FrontOperator\Request\Payment\Transaction\TransactionLineRequest();
+ * $request = new \Mirakl\MMP\Shop\Request\Payment\Transaction\TransactionLineRequest();
  * $request->setPageToken($result->getNextPageToken());
  * $result = $api->getTransactionLine($request);
  * var_dump($result); // @see \Mirakl\MMP\Common\Domain\Collection\SeekableCollection

@@ -1,6 +1,8 @@
 <?php
 namespace Mirakl\Core\Request;
 
+use Mirakl\MMP\Common\Domain\Product\Offer\ProductReference;
+
 /**
  * Example of product references:
  * <code>
@@ -47,7 +49,13 @@ trait ProductReferencesTrait
      */
     public function setProductReferences(array $references)
     {
-        $this->productReferences = $references;
+        foreach ($references as $type => $value) {
+            if ($value instanceof ProductReference) {
+                $this->addProductReference($value->getType(), $value->getValue());
+            } else {
+                $this->productReferences[$type] = $value;
+            }
+        }
 
         return $this;
     }

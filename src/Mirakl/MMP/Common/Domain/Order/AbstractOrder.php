@@ -5,8 +5,8 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Fulfillment\Fulfillment;
 use Mirakl\MMP\Common\Domain\Order\State\OrderStatus;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Order\DeliveryDate;
 use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
-use Mirakl\MMP\FrontOperator\Domain\Order\DeliveryDate;
 
 /**
  * @method  \DateTime                       getAcceptanceDecisionDate()

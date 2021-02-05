@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.13.1 - 2021-02-05
+### Fixes
+- Fix namespace issue for DeliveryDate
+- Fix error 'Notice: Array to string conversion' when using API P31
+
 ## v1.13.0 - 2021-01-22
 ### Features
 - Add OR05 API
