@@ -26,6 +26,8 @@ use Mirakl\MMP\Common\Domain\Collection\Order\CancelationCollection;
  * @method  $this                           setId(string $id)
  * @method  int                             getIndex()
  * @method  $this                           setIndex(int $index)
+ * @method  OrderLineMeasurement            getMeasurement()
+ * @method  $this                           setMeasurement(array|OrderLineMeasurement $measurement)
  * @method  OrderLineOfferInfo              getOffer()
  * @method  $this                           setOffer(array|OrderLineOfferInfo $offer)
  * @method  float                           getPrice()
@@ -33,7 +35,7 @@ use Mirakl\MMP\Common\Domain\Collection\Order\CancelationCollection;
  * @method  string                          getPriceAdditionalInfo()
  * @method  $this                           setPriceAdditionalInfo(string $priceAdditionalInfo)
  * @method  AmountBreakdown                 getPriceAmountBreakdown()
- * @method  $this                           setPriceAmountBreakdown(AmountBreakdown $priceAmountBreakdown)
+ * @method  $this                           setPriceAmountBreakdown(array|AmountBreakdown $priceAmountBreakdown)
  * @method  ProductMediaCollection          getProductMedia()
  * @method  $this                           setProductMedia(array|ProductMediaCollection $media)
  * @method  AppliedPromotionCollection      getPromotions()
@@ -45,7 +47,7 @@ use Mirakl\MMP\Common\Domain\Collection\Order\CancelationCollection;
  * @method  float                           getShippingPrice()
  * @method  $this                           setShippingPrice(float $price)
  * @method  AmountBreakdown                 getShippingPriceAmountBreakdown()
- * @method  $this                           setShippingPriceAmountBreakdown(AmountBreakdown $shippingPriceAmountBreakdown)
+ * @method  $this                           setShippingPriceAmountBreakdown(array|AmountBreakdown $shippingPriceAmountBreakdown)
  * @method  OrderTaxAmountCollection        getShippingTaxes()
  * @method  $this                           setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
  * @method  OrderLineStatus                 getStatus()
@@ -99,6 +101,7 @@ class ShopOrderLine extends MiraklObject
         'cancelations'                      => [CancelationCollection::class, 'create'],
         'commission'                        => [OrderLineCommission::class, 'create'],
         'history'                           => [OrderLineHistory::class, 'create'],
+        'measurement'                       => [OrderLineMeasurement::class, 'create'],
         'offer'                             => [OrderLineOfferInfo::class, 'create'],
         'product_media'                     => [ProductMediaCollection::class, 'create'],
         'promotions'                        => [AppliedPromotionCollection::class, 'create'],

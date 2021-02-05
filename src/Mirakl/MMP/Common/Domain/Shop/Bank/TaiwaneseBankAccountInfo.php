@@ -10,4 +10,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setBranchCode(string $branchCode)
  */
 class TaiwaneseBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'TAIWANESE';
+}

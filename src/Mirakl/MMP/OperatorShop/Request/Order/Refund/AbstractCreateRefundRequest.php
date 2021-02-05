@@ -7,6 +7,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Order\Refund\CreateRefundCollectio
 /**
  * (OR28) Demand refunds on order lines
  *
+ * @method  string                  getOrderTaxMode()
+ * @method  $this                   setOrderTaxMode(string $orderTaxMode)
  * @method  CreateRefundCollection  getRefunds()
  * @method  $this                   setRefunds(array|CreateRefundCollection $refunds)
  */
@@ -25,7 +27,7 @@ abstract class AbstractCreateRefundRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $bodyParams = ['refunds'];
+    public $bodyParams = ['order_tax_mode', 'refunds'];
 
     /**
      * @var array

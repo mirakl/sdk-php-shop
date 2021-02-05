@@ -20,6 +20,13 @@ interface RequestInterface
     public function getBodyParams();
 
     /**
+     * Get request query parameters that should be duplicated
+     *
+     * @return  array
+     */
+    public function getDuplicatedQueryParams();
+
+    /**
      * HTTP method (GET, POST, PUT, PATCH, DELETE)
      *
      * @return  string
@@ -41,13 +48,6 @@ interface RequestInterface
     public function getUri();
 
     /**
-     * Returns whether the request body is JSON or not
-     *
-     * @return  bool
-     */
-    public function isJSON();
-
-    /**
      * Returns true if query parameters can be duplicated if multiple values are specified, false otherwise.
      * For example if true:
      * order_id=ORD-123&order_id=ORD-456
@@ -56,7 +56,14 @@ interface RequestInterface
      *
      * @return  bool
      */
-    public function areQueryParamsDuplicated();
+    public function haveQueryParamsDuplicated();
+
+    /**
+     * Returns whether the request body is JSON or not
+     *
+     * @return  bool
+     */
+    public function isJSON();
 
     /**
      * Executes request against provided API client

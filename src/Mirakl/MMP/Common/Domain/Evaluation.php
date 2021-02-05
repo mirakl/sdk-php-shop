@@ -3,6 +3,7 @@ namespace Mirakl\MMP\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Evaluation\AssessmentCollection;
+use Mirakl\MMP\Common\Domain\Evaluation\EvaluationReply;
 
 /**
  * @method  AssessmentCollection    getAssessments()
@@ -21,6 +22,8 @@ use Mirakl\MMP\Common\Domain\Collection\Evaluation\AssessmentCollection;
  * @method  $this                   setLastname(string $lastname)
  * @method  \DateTime               getLastUpdatedDate()
  * @method  $this                   setLastUpdatedDate(\DateTime $lastUpdatedDate)
+ * @method  EvaluationReply         getReply()
+ * @method  $this                   setReply(EvaluationReply $reply)
  * @method  bool                    getVisible()
  * @method  $this                   setVisible(bool $visible)
  * @method  bool                    isVisible()
@@ -32,5 +35,6 @@ class Evaluation extends MiraklObject
      */
     protected static $dataTypes = [
         'assessments' => [AssessmentCollection::class, 'create'],
+        'reply'       => [EvaluationReply::class, 'create'],
     ];
 }

@@ -14,4 +14,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setSwiftCode(string $swiftCode)
  */
 class JapaneseBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'JAPANESE';
+}

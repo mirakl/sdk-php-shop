@@ -30,6 +30,8 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  Discount                        getDiscount()
  * @method  int                             getFavoriteRank()
  * @method  $this                           setFavoriteRank(int $favoriteRank)
+ * @method  array                           getInactivityReasons()
+ * @method  $this                           setInactivityReasons(array $inactivityReasons)
  * @method  int                             getLeadtimeToShip() (in days)
  * @method  $this                           setLeadtimeToShip(int $leadtimeToShip)
  * @method  LogisticClass                   getLogisticClass()

@@ -23,7 +23,7 @@ use Mirakl\Core\Domain\MiraklObject;
  *
  * @method  bool    getRequired()
  * @method  $this   setRequired(bool $required)
- * @method  bool    isRequired()                                Whether or not the additionnal field is required
+ * @method  bool    isRequired()                                Whether or not the additional field is required
  *
  * @method  string  getShopPermission()
  * @method  $this   setShopPermission(bool $shopPermission)

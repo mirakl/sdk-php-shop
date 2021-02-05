@@ -19,7 +19,7 @@ use Mirakl\MMP\Common\Request\Offer\State\AbstractGetOfferStatesRequest;
  * </code>
  *
  * @deprecated  Class deprecated since 1.6.0
- * @see         \Mirakl\MMP\shop\Request\Offer\State\GetOfferStateListRequest
+ * @see         \Mirakl\MMP\Shop\Request\Offer\State\GetOfferStateListRequest
  */
 class GetOfferStatesRequest extends AbstractGetOfferStatesRequest
 {}

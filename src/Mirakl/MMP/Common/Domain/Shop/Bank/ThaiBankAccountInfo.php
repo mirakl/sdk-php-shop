@@ -6,4 +6,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setAccountNumber(string $accountNumber)
  */
 class ThaiBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'THAI';
+}

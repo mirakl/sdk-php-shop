@@ -21,6 +21,8 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  $this                   setCurrencyIsoCode(string $currencyIsoCode)
  * @method  string                  getDescription()
  * @method  $this                   setDescription(string $description)
+ * @method  array                   getInactivityReasons()
+ * @method  $this                   setInactivityReasons(array $inactivityReasons)
  * @method  int                     getLeadtimeToShip() (in days)
  * @method  $this                   setLeadtimeToShip(int $leadtimeToShip)
  * @method  OfferMinimumShipping    getMinShipping()

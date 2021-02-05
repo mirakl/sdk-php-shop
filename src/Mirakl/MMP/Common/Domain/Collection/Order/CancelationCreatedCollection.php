@@ -1,7 +1,7 @@
 <?php
 namespace Mirakl\MMP\Common\Domain\Collection\Order;
 
-use Mirakl\Core\Domain\Collection\MiraklCollection;
+use Mirakl\MMP\FrontOperator\Domain\Collection\Order\CancelationCreatedCollection as BaseCollection;
 use Mirakl\MMP\FrontOperator\Domain\Order\Cancelation\CancelationCreated;
 
 /**
@@ -10,8 +10,10 @@ use Mirakl\MMP\FrontOperator\Domain\Order\Cancelation\CancelationCreated;
  * @method  CancelationCreated  get($offset)
  * @method  CancelationCreated  offsetGet($offset)
  * @method  CancelationCreated  last()
+ *
+ * @deprecated Use \Mirakl\MMP\FrontOperator\Domain\Collection\Order\CancelationCreatedCollection instead
  */
-class CancelationCreatedCollection extends MiraklCollection
+class CancelationCreatedCollection extends BaseCollection
 {
     /**
      * @var string

@@ -151,6 +151,46 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
+     * @param   RequestInterface    $request
+     * @return  array
+     */
+    public function buildRequestOptions(RequestInterface $request)
+    {
+        // Build Guzzle request options
+        $options = array_merge_recursive($this->options, $request->getOptions());
+
+        $queryParams = $this->queryParams + $request->getQueryParams();
+
+        if ($request->haveQueryParamsDuplicated()) {
+            // If query params are duplicated, specify them as string to Guzzle
+            $simpleParams = array_diff_key($queryParams, array_flip($request->getDuplicatedQueryParams()));
+            $duplicatedParams = array_intersect_key($queryParams, array_flip($request->getDuplicatedQueryParams()));
+
+            $options['query'] = GuzzleHttp\Psr7\build_query(array_merge($this->formatQueryParams($simpleParams), $duplicatedParams));
+        } else {
+            $options['query'] = $this->formatQueryParams($queryParams);
+        }
+
+        $bodyParams = $request->getBodyParams();
+
+        if (!empty($bodyParams)) {
+            if ($request->isJSON()) {
+                $options['json'] = $this->formatBodyParamsJson($bodyParams);
+            } else {
+                $options['multipart'] = $this->formatBodyParamsMultipart($bodyParams);
+            }
+        }
+
+        if (!isset($options['headers'])) {
+            $options['headers'] = [];
+        }
+
+        $options['headers']['X-Mirakl-Sdk-Uuid'] = uniqid('sdk_php_', true);
+
+        return $options;
+    }
+
+    /**
      * @param   bool    $flag
      * @return  $this
      */
@@ -410,33 +450,9 @@ abstract class AbstractApiClient implements ApiClientInterface
      */
     private function prepareRequest(RequestInterface $request)
     {
-        // Build Guzzle request options
-        $options = array_merge_recursive($this->options, $request->getOptions());
-
-        $queryParams = $this->queryParams + $request->getQueryParams();
-        if ($request->areQueryParamsDuplicated()) {
-            // If query params are duplicated, specify them as string to Guzzle
-            $options['query'] = GuzzleHttp\Psr7\build_query($queryParams);
-        } else {
-            $options['query'] = $this->formatQueryParams($queryParams);
-        }
-
-        $bodyParams = $request->getBodyParams();
-        if (!empty($bodyParams)) {
-            if ($request->isJSON()) {
-                $options['json'] = $this->formatBodyParamsJson($bodyParams);
-            } else {
-                $options['multipart'] = $this->formatBodyParamsMultipart($bodyParams);
-            }
-        }
-        if (!isset($options['headers'])) {
-            $options['headers'] = [];
-        }
-        $options['headers']['X-Mirakl-Sdk-Uuid'] = uniqid('sdk_php_', true);
-
-        $promise = $this->getClient()->requestAsync($request->getMethod(), $request->getUri(), $options);
-
-        return $promise;
+        return $this->getClient()->requestAsync(
+            $request->getMethod(), $request->getUri(), $this->buildRequestOptions($request)
+        );
     }
 
     /**

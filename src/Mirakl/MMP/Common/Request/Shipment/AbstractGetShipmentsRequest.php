@@ -26,9 +26,9 @@ abstract class AbstractGetShipmentsRequest extends AbstractRequest
     protected $endpoint = '/shipments';
 
     /**
-     * @var bool
+     * @var array
      */
-    protected $queryParamsDuplicated = true;
+    protected $duplicatedQueryParams = ['order_id', 'shipment_state_code'];
 
     /**
      * @var array

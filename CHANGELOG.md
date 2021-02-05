@@ -1,5 +1,51 @@
 # Changelog
 
+## v1.13.0 - 2021-01-22
+### Features
+- Add OR05 API
+- Add inactivity_reasons on offer
+- Add reply to review in S03 and OR51
+- Add TL02 endpoint for sellers
+- Add order_tax_mode and tax_calculation_rule in OR01, OR11, Q07, OR28 & OR30
+- Add channel support in S06
+- Add OR32 + measurement feature to OF24/OR01/OR11
+- Add CH11 API
+- Add SH12 API
+- Add OR30 method in shop sdk
+- Add 'can_shop_ship' to MiraklOrder
+- Add support for shipping_pudo_id in OR01, Q07 and OR11
+- Add editable to shop AF01
+- Add fulfillment_center_code to OR11
+- Add API CM61 to export deleted products from MCM
+- Add New product info in P11
+- Open OF51 to sellers
+- Add support to CM51 authorized-selling-shop-ids
+- Add indian bank info type
+- Add delivery date in OR01, OR04, OR11, Q07, SH01 & SH02
+- Add type parameters to PM11 result
+- Add tax rate on orders API
+- Add Amount breakdown for OR11, OR28, OR30, Q07
+- Expose email alias information in OR11 for seller
+- Add catalogs to CM21
+- Add productUrls in CM21 & CM51
+- Allow to delete products using CM21
+- Add measurement to P13 and P11
+- Add 'with_roles' query param to API PM11
+- Add fulfillment in OR01, OR11, Q07, SH01 & SH02 output
+- Created SDK methods for TL02 endpoint
+- Mark API OF43 as deprecated
+- Add OR04 API
+- Add new rejection reason status for CM21 and CM51
+- Add API endpoint for OR65 (dispute an incident)
+- Add endpoint for new OR64 API (mark incident as resolved)
+- Add new filter for CM51
+
+### Fixes
+- OF24 mapping not work for available date
+- transaction_date et transaction_number are not returned in OR11
+- Namespace issue for OF61 API with Operator SDK
+- Bad offer_additional_fields declaration for API OF24
+
 ## v1.12.1 - 2020-08-04
 ### Fixes
  - Fix missing payment_voucher param and retro compatibility problem on TL01

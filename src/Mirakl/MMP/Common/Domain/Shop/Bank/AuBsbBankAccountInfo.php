@@ -10,6 +10,11 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
 class AuBsbBankAccountInfo extends BankAccountInfo
 {
     /**
+     * @var string
+     */
+    public static $type = 'AUBSB';
+
+    /**
      * @var array
      */
     protected static $mapping = [

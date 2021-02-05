@@ -31,6 +31,8 @@ class ProductMedia extends MiraklObject
      */
     public static function create(array $data = [])
     {
+        !isset($data['mime_type']) && $data['mime_type'] = null;
+
         return new static($data['media_url'], $data['type'], $data['mime_type']);
     }
 }

@@ -9,6 +9,8 @@ use Mirakl\MCI\Common\Domain\Collection\AttributeCollection;
  * @method  $this   setHierarchyCode(string $hierarchyCode)
  * @method  int     getMaxLevel()
  * @method  $this   setMaxLevel(int $maxLevel)
+ * @method  bool    getWithRoles()
+ * @method  $this   setWithRoles(bool $withRoles)
  */
 abstract class AbstractGetAttributesRequest extends AbstractRequest
 {
@@ -20,7 +22,7 @@ abstract class AbstractGetAttributesRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $queryParams = ['hierarchy_code', 'max_level'];
+    public $queryParams = ['hierarchy_code', 'max_level', 'with_roles'];
 
     /**
      * @inheritdoc

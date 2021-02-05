@@ -10,4 +10,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setRoutingNumber(string $number)
  */
 class AbaBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'ABA';
+}

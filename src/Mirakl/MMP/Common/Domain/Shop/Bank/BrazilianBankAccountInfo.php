@@ -14,6 +14,11 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
 class BrazilianBankAccountInfo extends BankAccountInfo
 {
     /**
+     * @var string
+     */
+    public static $type = 'BRAZILIAN';
+
+    /**
      * @var array
      */
     protected static $mapping = [

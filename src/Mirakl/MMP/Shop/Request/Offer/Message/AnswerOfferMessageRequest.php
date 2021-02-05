@@ -8,6 +8,9 @@ use Mirakl\MMP\Shop\Domain\Offer\Message\OfferMessageAnswer;
 /**
  * (OF43) Answer to a message on an offer
  *
+ * @deprecated Use API M12 instead
+ * @see \Mirakl\MMP\Common\Request\Message\ThreadReplyRequest
+ *
  * @method  OfferMessageAnswer  getAnswer()
  * @method  $this               setAnswer(array|OfferMessageAnswer $answer)
  * @method  string              getMessageId()

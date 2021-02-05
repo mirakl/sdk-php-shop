@@ -6,6 +6,8 @@ use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
 /**
  * @method  AdditionalFieldValueCollection  getAdditionalFieldsValues()
  * @method  $this                           setAdditionalFieldsValues(array|AdditionalFieldValueCollection $additionalFields)
+ * @method  DeliveryTime                    getDeliveryTime()
+ * @method  $this                           setDeliveryTime(DeliveryTime $deliveryTime)
  */
 class ShippingTypeWithConfiguration extends ShippingType
 {
@@ -21,5 +23,6 @@ class ShippingTypeWithConfiguration extends ShippingType
      */
     protected static $dataTypes = [
         'additional_fields_values' => [AdditionalFieldValueCollection::class, 'create'],
+        'delivery_time'            => [DeliveryTime::class, 'create'],
     ];
 }

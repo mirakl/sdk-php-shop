@@ -90,6 +90,16 @@ trait DataObjectTrait
     }
 
     /**
+     * Give the value for an empty object
+     *
+     * @return  mixed
+     */
+    public function getEmptyValue()
+    {
+        return new \stdClass();
+    }
+
+    /**
      * Checks if current object has a value for the given key
      *
      * @param   string  $key
@@ -98,6 +108,16 @@ trait DataObjectTrait
     public function hasData($key)
     {
         return array_key_exists($key, $this->data);
+    }
+
+    /**
+     * Check if current object is empty
+     *
+     * @return bool
+     */
+    public function isEmpty()
+    {
+        return empty($this->data);
     }
 
     /**
@@ -133,11 +153,15 @@ trait DataObjectTrait
         $result = [];
         foreach ($this->data as $key => $value) {
             if (is_float($value)) {
-                $value = sprintf('%.4F', $value);
+                $value = sprintf('%.5F', $value);
             } elseif ($value instanceof \DateTime) {
                 $value = \Mirakl\date_format($value);
             } elseif (is_object($value) && $value instanceof ArrayableInterface) {
-                $value = $value->toArray();
+                if ($value->isEmpty()) {
+                    $value = $value->getEmptyValue();
+                } else {
+                    $value = $value->toArray();
+                }
             }
             $result[$key] = $value;
         }

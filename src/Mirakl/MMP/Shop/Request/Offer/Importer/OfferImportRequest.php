@@ -12,7 +12,7 @@ use Mirakl\MMP\OperatorShop\Request\Offer\Importer\AbstractOfferImportRequest;
  * use Mirakl\MMP\Shop\Client\ShopApiClient;
  * use Mirakl\MMP\Shop\Request\Offer\Importer\OfferImportRequest;
  *
- * $api = new ShopApiClient('API_URL', 'API_KEY');
+ * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  * $file = new \SplFileObject('/path/to/file.csv');
  * $request = new OfferImportRequest($file);
  * $request->setImportMode(\Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportMode::PARTIAL_UPDATE); // Optional

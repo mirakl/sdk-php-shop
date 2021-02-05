@@ -8,8 +8,6 @@ use Mirakl\MMP\Common\Domain\Discount;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
 
 /**
- * @method  AdditionalFieldValueCollection  getAdditionalFields()
- * @method  $this                           setAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
  * @method  UpdateOfferPricesCollection     getAllPrices()
  * @method  $this                           setAllPrices(array|UpdateOfferPricesCollection $prices)
  * @method  bool                            getAllowQuoteRequests()
@@ -34,12 +32,16 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
  * @method  $this                           setMinOrderQuantity(int $minOrderQuantity)
  * @method  int                             getMinQuantityAlert()
  * @method  $this                           setMinQuantityAlert(int $minQuantityAlert)
+ * @method  AdditionalFieldValueCollection  getOfferAdditionalFields()
+ * @method  $this                           setOfferAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
  * @method  int                             getPackageQuantity()
  * @method  $this                           setPackageQuantity(int $packageQuantity)
  * @method  float                           getPrice()
  * @method  $this                           setPrice(float $price)
  * @method  string                          getPriceAdditionalInfo()
  * @method  $this                           setPriceAdditionalInfo(string $priceAdditionalInfo)
+ * @method  string                          getPricingUnit()
+ * @method  $this                           setPricingUnit(string $pricingUnit)
  * @method  string                          getProductId()
  * @method  $this                           setProductId(string $id)
  * @method  string                          getProductIdType()
@@ -63,16 +65,15 @@ class UpdateOffer extends MiraklObject
      * @var array
      */
     protected static $mapping = [
-        'available_ended'   => 'start_date',
-        'available_started' => 'end_date',
+        'additional_fields' => 'offer_additional_fields',
     ];
 
     /**
      * @var array
      */
     protected static $dataTypes = [
-        'additional_fields' => [AdditionalFieldValueCollection::class, 'create'],
-        'discount'          => [Discount::class, 'create'],
-        'all_prices'        => [UpdateOfferPricesCollection::class, 'create'],
+        'offer_additional_fields' => [AdditionalFieldValueCollection::class, 'create'],
+        'discount'                => [Discount::class, 'create'],
+        'all_prices'              => [UpdateOfferPricesCollection::class, 'create'],
     ];
 }

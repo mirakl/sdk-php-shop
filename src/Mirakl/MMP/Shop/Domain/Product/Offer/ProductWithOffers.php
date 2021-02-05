@@ -19,19 +19,20 @@ class ProductWithOffers extends MiraklObject
      * @var array
      */
     protected static $mapping = [
-        'product_sku'        => 'product/sku',
-        'product_title'      => 'product/title',
-        'product_references' => 'product/references',
         'category_code'      => 'product/category/code',
         'category_label'     => 'product/category/label',
         'category_type'      => 'product/category/type',
+        'measurement'        => 'product/measurement',
+        'product_references' => 'product/references',
+        'product_sku'        => 'product/sku',
+        'product_title'      => 'product/title',
     ];
 
     /**
      * @var array
      */
     protected static $dataTypes = [
-        'product' => [ProductInfoWithRefs::class, 'create'],
         'offers'  => [OfferOnProductCollection::class, 'create'],
+        'product' => [ProductInfoWithRefs::class, 'create'],
     ];
 }

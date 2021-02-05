@@ -4,10 +4,13 @@ namespace Mirakl\MMP\Common\Domain\Order;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Order\CommissionTaxCollection;
 use Mirakl\MMP\Common\Domain\Collection\Order\Tax\OrderTaxAmountCollection;
+use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
 
 /**
  * @method  float                       getAmount()
  * @method  $this                       setAmount(float $amount)
+ * @method  AmountBreakdown             getAmountBreakdown()
+ * @method  $this                       setAmountBreakdown(AmountBreakdown $amountBreakdown)
  * @method  CommissionTaxCollection     getCommissionTaxes()
  * @method  $this                       setCommissionTaxes(array|CommissionTaxCollection $commissionTaxes)
  * @method  bool                        hasCommissionTaxes()
@@ -31,6 +34,8 @@ use Mirakl\MMP\Common\Domain\Collection\Order\Tax\OrderTaxAmountCollection;
  * @method  $this                       setReasonCode(string $amount)
  * @method  float                       getShippingAmount()
  * @method  $this                       setShippingAmount(float $shippingAmount)
+ * @method  AmountBreakdown             getShippingAmountBreakdown()
+ * @method  $this                       setShippingAmountBreakdown(AmountBreakdown $shippingAmountBreakdown)
  * @method  OrderTaxAmountCollection    getShippingTaxes()
  * @method  $this                       setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
  * @method  OrderTaxAmountCollection    getTaxes()
@@ -42,9 +47,11 @@ class Cancelation extends MiraklObject
      * @var array
      */
     protected static $dataTypes = [
-        'commission_taxes' => [CommissionTaxCollection::class, 'create'],
-        'shipping_taxes'   => [OrderTaxAmountCollection::class, 'create'],
-        'taxes'            => [OrderTaxAmountCollection::class, 'create'],
+        'amount_breakdown'          => [AmountBreakdown::class, 'create'],
+        'commission_taxes'          => [CommissionTaxCollection::class, 'create'],
+        'shipping_amount_breakdown' => [AmountBreakdown::class, 'create'],
+        'shipping_taxes'            => [OrderTaxAmountCollection::class, 'create'],
+        'taxes'                     => [OrderTaxAmountCollection::class, 'create'],
     ];
 
     /**

@@ -5,6 +5,7 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Product\Export\ExportProductReferenceCollection;
 use Mirakl\MMP\Common\Domain\Collection\Product\ProductMediaCollection;
 use Mirakl\MMP\Common\Domain\Collection\Product\Export\ExportProductShopSkuCollection;
+use Mirakl\MMP\Common\Domain\Product\Measurement\ProductMeasurement;
 
 /**
  * @method  bool                                isActive()
@@ -19,20 +20,22 @@ use Mirakl\MMP\Common\Domain\Collection\Product\Export\ExportProductShopSkuColle
  * @method  $this                               setDescription(string $description)
  * @method  string                              getLogisticClassCode()
  * @method  $this                               setLogisticClassCode(string $logisticClassCode)
+ * @method  ProductMeasurement                  getMeasurement()
+ * @method  $this                               setMeasurement(ProductMeasurement $measurement)
+ * @method  ProductMediaCollection              getMedias()
+ * @method  $this                               setMedia(ProductMediaCollection $medias)
  * @method  ExportProductReferenceCollection    getReferences()
  * @method  $this                               setReferences(ExportProductReferenceCollection $references)
+ * @method  ExportProductShopSkuCollection      getShopSkus()
+ * @method  $this                               setShopSkus(ExportProductShopSkuCollection $shopSkus)
+ * @method  string                              getSku()
+ * @method  $this                               setSku(string $sku)
+ * @method  string                              getTitle()
+ * @method  $this                               setTitle(string $title)
  * @method  string                              getUrl()
  * @method  $this                               setUrl(string $url)
  * @method  string                              getVariantGroupCode()
  * @method  $this                               setVariantGroupCode(string $variantGroupCode)
- * @method  string                              getSku()
- * @method  $this                               setSku(string $sku)
- * @method  ExportProductShopSkuCollection      getShopSkus()
- * @method  $this                               setShopSkus(ExportProductShopSkuCollection $shopSkus)
- * @method  ProductMediaCollection              getMedias()
- * @method  $this                               setMedia(ProductMediaCollection $medias)
- * @method  string                              getTitle()
- * @method  $this                               setTitle(string $title)
  *
  */
 class ExportProduct extends MiraklObject
@@ -41,8 +44,9 @@ class ExportProduct extends MiraklObject
      * @var array
      */
     protected static $dataTypes = [
-        'references' => [ExportProductReferenceCollection::class, 'create'],
-        'shop_skus'  => [ExportProductShopSkuCollection::class, 'create'],
-        'medias'     => [ProductMediaCollection::class, 'create'],
+        'measurement' => [ProductMeasurement::class, 'create'],
+        'medias'      => [ProductMediaCollection::class, 'create'],
+        'references'  => [ExportProductReferenceCollection::class, 'create'],
+        'shop_skus'   => [ExportProductShopSkuCollection::class, 'create'],
     ];
 }

@@ -56,9 +56,9 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     protected $uriVars = [];
 
     /**
-     * @var bool
+     * @var array
      */
-    protected $queryParamsDuplicated = false;
+    protected $duplicatedQueryParams = [];
 
     /**
      * Array of query string parameters
@@ -90,10 +90,19 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
 
     /**
      * @return  bool
+     * @deprecated use haveQueryParamsDuplicated()
      */
     public function areQueryParamsDuplicated()
     {
-        return $this->queryParamsDuplicated;
+        return $this->haveQueryParamsDuplicated();
+    }
+
+    /**
+     * @return  bool
+     */
+    public function haveQueryParamsDuplicated()
+    {
+        return !empty($this->duplicatedQueryParams);
     }
 
     /**
@@ -138,6 +147,16 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     public function getBodyParams()
     {
         return $this->buildParams($this->bodyParams);
+    }
+
+    /**
+     * Get request query parameters that should be duplicated
+     *
+     * @return  array
+     */
+    public function getDuplicatedQueryParams()
+    {
+        return $this->duplicatedQueryParams;
     }
 
     /**

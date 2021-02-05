@@ -2,13 +2,12 @@
 namespace Mirakl\MMP\Common\Request\Order\Cancelation;
 
 use Mirakl\Core\Request\AbstractRequest;
-use Mirakl\MMP\Common\Domain\Collection\Order\CreateCancelationCollection;
 
 /**
  * (OR30) Demand cancelations on order lines
  *
- * @method  CreateCancelationCollection   getCancelations()
- * @method  $this                         setCancelations(array|CreateCancelationCollection $cancelations)
+ * @method  string  getOrderTaxMode()
+ * @method  $this   setOrderTaxMode(string $orderTaxMode)
  */
 abstract class AbstractCreateCancelationsRequest extends AbstractRequest
 {
@@ -25,21 +24,5 @@ abstract class AbstractCreateCancelationsRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $bodyParams = ['cancelations'];
-
-    /**
-     * @var array
-     */
-    protected static $dataTypes = [
-        'cancelations' => [CreateCancelationCollection::class, 'create'],
-    ];
-
-    /**
-     * @param   array|CreateCancelationCollection $cancelations
-     */
-    public function __construct($cancelations)
-    {
-        parent::__construct();
-        $this->setCancelations($cancelations);
-    }
+    public $bodyParams = ['cancelations', 'order_tax_mode'];
 }

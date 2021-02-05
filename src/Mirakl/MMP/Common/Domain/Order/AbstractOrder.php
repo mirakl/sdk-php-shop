@@ -2,13 +2,17 @@
 namespace Mirakl\MMP\Common\Domain\Order;
 
 use Mirakl\Core\Domain\MiraklObject;
+use Mirakl\MMP\Common\Domain\Fulfillment\Fulfillment;
 use Mirakl\MMP\Common\Domain\Order\State\OrderStatus;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
 use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
+use Mirakl\MMP\FrontOperator\Domain\Order\DeliveryDate;
 
 /**
  * @method  \DateTime                       getAcceptanceDecisionDate()
  * @method  $this                           setAcceptanceDecisionDate(\DateTime $acceptanceDecisionDate)
+ * @method  bool                            getCanShopShip()
+ * @method  $this                           setCanShopShip(bool $canShopShip)
  * @method  Channel                         getChannel()
  * @method  $this                           setChannel(array|Channel $channel)
  * @method  string                          getCommercialId()
@@ -19,6 +23,10 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setCurrencyIsoCode(string $currencyCode)
  * @method  \DateTime                       getCustomerDebitedDate()
  * @method  $this                           setCustomerDebitedDate(\DateTime $customerDebitedDate)
+ * @method  DeliveryDate                    getDeliveryDate()
+ * @method  $this                           setDeliveryDate(DeliveryDate $deliveryDate)
+ * @method  Fulfillment                     getFulfillment()
+ * @method  $this                           setFulfillment(Fulfillment $fulfillment)
  * @method  bool                            getHasCustomerMessage()
  * @method  $this                           setHasCustomerMessage(bool $hasCustomerMessage)
  * @method  bool                            getHasIncident()
@@ -33,6 +41,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setLeadtimeToShip(int $leadtimeToShip)
  * @method  AdditionalFieldValueCollection  getOrderAdditionalFields()
  * @method  $this                           setOrderAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
+ * @method  string                          getOrderTaxMode()
+ * @method  $this                           setOrderTaxMode(string $orderTaxMode)
  * @method  int                             getPaymentDuration()
  * @method  $this                           setPaymentDuration(int $paymentDuration)
  * @method  string                          getPaymentType()
@@ -55,6 +65,10 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setTotalCommission(float $commission)
  * @method  float                           getTotalPrice()
  * @method  $this                           setTotalPrice(float $totalPrice)
+ * @method  \DateTime                       getTransactionDate()
+ * @method  $this                           setTransactionDate(\DateTime $transactionDate)
+ * @method  string                          getTransactionNumber()
+ * @method  $this                           setTransactionNumber(string $transactionNumber)
  */
 abstract class AbstractOrder extends MiraklObject
 {
@@ -70,6 +84,7 @@ abstract class AbstractOrder extends MiraklObject
         'shipping_carrier_code'    => 'shipping/carrier_code',
         'shipping_company'         => 'shipping/company',
         'shipping_price'           => 'shipping/price',
+        'shipping_pudo_id'         => 'shipping/pudo_id',
         'shipping_tracking'        => 'shipping/tracking_number',
         'shipping_tracking_url'    => 'shipping/tracking_url',
         'shipping_type_code'       => 'shipping/type/code',
@@ -82,10 +97,12 @@ abstract class AbstractOrder extends MiraklObject
      * @var array
      */
     protected static $dataTypes = [
-        'order_additional_fields' => [AdditionalFieldValueCollection::class, 'create'],
-        'shipping'                => [OrderShipping::class, 'create'],
         'channel'                 => [Channel::class, 'create'],
+        'delivery_date'           => [DeliveryDate::class, 'create'],
+        'fulfillment'             => [Fulfillment::class, 'create'],
+        'order_additional_fields' => [AdditionalFieldValueCollection::class, 'create'],
         'promotions'              => [OrderPromotionsSummary::class, 'create'],
+        'shipping'                => [OrderShipping::class, 'create'],
         'status'                  => [OrderStatus::class, 'create'],
     ];
 }

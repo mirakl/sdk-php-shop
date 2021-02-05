@@ -8,4 +8,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setClabe(string $clabe)
  */
 class MexicanBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'MEXICAN';
+}

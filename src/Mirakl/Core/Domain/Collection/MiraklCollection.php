@@ -109,6 +109,14 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     }
 
     /**
+     * @inheritdoc
+     */
+    public function getEmptyValue()
+    {
+        return [];
+    }
+
+    /**
      * @return  array
      */
     public function getItems()
@@ -130,6 +138,14 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     public function getIterator()
     {
         return new \ArrayIterator($this->items);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isEmpty()
+    {
+        return empty($this->items);
     }
 
     /**

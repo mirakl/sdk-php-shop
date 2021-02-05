@@ -8,4 +8,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setSwiftCode(string $swiftCode)
  */
 class HKBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'HK';
+}

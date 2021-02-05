@@ -12,47 +12,60 @@ use Mirakl\Core\Domain\MiraklObject;
 class PaymentInfo extends MiraklObject
 {
     /**
+     * @var string
+     */
+    public static $type = '';
+
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        $this->setData('@type', $this::$type);
+    }
+
+    /**
      * @param   array $info
      * @return  BankAccountInfo|PaymentInfo
      */
     public static function factory(array $info)
     {
         switch (@$info['@type']) {
-            case 'ABA':
+            case AbaBankAccountInfo::$type:
                 $info = new AbaBankAccountInfo($info);
                 break;
-            case 'AUBSB':
+            case AuBsbBankAccountInfo::$type:
                 $info = new AuBsbBankAccountInfo($info);
                 break;
-            case 'BRAZILIAN':
+            case BrazilianBankAccountInfo::$type:
                 $info = new BrazilianBankAccountInfo($info);
                 break;
-            case 'CANADIAN':
+            case CanadianBankAccountInfo::$type:
                 $info = new CanadianBankAccountInfo($info);
                 break;
-            case 'HK':
+            case HKBankAccountInfo::$type:
                 $info = new HKBankAccountInfo($info);
                 break;
-            case 'IBAN':
+            case IbanBankAccountInfo::$type:
                 $info = new IbanBankAccountInfo($info);
                 break;
-            case 'JAPANESE':
+            case IndianBankAccountInfo::$type:
+                $info = new IndianBankAccountInfo($info);
+                break;
+            case JapaneseBankAccountInfo::$type:
                 $info = new JapaneseBankAccountInfo($info);
                 break;
-            case 'MEXICAN':
+            case MexicanBankAccountInfo::$type:
                 $info = new MexicanBankAccountInfo($info);
                 break;
-            case 'NUBAN':
+            case NubanBankAccountInfo::$type:
                 $info = new NubanBankAccountInfo($info);
                 break;
-            case 'NZBSB':
+            case NzBsbBankAccountInfo::$type:
                 $info = new NzBsbBankAccountInfo($info);
                 break;
-                break;
-            case 'TAIWANESE':
+            case TaiwaneseBankAccountInfo::$type:
                 $info = new TaiwaneseBankAccountInfo($info);
                 break;
-            case 'THAI':
+            case ThaiBankAccountInfo::$type:
                 $info = new ThaiBankAccountInfo($info);
                 break;
             default:

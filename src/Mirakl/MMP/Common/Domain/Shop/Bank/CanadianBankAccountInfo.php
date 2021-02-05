@@ -12,4 +12,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setTransitNumber(string $transitNumber)
  */
 class CanadianBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'CANADIAN';
+}

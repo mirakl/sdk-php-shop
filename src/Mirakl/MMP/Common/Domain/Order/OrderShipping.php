@@ -12,6 +12,8 @@ use Mirakl\MMP\Common\Domain\Shipping\ShippingZone;
  * @method  $this           setCarrierCode(string $carrierCode)
  * @method  float           getPrice()
  * @method  $this           setPrice(float $price)
+ * @method  string          getPudoId()
+ * @method  $this           setPudoId(string $pudoId)
  * @method  string          getTrackingNumber()
  * @method  $this           setTrackingNumber(string $trackingNumber)
  * @method  string          getTrackingUrl()
@@ -31,6 +33,7 @@ class OrderShipping extends MiraklObject
         'shipping_price'        => 'price',
         'shipping_company'      => 'carrier',
         'shipping_carrier_code' => 'carrier_code',
+        'shipping_pudo_id'      => 'pudo_id',
         'shipping_tracking'     => 'tracking_number',
         'shipping_tracking_url' => 'tracking_url',
     ];

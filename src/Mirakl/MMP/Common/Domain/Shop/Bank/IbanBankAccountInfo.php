@@ -8,4 +8,9 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
  * @method  $this   setIban(string $iban)
  */
 class IbanBankAccountInfo extends BankAccountInfo
-{}
+{
+    /**
+     * @var string
+     */
+    public static $type = 'IBAN';
+}
