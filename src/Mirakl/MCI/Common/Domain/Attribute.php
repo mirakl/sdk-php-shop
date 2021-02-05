@@ -22,6 +22,8 @@ use Mirakl\MCI\Common\Domain\Collection\ValueTranslationCollection;
  * @method  ValueTranslationCollection  getLabelTranslations()
  * @method  bool                        getRequired()
  * @method  $this                       setRequired(bool $required)
+ * @method  string                      getRequirementLevel()
+ * @method  $this                       setRequirementLevel(bool $requirementLevel)
  * @method  bool                        isRequired()
  * @method  AttributeRoleCollection     getRoles()
  * @method  $this                       setRoles(AttributeRoleCollection $roles)

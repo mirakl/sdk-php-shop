@@ -15,7 +15,7 @@ use Mirakl\MMP\Common\Request\Order\Accept\AbstractAcceptOrderRequest;
  *
  * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  * $request = new AcceptOrderRequest('ORDER_ID', [
- *     new AcceptOrderLine(['id' => 'ORDER_ID', 'accepted' => true])
+ *     new AcceptOrderLine(['id' => 'ORDER_LINE_ID', 'accepted' => true])
  * ]);
  * $api->acceptOrder($request);
  * </code>

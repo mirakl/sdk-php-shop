@@ -18,15 +18,23 @@ use Mirakl\MMP\Common\Domain\Collection\Shop\Document\ShopDocumentCollection;
 use Mirakl\MMP\Common\Domain\Document\DocumentsUploadResult;
 use Mirakl\MMP\Common\Domain\Evaluation;
 use Mirakl\MMP\Common\Domain\Message\MessageCreated;
+use Mirakl\MMP\Common\Domain\Message\Thread\ThreadCreated;
+use Mirakl\MMP\Common\Domain\Message\Thread\ThreadDetails;
+use Mirakl\MMP\Common\Domain\Message\Thread\ThreadReplyCreated;
 use Mirakl\MMP\Common\Domain\Order\Document\OrderDocumentsUploadResult;
 use Mirakl\MMP\Common\Domain\Shipment\CreatedShipments;
 use Mirakl\MMP\Common\Domain\Shipment\UpdatedShipmentTrackings;
 use Mirakl\MMP\Common\Domain\Shipment\Workflow\ShipmentWorkflowResponse;
+use Mirakl\MMP\Common\Request\Message\DownloadThreadMessageAttachmentRequest;
+use Mirakl\MMP\Common\Request\Message\ThreadReplyRequest;
+use Mirakl\MMP\Common\Request\Order\Message\CreateOrderThreadRequest;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceCollection;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Order\Refund\RefundCreatedCollection;
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportResult;
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportTracking;
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferProductImportTracking;
+use Mirakl\MMP\OperatorShop\Request\Message\GetThreadDetailsRequest;
+use Mirakl\MMP\OperatorShop\Request\Message\GetThreadsRequest;
 use Mirakl\MMP\Shop\Domain\Collection\Offer\ShopOfferCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Offer\State\OfferStateCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Order\ShopOrderCollection;
@@ -90,11 +98,13 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  void                                cancelOrder(CancelOrderRequest $request)
  * @method  MessageCreated                      createOrderMessage(CreateOrderMessageRequest $request)
  * @method  CreatedShipments                    createShipments(CreateShipmentsRequest $request)
+ * @method  ThreadCreated                       createOrderThread(CreateOrderThreadRequest $request)
  * @method  void                                deleteOrderDocument(DeleteOrderDocumentRequest $request)
  * @method  void                                deleteShopDocument(DeleteShopDocumentRequest $request)
  * @method  FileWrapper                         downloadInvoice(DownloadInvoiceRequest $request)
  * @method  FileWrapper                         downloadOrdersDocuments(DownloadOrdersDocumentsRequest $request)
  * @method  FileWrapper                         downloadShopDocuments(DownloadShopDocumentsRequest $request)
+ * @method  FileWrapper                         downloadThreadMessageAttachment(DownloadThreadMessageAttachmentRequest $request)
  * @method  AdditionalFieldCollection           getAdditionalFields(GetAdditionalFieldRequest $request)
  * @method  DocumentsConfigurationCollection    getDocumentsConfiguration(GetDocumentsConfigurationRequest $request)
  * @method  InvoiceCollection                   getInvoices(GetInvoicesRequest $request)
@@ -114,11 +124,14 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  ProductCollection                   getProducts(GetProductsRequest $request)
  * @method  PromotionCollection                 getPromotions(GetPromotionsRequest $request)
  * @method  SeekableCollection                  getShipments(GetShipmentsRequest $request)
+ * @method  ThreadDetails                       getThreadDetails(GetThreadDetailsRequest $request)
+ * @method  SeekableCollection                  getThreads(GetThreadsRequest $request)
  * @method  ReasonCollection                    getTypeReasons(GetTypeReasonsRequest $request)
  * @method  ShippingZoneDetailCollection        getShippingZones(GetShippingZonesRequest $request)
  * @method  ShopDocumentCollection              getShopDocuments(GetShopDocumentsRequest $request)
  * @method  OfferProductImportTracking          importOffers(OfferImportRequest $request)
  * @method  RefundCreatedCollection             refundOrder(CreateRefundRequest $request)
+ * @method  ThreadReplyCreated                  replyToThread(ThreadReplyRequest $request)
  * @method  void                                shipOrder(ShipOrderRequest $request)
  * @method  ShipmentWorkflowResponse            shipShipments(ShipShipmentsRequest $request)
  * @method  OfferImportTracking                 updateOffers(UpdateOffersRequest $request)

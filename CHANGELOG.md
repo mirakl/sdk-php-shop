@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.12.0 - 2020-07-28
+### Features
+ - Add requirement level for attributes (PM11)
+ - Add KYC information for A01, S06, S07 & S20 API clients
+ - Add M10, M11, M12, M13 AN OR43 in SDK
 ## v1.11.1 - 2020-01-16
 ### Fixes
  - Fix XML responses that may not be parsed correctly

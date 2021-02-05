@@ -8,7 +8,7 @@ trait SeekableTrait
      *
      * @var int
      */
-    protected $limit = 10;
+    protected $limit;
 
     /**
      * Indicate whether or not this API should return the page associated to this token.

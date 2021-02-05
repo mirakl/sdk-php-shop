@@ -14,6 +14,7 @@ use Psr\Http\Message\ResponseInterface;
  * @method int       getMax()
  * @method int       getOffset()
  * @method string    getPageToken()
+ * @method int       getLimit()
  * @method bool      getPaginate()
  * @method array     getProductReferences()
  * @method \DateTime getStartDate()
@@ -186,6 +187,10 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
         if ($this->getPageToken()) {
             /** @see SeekableTrait */
             $params['page_token'] = $this->getPageToken();
+        }
+
+        if ($this->getLimit()) {
+            $params['limit'] = $this->getLimit();
         }
 
         /** @see SortableTrait */
