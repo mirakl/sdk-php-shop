@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.2 - 2021-04-16
+### Fixes
+- Allow Guzzle 7 to be used for API calls
+
 ## v1.13.1 - 2021-02-05
 ### Fixes
 - Fix namespace issue for DeliveryDate
