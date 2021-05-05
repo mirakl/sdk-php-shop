@@ -22,7 +22,11 @@ abstract class AbstractGetAttributesRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $queryParams = ['hierarchy_code', 'max_level', 'with_roles'];
+    public $queryParams = [
+        'hierarchy_code' => 'hierarchy',
+        'max_level'      => 'max_level',
+        'with_roles'     => 'with_roles',
+    ];
 
     /**
      * @inheritdoc
