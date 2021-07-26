@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.5 - 2021-07-26
+### Fixes
+- Fix error with deprecated method GuzzleHttp\Psr7\build_query() if using Guzzle 7.2+
+
 ## v1.13.4 - 2021-05-21
 ### Fixes
 - Fix potential notice when downloading an empty file from API

@@ -166,7 +166,7 @@ abstract class AbstractApiClient implements ApiClientInterface
             $simpleParams = array_diff_key($queryParams, array_flip($request->getDuplicatedQueryParams()));
             $duplicatedParams = array_intersect_key($queryParams, array_flip($request->getDuplicatedQueryParams()));
 
-            $options['query'] = GuzzleHttp\Psr7\build_query(array_merge($this->formatQueryParams($simpleParams), $duplicatedParams));
+            $options['query'] = GuzzleHttp\Psr7\Query::build(array_merge($this->formatQueryParams($simpleParams), $duplicatedParams));
         } else {
             $options['query'] = $this->formatQueryParams($queryParams);
         }
@@ -421,7 +421,7 @@ abstract class AbstractApiClient implements ApiClientInterface
      */
     public function getLastRequestString()
     {
-        return !empty($this->history) ? GuzzleHttp\Psr7\str(current($this->history)['request']) : '';
+        return !empty($this->history) ? GuzzleHttp\Psr7\Message::toString(current($this->history)['request']) : '';
     }
 
     /**
