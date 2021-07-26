@@ -25,7 +25,10 @@ trait DownloadableTrait
         header('Content-Length: ' . $this->file->fstat()['size'], true);
         header('Cache-Control: must-revalidate, post-check=0, pre-check=0', true);
 
-        ob_clean();
+        if (ob_get_length()) {
+            ob_clean();
+        }
+
         $this->file->rewind();
         $this->file->fpassthru();
         exit;

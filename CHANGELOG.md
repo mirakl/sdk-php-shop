@@ -1,8 +1,12 @@
 # Changelog
 
+## v1.13.4 - 2021-05-21
+### Fixes
+- Fix potential notice when downloading an empty file from API
+
 ## v1.13.3 - 2021-05-05
 ### Fixes
-- Fix query param 'hierarchy' can't be used in PM11
+- Fix cannot use query param hierarchy in PM11
 
 ## v1.13.2 - 2021-04-16
 ### Fixes
