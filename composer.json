@@ -2,7 +2,7 @@
     "name": "mirakl/sdk-php-shop",
     "description": "Mirakl provides a PHP SDK that wraps the Mirakl REST APIs in a lightweight library. This enables you to develop a fast, flexible and custom integration for your existing e-commerce solution.",
     "type": "library",
-    "version": "1.13.5",
+    "version": "1.13.6",
     "license": "proprietary",
     "authors": [
         {

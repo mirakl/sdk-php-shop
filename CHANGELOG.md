@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.13.6 - 2021-08-12
+### Fixes
+- Fix GetHierarchiesRequest not working with param hierarchy
+
 ## v1.13.5 - 2021-07-26
 ### Fixes
 - Fix error with deprecated method GuzzleHttp\Psr7\build_query() if using Guzzle 7.2+

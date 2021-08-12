@@ -5,6 +5,8 @@ use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MCI\Common\Domain\Collection\HierarchyCollection;
 
 /**
+ * @method  string  getHierarchy()
+ * @method  $this   setHierarchy(string $hierarchyCode)
  * @method  string  getHierarchyCode()
  * @method  $this   setHierarchyCode(string $hierarchyCode)
  * @method  int     getMaxLevel()
@@ -20,7 +22,11 @@ abstract class AbstractGetHierarchiesRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $queryParams = ['hierarchy_code', 'max_level'];
+    public $queryParams = [
+        'hierarchy_code' => 'hierarchy',
+        'hierarchy'      => 'hierarchy',
+        'max_level'      => 'max_level',
+    ];
 
     /**
      * @inheritdoc
