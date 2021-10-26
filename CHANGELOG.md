@@ -2,6 +2,10 @@
 
 ## v1.13.6 - 2021-08-12
 ### Fixes
+- Fix parameter order_tax_mode not working in GetOrdersRequest.php 
+
+## v1.13.6 - 2021-08-12
+### Fixes
 - Fix GetHierarchiesRequest not working with param hierarchy
 
 ## v1.13.5 - 2021-07-26
