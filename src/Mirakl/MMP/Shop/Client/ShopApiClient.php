@@ -45,6 +45,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Offer\State\OfferStateCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Order\CancelationCreatedCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Order\ShopOrderCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Order\Tax\OrderTaxCollection;
+use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdatedOrderAndErrorCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Product\ProductCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Product\Offer\ProductWithOffersCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Promotion\PromotionCollection;
@@ -53,6 +54,7 @@ use Mirakl\MMP\Shop\Domain\Offer\ShopOffer;
 use Mirakl\MMP\Shop\Domain\Order\AdditionalField\UpdateAdditionalFieldsResult;
 use Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated;
 use Mirakl\MMP\Shop\Domain\Shop\ShopAccount;
+use Mirakl\MMP\Shop\Domain\Shop\UpdatedShopAndError;
 use Mirakl\MMP\Shop\Request\AdditionalField\GetAdditionalFieldRequest;
 use Mirakl\MMP\Shop\Request\Channel\GetChannelsRequest;
 use Mirakl\MMP\Shop\Request\Document\GetDocumentsConfigurationRequest;
@@ -62,6 +64,7 @@ use Mirakl\MMP\Shop\Request\Offer\GetOffersRequest;
 use Mirakl\MMP\Shop\Request\Offer\Importer\OfferImportReportRequest;
 use Mirakl\MMP\Shop\Request\Offer\Importer\OfferImportRequest;
 use Mirakl\MMP\Shop\Request\Offer\Importer\OfferImportErrorReportRequest;
+use Mirakl\MMP\Shop\Request\Offer\Importer\OffersImportsRequest;
 use Mirakl\MMP\Shop\Request\Offer\Message\AnswerOfferMessageRequest;
 use Mirakl\MMP\Shop\Request\Offer\Message\GetOfferMessagesRequest;
 use Mirakl\MMP\Shop\Request\Offer\OffersExportFileRequest;
@@ -86,6 +89,7 @@ use Mirakl\MMP\Shop\Request\Order\Refund\CreateRefundRequest;
 use Mirakl\MMP\Shop\Request\Order\Ship\ShipOrderRequest;
 use Mirakl\MMP\Shop\Request\Order\Tax\GetOrderTaxesRequest;
 use Mirakl\MMP\Shop\Request\Order\Tracking\UpdateOrderTrackingInfoRequest;
+use Mirakl\MMP\Shop\Request\Order\Update\UpdateOrdersRequest;
 use Mirakl\MMP\Shop\Request\Order\Workflow\CancelOrderRequest;
 use Mirakl\MMP\Shop\Request\Payment\Invoice\DownloadInvoiceRequest;
 use Mirakl\MMP\Shop\Request\Payment\Invoice\GetInvoicesRequest;
@@ -93,6 +97,7 @@ use Mirakl\MMP\Shop\Request\Payment\Transaction\TransactionLineRequest;
 use Mirakl\MMP\Shop\Request\Product\GetProductsRequest;
 use Mirakl\MMP\Shop\Request\Product\Offer\GetOffersOnProductsRequest;
 use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
+use Mirakl\MMP\Shop\Request\Reason\GetReasonsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\CreateShipmentsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\GetShipmentsRequest;
@@ -106,6 +111,7 @@ use Mirakl\MMP\Shop\Request\Shop\Document\DeleteShopDocumentRequest;
 use Mirakl\MMP\Shop\Request\Shop\Document\DownloadShopDocumentsRequest;
 use Mirakl\MMP\Shop\Request\Shop\Document\GetShopDocumentsRequest;
 use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
+use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
 
 /**
  * @method  void                                    acceptOrder(AcceptOrderRequest $request)
@@ -132,6 +138,7 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  ShopOfferCollection                     getOffers(GetOffersRequest $request)
  * @method  FileWrapper                             getOffersImportErrorReport(OfferImportErrorReportRequest $request)
  * @method  OfferImportResult                       getOffersImportResult(OfferImportReportRequest $request)
+ * @method  SeekableCollection                      getOffersImports(OffersImportsRequest $request)
  * @method  ProductWithOffersCollection             getOffersOnProducts(GetOffersOnProductsRequest $request)
  * @method  CommonOfferStateCollection              getOfferStates(GetOfferStatesRequest $request) @deprecated Use getOfferStateList instead
  * @method  OfferStateCollection                    getOfferStateList(GetOfferStateListRequest $request)
@@ -142,6 +149,7 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  OrderTaxCollection                      getOrderTaxes(GetOrderTaxesRequest $request)
  * @method  ProductCollection                       getProducts(GetProductsRequest $request)
  * @method  PromotionCollection                     getPromotions(GetPromotionsRequest $request)
+ * @method  ReasonCollection                        getReasons(GetReasonsRequest $request)
  * @method  SeekableCollection                      getShipments(GetShipmentsRequest $request)
  * @method  ThreadDetails                           getThreadDetails(GetThreadDetailsRequest $request)
  * @method  SeekableCollection                      getThreads(GetThreadsRequest $request)
@@ -157,8 +165,10 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
  * @method  RefundsCreated                          requestRefundOrder(CreateRefundRequest $request)
  * @method  void                                    shipOrder(ShipOrderRequest $request)
  * @method  ShipmentWorkflowResponse                shipShipments(ShipShipmentsRequest $request)
+ * @method  UpdatedShopAndError                     updateAccount(UpdateAccountRequest $request)
  * @method  OfferImportTracking                     updateOffers(UpdateOffersRequest $request)
  * @method  void                                    updateOrderTrackingInfo(UpdateOrderTrackingInfoRequest $request)
+ * @method  UpdatedOrderAndErrorCollection          updateOrders(UpdateOrdersRequest $request)
  * @method  OrderDocumentsUploadResult              uploadOrderDocuments(UploadOrdersDocumentsRequest $request)
  * @method  DocumentsUploadResult                   uploadShopDocuments(UploadShopDocumentsRequest $request)
  * @method  UpdateAdditionalFieldsResult            updateOrderAdditionalFields(UpdateAdditionalFieldsRequest $request)

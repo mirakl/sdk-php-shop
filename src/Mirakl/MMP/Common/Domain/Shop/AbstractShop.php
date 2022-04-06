@@ -3,6 +3,7 @@ namespace Mirakl\MMP\Common\Domain\Shop;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Collection\Shop\ShopApplicableTaxCollection;
 use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
 
 /**
@@ -10,6 +11,8 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  *
  * @method  AdditionalFieldValueCollection  getAdditionalFieldValues()          List of additional fields
  * @method  $this                           setAdditionalFieldValues(array|AdditionalFieldValueCollection $additionalFieldValues)
+ * @method  ShopApplicableTaxCollection     getApplicableTaxes()
+ * @method  $this                           setApplicableTaxes(array|ShopApplicableTaxCollection $applicableTaxes)
  * @method  BillingInfo                     getBillingInfo()
  * @method  $this                           setBillingInfo(array|BillingInfo $billingInfo)
  * @method  array                           getChannels()                       List of the channel codes
@@ -56,6 +59,8 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  $this                           setShopStats(array|ShopStats $shopStats)
  * @method  string                          getState()
  * @method  $this                           setState(string $state)
+ * @method  string                          getSuspensionType()
+ * @method  $this                           setSuspensionType(string $suspensionType)
  */
 abstract class AbstractShop extends MiraklObject
 {
@@ -87,5 +92,6 @@ abstract class AbstractShop extends MiraklObject
         'shipping_info'           => [ShippingInfo::class, 'create'],
         'kyc'                     => [ShopKyc::class, 'create'],
         'shop_stats'              => [ShopStats::class, 'create'],
+        'applicable_taxes'        => [ShopApplicableTaxCollection::class, 'create'],
     ];
 }

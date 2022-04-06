@@ -55,6 +55,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setPromotions(array|OrderPromotionsSummary $promotions)
  * @method  string                          getQuoteId()
  * @method  $this                           setQuoteId(string $quoteId)
+ * @method  OrderReferences                 getReferences()
+ * @method  $this                           setReferences(array|OrderReferences $references)
  * @method  OrderShipping                   getShipping()
  * @method  $this                           setShipping(array|OrderShipping $shipping)
  * @method  \DateTime                       getShippingDeadline()
@@ -104,5 +106,6 @@ abstract class AbstractOrder extends MiraklObject
         'promotions'              => [OrderPromotionsSummary::class, 'create'],
         'shipping'                => [OrderShipping::class, 'create'],
         'status'                  => [OrderStatus::class, 'create'],
+        'references'              => [OrderReferences::class, 'create'],
     ];
 }

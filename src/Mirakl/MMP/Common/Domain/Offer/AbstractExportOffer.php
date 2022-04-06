@@ -1,25 +1,32 @@
 <?php
 namespace Mirakl\MMP\Common\Domain\Offer;
 
+use Mirakl\MMP\Common\Domain\Collection\Product\Measurement\ProductMeasurementCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Price\OfferPricesCollection;
+use Mirakl\MMP\Common\Domain\Collection\Offer\Shipping\ShippingPriceByZoneAndTypeCollection;
+use Mirakl\MMP\Common\Domain\Product\Measurement\ProductMeasurement;
+use Mirakl\MMP\Common\Domain\Offer\Shipping\DeliveryTime;
+use Mirakl\MMP\Common\Domain\Offer\Shipping\ShippingPriceByZoneAndType;
 
 /**
- * @method  bool    getDeleted()
- * @method  $this   setDeleted(bool $flag)
- * @method  bool    isDeleted()
- * @method  $this   setId(string $id)
- * @method  string  getLogisticClassCode()
- * @method  $this   setLogisticClassCode(string $logisticClassCode)
- * @method  int     getMaxOrderQuantity()
- * @method  $this   setMaxOrderQuantity(int $maxOrderQuantity)
- * @method  int     getMinOrderQuantity()
- * @method  $this   setMinOrderQuantity(int $minOrderQuantity)
- * @method  int     getMinQuantityAlert()
- * @method  $this   setMinQuantityAlert(int $minQuantityAlert)
- * @method  string  getProductSku()
- * @method  $this   setProductSku(string $sku)
- * @method  int     getPackageQuantity()
- * @method  $this   setPackageQuantity(int $packageQuantity)
+ * @method  bool                           getDeleted()
+ * @method  $this                          setDeleted(bool $flag)
+ * @method  bool                           isDeleted()
+ * @method  $this                          setId(string $id)
+ * @method  string                         getLogisticClassCode()
+ * @method  $this                          setLogisticClassCode(string $logisticClassCode)
+ * @method  int                            getMaxOrderQuantity()
+ * @method  $this                          setMaxOrderQuantity(int $maxOrderQuantity)
+ * @method  int                            getMinOrderQuantity()
+ * @method  $this                          setMinOrderQuantity(int $minOrderQuantity)
+ * @method  int                            getMinQuantityAlert()
+ * @method  $this                          setMinQuantityAlert(int $minQuantityAlert)
+ * @method  string                         getProductSku()
+ * @method  $this                          setProductSku(string $sku)
+ * @method  int                            getPackageQuantity()
+ * @method  $this                          setPackageQuantity(int $packageQuantity)
+ * @method  ProductMeasurementCollection   getMeasurements()
+ * @method  $this                          setMeasurements(ProductMeasurementCollection $measurements)
  */
 abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
 {
@@ -70,6 +77,15 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
         'discount-end-date'   => 'discount_end_date',
         'discount-ranges'     => 'discount_ranges',
     ];
+
+    /**
+     * @param array $data
+     */
+    public function __construct(array $data = [])
+    {
+        static::$dataTypes['measurements'] = [ProductMeasurementCollection::class, 'create'];
+        parent::__construct($data);
+    }
 
     /**
      * Return origin price directly from offer to keep backwards compatibility
@@ -134,6 +150,75 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
+     * @param  array $data
+     * @return array
+     */
+    protected function getOfferShippingPricingData(array $data)
+    {
+        // Collect shipping prices by type and zone
+        $shippingPricesByZoneAndType = [];
+        foreach ($data as $key => $value) {
+            $key = trim($key);
+
+            preg_match('/^shipping-price\[zone=(.+),method=(.+)\]$/', $key, $matches);
+
+            if (empty($matches[1]) || empty($matches[2])) {
+                continue;
+            }
+
+            list (, $shippingZone, $shippingType) = $matches;
+
+            $shippingPriceByZoneAndType = new ShippingPriceByZoneAndType();
+            $shippingPriceByZoneAndType->setCode($shippingType);
+            $shippingPriceByZoneAndType->setShippingZoneCode($shippingZone);
+            $shippingPriceByZoneAndType->setShippingPriceUnit($value);
+
+            $deliveryTime = new DeliveryTime();
+
+            $deliveryMinDaysColumn = sprintf('delivery-time-earliest-days[zone=%s,method=%s]', $shippingZone, $shippingType);
+            if (isset($data[$deliveryMinDaysColumn])) {
+                $deliveryTime->setEarliestDays($data[$deliveryMinDaysColumn]);
+            }
+
+            $deliveryMaxDaysColumn = sprintf('delivery-time-latest-days[zone=%s,method=%s]', $shippingZone, $shippingType);
+            if (isset($data[$deliveryMaxDaysColumn])) {
+                $deliveryTime->setLatestDays($data[$deliveryMaxDaysColumn]);
+            }
+
+            $shippingPriceByZoneAndType->setDeliveryTime($deliveryTime);
+
+            $shippingPricesByZoneAndType[] = $shippingPriceByZoneAndType;
+        }
+
+        return $shippingPricesByZoneAndType;
+    }
+
+    /**
+     * @param  array $data
+     * @return array
+     */
+    protected function getOfferMeasurements(array $data)
+    {
+        // Collect measurements data
+        $measurements = [];
+        foreach ($data as $key => $value) {
+            if ($key !== 'measurement-units' || empty($value)) {
+                continue;
+            }
+            $measurementsData = explode(ProductMeasurement::UNIT_SEPARATOR, $value);
+            foreach ($measurementsData as $measurementData) {
+                list ($unit, $totalMeasurementOfProduct) = explode(ProductMeasurement::QUANTITY_SEPARATOR, $measurementData);
+                $measurement = new ProductMeasurement();
+                $measurement->setUnit($unit);
+                $measurement->setTotalMeasurementOfProduct($totalMeasurementOfProduct);
+                $measurements[] = $measurement;
+            }
+        }
+
+        return $measurements;
+    }
+
+    /**
      * @inheritdoc
      */
     public function setData($key, $value = null)
@@ -153,6 +238,20 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
             }
         }
         $this->setAllPrices($allPrices);
+
+        $shippingTypes = new ShippingPriceByZoneAndTypeCollection();
+        foreach ($this->getOfferShippingPricingData($key) as $shippingPriceByZoneAndType) {
+            $shippingTypes->add($shippingPriceByZoneAndType);
+        }
+
+        $this->setShippingTypes($shippingTypes);
+
+        $measurementsCollection = new ProductMeasurementCollection();
+        foreach ($this->getOfferMeasurements($key) as $measurement) {
+            $measurementsCollection->add($measurement);
+        }
+
+        $this->setMeasurements($measurementsCollection);
 
         return $this;
     }

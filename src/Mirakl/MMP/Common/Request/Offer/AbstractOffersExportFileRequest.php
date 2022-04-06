@@ -9,6 +9,8 @@ use Mirakl\Core\Response\Decorator\CsvTrait as CsvResponseDecorator;
  * @method  $this   setChannelCodes(array $channelCodes)
  * @method  bool    isIncludeInactiveOffers()
  * @method  $this   setIncludeInactiveOffers(bool $includeInactiveOffers)
+ * @method  array   getShippingZones()
+ * @method  $this   setShippingZones(array $shippingZones)
  *
  * setIncludeInactiveOffers method can be used only if last_request_date is not specified.
  * If true, active offers as well as inactive offers are returned.
@@ -34,7 +36,12 @@ abstract class AbstractOffersExportFileRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $queryParams = ['last_request_date', 'channel_codes', 'include_inactive_offers'];
+    public $queryParams = [
+        'last_request_date',
+        'channel_codes',
+        'include_inactive_offers',
+        'shipping_zones'
+    ];
 
     /**
      * @param   string|\Datetime    $lastRequestDate
@@ -45,5 +52,18 @@ abstract class AbstractOffersExportFileRequest extends AbstractRequest
         if (null !== $lastRequestDate) {
             $this->setLastRequestDate($lastRequestDate);
         }
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getQueryParams()
+    {
+        $params = parent::getQueryParams();
+        if (isset($params['shipping_zones'])) {
+            $params['shipping_zones'] = \Mirakl\tuples_to_query_param($this->getShippingZones());
+        }
+
+        return $params;
     }
 }

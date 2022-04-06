@@ -14,9 +14,15 @@ use Mirakl\MCI\Common\Request\Product\AbstractProductImportRequest;
  *
  * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  * $request = new ProductImportRequest(new \SplFileObject('/path/to/file.csv'));
+ *
  * $result = $api->importProducts($request);
  * // $result => @see \Mirakl\MCI\Common\Domain\Product\ProductImportTracking
  * </code>
  */
 class ProductImportRequest extends AbstractProductImportRequest
-{}
+{
+    /**
+     * @var array
+     */
+    public $bodyParams = ['operator_format'];
+}

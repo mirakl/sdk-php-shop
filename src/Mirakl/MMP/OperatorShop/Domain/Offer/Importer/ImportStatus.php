@@ -8,4 +8,7 @@ class ImportStatus
     const RUNNING                         = 'RUNNING';
     const COMPLETE                        = 'COMPLETE';
     const FAILED                          = 'FAILED';
+
+    /** @deprecated */
+    const QUEUED                          = 'QUEUED';
 }

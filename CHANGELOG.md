@@ -1,8 +1,29 @@
 # Changelog
 
-## v1.13.6 - 2021-08-12
+## v1.14.0 - 2021-12-23
+### Features
+- Add product feeds APIs (PF01, PF02, PF03 and PF11)
+- Add API A02 to update shop information
+- Open RE01 to shops and deprecate RE02
+- Add API OF04 for operator and shop roles
+- Add OR06 API to confirm orders taxes
+- Add 'operator_format' parameter to API P41
+- Add fulfillment center code in API (offer)
+- Add measurement field to OF51
+- Add applicable_taxes in A01 and S20 output
+- Add the PAY_ON_SHIPMENT order workflow
+- Add offers shipping prices by type and zone to P11 and OF51
+- Add commissionnable flag and filter in OR11 / P11 / OF51
+- Add API OR04 for the shop role + order references in API OR01, OR04 and OR11
+- Add mandatoryTracking clickAndCollect and deliveryByOperator in SH12
+- Add suspension_type in A01, S20, S06 and S07 APIs
+- Add createDate and lastUpdatedDate on ST01 & ST11
+- Support UK bank format for seller payout
+- Add customer organization & additional contacts in OR01, OR11, OR04, M11, M10
+
+## v1.13.7 - 2021-10-26
 ### Fixes
-- Fix parameter order_tax_mode not working in GetOrdersRequest.php 
+- Fix parameter order_tax_mode not working in GetHierarchiesRequest when calling OR11 API
 
 ## v1.13.6 - 2021-08-12
 ### Fixes

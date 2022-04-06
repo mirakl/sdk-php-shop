@@ -4,7 +4,7 @@ namespace Mirakl\MMP\Common\Domain\Shop\Bank;
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * Payment information that would be use to generate the invoice and the payment voucher info file
+ * Payment information that would be used to generate the invoice and the payment voucher info file
  *
  * @method  string  getOwner()
  * @method  $this   setOwner(string $owner)
@@ -16,6 +16,9 @@ class PaymentInfo extends MiraklObject
      */
     public static $type = '';
 
+    /**
+     * @inheritdoc
+     */
     public function __construct(array $data = [])
     {
         parent::__construct($data);
@@ -67,6 +70,9 @@ class PaymentInfo extends MiraklObject
                 break;
             case ThaiBankAccountInfo::$type:
                 $info = new ThaiBankAccountInfo($info);
+                break;
+            case UkBankAccountInfo::$type:
+                $info = new UkBankAccountInfo($info);
                 break;
             default:
                 $info = new PaymentInfo($info);

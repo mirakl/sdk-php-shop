@@ -10,4 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this   setUnit(string $unit)
  */
 class ProductMeasurement extends MiraklObject
-{}
+{
+    const UNIT_SEPARATOR = ',';
+    const QUANTITY_SEPARATOR = '|';
+}

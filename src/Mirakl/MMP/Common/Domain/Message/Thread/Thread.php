@@ -10,6 +10,8 @@ use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadParticipantCollecti
  * @method  $this                       setAuthorizedParticipants(ThreadParticipantCollection|array $authorizedParticipants)
  * @method  ThreadParticipantCollection getCurrentParticipants()
  * @method  $this                       setCurrentParticipants(ThreadParticipantCollection|array $currentParticipants)
+ * @method  ThreadCustomerOrganization  getCustomerOrganization()
+ * @method  $this                       setCustomerOrganization(ThreadCustomerOrganization|array $customerOrganization)
  * @method  \DateTime                   getDateCreated()
  * @method  $this                       setDateCreated(\DateTime $dateCreated)
  * @method  \DateTime                   getDateUpdated()
@@ -34,5 +36,6 @@ class Thread extends MiraklObject
         'current_participants'    => [ThreadParticipantCollection::class, 'create'],
         'entities'                => [ThreadEntityCollection::class, 'create'],
         'metadata'                => [ThreadMetadata::class, 'create'],
+        'customer_organization'   => [ThreadCustomerOrganization::class, 'create'],
     ];
 }

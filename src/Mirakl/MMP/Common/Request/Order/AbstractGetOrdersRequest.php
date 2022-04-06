@@ -13,22 +13,26 @@ use Mirakl\Core\Request\SortableTrait;
  * Sort by creation date, order identifier, shop name and then by index of the order line
  * This API uses pagination by default and will return 10 orders
  *
- * @method  array       getChannelCodes()
- * @method  $this       setChannelCodes(array $channelCodes)
+ * @method  string[]    getChannelCodes()
+ * @method  $this       setChannelCodes(string[] $channelCodes)
  * @method  bool        getCustomerDebited()
  * @method  $this       setCustomerDebited(bool $customerDebited)
  * @method  \DateTime   getEndUpdateDate()
  * @method  $this       setEndUpdateDate(\DateTime $endUpdateDate)
- * @method  array       getFulfillmentCenterCodes()
- * @method  $this       setFulfillmentCenterCodes(array $fulfillmentCenterCode)
+ * @method  string[]    getFulfillmentCenterCodes()
+ * @method  $this       setFulfillmentCenterCodes(string[] $fulfillmentCenterCodes)
  * @method  bool        getHasIncident()
  * @method  $this       setHasIncident(bool $hasIncident)
  * @method  bool        getOnlyNullChannel()
  * @method  $this       setOnlyNullChannel(bool $onlyNullChannel)
- * @method  array       getOrderIds()
- * @method  $this       setOrderIds(array $ids)
- * @method  array       getOrderStates()
- * @method  $this       setOrderStates(array $orderStates)
+ * @method  string[]    getOrderIds()
+ * @method  $this       setOrderIds(string[] $ids)
+ * @method  string[]    getOrderReferencesForCustomer()
+ * @method  $this       setOrderReferencesForCustomer(string[] $orderReferencesForCustomer)
+ * @method  string[]    getOrderReferencesForSeller()
+ * @method  $this       setOrderReferencesForSeller(string[] $orderReferencesForSeller)
+ * @method  string[]    getOrderStates()
+ * @method  $this       setOrderStates(string[] $orderStates)
  * @method  string      getOrderTaxMode()
  * @method  $this       setOrderTaxMode(string $orderTaxMode)
  * @method  string      getPaymentWorkflow()
@@ -63,6 +67,8 @@ abstract class AbstractGetOrdersRequest extends AbstractRequest
         'order_tax_mode',
         'payment_workflow',
         'start_update_date',
+        'order_references_for_customer',
+        'order_references_for_seller',
     ];
 
     /**

@@ -10,6 +10,9 @@ use Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection;
  * (RE02) Get reasons by type configured on the platform
  * Used for incident opening, refunds...
  *
+ * @deprecated Use RE01 instead
+ * @see \Mirakl\MMP\Shop\Request\Reason\GetReasonsRequest
+ *
  * @method string getReasonType()
  * @method $this  setReasonType(string $reasonType)
  *

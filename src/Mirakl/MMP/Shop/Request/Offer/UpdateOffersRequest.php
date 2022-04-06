@@ -5,7 +5,9 @@ use Mirakl\MMP\OperatorShop\Request\Offer\AbstractUpdateOffersRequest;
 
 /**
  * (OF24) Update offers
+ *
  * Example:
+ *
  * <code>
  * use Mirakl\MMP\Shop\Client\ShopApiClient;
  * use Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest;

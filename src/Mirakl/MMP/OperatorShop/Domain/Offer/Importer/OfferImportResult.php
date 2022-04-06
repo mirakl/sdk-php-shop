@@ -5,6 +5,7 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method  \DateTime   getDateCreated()
+ * @method  $this       setDateCreated(\DateTime $dateCreated)
  * @method  bool        getErrorReport()
  * @method  $this       setErrorReport(bool $flag)
  * @method  string      getImportId()

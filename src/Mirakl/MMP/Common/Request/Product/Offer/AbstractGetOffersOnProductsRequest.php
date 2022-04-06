@@ -25,6 +25,8 @@ use Mirakl\Core\Request\SortableTrait;
  * @method  $this   setPricingChannelCode(string $pricingChannelCode)
  * @method  array   getProductIds()
  * @method  $this   setProductIds(array $productIds)
+ * @method  array   getShippingZones()
+ * @method  $this   setShippingZones(array $shippingZones)
  */
 abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
 {
@@ -69,5 +71,19 @@ abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
         'all_channels',
         'product_references',
         'pricing_channel_code',
+        'shipping_zones'
     ];
+
+    /**
+     * @inheriDoc
+     */
+    public function getQueryParams()
+    {
+        $params = parent::getQueryParams();
+        if (isset($params['shipping_zones'])) {
+            $params['shipping_zones'] = \Mirakl\tuples_to_query_param($this->getShippingZones());
+        }
+
+        return $params;
+    }
 }
