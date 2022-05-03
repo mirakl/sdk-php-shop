@@ -10,10 +10,14 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\ShipmentCollection;
 /**
  * (ST11) List shipments (this resource supports seek pagination)
  *
- * @method  array   getShipmentStateCodes()
- * @method  $this   setShipmentStateCodes(array $shipmentStateCodes)
- * @method  array   getOrderIds()
- * @method  $this   setOrderIds(array $ids)
+ * @method  array     getShipmentStateCodes()
+ * @method  $this     setShipmentStateCodes(array $shipmentStateCodes)
+ * @method  array     getOrderIds()
+ * @method  $this     setOrderIds(array $ids)
+ * @method  \DateTime getLastUpdatedFrom()
+ * @method  $this     setLastUpdatedFrom(\DateTime $lastUpdatedFrom)
+ * @method  \DateTime getLastUpdatedTo()
+ * @method  $this     setLastUpdatedTo(\DateTime $lastUpdatedTo)
  */
 abstract class AbstractGetShipmentsRequest extends AbstractRequest
 {
@@ -34,8 +38,10 @@ abstract class AbstractGetShipmentsRequest extends AbstractRequest
      * @var array
      */
     public $queryParams = [
-        'order_ids' => 'order_id',
+        'order_ids'            => 'order_id',
         'shipment_state_codes' => 'shipment_state_code',
+        'last_updated_from'    => 'last_updated_from',
+        'last_updated_to'      => 'last_updated_to',
     ];
 
     /**

@@ -9,6 +9,7 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceTaxCollection;
 use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceAddress;
 use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoicePayment;
 use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceSummary;
+use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceUser;
 
 /**
  * @method  InvoiceDetailedItemCollection   getAccountingDocumentsItems()
@@ -51,6 +52,8 @@ use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceSummary;
  * @method  $this                           setTotalTaxes(array|InvoiceTaxCollection $totalTaxes)
  * @method  string                          getType()
  * @method  $this                           setType(string $type)
+ * @method  InvoiceUser                     getIssuingUser()
+ * @method  $this                           setIssuingUser(array|InvoiceUser $issuingUser)
  */
 class Invoice extends MiraklObject
 {
@@ -79,5 +82,6 @@ class Invoice extends MiraklObject
         'shop_address'               => [InvoiceAddress::class, 'create'],
         'summary'                    => [InvoiceSummary::class, 'create'],
         'total_taxes'                => [InvoiceTaxCollection::class, 'create'],
+        'issuing_user'               => [InvoiceUser::class, 'create'],
     ];
 }

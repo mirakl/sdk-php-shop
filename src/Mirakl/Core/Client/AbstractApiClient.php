@@ -566,26 +566,6 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * Builds a mocked response
-     *
-     * @param   string  $body
-     * @param   string  $contentType
-     * @param   int     $status
-     * @return  $this
-     */
-    public function setResponse($body = '', $contentType = 'application/text-plain', $status = 200)
-    {
-        $headers['Content-Type'] = $contentType;
-        $mock = new GuzzleHttp\Handler\MockHandler([
-            new GuzzleHttp\Psr7\Response($status, $headers, $body)
-        ]);
-        $client = new GuzzleHttp\Client(['handler' => GuzzleHttp\HandlerStack::create($mock)]);
-        $this->setClient($client);
-
-        return $this;
-    }
-
-    /**
      * Overrides all request options by specified ones
      *
      * @param   array   $options

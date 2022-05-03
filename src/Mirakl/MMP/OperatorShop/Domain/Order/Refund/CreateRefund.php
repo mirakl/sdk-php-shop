@@ -28,6 +28,8 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method  $this                       setTransactionDate(\DateTime $transactionDate)
  * @method  string                      getOrderLineId()
  * @method  $this                       setOrderLineId(string $id)
+ * @method  bool                        getExcludedFromShipment()
+ * @method  $this                       setExcludedFromShipment(bool $excludedFromShipment)
  */
 class CreateRefund extends MiraklObject
 {

@@ -2,7 +2,7 @@
     "name": "mirakl/sdk-php-shop",
     "description": "Mirakl provides a PHP SDK that wraps the Mirakl REST APIs in a lightweight library. This enables you to develop a fast, flexible and custom integration for your existing e-commerce solution.",
     "type": "library",
-    "version": "1.14.0",
+    "version": "1.15.0",
     "license": "proprietary",
     "authors": [
         {
@@ -12,10 +12,17 @@
     ],
     "autoload": {
         "psr-4": {
-            "Mirakl\\": "src/Mirakl/",
-            "Mirakl\\Tests\\": "tests/Mirakl/"
+            "Mirakl\\": "src/Mirakl/"
         },
-        "files": ["src/Mirakl/functions.php"]
+        "files": [
+            "src/Mirakl/functions.php",
+            "src/Mirakl/autoload.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mirakl\\Tests\\": "tests/Mirakl/"
+        }
     },
     "require": {
         "php": ">=7.2.0",
@@ -24,8 +31,7 @@
         "guzzlehttp/psr7": "~1.7 || ~2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~5.0",
-        "php-parallel-lint/php-parallel-lint": "*",
-        "php-parallel-lint/php-console-highlighter": "*"
+        "phpunit/phpunit": "~9.0",
+        "php-parallel-lint/php-parallel-lint": "^1.3"
     }
 }

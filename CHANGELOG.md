@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.15.0 - 2022-04-28
+### Features
+- Add compatibility with PHP 8
+- Add API CU01
+- Add excluded_from_shipment to OR28
+- Add issuing user to IV01
+- Add amout transferred to operator to IV01
+- Add Uruguayan bank account
+- Add Colombian bank account
+- Add customer_directly_pays_seller field to OR01, OR11 and Q07
+- Add shipping deadline to S04, PR02, OF22, OF21, SH01 and SH02
+- Add last sender details in M11 API
+- Add tax_calculation_rule, included_in_commission and operator_withheld field to OR75
+- Add shipped date to Mirakl shipment
+- Add last_updated_from and last_updated_to to ST11
+- Add tax rate to TL02
+- Deprecate LeadtimeToShip in OR01, OR11 and Q07
+
 ## v1.14.0 - 2021-12-23
 ### Features
 - Add product feeds APIs (PF01, PF02, PF03 and PF11)

@@ -5,7 +5,6 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Fulfillment\Fulfillment;
 use Mirakl\MMP\Common\Domain\Order\State\OrderStatus;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
-use Mirakl\MMP\Common\Domain\Order\DeliveryDate;
 use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
 
 /**
@@ -37,8 +36,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setId(string $id)
  * @method  \DateTime                       getLastUpdatedDate()
  * @method  $this                           setLastUpdatedDate(\DateTime $lastUpdatedDate)
- * @method  int                             getLeadtimeToShip()
- * @method  $this                           setLeadtimeToShip(int $leadtimeToShip)
+ * @method  int                             getLeadtimeToShip() @deprecated Please use getShippingDeadline() instead.
+ * @method  $this                           setLeadtimeToShip(int $leadtimeToShip) @deprecated Please use setShippingDeadline() instead.
  * @method  AdditionalFieldValueCollection  getOrderAdditionalFields()
  * @method  $this                           setOrderAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
  * @method  string                          getOrderTaxMode()
@@ -71,6 +70,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setTransactionDate(\DateTime $transactionDate)
  * @method  string                          getTransactionNumber()
  * @method  $this                           setTransactionNumber(string $transactionNumber)
+ * @method  bool                            getCustomerDirectlyPaysSeller()
+ * @method  $this                           setCustomerDirectlyPaysSeller(bool $customerDirectlyPaysSeller)
  */
 abstract class AbstractOrder extends MiraklObject
 {

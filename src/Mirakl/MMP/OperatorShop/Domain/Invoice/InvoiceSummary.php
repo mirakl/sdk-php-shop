@@ -60,6 +60,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this   setTotalSubscriptionExclTax(float $totalSubscriptionExclTax)
  * @method  float   getTotalSubscriptionInclTax()
  * @method  $this   setTotalSubscriptionInclTax(float $totalSubscriptionInclTax)
+ * @method  float   getAmountTransferredToOperator()
+ * @method  $this   setAmountTransferredToOperator(float $amountTransferredToOperator)
  */
 class InvoiceSummary extends MiraklObject
 {}

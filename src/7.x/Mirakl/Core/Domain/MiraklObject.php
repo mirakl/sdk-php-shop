@@ -1,6 +1,4 @@
 <?php
-declare(strict_types=1);
-
 namespace Mirakl\Core\Domain;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
@@ -119,7 +117,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * @inheritdoc
      */
-    public function getIterator(): \Traversable
+    public function getIterator()
     {
         return new \ArrayIterator($this->data);
     }

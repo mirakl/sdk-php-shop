@@ -1,10 +1,7 @@
 <?php
-declare(strict_types=1);
-
 namespace Mirakl\Core\Domain\Collection;
 
 use Mirakl\Core\Domain\ArrayableInterface;
-use Mirakl\Core\Response\Decorator;
 
 class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAggregate, \Countable
 {
@@ -21,7 +18,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     protected $itemClass;
 
     /**
-     * @var int|null
+     * @var int
      */
     protected $totalCount;
 
@@ -29,7 +26,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   array       $items
      * @param   int|null    $totalCount
      */
-    public function __construct(array $items = [], ?int $totalCount = null)
+    public function __construct(array $items = [], $totalCount = null)
     {
         $this->setItems($items);
         if (null !== $totalCount) {
@@ -41,7 +38,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   mixed   $item
      * @return  $this
      */
-    public function add(mixed $item): self
+    public function add($item)
     {
         $this->items[] = !is_object($item) ? $this->newItem($item) : $item;
 
@@ -49,9 +46,9 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     }
 
     /**
-     * @inheritdoc
+     * @return  int
      */
-    public function count(): int
+    public function count()
     {
         return count($this->items);
     }
@@ -61,7 +58,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   int|null    $totalCount
      * @return  $this
      */
-    public static function create(array $items = [], ?int $totalCount = null)
+    public static function create(array $items = [], $totalCount = null)
     {
         return new static($items, $totalCount);
     }
@@ -69,7 +66,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @return  mixed
      */
-    public function current(): mixed
+    public function current()
     {
         return current($this->items);
     }
@@ -78,18 +75,18 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * Useful method for requests returning collections
      *
      * @param   string|null $key
-     * @return  Decorator\MiraklCollection
+     * @return  \Mirakl\Core\Response\Decorator\MiraklCollection
      */
-    public static function decorator(?string $key = null): Decorator\MiraklCollection
+    public static function decorator($key = null)
     {
-        return new Decorator\MiraklCollection(static::class, $key);
+        return new \Mirakl\Core\Response\Decorator\MiraklCollection(static::class, $key);
     }
 
     /**
      * @param   mixed   $offset
      * @return  bool
      */
-    public function exists(mixed $offset): bool
+    public function exists($offset)
     {
         return $this->offsetExists($offset);
     }
@@ -97,7 +94,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @return  mixed
      */
-    public function first(): mixed
+    public function first()
     {
         return reset($this->items);
     }
@@ -106,7 +103,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   $offset
      * @return  mixed
      */
-    public function get($offset): mixed
+    public function get($offset)
     {
         return $this->offsetGet($offset);
     }
@@ -122,23 +119,23 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @return  array
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->items;
     }
 
     /**
-     * @return  int|null
+     * @return  int
      */
-    public function getTotalCount(): ?int
+    public function getTotalCount()
     {
         return $this->totalCount;
     }
 
     /**
-     * @inheritdoc
+     * @return  \ArrayIterator
      */
-    public function getIterator(): \Traversable
+    public function getIterator()
     {
         return new \ArrayIterator($this->items);
     }
@@ -146,7 +143,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @inheritdoc
      */
-    public function isEmpty(): bool
+    public function isEmpty()
     {
         return empty($this->items);
     }
@@ -154,7 +151,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @return  mixed
      */
-    public function last(): mixed
+    public function last()
     {
         return end($this->items);
     }
@@ -162,14 +159,14 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @return  mixed
      */
-    public function next(): mixed
+    public function next()
     {
         return next($this->items);
     }
 
     /**
      * @param   array   $item
-     * @return  mixed
+     * @return  array|object
      */
     public function newItem(array $item)
     {
@@ -180,57 +177,66 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   mixed   $offset
      * @return  bool
      */
-    public function offsetExists($offset): bool
+    public function offsetExists($offset)
     {
         return isset($this->items[$offset]);
     }
 
     /**
-     * @inheritdoc
+     * @param   mixed   $offset
+     * @return  mixed
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
-        return $this->items[$offset] ?? null;
+        return isset($this->items[$offset]) ? $this->items[$offset] : null;
     }
 
     /**
-     * @inheritdoc
+     * @param   mixed   $key
+     * @param   mixed   $value
+     * @return  $this
      */
-    public function offsetSet(mixed $offset, $value): void
+    public function offsetSet($key, $value)
     {
-        $this->items[$offset] = $value;
+        $this->items[$key] = $value;
+
+        return $this;
     }
 
     /**
      * @param   mixed   $offset
+     * @return  $this
      */
-    public function offsetUnset(mixed $offset): void
+    public function offsetUnset($offset)
     {
         if (isset($this->items[$offset])) {
             unset($this->items[$offset]);
         }
+
+        return $this;
     }
 
     /**
      * @return  mixed
      */
-    public function prev(): mixed
+    public function prev()
     {
         return prev($this->items);
     }
 
     /**
      * @param   mixed   $offset
+     * @return  $this
      */
-    public function remove(mixed $offset): void
+    public function remove($offset)
     {
-        $this->offsetUnset($offset);
+        return $this->offsetUnset($offset);
     }
 
     /**
      * @return  $this
      */
-    public function reset(): self
+    public function reset()
     {
         $this->items = [];
 
@@ -240,17 +246,18 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @param   mixed   $key
      * @param   mixed   $value
+     * @return  $this
      */
-    public function set(mixed $key, mixed $value): void
+    public function set($key, $value)
     {
-        $this->offsetSet($key, $value);
+        return $this->offsetSet($key, $value);
     }
 
     /**
      * @param   string  $class
      * @return  $this
      */
-    public function setItemClass(string $class): self
+    public function setItemClass($class)
     {
         $this->itemClass = $class;
 
@@ -261,7 +268,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   array   $items
      * @return  $this
      */
-    public function setItems(array $items): self
+    public function setItems(array $items)
     {
         if ($this->itemClass) {
             array_walk($items, function(&$item) {
@@ -280,7 +287,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   int     $totalCount
      * @return  $this
      */
-    public function setTotalCount(int $totalCount): self
+    public function setTotalCount($totalCount)
     {
         $this->totalCount = $totalCount;
 
@@ -290,7 +297,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     /**
      * @return  array
      */
-    public function toArray(): array
+    public function toArray()
     {
         $result = [];
         foreach ($this as $item) {
@@ -308,7 +315,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * @param   array   $args
      * @return  array
      */
-    public function walk(string $method, array $args = []): array
+    public function walk($method, array $args = [])
     {
         $result = [];
         foreach ($this as $item) {

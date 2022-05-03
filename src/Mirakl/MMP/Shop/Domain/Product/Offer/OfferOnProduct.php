@@ -49,6 +49,8 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  $this                                 setTotalPrice(float $totalPrice)
  * @method  ShippingPriceByZoneAndTypeCollection  getShippingTypes()
  * @method  $this                                 setShippingTypes(ShippingPriceByZoneAndTypeCollection $shippingTypes)
+ * @method  \DateTime                             getShippingDeadline()
+ * @method  $this                                 setShippingDeadline(\DateTime $shippingDeadline)
  */
 class OfferOnProduct extends MiraklObject
 {

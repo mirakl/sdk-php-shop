@@ -71,8 +71,14 @@ class PaymentInfo extends MiraklObject
             case ThaiBankAccountInfo::$type:
                 $info = new ThaiBankAccountInfo($info);
                 break;
+            case UruguayanBankAccountInfo::$type:
+                $info = new UruguayanBankAccountInfo($info);
+                break;
             case UkBankAccountInfo::$type:
                 $info = new UkBankAccountInfo($info);
+                break;
+            case ColombianBankAccountInfo::$type:
+                $info = new ColombianBankAccountInfo($info);
                 break;
             default:
                 $info = new PaymentInfo($info);

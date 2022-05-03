@@ -15,10 +15,12 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\ShipmentLineCollection;
  * @method  $this                   setStatus(string $status)
  * @method  ShipmentTracking        getTracking()
  * @method  $this                   setTracking(array|ShipmentTracking $tracking)
- * @method  string                  getCreatedDate()
- * @method  $this                   setCreatedDate(string $createdDate)
+ * @method  \DateTime               getCreatedDate()
+ * @method  $this                   setCreatedDate(\DateTime $createdDate)
  * @method  \DateTime               getLastUpdatedDate()
  * @method  $this                   setLastUpdatedDate(\DateTime $lastUpdatedDate)
+ * @method  \DateTime               getShippedDate()
+ * @method  $this                   setShippedDate(\DateTime $shippedDate)
  */
 class Shipment extends MiraklObject
 {

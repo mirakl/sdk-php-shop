@@ -8,6 +8,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this   setCode(string $code)
  * @method  string  getLabel()
  * @method  $this   setLabel(string $label)
+ * @method  string  getTaxCalculationRule()
+ * @method  $this   setTaxCalculationRule(string $taxCalculationRule)
  */
 abstract class AbstractOrderTax extends MiraklObject
 {}
