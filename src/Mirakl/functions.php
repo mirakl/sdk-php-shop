@@ -166,14 +166,15 @@ if (!function_exists('\Mirakl\create_temp_file')) {
  * @param   array   $data
  * @param   string  $separator
  * @param   string  $enclosure
+ * @param   string  $escape
  * @return  \SplTempFileObject
  */
 if (!function_exists('\Mirakl\create_temp_csv_file')) {
-    function create_temp_csv_file(array $data, $separator = ';', $enclosure = '"')
+    function create_temp_csv_file(array $data, $separator = ';', $enclosure = '"', $escape = '\\')
     {
         $file = new \SplTempFileObject();
         $file->setFlags(\SplFileObject::READ_CSV);
-        $file->setCsvControl($separator, $enclosure);
+        $file->setCsvControl($separator, $enclosure, $escape);
         foreach ($data as $fields) {
             $file->fputcsv($fields);
         }
@@ -307,7 +308,12 @@ if (!function_exists('\Mirakl\parse_file_response')) {
 if (!function_exists('\Mirakl\parse_json_response')) {
     function parse_json_response(ResponseInterface $response, $assoc = true)
     {
-        return \GuzzleHttp\json_decode((string) $response->getBody(), $assoc);
+        $json = trim((string) $response->getBody());
+        if (empty($json)) {
+            return []; // fallback for empty response
+        }
+
+        return \GuzzleHttp\json_decode($json, $assoc);
     }
 }
 
@@ -322,8 +328,6 @@ if (!function_exists('\Mirakl\parse_json_response')) {
 if (!function_exists('\Mirakl\parse_xml_response')) {
     function parse_xml_response(ResponseInterface $response, $assoc = true)
     {
-        $json = null;
-
         $xml = simplexml_load_string($response->getBody(), 'SimpleXMLElement', LIBXML_NOCDATA);
         if ($xml === false) {
             throw new \InvalidArgumentException('XML can not be read');

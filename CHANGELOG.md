@@ -1,4 +1,11 @@
 # Changelog
+## v1.15.1 - 2022-05-31
+### Features
+- Add the `escape` parameter in `create_temp_csv_file` function
+
+### Fixes
+- Fix compatibility with `-o` option of Composer
+- Fix potential error when Mirakl API returns an empty JSON response
 
 ## v1.15.0 - 2022-04-28
 ### Features
