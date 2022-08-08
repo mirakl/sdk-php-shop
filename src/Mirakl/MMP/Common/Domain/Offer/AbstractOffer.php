@@ -29,7 +29,7 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  $this                                 setCurrencyIsoCode(string $currencyIsoCode)
  * @method  string                                getDescription()
  * @method  $this                                 setDescription(string $description)
- * @method  Discount                              getDiscount()
+ * @method  Discount|null                         getDiscount()
  * @method  int                                   getFavoriteRank()
  * @method  $this                                 setFavoriteRank(int $favoriteRank)
  * @method  Fulfillment                           getFulfillment()
