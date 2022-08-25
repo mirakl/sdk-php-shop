@@ -4,6 +4,7 @@ namespace Mirakl\MCI\Common\Domain\Product;
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
+ * @deprecated
  * @method string getCode()
  * @method $this  setCode(string $code)
  * @method string getStatus()

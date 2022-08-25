@@ -1,4 +1,10 @@
 # Changelog
+## v1.15.2 - 2022-08-25
+### Features
+- Remove deprecated PF01, PF02 and PF03 APIs
+### Fixes
+- Fix channel price discount start and end dates are always empty when calling OF24 API
+
 ## v1.15.1 - 2022-05-31
 ### Features
 - Add the `escape` parameter in `create_temp_csv_file` function

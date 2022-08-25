@@ -24,8 +24,8 @@ use Mirakl\MCI\Common\Domain\Collection\ValueTranslationCollection;
  * @method  $this                           setLabel(string $label)
  * @method  ValueTranslationCollection      getLabelTranslations()
  * @method  $this                           setLabelTranslations(ValueTranslationCollection $labelTranslations)
- * @method  AttributeProductFeedCollection  getProductFeeds()
- * @method  $this                           setProductFeeds(AttributeProductFeedCollection $productFeeds)
+ * @method  AttributeProductFeedCollection  getProductFeeds() @deprecated Please use getChannels() instead.
+ * @method  $this                           setProductFeeds(AttributeProductFeedCollection $productFeeds) @deprecated Please use setChannels() instead.
  * @method  bool                            getRequired()
  * @method  $this                           setRequired(bool $required)
  * @method  string                          getRequirementLevel()

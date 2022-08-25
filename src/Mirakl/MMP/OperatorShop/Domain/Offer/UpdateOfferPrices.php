@@ -21,16 +21,6 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferVolumePriceCollec
  */
 class UpdateOfferPrices extends MiraklObject
 {
-    use DateRangeTrait;
-
-    /**
-     * @var array
-     */
-    protected static $mapping = [
-        'discount_start_date' => 'start_date',
-        'discount_end_date' => 'end_date',
-    ];
-
     /**
      * @var array
      */

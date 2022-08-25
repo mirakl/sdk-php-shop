@@ -5,6 +5,7 @@ use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MCI\Common\Domain\Product\ProductDataSheetProductFeedValidationStatus;
 
 /**
+ * @deprecated
  * @method ProductDataSheetProductFeedValidationStatus current()
  * @method ProductDataSheetProductFeedValidationStatus first()
  * @method ProductDataSheetProductFeedValidationStatus get($offset)
