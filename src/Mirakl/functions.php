@@ -192,7 +192,7 @@ if (!function_exists('\Mirakl\date_format')) {
     function date_format(\DateTime $date)
     {
         return $date->setTimezone(new \DateTimeZone('GMT'))
-            ->format(\DateTime::ISO8601);
+            ->format(\DateTime::ATOM);
     }
 }
 

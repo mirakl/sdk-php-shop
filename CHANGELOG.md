@@ -1,4 +1,25 @@
 # Changelog
+## v1.16.0 - 2022-09-01
+### Features
+- Add CO01 API
+- Add ST06 API
+- Add product feeds filter parameter to PM11 API
+- Add messages details and channel_codes parameter to M11 API
+- Add invoice details to OR01, OR11 and OR04 APIs
+- Add shop_reply_needed_since field to inbox API
+- Add eco-contributions details to OF24 API
+- Add AGEC fields to S06, S07 and A02 APIs
+- Add due date field to IV01 API
+- Add issue and operation dates to IV01 API
+- Add no_store_reply_needed fields to M10 and M11 APIs
+- Add payment details to PA11 and PA12 APIs
+- Add AN01 API
+- Add pricing_customer_organization_id field to SH02 and SH01 APIs
+- Add new NOT_REQUIRED KYC status
+- Add description field to AF01 API
+- Add preserve_order parameter to H01 API
+- Update the default date format to fit Mirakl requirements
+
 ## v1.15.2 - 2022-08-25
 ### Features
 - Remove deprecated PF01, PF02 and PF03 APIs

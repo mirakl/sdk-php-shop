@@ -51,6 +51,10 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  bool                            isProfessional()
  * @method  ProfessionalInfo                getProfessionalInfo()
  * @method  $this                           setProfessionalInfo(array|ProfessionalInfo $professionalInfo)
+ * @method  array                           getProducerIds()
+ * @method  $this                           setProducerIds(array $producerIds)
+ * @method  string                          getRecyclingPolicy()
+ * @method  $this                           setRecyclingPolicy(string $recyclingPolicy)
  * @method  string                          getReturnPolicy()
  * @method  $this                           setReturnPolicy(string $policy)     Short text indicating the terms of restitution of a product to the shop
  * @method  ShippingInfo                    getShippingInfo()

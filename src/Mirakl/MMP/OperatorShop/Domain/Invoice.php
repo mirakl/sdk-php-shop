@@ -18,10 +18,14 @@ use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceUser;
  * @method  $this                           setCurrencyIsoCode(string $currencyIsoCode)
  * @method  \DateTime                       getDateCreated()
  * @method  $this                           setDateCreated(\DateTime $dateCreated)
- * @method  \DateTime                       getEmissionDate()
- * @method  $this                           setEmissionDate(\DateTime $emissionDate)
+ * @method  \DateTime                       getDueDate()
+ * @method  $this                           setDueDate(\DateTime $dueDate)
+ * @method  \DateTime                       getEmissionDate() @deprecated Use operation date in invoice details instead.
+ * @method  $this                           setEmissionDate(\DateTime $emissionDate) @deprecated Use operation date in invoice details instead.
  * @method  string                          getId()
  * @method  $this                           setId(string $id)
+ * @method  \DateTime                       getIssueDate()
+ * @method  $this                           setIssueDate(\DateTime $issueDate)
  * @method  string                          getInvoiceId()
  * @method  $this                           setInvoiceId(string $invoiceId)
  * @method  InvoicePayment                  getPayment()

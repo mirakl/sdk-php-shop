@@ -7,4 +7,5 @@ class ShopKycStatus
     const PENDING_APPROVAL   = 'PENDING_APPROVAL';
     const REFUSED            = 'REFUSED';
     const APPROVED           = 'APPROVED';
+    const NOT_REQUIRED       = 'NOT_REQUIRED';
 }

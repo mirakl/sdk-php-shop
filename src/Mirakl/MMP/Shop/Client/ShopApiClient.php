@@ -25,6 +25,7 @@ use Mirakl\MMP\Common\Domain\Message\Thread\ThreadDetails;
 use Mirakl\MMP\Common\Domain\Message\Thread\ThreadReplyCreated;
 use Mirakl\MMP\Common\Domain\Order\Document\OrderDocumentsUploadResult;
 use Mirakl\MMP\Common\Domain\Shipment\CreatedShipments;
+use Mirakl\MMP\Common\Domain\Shipment\DeletedShipments;
 use Mirakl\MMP\Common\Domain\Shipment\UpdatedShipmentTrackings;
 use Mirakl\MMP\Common\Domain\Shipment\Workflow\ShipmentWorkflowResponse;
 use Mirakl\MMP\Common\Request\Message\DownloadThreadMessageAttachmentRequest;
@@ -100,6 +101,7 @@ use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetReasonsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\CreateShipmentsRequest;
+use Mirakl\MMP\Shop\Request\Shipment\DeleteShipmentsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\GetShipmentsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\ShipShipmentsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\UpdateShipmentTrackingsRequest;
@@ -173,6 +175,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method  DocumentsUploadResult                   uploadShopDocuments(UploadShopDocumentsRequest $request)
  * @method  UpdateAdditionalFieldsResult            updateOrderAdditionalFields(UpdateAdditionalFieldsRequest $request)
  * @method  UpdatedShipmentTrackings                updateShipmentTrackings(UpdateShipmentTrackingsRequest $request)
+ * @method  DeletedShipments                        deleteShipments(DeleteShipmentsRequest $request)
  */
 class ShopApiClient extends CommonApiClient
 {

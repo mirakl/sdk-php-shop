@@ -9,6 +9,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceTaxCollection;
  * @method  $this                   setAmountExclTaxes(float $amountExclTaxes)
  * @method  string                  getDescription()
  * @method  $this                   setDescription(string $description)
+ * @method  \DateTime               getOperationDate()
+ * @method  $this                   setOperationDate(\DateTime $operationDate)
  * @method  int                     getQuantity()
  * @method  $this                   setQuantity(int $qty)
  * @method  InvoiceTaxCollection    getTaxes()

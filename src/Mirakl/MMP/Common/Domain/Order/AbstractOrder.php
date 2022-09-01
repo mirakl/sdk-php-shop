@@ -72,6 +72,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setTransactionNumber(string $transactionNumber)
  * @method  bool                            getCustomerDirectlyPaysSeller()
  * @method  $this                           setCustomerDirectlyPaysSeller(bool $customerDirectlyPaysSeller)
+ * @method  InvoiceDetails                  getInvoiceDetails()
+ * @method  $this                           setInvoiceDetails(InvoiceDetails $invoiceDetails)
  */
 abstract class AbstractOrder extends MiraklObject
 {
@@ -108,5 +110,6 @@ abstract class AbstractOrder extends MiraklObject
         'shipping'                => [OrderShipping::class, 'create'],
         'status'                  => [OrderStatus::class, 'create'],
         'references'              => [OrderReferences::class, 'create'],
+        'invoice_details'         => [InvoiceDetails::class, 'create'],
     ];
 }

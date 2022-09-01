@@ -4,6 +4,7 @@ namespace Mirakl\MMP\OperatorShop\Domain\Offer;
 use Mirakl\Core\Domain\DateRangeTrait;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Collection\EcoContributionCollection;
 use Mirakl\MMP\Common\Domain\Discount;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
 
@@ -20,6 +21,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
  * @method  $this                           setDescription(string $description)
  * @method  Discount                        getDiscount()
  * @method  $this                           setDiscount(array|Discount $discount)
+ * @method  EcoContributionCollection       getEcoContributions()
+ * @method  $this                           setEcoContributions(EcoContributionCollection|array $ecoContributions)
  * @method  string                          getInternalDescription()
  * @method  $this                           setInternalDescription(string $internalDescription)
  * @method  int                             getLeadtimeToShip() (in days)
@@ -75,5 +78,6 @@ class UpdateOffer extends MiraklObject
         'offer_additional_fields' => [AdditionalFieldValueCollection::class, 'create'],
         'discount'                => [Discount::class, 'create'],
         'all_prices'              => [UpdateOfferPricesCollection::class, 'create'],
+        'eco_contributions'       => [EcoContributionCollection::class, 'create'],
     ];
 }
