@@ -1,9 +1,11 @@
 <?php
 namespace Mirakl\MMP\Common\Domain\Offer;
 
+use Mirakl\MMP\Common\Domain\Collection\EcoContributionCollection;
 use Mirakl\MMP\Common\Domain\Collection\Product\Measurement\ProductMeasurementCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Price\OfferPricesCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Shipping\ShippingPriceByZoneAndTypeCollection;
+use Mirakl\MMP\Common\Domain\EcoContribution;
 use Mirakl\MMP\Common\Domain\Product\Measurement\ProductMeasurement;
 use Mirakl\MMP\Common\Domain\Offer\Shipping\DeliveryTime;
 use Mirakl\MMP\Common\Domain\Offer\Shipping\ShippingPriceByZoneAndType;
@@ -219,6 +221,31 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
+     * @param array $data
+     * @return array
+     */
+    public function getOfferEcoContributions(array $data)
+    {
+        // Collect eco-contributions data
+        $ecoContributions = [];
+        foreach ($data as $key => $value) {
+            if ($key !== 'eco-contributions' || empty($value)) {
+                continue;
+            }
+            $ecoContributionsData = explode(EcoContribution::LIST_SEPARATOR, $value);
+            foreach ($ecoContributionsData as $ecoContributionData) {
+                list ($producerId, $ecoContributionAmount) = explode(EcoContribution::PRODUCERID_AND_AMOUNT_SEPARATOR, $ecoContributionData);
+                $ecoContribution = new EcoContribution();
+                $ecoContribution->setProducerId($producerId);
+                $ecoContribution->setEcoContributionAmount($ecoContributionAmount);
+                $ecoContributions[] = $ecoContribution;
+            }
+        }
+
+        return $ecoContributions;
+    }
+
+    /**
      * @inheritdoc
      */
     public function setData($key, $value = null)
@@ -252,6 +279,13 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
         }
 
         $this->setMeasurements($measurementsCollection);
+
+        $ecoContributionCollection = new EcoContributionCollection();
+        foreach ($this->getOfferEcoContributions($key) as $ecoContribution) {
+            $ecoContributionCollection->add($ecoContribution);
+        }
+
+        $this->setEcoContributions($ecoContributionCollection);
 
         return $this;
     }

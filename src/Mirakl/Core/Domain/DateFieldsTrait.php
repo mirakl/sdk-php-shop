@@ -16,6 +16,8 @@ trait DateFieldsTrait
         'start_update_date', 'end_update_date', 'accounting_document_creation_date', 'customer_debited_date',
         'expiration_date', 'date_created_from', 'date_created_to', 'discount_start_date', 'discount_end_date',
         'updated_since', 'last_updated', 'creation_date', 'update_date', 'shipping_deadline', 'date_updated',
-        'earliest', 'latest', 'deletion_date', 'deleted_from', 'deleted_to', 'due_date', 'shop_reply_needed_since', 'issue_date', 'operation_date'
+        'earliest', 'latest', 'deletion_date', 'deleted_from', 'deleted_to', 'due_date', 'shop_reply_needed_since',
+        'issue_date', 'operation_date', 'issue_date_from', 'last_updated_from', 'last_updated_to',
+        'billing_cycle_from', 'billing_cycle_to','shipping_date','available_start_date'
     ];
 }

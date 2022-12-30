@@ -2,11 +2,27 @@
 namespace Mirakl\MMP\Common\Client;
 
 use Mirakl\Core\Client\AbstractApiClient;
+use Mirakl\Core\Domain\FileWrapper;
 use Mirakl\MMP\Common\Domain\Collection\Locale\LocaleCollection;
+use Mirakl\MMP\Common\Domain\Collection\Offer\Async\Export\AsyncExportOfferCollection;
+use Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult;
+use Mirakl\MMP\Common\Domain\Offer\Async\Export\PollOffersExportAsyncStatusResult;
 use Mirakl\MMP\Common\Domain\Version;
 use Mirakl\MMP\Common\Request\Locale\GetLocalesRequest;
+use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncFileCsvRequest;
+use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncFileJsonRequest;
+use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncFileRequest;
+use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncRequest;
+use Mirakl\MMP\Common\Request\Offer\Async\Export\PollOffersExportAsyncRequest;
 use Mirakl\MMP\Common\Request\Version\GetVersionRequest;
 
+/**
+ * @method OffersExportAsyncTrackingResult   createOffersExportAsync(OffersExportAsyncRequest $request)
+ * @method AsyncExportOfferCollection        getOffersExportAsyncFile(OffersExportAsyncFileRequest $request)
+ * @method FileWrapper                       getOffersExportAsyncFileCsv(OffersExportAsyncFileCsvRequest $request)
+ * @method FileWrapper                       getOffersExportAsyncFileJson(OffersExportAsyncFileJsonRequest $request)
+ * @method PollOffersExportAsyncStatusResult pollOffersExportAsyncStatus(PollOffersExportAsyncRequest $request)
+ */
 class CommonApiClient extends AbstractApiClient
 {
     /**

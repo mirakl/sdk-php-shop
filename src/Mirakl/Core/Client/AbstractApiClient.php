@@ -7,6 +7,7 @@ use Mirakl\Core\Domain\Collection\FileCollection;
 use Mirakl\Core\Domain\FileWrapper;
 use Mirakl\Core\Exception\ClientDisabledException;
 use Mirakl\Core\Request\RequestInterface;
+use Mirakl\Core\Stream\SplFileStream;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
@@ -186,6 +187,11 @@ abstract class AbstractApiClient implements ApiClientInterface
         }
 
         $options['headers']['X-Mirakl-Sdk-Uuid'] = uniqid('sdk_php_', true);
+        $options['headers']['X-Mirakl-Sdk-Version'] = \Mirakl\get_version();
+
+        if (!isset($options['sink'])) {
+            $options['sink'] = new SplFileStream(new \SplTempFileObject());
+        }
 
         return $options;
     }

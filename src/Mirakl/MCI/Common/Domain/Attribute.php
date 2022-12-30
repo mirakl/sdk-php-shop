@@ -2,12 +2,15 @@
 namespace Mirakl\MCI\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
+use Mirakl\MCI\Common\Domain\Collection\AttributeChannelCollection;
 use Mirakl\MCI\Common\Domain\Collection\AttributeParameterCollection;
 use Mirakl\MCI\Common\Domain\Collection\AttributeProductFeedCollection;
 use Mirakl\MCI\Common\Domain\Collection\AttributeRoleCollection;
 use Mirakl\MCI\Common\Domain\Collection\ValueTranslationCollection;
 
 /**
+ * @method  AttributeChannelCollection      getChannels()
+ * @method  $this                           setChannels(AttributeChannelCollection $channels)
  * @method  string                          getCode()
  * @method  $this                           setCode(string $code)
  * @method  string                          getDefaultValue() @deprecated Please use getTypeParameters() instead.
@@ -60,5 +63,6 @@ class Attribute extends MiraklObject
         'roles'                    => [AttributeRoleCollection::class, 'create'],
         'type_parameters'          => [AttributeParameterCollection::class, 'create'],
         'product_feeds'            => [AttributeProductFeedCollection::class, 'create'],
+        'channels'                 => [AttributeChannelCollection::class, 'create'],
     ];
 }

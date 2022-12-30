@@ -39,6 +39,8 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  \DateTime                       getLastUpdatedDate()                Last modification date on any attribute
  * @method  MediaInfo                       getMediaInfo()
  * @method  $this                           setMediaInfo(array|MediaInfo $mediaInfo)
+ * @method  string                          getModel()
+ * @method  $this                           setModel(string $model)
  * @method  string                          getName()
  * @method  $this                           setName(string $name)
  * @method  PaymentInfo                     getPaymentInfo()

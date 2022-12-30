@@ -3,8 +3,6 @@ namespace Mirakl\Core\Domain;
 
 /**
  * List of all possible statuses for a process tracking
- *
- * @package Mirakl\Core\Domain
  */
 class ProcessTrackingStatus
 {

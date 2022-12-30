@@ -4,6 +4,7 @@ namespace Mirakl\MMP\Common\Domain\Offer;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Category\LogisticClass;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Collection\EcoContributionCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Price\OfferPricesCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Shipping\ShippingPriceByZoneAndTypeCollection;
 use Mirakl\MMP\Common\Domain\Discount;
@@ -76,6 +77,8 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  $this                                 setShippingTypes(ShippingPriceByZoneAndTypeCollection $shippingPricesByZoneAndType)
  * @method  \DateTime                             getShippingDeadline()
  * @method  $this                                 setShippingDeadline(\DateTime $shippingDeadline)
+ * @method  EcoContributionCollection             getEcoContributions()
+ * @method  $this                                 setEcoContributions(EcoContributionCollection $ecoContribution)
  */
 abstract class AbstractOffer extends MiraklObject
 {
@@ -115,6 +118,7 @@ abstract class AbstractOffer extends MiraklObject
         'applicable_pricing' => [OfferPricing::class, 'create'],
         'shipping_types'     => [ShippingPriceByZoneAndTypeCollection::class, 'create'],
         'fulfillment'        => [Fulfillment::class, 'create'],
+        'eco_contributions'  => [EcoContributionCollection::class, 'create'],
     ];
 
     /**

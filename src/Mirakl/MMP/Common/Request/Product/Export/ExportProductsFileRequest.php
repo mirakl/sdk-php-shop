@@ -24,9 +24,9 @@ class ExportProductsFileRequest extends AbstractRequest
     /**
      * @inheritdoc
      */
-    public function __construct()
+    protected function init()
     {
-        parent::__construct();
-        $this->addOption('headers' , ['Accept' => 'text/csv']);
+        parent::init();
+        $this->setOptions(['headers' => ['Accept' => 'text/csv']]);
     }
 }

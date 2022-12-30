@@ -19,7 +19,7 @@ use Psr\Http\Message\ResponseInterface;
  * @method  int                     getOrderLines()
  * @method  $this                   setOrderLines(array|UpdateAdditionalFields $orderAdditionalFields)
  *
- * Example :
+ * Example:
  *
  * <code>
  * <?php

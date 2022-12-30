@@ -8,6 +8,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this   setOfferSku(string $offerSku)
  * @method  string  getOrderLineId()
  * @method  $this   setOrderLineId(string $orderLineId)
+ * @method  string  getPackageReference()
+ * @method  $this   setPackageReference(string $packageReference)
  * @method  int     getQuantity()
  * @method  $this   setQuantity(int $quantity)
  */

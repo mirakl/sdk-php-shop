@@ -6,6 +6,7 @@ use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\Core\Exception\RequestValidationException;
 use Mirakl\Core\Response\Decorator;
+use Mirakl\Core\Stream\SplFileStream;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -86,7 +87,24 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
      *
      * @var array
      */
-    protected $options = ['headers' => ['Accept' => 'application/json']];
+    protected $options = [];
+
+    /**
+     * @inheritdoc
+     */
+    public function __construct(array $data = [])
+    {
+        parent::__construct($data);
+        $this->init();
+    }
+
+    /**
+     * @return void
+     */
+    protected function init()
+    {
+        $this->addOption('headers', ['Accept' => 'application/json']);
+    }
 
     /**
      * @return  bool
@@ -299,6 +317,10 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
      */
     public function addOption($key, $value)
     {
+        if (isset($this->options[$key]) && is_array($this->options[$key])) {
+            $value = array_merge($this->options[$key], $value);
+        }
+
         $this->options[$key] = $value;
 
         return $this;

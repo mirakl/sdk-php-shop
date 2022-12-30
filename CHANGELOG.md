@@ -1,5 +1,29 @@
 # Changelog
-## v1.16.0 - 2022-09-01
+## v1.17.0 - 2022-12-30
+### Features
+- Add API DR11, DR72, DR73 and DR74
+- Hide shop_ids for shop user in DR11 API
+- Add shipping address to DR11 API
+- Add the SDK version in header X-Mirakl-Sdk-Version
+- Add CM11 API
+- Export acceptance status by channel in CM51 and CM52 APIs
+- Add CO02 API
+- Add CG01 API
+- Add ST26 API
+- Add CM52, CM53 and CM54 APIs
+- Add S08 API to associate seller to customer groups
+- Stream M13 attachment
+- Add eco contribution details to P11, OF21, OF22, S04 and PR02
+- Add eco-contributions to OF51 API
+- Add API ST12 and update APIs ST01 and ST11
+- Add validation by channel to CM51 API
+- Add OF52, OF53 and OF54 APIs
+- Change invoice id field type in IV07
+- Add validation by channel to PM11 API
+- Add validation by channel to PF01 PF02, PF03 and PF11 APIs
+- Add platform model to S04,S06, S07, S20, A01, A02, AF01, DO01, P11, OF22 and PR02 APIs
+
+## v1.16.0 - 2022-08-25
 ### Features
 - Add CO01 API
 - Add ST06 API

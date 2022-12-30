@@ -10,4 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setProducerId(string $producerId)
  */
 class EcoContribution extends MiraklObject
-{}
+{
+    const LIST_SEPARATOR = ',';
+    const PRODUCERID_AND_AMOUNT_SEPARATOR = '|';
+}

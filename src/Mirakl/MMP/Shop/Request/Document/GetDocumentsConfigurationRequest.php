@@ -4,8 +4,7 @@ namespace Mirakl\MMP\Shop\Request\Document;
 use Mirakl\MMP\Common\Request\Document\AbstractGetDocumentsConfigurationRequest;
 
 /**
- * Class GetDocumentsConfigurationRequest
- * @package Mirakl\MMP\Shop\Request\Document
+ * (DO01) Get the list of all document types
  */
 class GetDocumentsConfigurationRequest extends AbstractGetDocumentsConfigurationRequest
 {}

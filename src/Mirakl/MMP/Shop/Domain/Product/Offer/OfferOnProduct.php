@@ -2,6 +2,7 @@
 namespace Mirakl\MMP\Shop\Domain\Product\Offer;
 
 use Mirakl\Core\Domain\MiraklObject;
+use Mirakl\MMP\Common\Domain\Collection\EcoContributionCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Price\OfferPricesCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Shipping\ShippingPriceByZoneAndTypeCollection;
 use Mirakl\MMP\Common\Domain\Offer\OfferMinimumShipping;
@@ -51,6 +52,8 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  $this                                 setShippingTypes(ShippingPriceByZoneAndTypeCollection $shippingTypes)
  * @method  \DateTime                             getShippingDeadline()
  * @method  $this                                 setShippingDeadline(\DateTime $shippingDeadline)
+ * @method  EcoContributionCollection             getEcoContributions()
+ * @method  $this                                 setEcoContributions(EcoContributionCollection $ecoContribution)
  */
 class OfferOnProduct extends MiraklObject
 {
@@ -81,6 +84,7 @@ class OfferOnProduct extends MiraklObject
         'all_prices'         => [OfferPricesCollection::class, 'create'],
         'applicable_pricing' => [OfferPricing::class, 'create'],
         'shipping_types'     => [ShippingPriceByZoneAndTypeCollection::class, 'create'],
+        'eco_contributions'  => [EcoContributionCollection::class, 'create'],
     ];
 
     /**

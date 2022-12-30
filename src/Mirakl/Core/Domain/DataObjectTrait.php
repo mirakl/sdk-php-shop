@@ -151,7 +151,22 @@ trait DataObjectTrait
     public function toArray()
     {
         $result = [];
-        foreach ($this->data as $key => $value) {
+        $data = $this->data;
+
+        /** @see LocalizableTrait */
+        if ($this->getLocale()) {
+            $data['locale'] = $this->getLocale();
+        }
+
+        /** @see DateRangeTrait */
+        if ($this->getStartDate()) {
+            $data['start_date'] = $this->getStartDate();
+        }
+        if ($this->getEndDate()) {
+            $data['end_date'] = $this->getEndDate();
+        }
+
+        foreach ($data as $key => $value) {
             if (is_float($value)) {
                 $value = sprintf('%.5F', $value);
             } elseif ($value instanceof \DateTime) {

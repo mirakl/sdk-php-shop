@@ -6,6 +6,8 @@ use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MMP\Common\Domain\Collection\Document\DocumentsConfigurationCollection;
 
 /**
+ * (DO01) Get the list of all document types
+ *
  * @method  string[]    getEntities()
  * @method  $this       setEntities(string[] $entities)
  */

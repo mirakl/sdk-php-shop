@@ -67,6 +67,7 @@ trait FileTrait
     public function setFile($file)
     {
         $this->file = \Mirakl\create_file($file);
+        $this->file->rewind();
 
         return $this;
     }
