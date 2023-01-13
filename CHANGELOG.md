@@ -1,5 +1,9 @@
 # Changelog
 ## v1.17.0 - 2022-12-30
+### Fix
+- Added missing "channel" query parameter to CM54 API
+
+## v1.17.0 - 2022-12-30
 ### Features
 - Add API DR11, DR72, DR73 and DR74
 - Hide shop_ids for shop user in DR11 API
