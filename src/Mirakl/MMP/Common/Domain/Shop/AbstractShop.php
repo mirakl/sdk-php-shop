@@ -3,6 +3,7 @@ namespace Mirakl\MMP\Common\Domain\Shop;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Collection\Shop\ProducerIdentifierCollection;
 use Mirakl\MMP\Common\Domain\Collection\Shop\ShopApplicableTaxCollection;
 use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
 
@@ -53,8 +54,10 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  bool                            isProfessional()
  * @method  ProfessionalInfo                getProfessionalInfo()
  * @method  $this                           setProfessionalInfo(array|ProfessionalInfo $professionalInfo)
- * @method  array                           getProducerIds()
- * @method  $this                           setProducerIds(array $producerIds)
+ * @method  array                           getProducerIds() // @deprecated Use getProducerIdentifiers() instead
+ * @method  $this                           setProducerIds(array $producerIds) // @deprecated Use setProducerIdentifiers() instead
+ * @method  ProducerIdentifierCollection    getProducerIdentifiers()
+ * @method  $this                           setProducerIdentifiers(ProducerIdentifierCollection|array $producerIdentifiers)
  * @method  string                          getRecyclingPolicy()
  * @method  $this                           setRecyclingPolicy(string $recyclingPolicy)
  * @method  string                          getReturnPolicy()
@@ -99,5 +102,6 @@ abstract class AbstractShop extends MiraklObject
         'kyc'                     => [ShopKyc::class, 'create'],
         'shop_stats'              => [ShopStats::class, 'create'],
         'applicable_taxes'        => [ShopApplicableTaxCollection::class, 'create'],
+        'producer_identifiers'    => [ProducerIdentifierCollection::class, 'create'],
     ];
 }

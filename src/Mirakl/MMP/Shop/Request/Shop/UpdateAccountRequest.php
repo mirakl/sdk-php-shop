@@ -79,6 +79,11 @@ class UpdateAccountRequest extends AbstractRequest
     protected $endpoint = '/account';
 
     /**
+     * @var bool
+     */
+    protected $cleanup = false;
+
+    /**
      * @param UpdateShopAccount|array $updateShopAccount
      */
     public function __construct($updateShopAccount)

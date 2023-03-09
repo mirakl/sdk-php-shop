@@ -10,6 +10,8 @@ use Mirakl\MMP\Shop\Domain\Collection\Payment\Transaction\TransactionLineCollect
 /**
  * (TL02) Get a listing of transactions (this resource supports seek pagination)
  *
+ * @method  string      getAccountingDocumentId()
+ * @method  $this       setAccountingDocumentId(string $accountingDocumentId)
  * @method  string      getAccountingDocumentNumber()
  * @method  $this       setAccountingDocumentNumber(string $accountingDocumentNumber)
  * @method  \DateTime   getDateCreatedFrom()
@@ -70,6 +72,7 @@ class TransactionLineRequest extends AbstractRequest
      * @var array
      */
     public $queryParams = [
+        'accounting_document_id',
         'accounting_document_number',
         'date_created_from',
         'date_created_to',

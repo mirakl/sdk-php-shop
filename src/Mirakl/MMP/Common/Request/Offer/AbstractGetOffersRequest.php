@@ -14,6 +14,8 @@ use Mirakl\Core\Request\SortableTrait;
  * @method  $this   setOfferStateCodes(array $offerStateCodes)
  * @method  string  getPricingChannelCode()
  * @method  $this   setPricingChannelCode(string $pricingChannelCode)
+ * @method  string  getPricingCustomerOrganizationId()
+ * @method  $this   setPricingCustomerOrganizationId(string $pricingCustomerOrganizationId)
  */
 abstract class AbstractGetOffersRequest extends AbstractRequest
 {
@@ -39,5 +41,10 @@ abstract class AbstractGetOffersRequest extends AbstractRequest
     /**
      * @var array
      */
-    public $queryParams = ['offer_state_codes', 'favorite', 'pricing_channel_code'];
+    public $queryParams = [
+        'offer_state_codes',
+        'favorite',
+        'pricing_channel_code',
+        'pricing_customer_organization_id'
+    ];
 }

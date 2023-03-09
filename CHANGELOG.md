@@ -1,4 +1,29 @@
 # Changelog
+
+## v1.18.0 - 2023-03-09
+### Features
+- Add TL03, TL04 and TL05 APIs
+- Add offer pricing_context and pricing_customer_organization_id filter to OF21, OF22, PR02, S04, P11 APIs
+- Deprecate TL01 API
+- Add invoice reference to ST01 and ST11 APIs
+- Add CUR01 API
+- Add model to OF51 and SH02 APIs
+- Add triggers and last_updated information on promotion APIs PR01 and PR02
+- Add debit entity to PA01/11
+- Update document ID Filter in TL02/TL03 APIs
+- Add purchase information in OR01/OR05/0R11/0R28/OR30 APIs
+- Add query param id and document number in DR11
+- Add entities field to DR11 response
+- Make amount breakdown deprecated in OR30 and OR28 APIs
+- Deprectate amount breakdown in taxes for OR30 and OR28
+- Add PC01 API
+- Update tax information in OR05 API
+- Add producer identifiers in S06, S07 and A02
+- Add A02 API
+- Deprecate all instances of producerids
+- Add shipments fields (ST11 + ST01)
+- Allow nullable fields in PUT requests
+
 ## v1.17.0 - 2022-12-30
 ### Fix
 - Added missing "channel" query parameter to CM54 API

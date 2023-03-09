@@ -40,6 +40,8 @@ use Mirakl\MMP\Common\Domain\Collection\Order\CancelationCollection;
  * @method  $this                           setProductMedia(array|ProductMediaCollection $media)
  * @method  AppliedPromotionCollection      getPromotions()
  * @method  $this                           setPromotions(array|AppliedPromotionCollection $promotions)
+ * @method  PurchaseInformation             getPurchaseInformation()
+ * @method  $this                           setPurchaseInformation(PurchaseInformation $purchaseInformation)
  * @method  int                             getQuantity()
  * @method  $this                           setQuantity(int $qty)
  * @method  RefundCollection                getRefunds()
@@ -97,19 +99,20 @@ class ShopOrderLine extends MiraklObject
      * @var array
      */
     protected static $dataTypes = [
-        'additional_fields'                 => [AdditionalFieldValueCollection::class, 'create'],
-        'cancelations'                      => [CancelationCollection::class, 'create'],
-        'commission'                        => [OrderLineCommission::class, 'create'],
-        'history'                           => [OrderLineHistory::class, 'create'],
-        'measurement'                       => [OrderLineMeasurement::class, 'create'],
-        'offer'                             => [OrderLineOfferInfo::class, 'create'],
-        'product_media'                     => [ProductMediaCollection::class, 'create'],
-        'promotions'                        => [AppliedPromotionCollection::class, 'create'],
-        'refunds'                           => [RefundCollection::class, 'create'],
-        'shipping_taxes'                    => [OrderTaxAmountCollection::class, 'create'],
-        'status'                            => [OrderLineStatus::class, 'create'],
-        'taxes'                             => [OrderTaxAmountCollection::class, 'create'],
-        'price_amount_breakdown'            => [AmountBreakdown::class, 'create'],
-        'shipping_price_amount_breakdown'   => [AmountBreakdown::class, 'create'],
+        'additional_fields'               => [AdditionalFieldValueCollection::class, 'create'],
+        'cancelations'                    => [CancelationCollection::class, 'create'],
+        'commission'                      => [OrderLineCommission::class, 'create'],
+        'history'                         => [OrderLineHistory::class, 'create'],
+        'measurement'                     => [OrderLineMeasurement::class, 'create'],
+        'offer'                           => [OrderLineOfferInfo::class, 'create'],
+        'product_media'                   => [ProductMediaCollection::class, 'create'],
+        'promotions'                      => [AppliedPromotionCollection::class, 'create'],
+        'purchase_information'            => [PurchaseInformation::class, 'create'],
+        'refunds'                         => [RefundCollection::class, 'create'],
+        'shipping_taxes'                  => [OrderTaxAmountCollection::class, 'create'],
+        'status'                          => [OrderLineStatus::class, 'create'],
+        'taxes'                           => [OrderTaxAmountCollection::class, 'create'],
+        'price_amount_breakdown'          => [AmountBreakdown::class, 'create'],
+        'shipping_price_amount_breakdown' => [AmountBreakdown::class, 'create'],
     ];
 }

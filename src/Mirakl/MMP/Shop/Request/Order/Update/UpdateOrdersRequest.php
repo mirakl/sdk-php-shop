@@ -47,6 +47,11 @@ class UpdateOrdersRequest extends AbstractRequest
     protected $endpoint = '/orders';
 
     /**
+     * @var bool
+     */
+    protected $cleanup = false;
+
+    /**
      * @var array
      */
     public $bodyParams = ['orders'];

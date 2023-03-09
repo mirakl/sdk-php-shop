@@ -7,10 +7,12 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
 /**
  * @method  float               getAmount()
  * @method  $this               setAmount(float $amount)
- * @method  AmountBreakdown     getAmountBreakdown()
- * @method  $this               setAmountBreakdown(AmountBreakdown $amountBreakdown)
+ * @method  AmountBreakdown     getAmountBreakdown() // @deprecated for OR28 and OR30 requests
+ * @method  $this               setAmountBreakdown(AmountBreakdown $amountBreakdown) // @deprecated for OR28 and OR30 requests
  * @method  string              getCode()
  * @method  $this               setCode(string $code)
+ * @method  PurchaseTax         getPurchaseTax()
+ * @method  $this               setPurchaseTax(PurchaseTax $purchaseTax)
  * @method  float               getRate()
  * @method  $this               setRate(float $rate)
  * @method  string              getTaxCalculationRule()
@@ -23,6 +25,7 @@ class OrderTaxAmount extends MiraklObject
      */
     protected static $dataTypes = [
         'amount_breakdown' => [AmountBreakdown::class, 'create'],
+        'purchase_tax'     => [PurchaseTax::class, 'create'],
     ];
 
     /**
@@ -37,9 +40,15 @@ class OrderTaxAmount extends MiraklObject
         parent::__construct();
         $this->setAmount($amount);
         $this->setCode($code);
-        $this->setAmountBreakdown($amountBreakdown);
-        $this->setRate($rate);
-        $this->setTaxCalculationRule($taxCalculationRule);
+        if (null !== $amountBreakdown) {
+            $this->setAmountBreakdown($amountBreakdown);
+        }
+        if (null !== $rate) {
+            $this->setRate($rate);
+        }
+        if (null !== $taxCalculationRule) {
+            $this->setTaxCalculationRule($taxCalculationRule);
+        }
     }
 
     /**

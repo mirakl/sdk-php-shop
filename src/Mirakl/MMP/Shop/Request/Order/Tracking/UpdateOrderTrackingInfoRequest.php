@@ -10,7 +10,7 @@ use Mirakl\MMP\Common\Request\Order\Tracking\AbstractUpdateOrderTrackingInfoRequ
  *
  * <code>
  * use Mirakl\MMP\Shop\Client\ShopApiClient;
- * use Mirakl\MMP\Shop\Request\Order\Tax\UpdateOrderTrackingInfoRequest;
+ * use Mirakl\MMP\Shop\Request\Order\Tracking\UpdateOrderTrackingInfoRequest;
  *
  * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  * $request = new UpdateOrderTrackingInfoRequest('ORDER_ID', [

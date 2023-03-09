@@ -2,6 +2,7 @@
 namespace Mirakl;
 
 use Mirakl\Core\Domain\FileWrapper;
+use Mirakl\Core\Stream\SplFileStream;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -273,27 +274,39 @@ if (!function_exists('\Mirakl\underscorize')) {
 if (!function_exists('\Mirakl\parse_file_response')) {
     function parse_file_response(ResponseInterface $response, $extension)
     {
-        $contents = trim((string) $response->getBody());
+        $body = $response->getBody();
 
-        $file = (new FileWrapper($contents))->setFileExtension($extension);
+        if ($body instanceof SplFileStream) {
+            $file = $body->getFile();
+        } else {
+            $file = new \SplTempFileObject();
+            $body->rewind();
+            while (!$body->eof()) {
+                $file->fwrite($body->read(1024));
+            }
+        }
+
+        $fileWrapper = new FileWrapper($file);
+        $fileWrapper->setFileExtension($extension);
+
         if ($extension == 'csv') {
-            $file->getFile()->setFlags(\SplFileObject::READ_CSV);
-            $file->getFile()->setCsvControl(';');
+            $file->setFlags(\SplFileObject::READ_CSV);
+            $file->setCsvControl(';');
         }
 
         if ($contentType = $response->getHeaderLine('Content-Type')) {
-            $file->setContentType($contentType);
+            $fileWrapper->setContentType($contentType);
         }
 
         if ($contentDisposition = $response->getHeaderLine('Content-Disposition')) {
             preg_match('#.*filename="(.*)"$#i', $contentDisposition, $matches);
             if (!empty($matches) && isset($matches[1])) {
-                $file->setFileName($matches[1]);
-                $file->setFileExtension(pathinfo($matches[1], PATHINFO_EXTENSION), false);
+                $fileWrapper->setFileName($matches[1]);
+                $fileWrapper->setFileExtension(pathinfo($matches[1], PATHINFO_EXTENSION), false);
             }
         }
 
-        return $file;
+        return $fileWrapper;
     }
 }
 
@@ -378,5 +391,26 @@ if (!function_exists('\Mirakl\tuples_to_query_param')) {
         }
 
         return implode($refSeperator, $params);
+    }
+}
+
+/**
+ * Removes recursively the NULL values of the specified array
+ *
+ * @param   array   $data
+ * @return  array
+ */
+if (!function_exists('\Mirakl\remove_null_values')) {
+    function remove_null_values(array $data)
+    {
+        foreach ($data as $k => $v) {
+            if (is_array($v)) {
+                $data[$k] = remove_null_values($v);
+            } elseif (null === $v) {
+                unset($data[$k]);
+            }
+        }
+
+        return $data;
     }
 }

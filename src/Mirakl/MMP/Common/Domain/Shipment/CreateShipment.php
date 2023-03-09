@@ -5,6 +5,8 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Shipment\ShipmentLineCollection;
 
 /**
+ * @method  string  getInvoiceReference()
+ * @method  $this   setInvoiceReference(string $invoiceReference)
  * @method  string  getOrderId()
  * @method  $this   setOrderId(string $orderId)
  * @method  bool    getShipped()

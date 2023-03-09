@@ -8,8 +8,8 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
 /**
  * @method  float                       getAmount()
  * @method  $this                       setAmount(float $amount)
- * @method  AmountBreakdown             getAmountBreakdown()
- * @method  $this                       setAmountBreakdown(AmountBreakdown $amountBreakdown)
+ * @method  AmountBreakdown             getAmountBreakdown() // @deprecated
+ * @method  $this                       setAmountBreakdown(AmountBreakdown $amountBreakdown) // @deprecated
  * @method  string                      getCurrencyIsoCode()
  * @method  $this                       setCurrencyIsoCode(string $currencyIsoCode)`
  * @method  int                         getOrderLineId()
@@ -20,8 +20,8 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method  $this                       setReasonCode(string $amount)
  * @method  float                       getShippingAmount()
  * @method  $this                       setShippingAmount(float $shippingAmount)
- * @method  AmountBreakdown             getShippingAmountBreakdown()
- * @method  $this                       setShippingAmountBreakdown(AmountBreakdown $shippingAmountBreakdown)
+ * @method  AmountBreakdown             getShippingAmountBreakdown() // @deprecated
+ * @method  $this                       setShippingAmountBreakdown(AmountBreakdown $shippingAmountBreakdown) // @deprecated
  * @method  OrderTaxAmountCollection    getShippingTaxes()
  * @method  $this                       setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
  * @method  OrderTaxAmountCollection    getTaxes()

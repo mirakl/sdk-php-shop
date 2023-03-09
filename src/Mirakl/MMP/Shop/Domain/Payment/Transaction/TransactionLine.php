@@ -6,6 +6,8 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @method  \DateTime           getAccountingDocumentCreationDate()
  * @method  $this               setAccountingDocumentCreationDate(\DateTime $accountingDocumentCreationDate)
+ * @method  string              getAccountingDocumentId()
+ * @method  $this               setAccountingDocumentId(string $accountingDocumentId)
  * @method  string              getAccountingDocumentNumber()
  * @method  $this               setAccountingDocumentNumber(string $accountingDocumentNumber)
  * @method  float               getAmount()

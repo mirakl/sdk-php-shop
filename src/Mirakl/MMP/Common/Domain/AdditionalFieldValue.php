@@ -28,7 +28,9 @@ class AdditionalFieldValue extends MiraklObject
         parent::__construct();
         $this->setCode($code);
         $this->setValue($value);
-        $this->setType($type);
+        if (null !== $type) {
+            $this->setType($type);
+        }
     }
 
     /**

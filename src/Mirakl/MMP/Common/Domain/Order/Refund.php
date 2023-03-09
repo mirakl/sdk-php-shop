@@ -24,6 +24,8 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method  $this                       setDateCreated(\DateTime $dateCreated)
  * @method  string                      getId()
  * @method  $this                       setId(string $id)
+ * @method  DiscardPurchaseInformation  getPurchaseInformation()
+ * @method  $this                       setPurchaseInformation(DiscardPurchaseInformation $purchaseInformation)
  * @method  int                         getQuantity()
  * @method  $this                       setQuantity(int $qty)
  * @method  string                      getReasonCode()
@@ -57,6 +59,7 @@ class Refund extends MiraklObject
     protected static $dataTypes = [
         'amount_breakdown'          => [AmountBreakdown::class, 'create'],
         'commission_taxes'          => [CommissionTaxCollection::class, 'create'],
+        'purchase_information'      => [DiscardPurchaseInformation::class, 'create'],
         'shipping_amount_breakdown' => [AmountBreakdown::class, 'create'],
         'shipping_taxes'            => [OrderTaxAmountCollection::class, 'create'],
         'taxes'                     => [OrderTaxAmountCollection::class, 'create'],

@@ -28,6 +28,8 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method  $this                       setId(string $id)
  * @method  string                      getOrderLineId()
  * @method  $this                       setOrderLineId(string $orderLineId)
+ * @method  DiscardPurchaseInformation  getPurchaseInformation()
+ * @method  $this                       setPurchaseInformation(DiscardPurchaseInformation $purchaseInformation)
  * @method  int                         getQuantity()
  * @method  $this                       setQuantity(int $qty)
  * @method  string                      getReasonCode()
@@ -49,6 +51,7 @@ class Cancelation extends MiraklObject
     protected static $dataTypes = [
         'amount_breakdown'          => [AmountBreakdown::class, 'create'],
         'commission_taxes'          => [CommissionTaxCollection::class, 'create'],
+        'purchase_information'      => [DiscardPurchaseInformation::class, 'create'],
         'shipping_amount_breakdown' => [AmountBreakdown::class, 'create'],
         'shipping_taxes'            => [OrderTaxAmountCollection::class, 'create'],
         'taxes'                     => [OrderTaxAmountCollection::class, 'create'],

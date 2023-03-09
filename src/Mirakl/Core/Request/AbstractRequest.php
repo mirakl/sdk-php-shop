@@ -6,7 +6,6 @@ use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\Core\Exception\RequestValidationException;
 use Mirakl\Core\Response\Decorator;
-use Mirakl\Core\Stream\SplFileStream;
 use Psr\Http\Message\ResponseInterface;
 
 /**
@@ -90,6 +89,13 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     protected $options = [];
 
     /**
+     * If enabled, the null fields of the request data will be removed before being sent to Mirakl.
+     *
+     * @var bool
+     */
+    protected $cleanup = true;
+
+    /**
      * @inheritdoc
      */
     public function __construct(array $data = [])
@@ -137,7 +143,14 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
         foreach ($params as $key => $value) {
             $mapping[is_int($key) ? $value : $key] = $value;
         }
-        $params = array_intersect_key($this->toArray(), $mapping);
+
+        $data = $this->toArray();
+
+        if ($this->cleanup) {
+            $data = \Mirakl\remove_null_values($data);
+        }
+
+        $params = array_intersect_key($data, $mapping);
         $params = \Mirakl\array_map_keys($params, $mapping);
 
         return $params;
@@ -372,5 +385,24 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     public function run(ApiClientInterface $api)
     {
         return $this->getResponseDecorator()->decorate($api->run($this));
+    }
+
+    /**
+     * @return  bool
+     */
+    public function getCleanup()
+    {
+        return $this->cleanup;
+    }
+
+    /**
+     * @param   bool    $flag
+     * @return  $this
+     */
+    public function setCleanup($flag)
+    {
+        $this->cleanup = (bool) $flag;
+
+        return $this;
     }
 }

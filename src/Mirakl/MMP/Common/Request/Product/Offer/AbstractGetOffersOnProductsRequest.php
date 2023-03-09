@@ -23,6 +23,8 @@ use Mirakl\Core\Request\SortableTrait;
  * @method  $this   setOfferStateCodes(array $offerStateCodes)
  * @method  string  getPricingChannelCode()
  * @method  $this   setPricingChannelCode(string $pricingChannelCode)
+ * @method  string  getPricingCustomerOrganizationId()
+ * @method  $this   setPricingCustomerOrganizationId(string $pricingCustomerOrganizationId)
  * @method  array   getProductIds()
  * @method  $this   setProductIds(array $productIds)
  * @method  array   getShippingZones()
@@ -57,7 +59,9 @@ abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
     {
         parent::__construct();
         $this->setProductIds($productIds);
-        $this->setOfferStateCodes($offerStateCodes);
+        if (null !== $offerStateCodes) {
+            $this->setOfferStateCodes($offerStateCodes);
+        }
     }
 
     /**
@@ -71,7 +75,8 @@ abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
         'all_channels',
         'product_references',
         'pricing_channel_code',
-        'shipping_zones'
+        'shipping_zones',
+        'pricing_customer_organization_id'
     ];
 
     /**

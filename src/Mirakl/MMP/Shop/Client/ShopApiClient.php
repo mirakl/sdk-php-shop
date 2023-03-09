@@ -41,6 +41,7 @@ use Mirakl\MMP\OperatorShop\Domain\Order\Refund\RefundsCreated;
 use Mirakl\MMP\OperatorShop\Request\Message\GetThreadDetailsRequest;
 use Mirakl\MMP\OperatorShop\Request\Message\GetThreadsRequest;
 use Mirakl\MMP\Shop\Domain\Collection\AdditionalFieldCollection;
+use Mirakl\MMP\Shop\Domain\Collection\Currency\CurrencyCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Offer\ExportOfferCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Offer\ShopOfferCollection;
 use Mirakl\MMP\Shop\Domain\Collection\Offer\State\OfferStateCollection;
@@ -55,10 +56,12 @@ use Mirakl\MMP\Shop\Domain\Collection\Reason\ReasonCollection;
 use Mirakl\MMP\Shop\Domain\Offer\ShopOffer;
 use Mirakl\MMP\Shop\Domain\Order\AdditionalField\UpdateAdditionalFieldsResult;
 use Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated;
+use Mirakl\MMP\Shop\Domain\PlatformConfiguration\PlatformConfigurationResponse;
 use Mirakl\MMP\Shop\Domain\Shop\ShopAccount;
 use Mirakl\MMP\Shop\Domain\Shop\UpdatedShopAndError;
 use Mirakl\MMP\Shop\Request\AdditionalField\GetAdditionalFieldRequest;
 use Mirakl\MMP\Shop\Request\Channel\GetChannelsRequest;
+use Mirakl\MMP\Shop\Request\Currency\GetCurrenciesRequest;
 use Mirakl\MMP\Shop\Request\Document\GetDocumentsConfigurationRequest;
 use Mirakl\MMP\Shop\Request\DocumentRequest\DownloadAccountingDocumentsRequest;
 use Mirakl\MMP\Shop\Request\DocumentRequest\GetAccountingDocumentsRequest;
@@ -99,6 +102,7 @@ use Mirakl\MMP\Shop\Request\Order\Workflow\CancelOrderRequest;
 use Mirakl\MMP\Shop\Request\Payment\Invoice\DownloadInvoiceRequest;
 use Mirakl\MMP\Shop\Request\Payment\Invoice\GetInvoicesRequest;
 use Mirakl\MMP\Shop\Request\Payment\Transaction\TransactionLineRequest;
+use Mirakl\MMP\Shop\Request\PlatformConfiguration\GetPlatformConfigurationRequest;
 use Mirakl\MMP\Shop\Request\Product\GetProductsRequest;
 use Mirakl\MMP\Shop\Request\Product\Offer\GetOffersOnProductsRequest;
 use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
@@ -142,6 +146,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method  SeekableCollection                      getAccountingDocumentsRequests(GetAccountingDocumentsRequest $request)
  * @method  AdditionalFieldCollection               getAdditionalFields(GetAdditionalFieldRequest $request)
  * @method  ChannelCollection                       getChannels(GetChannelsRequest $request)
+ * @method  CurrencyCollection                      getCurrencies(GetCurrenciesRequest $request)
  * @method  DocumentsConfigurationCollection        getDocumentsConfiguration(GetDocumentsConfigurationRequest $request)
  * @method  InvoiceCollection                       getInvoices(GetInvoicesRequest $request)
  * @method  SeekableCollection                      getItemsToShip(GetItemsToShipRequest $request)
@@ -159,6 +164,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method  OrderMessageCollection                  getOrderMessages(GetOrderMessagesRequest $request)
  * @method  ShopOrderCollection                     getOrders(GetOrdersRequest $request)
  * @method  OrderTaxCollection                      getOrderTaxes(GetOrderTaxesRequest $request)
+ * @method  PlatformConfigurationResponse           getPlatformConfiguration(GetPlatformConfigurationRequest $request)
  * @method  ProductCollection                       getProducts(GetProductsRequest $request)
  * @method  PromotionCollection                     getPromotions(GetPromotionsRequest $request)
  * @method  ReasonCollection                        getReasons(GetReasonsRequest $request)

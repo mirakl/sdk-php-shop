@@ -18,6 +18,8 @@ trait DateFieldsTrait
         'updated_since', 'last_updated', 'creation_date', 'update_date', 'shipping_deadline', 'date_updated',
         'earliest', 'latest', 'deletion_date', 'deleted_from', 'deleted_to', 'due_date', 'shop_reply_needed_since',
         'issue_date', 'operation_date', 'issue_date_from', 'last_updated_from', 'last_updated_to',
-        'billing_cycle_from', 'billing_cycle_to','shipping_date','available_start_date'
+        'billing_cycle_from', 'billing_cycle_to','shipping_date','available_start_date', 'date_from', 'date_to',
+        'transaction_date_from', 'transaction_date_to', 'billing_cycle_from', 'billing_cycle_to', 'shipping_date',
+        'available_start_date', 'date_from', 'date_to', 'closed_from_date', 'closed_to_date'
     ];
 }

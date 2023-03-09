@@ -6,6 +6,7 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionMediaCollection;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionChannelCollection;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionPublicDescriptionCollection;
+use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionTriggerCollection;
 
 /**
  * @method  float                                   getAmountOff()
@@ -20,6 +21,8 @@ use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionPublicDescriptionColl
  * @method  $this                                   setInternalDescription(string $internalDescription)
  * @method  string                                  getInternalId()
  * @method  $this                                   setInternalId(string $internalId)
+ * @method  \DateTime                               getLastUpdated()
+ * @method  $this                                   setLastUpdated(\DateTime $lastUpdated)
  * @method  PromotionMediaCollection                getMedia()
  * @method  $this                                   setMedia(PromotionMediaCollection|array $media)
  * @method  float                                   getPercentageOff()
@@ -28,6 +31,8 @@ use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionPublicDescriptionColl
  * @method  $this                                   setPublicDescriptions(PromotionPublicDescriptionCollection|array $publicDescriptions)
  * @method  string                                  getState()
  * @method  $this                                   setState(string $state)
+ * @method  PromotionTriggerCollection              getTriggers()
+ * @method  $this                                   setTriggers(PromotionTriggerCollection|array $triggers)
  * @method  string                                  getType()
  * @method  $this                                   setType(string $type)
  * @method  boolean                                 isRewardOnPurchasedItems()
@@ -58,6 +63,7 @@ abstract class AbstractPromotion extends MiraklObject
     protected static $dataTypes = [
         'public_descriptions' => [PromotionPublicDescriptionCollection::class, 'create'],
         'media'               => [PromotionMediaCollection::class, 'create'],
-        'channels'            => [PromotionChannelCollection::class, 'create']
+        'channels'            => [PromotionChannelCollection::class, 'create'],
+        'triggers'            => [PromotionTriggerCollection::class, 'create']
     ];
 }

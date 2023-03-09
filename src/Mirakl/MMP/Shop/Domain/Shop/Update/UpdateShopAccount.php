@@ -3,6 +3,7 @@ namespace Mirakl\MMP\Shop\Domain\Shop\Update;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Collection\Shop\ProducerIdentifierCollection;
 use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
 
 /**
@@ -28,8 +29,10 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method  $this                           setPaymentInfo(PaymentInfo|array $paymentInfo)
  * @method  UpdateShopAccountProDetails     getProDetails()
  * @method  $this                           setProDetails(UpdateShopAccountProDetails|array $proDetails)
- * @method  array                           getProducerIds()
- * @method  $this                           setProducerIds(array $producerIds)
+ * @method  array                           getProducerIds() // @deprecated Use getProducerIdentifiers() instead
+ * @method  $this                           setProducerIds(array $producerIds) // @deprecated Use setProducerIdentifiers() instead
+ * @method  ProducerIdentifierCollection    getProducerIdentifiers()
+ * @method  $this                           setProducerIdentifiers(ProducerIdentifierCollection|array $producerIdentifiers)
  * @method  string                          getRecyclingPolicy()
  * @method  $this                           setRecyclingPolicy(string $recyclingPolicy)
  * @method  string                          getReturnPolicy()
@@ -53,5 +56,6 @@ class UpdateShopAccount extends MiraklObject
         'pro_details'            => [UpdateShopAccountProDetails::class, 'create'],
         'payment_info'           => [PaymentInfo::class, 'factory'],
         'shop_additional_fields' => [AdditionalFieldValueCollection::class, 'create'],
+        'producer_identifiers'   => [ProducerIdentifierCollection::class, 'create'],
     ];
 }

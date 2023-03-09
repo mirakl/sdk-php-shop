@@ -45,6 +45,8 @@ use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
  * @method  $this                                 setMaxOrderQuantity(int $maxOrderQuantity)
  * @method  int                                   getMinOrderQuantity()
  * @method  $this                                 setMinOrderQuantity(int $minOrderQuantity)
+ * @method  string                                getModel()
+ * @method  $this                                 setModel(string $model)
  * @method  int                                   getPackageQuantity()
  * @method  $this                                 setPackageQuantity(int $packageQuantity)
  * @method  int                                   getMinQuantityAlert()

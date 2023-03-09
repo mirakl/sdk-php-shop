@@ -9,6 +9,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\InitialDocumentCol
 /**
  * @method string                                getId()
  * @method $this                                 setId(string $id)
+ * @method DocumentRequestEntities               getEntities()
+ * @method $this                                 setEntities(DocumentRequestEntities|array $entities)
  * @method string                                getEntityType()
  * @method $this                                 setEntityType(string $entityType)
  * @method string                                getEntityId()
@@ -62,5 +64,6 @@ class AccountingDocumentRequestResponse extends MiraklObject
         'recipient'           => [Recipient::class, 'create'],
         'lines'               => [DocumentRequestLineResponseCollection::class, 'create'],
         'initial_documents'   => [InitialDocumentCollection::class, 'create'],
+        'entities'            => [DocumentRequestEntities::class, 'create'],
     ];
 }

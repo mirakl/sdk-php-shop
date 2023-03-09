@@ -55,15 +55,11 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * Cleans up data by removing null values
      *
-     * @return  void
+     * @deprecated NULL values are not automatically removed anymore in domain objects but in request objects if needed
+     * @see \Mirakl\Core\Request\AbstractRequest::$cleanup
      */
     public function cleanup()
-    {
-        // Remove null values
-        $this->data = array_filter($this->data, function($val) {
-            return null !== $val;
-        });
-    }
+    {}
 
     /**
      * Useful method for requests returning domain objects
@@ -133,8 +129,6 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
             $this->setDataValue($key, $value);
         }
 
-        $this->cleanup();
-
         return $this;
     }
 
@@ -168,9 +162,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
      */
     private function setDataValue($key, $value)
     {
-        if (null !== $value) {
-            $this->data[$key] = static::value($key, $value); // value has to be transformed and validated
-        }
+        $this->data[$key] = static::value($key, $value); // value has to be transformed and validated
 
         return $this;
     }
@@ -218,6 +210,10 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
      */
     public static function value($key, $value)
     {
+        if (null === $value) {
+            return $value;
+        }
+
         if (is_string($value) && in_array($key, self::$dateFields)) {
             $value = new \DateTime($value);
         } else {

@@ -4,6 +4,7 @@ namespace Mirakl\MMP\Common\Domain\Order\Cancelation;
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Order\Tax\OrderTaxAmountCollection;
 use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
+use Mirakl\MMP\Common\Domain\Order\DiscardPurchaseInformation;
 
 /**
  * @method  float                       getAmount()
@@ -16,6 +17,8 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method  $this                       setId(int $id)
  * @method  int                         getOrderLineId()
  * @method  $this                       setOrderLineId(int $orderLineId)
+ * @method  DiscardPurchaseInformation  getPurchaseInformation()
+ * @method  $this                       setPurchaseInformation(DiscardPurchaseInformation $purchaseInformation)
  * @method  int                         getQuantity()
  * @method  $this                       setQuantity(int $qty)
  * @method  string                      getReasonCode()
@@ -43,6 +46,7 @@ abstract class AbstractCancelationCreated extends MiraklObject
      */
     protected static $dataTypes = [
         'amount_breakdown'          => [AmountBreakdown::class, 'create'],
+        'purchase_information'      => [DiscardPurchaseInformation::class, 'create'],
         'shipping_amount_breakdown' => [AmountBreakdown::class, 'create'],
         'shipping_taxes'            => [OrderTaxAmountCollection::class, 'create'],
         'taxes'                     => [OrderTaxAmountCollection::class, 'create'],
