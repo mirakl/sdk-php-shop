@@ -12,7 +12,7 @@ use Mirakl\MMP\OperatorShop\Request\Offer\AbstractUpdateOffersRequest;
  * use Mirakl\MMP\Shop\Client\ShopApiClient;
  * use Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest;
  * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
- * $request = new UpdateOffersRequest('SHOP_ID');
+ * $request = new UpdateOffersRequest();
  * $request->setOffers([
  *     [
  *         'shop_sku' => 'AAPL-CHASAW7852',
