@@ -1,1 +1,30 @@
+# Composer
+composer.lock
+vendor/
+composer.phar
+
+# Editor
+.idea
+.buildpath
+.project
+nbproject
+*.sublime-*
+.settings
+
+# OS
 .DS_Store
+.DS_Store?
+._*
+.~*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Misc
+phpunit.xml
+.phpunit.result.cache
+/index.php
+*.log
+build/

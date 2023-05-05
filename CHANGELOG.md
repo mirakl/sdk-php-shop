@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.18.1 - 2023-05-05
+### Fixes
+- Fix `psr/http-message` package compatibility
+- Fix PHPDoc on request \Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest
+
 ## v1.18.0 - 2023-03-09
 ### Features
 - Add TL03, TL04 and TL05 APIs

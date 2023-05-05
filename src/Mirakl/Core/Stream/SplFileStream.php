@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 namespace Mirakl\Core\Stream;
 
 use Psr\Http\Message\StreamInterface;
@@ -21,7 +23,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function read($length)
+    public function read($length): string
     {
         return $this->file->fread($length);
     }
@@ -29,7 +31,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getContents();
     }
@@ -37,7 +39,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function close()
+    public function close(): void
     {
         $this->detach();
     }
@@ -55,7 +57,7 @@ class SplFileStream implements StreamInterface
     /**
      * @return \SplFileObject
      */
-    public function getFile()
+    public function getFile(): \SplFileObject
     {
         return $this->file;
     }
@@ -63,7 +65,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function getSize()
+    public function getSize(): ?int
     {
         return $this->file->fstat()['size'];
     }
@@ -71,7 +73,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function tell()
+    public function tell(): int
     {
         return $this->file->ftell();
     }
@@ -79,7 +81,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function eof()
+    public function eof(): bool
     {
         return $this->file->eof();
     }
@@ -87,7 +89,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function isSeekable()
+    public function isSeekable(): bool
     {
         return $this->file !== null;
     }
@@ -95,7 +97,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function seek($offset, $whence = SEEK_SET)
+    public function seek($offset, $whence = SEEK_SET): void
     {
         $this->file->fseek($offset, $whence);
     }
@@ -103,7 +105,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function rewind()
+    public function rewind(): void
     {
         $this->file->rewind();
     }
@@ -111,7 +113,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function isWritable()
+    public function isWritable(): bool
     {
         return $this->file->isWritable();
     }
@@ -119,7 +121,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function write($string)
+    public function write($string): int
     {
         return $this->file->fwrite($string);
     }
@@ -127,7 +129,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function isReadable()
+    public function isReadable(): bool
     {
         return $this->file->isReadable();
     }
@@ -135,7 +137,7 @@ class SplFileStream implements StreamInterface
     /**
      * @inheritdoc
      */
-    public function getContents()
+    public function getContents(): string
     {
         $result = '';
         $this->rewind();
