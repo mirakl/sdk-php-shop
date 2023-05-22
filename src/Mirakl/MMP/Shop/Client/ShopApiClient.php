@@ -23,6 +23,9 @@ use Mirakl\MMP\Common\Domain\Message\MessageCreated;
 use Mirakl\MMP\Common\Domain\Message\Thread\ThreadCreated;
 use Mirakl\MMP\Common\Domain\Message\Thread\ThreadDetails;
 use Mirakl\MMP\Common\Domain\Message\Thread\ThreadReplyCreated;
+use Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult;
+use Mirakl\MMP\Common\Domain\Order\Async\Export\ExportOrdersAsyncStatusResponse;
+use Mirakl\MMP\Common\Domain\Order\Async\Export\ExportOrdersAsyncSubmitResponse;
 use Mirakl\MMP\Common\Domain\Order\Document\OrderDocumentsUploadResult;
 use Mirakl\MMP\Common\Domain\Shipment\CreatedShipments;
 use Mirakl\MMP\Common\Domain\Shipment\DeletedShipments;
@@ -64,8 +67,10 @@ use Mirakl\MMP\Shop\Request\Channel\GetChannelsRequest;
 use Mirakl\MMP\Shop\Request\Currency\GetCurrenciesRequest;
 use Mirakl\MMP\Shop\Request\Document\GetDocumentsConfigurationRequest;
 use Mirakl\MMP\Shop\Request\DocumentRequest\DownloadAccountingDocumentsRequest;
+use Mirakl\MMP\Shop\Request\DocumentRequest\GetAccountingDocumentLinesRequest;
 use Mirakl\MMP\Shop\Request\DocumentRequest\GetAccountingDocumentsRequest;
 use Mirakl\MMP\Shop\Request\DocumentRequest\UploadAccountingDocumentsRequest;
+use Mirakl\MMP\Shop\Request\Offer\Async\Export\OffersExportAsyncRequest;
 use Mirakl\MMP\Shop\Request\Offer\GetAccountRequest;
 use Mirakl\MMP\Shop\Request\Offer\GetOfferRequest;
 use Mirakl\MMP\Shop\Request\Offer\GetOffersRequest;
@@ -83,6 +88,10 @@ use Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest;
 use Mirakl\MMP\Shop\Request\Order\Accept\AcceptOrderRequest;
 use Mirakl\MMP\Shop\Request\Order\AdditionalField\UpdateAdditionalFieldsRequest;
 use Mirakl\MMP\Shop\Request\Order\Adjust\AdjustOrderLinesRequest;
+use Mirakl\MMP\Shop\Request\Order\Async\Export\ExportOrdersAsyncDownloadFileJsonRequest;
+use Mirakl\MMP\Shop\Request\Order\Async\Export\ExportOrdersAsyncDownloadFileRequest;
+use Mirakl\MMP\Shop\Request\Order\Async\Export\ExportOrdersAsyncStatusRequest;
+use Mirakl\MMP\Shop\Request\Order\Async\Export\ExportOrdersAsyncSubmitRequest;
 use Mirakl\MMP\Shop\Request\Order\Cancelation\CreateCancelationsRequest;
 use Mirakl\MMP\Shop\Request\Order\Document\DeleteOrderDocumentRequest;
 use Mirakl\MMP\Shop\Request\Order\Document\DownloadOrdersDocumentsRequest;
@@ -126,73 +135,79 @@ use Mirakl\MMP\Shop\Request\Shop\Document\UploadShopDocumentsRequest;
 use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
 
 /**
- * @method  void                                    acceptOrder(AcceptOrderRequest $request)
- * @method  CreatedAdjustmentCollection             adjustOrderLines(AdjustOrderLinesRequest $request)
- * @method  MessageCreated                          answerOfferMessage(AnswerOfferMessageRequest $request)
- * @method  void                                    cancelOrder(CancelOrderRequest $request)
- * @method  MessageCreated                          createOrderMessage(CreateOrderMessageRequest $request)
- * @method  CreatedShipments                        createShipments(CreateShipmentsRequest $request)
- * @method  ThreadCreated                           createOrderThread(CreateOrderThreadRequest $request)
- * @method  void                                    deleteOrderDocument(DeleteOrderDocumentRequest $request)
- * @method  DeletedShipments                        deleteShipments(DeleteShipmentsRequest $request)
- * @method  void                                    deleteShopDocument(DeleteShopDocumentRequest $request)
- * @method  FileWrapper                             downloadInvoice(DownloadInvoiceRequest $request)
- * @method  FileWrapper                             downloadAccountingDocuments(DownloadAccountingDocumentsRequest $request)
- * @method  FileWrapper                             downloadOrdersDocuments(DownloadOrdersDocumentsRequest $request)
- * @method  FileWrapper                             downloadShopDocuments(DownloadShopDocumentsRequest $request)
- * @method  FileWrapper                             downloadThreadMessageAttachment(DownloadThreadMessageAttachmentRequest $request)
- * @method  ExportOfferCollection                   exportOffers(OffersExportRequest $request)
- * @method  FileWrapper                             exportOffersToFile(OffersExportFileRequest $request)
- * @method  SeekableCollection                      getAccountingDocumentsRequests(GetAccountingDocumentsRequest $request)
- * @method  AdditionalFieldCollection               getAdditionalFields(GetAdditionalFieldRequest $request)
- * @method  ChannelCollection                       getChannels(GetChannelsRequest $request)
- * @method  CurrencyCollection                      getCurrencies(GetCurrenciesRequest $request)
- * @method  DocumentsConfigurationCollection        getDocumentsConfiguration(GetDocumentsConfigurationRequest $request)
- * @method  InvoiceCollection                       getInvoices(GetInvoicesRequest $request)
- * @method  SeekableCollection                      getItemsToShip(GetItemsToShipRequest $request)
- * @method  ShopOffer                               getOffer(GetOfferRequest $request)
- * @method  OfferMessageCollection                  getOfferMessages(GetOfferMessagesRequest $request)
- * @method  ShopOfferCollection                     getOffers(GetOffersRequest $request)
- * @method  FileWrapper                             getOffersImportErrorReport(OfferImportErrorReportRequest $request)
- * @method  OfferImportResult                       getOffersImportResult(OfferImportReportRequest $request)
- * @method  SeekableCollection                      getOffersImports(OffersImportsRequest $request)
- * @method  ProductWithOffersCollection             getOffersOnProducts(GetOffersOnProductsRequest $request)
- * @method  CommonOfferStateCollection              getOfferStates(GetOfferStatesRequest $request) @deprecated Use getOfferStateList instead
- * @method  OfferStateCollection                    getOfferStateList(GetOfferStateListRequest $request)
- * @method  OrderDocumentCollection                 getOrderDocuments(GetOrderDocumentsRequest $request)
- * @method  Evaluation                              getOrderEvaluation(GetOrderEvaluationRequest $request)
- * @method  OrderMessageCollection                  getOrderMessages(GetOrderMessagesRequest $request)
- * @method  ShopOrderCollection                     getOrders(GetOrdersRequest $request)
- * @method  OrderTaxCollection                      getOrderTaxes(GetOrderTaxesRequest $request)
- * @method  PlatformConfigurationResponse           getPlatformConfiguration(GetPlatformConfigurationRequest $request)
- * @method  ProductCollection                       getProducts(GetProductsRequest $request)
- * @method  PromotionCollection                     getPromotions(GetPromotionsRequest $request)
- * @method  ReasonCollection                        getReasons(GetReasonsRequest $request)
- * @method  SeekableCollection                      getShipments(GetShipmentsRequest $request)
- * @method  ThreadDetails                           getThreadDetails(GetThreadDetailsRequest $request)
- * @method  SeekableCollection                      getThreads(GetThreadsRequest $request)
- * @method  SeekableCollection                      getTransactionLine(TransactionLineRequest $request)
- * @method  ReasonCollection                        getTypeReasons(GetTypeReasonsRequest $request)
- * @method  ShippingTypeWithDescriptionCollection   getShippingTypes(GetShippingTypesRequest $request)
- * @method  ShippingZoneDetailCollection            getShippingZones(GetShippingZonesRequest $request)
- * @method  ShopDocumentCollection                  getShopDocuments(GetShopDocumentsRequest $request)
- * @method  OfferProductImportTracking              importOffers(OfferImportRequest $request)
- * @method  void                                    markIncidentAsResolved(ResolveIncidentRequest $request)
- * @method  ShipmentWorkflowResponse                readyForPickUpShipments(ReadyForPickUpShipmentRequest $request)
- * @method  ThreadReplyCreated                      replyToThread(ThreadReplyRequest $request)
- * @method  CancelationsCreated                     requestCancelOrderLines(CreateCancelationsRequest $request)
- * @method  RefundsCreated                          requestRefundOrder(CreateRefundRequest $request)
- * @method  void                                    shipOrder(ShipOrderRequest $request)
- * @method  ShipmentWorkflowResponse                shipShipments(ShipShipmentsRequest $request)
- * @method  UpdatedShopAndError                     updateAccount(UpdateAccountRequest $request)
- * @method  OfferImportTracking                     updateOffers(UpdateOffersRequest $request)
- * @method  UpdateAdditionalFieldsResult            updateOrderAdditionalFields(UpdateAdditionalFieldsRequest $request)
- * @method  UpdatedOrderAndErrorCollection          updateOrders(UpdateOrdersRequest $request)
- * @method  void                                    updateOrderTrackingInfo(UpdateOrderTrackingInfoRequest $request)
- * @method  UpdatedShipmentTrackings                updateShipmentTrackings(UpdateShipmentTrackingsRequest $request)
- * @method  UploadedAccountingDocumentsResponse     uploadAccountingDocuments(UploadAccountingDocumentsRequest $request)
- * @method  OrderDocumentsUploadResult              uploadOrderDocuments(UploadOrdersDocumentsRequest $request)
- * @method  DocumentsUploadResult                   uploadShopDocuments(UploadShopDocumentsRequest $request)
+ * @method void                                  acceptOrder(AcceptOrderRequest $request)
+ * @method CreatedAdjustmentCollection           adjustOrderLines(AdjustOrderLinesRequest $request)
+ * @method MessageCreated                        answerOfferMessage(AnswerOfferMessageRequest $request)
+ * @method void                                  cancelOrder(CancelOrderRequest $request)
+ * @method OffersExportAsyncTrackingResult       createOffersExportAsync(OffersExportAsyncRequest $request)
+ * @method MessageCreated                        createOrderMessage(CreateOrderMessageRequest $request)
+ * @method CreatedShipments                      createShipments(CreateShipmentsRequest $request)
+ * @method ThreadCreated                         createOrderThread(CreateOrderThreadRequest $request)
+ * @method void                                  deleteOrderDocument(DeleteOrderDocumentRequest $request)
+ * @method DeletedShipments                      deleteShipments(DeleteShipmentsRequest $request)
+ * @method void                                  deleteShopDocument(DeleteShopDocumentRequest $request)
+ * @method FileWrapper                           downloadInvoice(DownloadInvoiceRequest $request)
+ * @method FileWrapper                           downloadAccountingDocuments(DownloadAccountingDocumentsRequest $request)
+ * @method FileWrapper                           downloadOrdersDocuments(DownloadOrdersDocumentsRequest $request)
+ * @method FileWrapper                           downloadShopDocuments(DownloadShopDocumentsRequest $request)
+ * @method FileWrapper                           downloadThreadMessageAttachment(DownloadThreadMessageAttachmentRequest $request)
+ * @method ExportOfferCollection                 exportOffers(OffersExportRequest $request)
+ * @method FileWrapper                           exportOffersToFile(OffersExportFileRequest $request)
+ * @method ExportOrdersAsyncSubmitResponse       exportOrdersAsync(ExportOrdersAsyncSubmitRequest $request)
+ * @method SeekableCollection                   getAccountingDocumentLinesRequests(GetAccountingDocumentLinesRequest $request)
+ * @method SeekableCollection                    getAccountingDocumentsRequests(GetAccountingDocumentsRequest $request)
+ * @method AdditionalFieldCollection             getAdditionalFields(GetAdditionalFieldRequest $request)
+ * @method ChannelCollection                     getChannels(GetChannelsRequest $request)
+ * @method CurrencyCollection                    getCurrencies(GetCurrenciesRequest $request)
+ * @method DocumentsConfigurationCollection      getDocumentsConfiguration(GetDocumentsConfigurationRequest $request)
+ * @method InvoiceCollection                     getInvoices(GetInvoicesRequest $request)
+ * @method SeekableCollection                    getItemsToShip(GetItemsToShipRequest $request)
+ * @method ShopOffer                             getOffer(GetOfferRequest $request)
+ * @method OfferMessageCollection                getOfferMessages(GetOfferMessagesRequest $request)
+ * @method ShopOfferCollection                   getOffers(GetOffersRequest $request)
+ * @method FileWrapper                           getOffersImportErrorReport(OfferImportErrorReportRequest $request)
+ * @method OfferImportResult                     getOffersImportResult(OfferImportReportRequest $request)
+ * @method SeekableCollection                    getOffersImports(OffersImportsRequest $request)
+ * @method ProductWithOffersCollection           getOffersOnProducts(GetOffersOnProductsRequest $request)
+ * @method CommonOfferStateCollection            getOfferStates(GetOfferStatesRequest $request) @deprecated Use getOfferStateList instead
+ * @method OfferStateCollection                  getOfferStateList(GetOfferStateListRequest $request)
+ * @method OrderDocumentCollection               getOrderDocuments(GetOrderDocumentsRequest $request)
+ * @method Evaluation                            getOrderEvaluation(GetOrderEvaluationRequest $request)
+ * @method OrderMessageCollection                getOrderMessages(GetOrderMessagesRequest $request)
+ * @method ShopOrderCollection                   getOrders(GetOrdersRequest $request)
+ * @method OrderTaxCollection                    getOrderTaxes(GetOrderTaxesRequest $request)
+ * @method PlatformConfigurationResponse         getPlatformConfiguration(GetPlatformConfigurationRequest $request)
+ * @method ProductCollection                     getProducts(GetProductsRequest $request)
+ * @method PromotionCollection                   getPromotions(GetPromotionsRequest $request)
+ * @method ReasonCollection                      getReasons(GetReasonsRequest $request)
+ * @method SeekableCollection                    getShipments(GetShipmentsRequest $request)
+ * @method ThreadDetails                         getThreadDetails(GetThreadDetailsRequest $request)
+ * @method SeekableCollection                    getThreads(GetThreadsRequest $request)
+ * @method SeekableCollection                    getTransactionLine(TransactionLineRequest $request)
+ * @method ReasonCollection                      getTypeReasons(GetTypeReasonsRequest $request)
+ * @method ShippingTypeWithDescriptionCollection getShippingTypes(GetShippingTypesRequest $request)
+ * @method ShippingZoneDetailCollection          getShippingZones(GetShippingZonesRequest $request)
+ * @method ShopDocumentCollection                getShopDocuments(GetShopDocumentsRequest $request)
+ * @method OfferProductImportTracking            importOffers(OfferImportRequest $request)
+ * @method void                                  markIncidentAsResolved(ResolveIncidentRequest $request)
+ * @method ExportOrdersAsyncStatusResponse       pollExportOrdersAsyncStatus(ExportOrdersAsyncStatusRequest $request)
+ * @method ShipmentWorkflowResponse              readyForPickUpShipments(ReadyForPickUpShipmentRequest $request)
+ * @method ThreadReplyCreated                    replyToThread(ThreadReplyRequest $request)
+ * @method CancelationsCreated                   requestCancelOrderLines(CreateCancelationsRequest $request)
+ * @method RefundsCreated                        requestRefundOrder(CreateRefundRequest $request)
+ * @method ShopOrderCollection                   retrieveExportOrdersAsyncFile(ExportOrdersAsyncDownloadFileRequest $request)
+ * @method FileWrapper                           retrieveExportOrdersAsyncFileJson(ExportOrdersAsyncDownloadFileJsonRequest $request)
+ * @method void                                  shipOrder(ShipOrderRequest $request)
+ * @method ShipmentWorkflowResponse              shipShipments(ShipShipmentsRequest $request)
+ * @method UpdatedShopAndError                   updateAccount(UpdateAccountRequest $request)
+ * @method OfferImportTracking                   updateOffers(UpdateOffersRequest $request)
+ * @method UpdateAdditionalFieldsResult          updateOrderAdditionalFields(UpdateAdditionalFieldsRequest $request)
+ * @method UpdatedOrderAndErrorCollection        updateOrders(UpdateOrdersRequest $request)
+ * @method void                                  updateOrderTrackingInfo(UpdateOrderTrackingInfoRequest $request)
+ * @method UpdatedShipmentTrackings              updateShipmentTrackings(UpdateShipmentTrackingsRequest $request)
+ * @method UploadedAccountingDocumentsResponse   uploadAccountingDocuments(UploadAccountingDocumentsRequest $request)
+ * @method OrderDocumentsUploadResult            uploadOrderDocuments(UploadOrdersDocumentsRequest $request)
+ * @method DocumentsUploadResult                 uploadShopDocuments(UploadShopDocumentsRequest $request)
  */
 class ShopApiClient extends CommonApiClient
 {

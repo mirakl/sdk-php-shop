@@ -2,6 +2,7 @@
 namespace Mirakl\MMP\Common\Request\Offer\Async\Export;
 
 use Mirakl\Core\Client\ApiClientInterface;
+use Mirakl\Core\Request\AbstractFileUrlRequest;
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\Core\Response\Decorator\CsvTrait as CsvResponseDecorator;
 
@@ -45,37 +46,7 @@ use Mirakl\Core\Response\Decorator\CsvTrait as CsvResponseDecorator;
  *
  * </code>
  */
-class OffersExportAsyncFileCsvRequest extends AbstractRequest
+class OffersExportAsyncFileCsvRequest extends AbstractFileUrlRequest
 {
     use CsvResponseDecorator;
-
-    /**
-     * @var string
-     */
-    protected $fileUrl;
-
-    /**
-     * @param string $fileUrl
-     */
-    public function __construct($fileUrl)
-    {
-        parent::__construct();
-        $this->setFileUrl($fileUrl);
-    }
-
-    /**
-     * @param $fileUrl
-     */
-    public function setFileUrl($fileUrl)
-    {
-        $this->fileUrl = $fileUrl;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function run(ApiClientInterface $api)
-    {
-        return $this->getResponseDecorator()->decorate($api->getClient()->get($this->fileUrl));
-    }
 }

@@ -6,6 +6,8 @@ use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
 /**
  * @method  AdditionalFieldValueCollection  getAdditionalFieldsValues()
  * @method  $this                           setAdditionalFieldsValues(array|AdditionalFieldValueCollection $additionalFields)
+ * @method  string                          getCutOffTime()
+ * @method  $this                           setCutOffTime(string $time)
  * @method  DeliveryTime                    getDeliveryTime()
  * @method  $this                           setDeliveryTime(DeliveryTime $deliveryTime)
  */

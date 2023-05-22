@@ -12,4 +12,11 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this       setTransactionDate(\DateTime $transactionDate)
  */
 class InvoicePayment extends MiraklObject
-{}
+{
+    /**
+     * @var array
+     */
+    protected static $mapping = [
+        'state' => 'status'
+    ];
+}

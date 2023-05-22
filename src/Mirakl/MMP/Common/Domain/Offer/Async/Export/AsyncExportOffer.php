@@ -68,6 +68,8 @@ use Mirakl\MMP\Common\Domain\Collection\Offer\Async\Export\AsyncExportOfferShipp
  * @method  $this                                           setMinOrderQuantity(int $minOrderQuantity)
  * @method  int                                             getMaxOrderQuantity()
  * @method  $this                                           setMaxOrderQuantity(int $maxOrderQuantity)
+ * @method  string                                          getModel()
+ * @method  $this                                           setModel(string $model)
  * @method  int                                             getPackageQuantity()
  * @method  $this                                           setPackageQuantity(int $packageQuantity)
  * @method  AsyncExportMeasurementUnit                      getMeasurement()

@@ -8,7 +8,7 @@ use Mirakl\Core\Response\Decorator\SeekableCollection;
 use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\AccountingDocumentRequestResponseCollection;
 
 /**
- * (DR11) Get order-related accounting documents requests
+ * (DR11) Get accounting documents requests
  *
  * Sort by creation date (desc by default)
  * This API uses pagination by default and will return 50 documents requests

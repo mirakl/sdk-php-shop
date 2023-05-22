@@ -1,8 +1,7 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Payment\Transaction;
 
-use Mirakl\Core\Client\ApiClientInterface;
-use Mirakl\Core\Request\AbstractRequest;
+use Mirakl\Core\Request\AbstractFileUrlRequest;
 use Mirakl\Core\Response\Decorator\JsonTrait as JsonResponseDecorator;
 
 /**
@@ -46,37 +45,7 @@ use Mirakl\Core\Response\Decorator\JsonTrait as JsonResponseDecorator;
  *
  * </code>
  */
-class ExportTransactionLinesAsyncFilesRequest extends AbstractRequest
+class ExportTransactionLinesAsyncFilesRequest extends AbstractFileUrlRequest
 {
     use JsonResponseDecorator;
-
-    /**
-     * @var string
-     */
-    protected $fileUrl;
-
-    /**
-     * @param string $fileUrl
-     */
-    public function __construct($fileUrl)
-    {
-        parent::__construct();
-        $this->setFileUrl($fileUrl);
-    }
-
-    /**
-     * @param string $fileUrl
-     */
-    public function setFileUrl($fileUrl)
-    {
-        $this->fileUrl = $fileUrl;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function run(ApiClientInterface $api)
-    {
-        return $this->getResponseDecorator()->decorate($api->getClient()->get($this->fileUrl));
-    }
 }

@@ -11,6 +11,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceTaxCollection;
  * @method  $this                   setDescription(string $description)
  * @method  \DateTime               getOperationDate()
  * @method  $this                   setOperationDate(\DateTime $operationDate)
+ * @method  string                  getOrderId()
+ * @method  $this                   setOrderId(string $orderId)
  * @method  int                     getQuantity()
  * @method  $this                   setQuantity(int $qty)
  * @method  InvoiceTaxCollection    getTaxes()

@@ -4,6 +4,8 @@ namespace Mirakl\MMP\Common\Domain\Offer\Async\Export;
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
+ * @method  string  getEprCategoryCode()
+ * @method  $this   setEprCategoryCode(string $eprCategoryCode)
  * @method  string  getShopTaxIdentifierCode()
  * @method  $this   setShopTaxIdentifierCode(string $shopTaxIdentifierCode)
  * @method  float   getTaxAmount()

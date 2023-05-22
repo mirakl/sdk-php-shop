@@ -6,6 +6,8 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @method float  getEcoContributionAmount()
  * @method $this  setEcoContributionAmount(float $ecoContributionAmount)
+ * @method string getEprCategoryCode()
+ * @method $this  setEprCategoryCode(string $eprCategoryCode)
  * @method string getProducerId()
  * @method $this  setProducerId(string $producerId)
  */

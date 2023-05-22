@@ -1,14 +1,11 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Payment\Transaction;
 
-use Mirakl\Core\Request\AbstractRequest;
+use Mirakl\Core\Request\AbstractTrackingRequest;
 use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsyncStatus;
 
 /**
  * (TL04) Poll the status of an asynchronous transaction log export (TL03)
- *
- * @method string getTrackingId()
- * @method string setTrackingId(string $trackingId)
  *
  * Example:
  *
@@ -41,28 +38,12 @@ use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsyncStat
  * }
  * </code>
  */
-class ExportTransactionLinesAsyncStatusRequest extends AbstractRequest
+class ExportTransactionLinesAsyncStatusRequest extends AbstractTrackingRequest
 {
     /**
      * @var string
      */
     protected $endpoint = '/sellerpayment/transactions_logs/async/status/{tracking_id}';
-
-    /**
-     * @var array
-     */
-    protected $uriVars = [
-        '{tracking_id}' => 'tracking_id'
-    ];
-
-    /**
-     * @param string $trackingId
-     */
-    public function __construct($trackingId)
-    {
-        parent::__construct();
-        $this->setTrackingId($trackingId);
-    }
 
     /**
      * @inheritdoc

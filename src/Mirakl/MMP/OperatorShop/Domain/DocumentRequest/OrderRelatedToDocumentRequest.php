@@ -6,6 +6,8 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @method string          getId()
  * @method $this           setId(string $id)
+ * @method string          getCommercialId()
+ * @method $this           setCommercialId(string $commercialId)
  * @method string          getReferenceForCustomer()
  * @method $this           setReferenceForCustomer(string $referenceForCustomer)
  * @method string          getReferenceForSeller()

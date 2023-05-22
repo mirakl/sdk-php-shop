@@ -5,18 +5,20 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
 
 /**
- * @method  float               getAmount()
- * @method  $this               setAmount(float $amount)
- * @method  AmountBreakdown     getAmountBreakdown() // @deprecated for OR28 and OR30 requests
- * @method  $this               setAmountBreakdown(AmountBreakdown $amountBreakdown) // @deprecated for OR28 and OR30 requests
- * @method  string              getCode()
- * @method  $this               setCode(string $code)
- * @method  PurchaseTax         getPurchaseTax()
- * @method  $this               setPurchaseTax(PurchaseTax $purchaseTax)
- * @method  float               getRate()
- * @method  $this               setRate(float $rate)
- * @method  string              getTaxCalculationRule()
- * @method  $this               setTaxCalculationRule(string $taxCalculationRule)
+ * @method float           getAmount()
+ * @method $this           setAmount(float $amount)
+ * @method AmountBreakdown getAmountBreakdown() // @deprecated for OR28 and OR30 requests
+ * @method $this           setAmountBreakdown(AmountBreakdown $amountBreakdown) // @deprecated for OR28 and OR30 requests
+ * @method string          getCode()
+ * @method $this           setCode(string $code)
+ * @method float           getOriginUnitAmount()
+ * @method $this           setOriginUnitAmount(float $originUnitAmount)
+ * @method PurchaseTax     getPurchaseTax()
+ * @method $this           setPurchaseTax(PurchaseTax $purchaseTax)
+ * @method float           getRate()
+ * @method $this           setRate(float $rate)
+ * @method string          getTaxCalculationRule()
+ * @method $this           setTaxCalculationRule(string $taxCalculationRule)
  */
 class OrderTaxAmount extends MiraklObject
 {
@@ -29,14 +31,21 @@ class OrderTaxAmount extends MiraklObject
     ];
 
     /**
-     * @param   float               $amount
-     * @param   string              $code
-     * @param   AmountBreakdown     $amountBreakdown
-     * @param   float               $rate
-     * @param   string              $taxCalculationRule
+     * @param float           $amount
+     * @param string          $code
+     * @param AmountBreakdown $amountBreakdown
+     * @param float|null      $rate
+     * @param string|null     $taxCalculationRule
+     * @param float|null      $originUnitAmount
      */
-    public function __construct($amount, $code, $amountBreakdown = null, $rate = null, $taxCalculationRule = null)
-    {
+    public function __construct(
+        $amount,
+        $code,
+        $amountBreakdown = null,
+        $rate = null,
+        $taxCalculationRule = null,
+        $originUnitAmount = null
+    ) {
         parent::__construct();
         $this->setAmount($amount);
         $this->setCode($code);
@@ -48,6 +57,9 @@ class OrderTaxAmount extends MiraklObject
         }
         if (null !== $taxCalculationRule) {
             $this->setTaxCalculationRule($taxCalculationRule);
+        }
+        if (null !== $originUnitAmount) {
+            $this->setOriginUnitAmount($originUnitAmount);
         }
     }
 
@@ -61,7 +73,8 @@ class OrderTaxAmount extends MiraklObject
             $data['code'],
             $data['amount_breakdown'] ?? null,
             $data['rate'] ?? null,
-            $data['tax_calculation_rule'] ?? null
+            $data['tax_calculation_rule'] ?? null,
+            $data['origin_unit_amount'] ?? null
         );
     }
 }

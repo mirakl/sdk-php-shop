@@ -17,6 +17,8 @@ use Mirakl\Core\Request\SortableTrait;
  * @method  $this   setAllChannels(bool $flag)
  * @method  bool    getAllOffers()
  * @method  $this   setAllOffers(bool $flag)
+ * @method  bool    getAllShippingZones()
+ * @method  $this   setAllShippingZones(bool $allShippingZones) If false (default), filters the offers with the given shipping zones or all shop shipping zones if no shipping zones are given. If true, selects all shop shipping zones and ignores the provided shipping_zones.
  * @method  array   getChannelCodes()
  * @method  $this   setChannelCodes(array $channelCodes)
  * @method  array   getOfferStateCodes()
@@ -76,6 +78,7 @@ abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
         'product_references',
         'pricing_channel_code',
         'shipping_zones',
+        'all_shipping_zones',
         'pricing_customer_organization_id'
     ];
 

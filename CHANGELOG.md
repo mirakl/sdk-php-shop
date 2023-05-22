@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.19.0 - 2023-05-22
+### Features
+- Add OR13, OR14 and OR15 APIs
+- Add DR12 API
+- Add origin price for OR01, OR11 and OR05 APIs
+- Add fully_refunded flag on orders
+- Add locale field to PM11 API
+- Add all_shipping_zones query parameter to P11 API
+- Add max_quantity_to_discount field to PR01 and PR02 APIs
+- Add models filter to OF51 and OF52 APIs
+- Add refund_state_code filter to OR11 and OR13 APIs
+- Remove product feeds nodes and query parameters from CM51 and CM54 APIs
+- Add eco-contributions to DR12 API
+- Support data origins in CM51 and CM54 APIs
+- Update promotions allowed statuses
+- Add shop-sku field to OF51 API
+- Add tax purchase rate to OR05 API
+- Add PL01, PL04 and PL11 APIs
+- Add originUnitPriceExcludingTaxes and originUnitPriceIncludingTaxes in DR12 API
+- Add product sku to DR12 API
+- Add tax recalculation flag to 0R01, OR11, OR13 and Q07 APIs
+- Add estimated delivery date to SH01, SH02 and P11 APIs
+- Add issuer_id to DR11 API
+- Add epr_category_code to OF21, OF22, OF51, OF54 and P11 APIs
+- Add psp_name to invoice and transaction APIs
+- Add support for israeli bank account
+- Add close_product_orders param to AN01 API
+- Add invoice consistency and override issue-date and due-date in DR74 API
+- Add seller-operator messaging reason types
+- Add eco-contributions to Q07, OR01, OR04, OR11, OR28, OR30 and OR32 APIs
+- Add order_id to manual accounting document line
+- Add platform model to OF54 API
+### Fixes
+- Fixed status mapping in invoice APIs
+
 ## v1.18.1 - 2023-05-05
 ### Fixes
 - Fix `psr/http-message` package compatibility

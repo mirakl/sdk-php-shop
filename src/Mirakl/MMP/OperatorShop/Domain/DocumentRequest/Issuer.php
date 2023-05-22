@@ -4,6 +4,8 @@ namespace Mirakl\MMP\OperatorShop\Domain\DocumentRequest;
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
+ * @method string       getId()
+ * @method $this        setId(string $id)
  * @method string       getType()
  * @method $this        setType(string $type)
  * @method Organization getOrganization()

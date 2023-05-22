@@ -1,14 +1,11 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Offer\Async\Export;
 
-use Mirakl\Core\Request\AbstractRequest;
+use Mirakl\Core\Request\AbstractTrackingRequest;
 use Mirakl\MMP\Common\Domain\Offer\Async\Export\PollOffersExportAsyncStatusResult;
 
 /**
  * (OF53) Poll the status of an asynchronous offers export (OF52)
- *
- * @method  string  getTrackingId()
- * @method  string  setTrackingId(string $trackingId)
  *
  * <code>
  *
@@ -42,28 +39,12 @@ use Mirakl\MMP\Common\Domain\Offer\Async\Export\PollOffersExportAsyncStatusResul
  *
  * </code>
  */
-class PollOffersExportAsyncRequest extends AbstractRequest
+class PollOffersExportAsyncRequest extends AbstractTrackingRequest
 {
     /**
      * @var string
      */
     protected $endpoint = '/offers/export/async/status/{tracking_id}';
-
-    /**
-     * @var array
-     */
-    protected $uriVars = [
-        '{tracking_id}' => 'tracking_id'
-    ];
-
-    /**
-     * @param string $trackingId
-     */
-    public function __construct($trackingId)
-    {
-        parent::__construct();
-        $this->setTrackingId($trackingId);
-    }
 
     /**
      * @inheritdoc

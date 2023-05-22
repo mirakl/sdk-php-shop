@@ -6,8 +6,6 @@ use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult;
 
 /**
- * (OF52) Export offers asynchronously
- *
  * @method  string[]    getChannelCodes()
  * @method  $this       setChannelCodes(string[] $channelCodes)
  * @method  string      getExportType()
@@ -22,52 +20,14 @@ use Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult;
  * @method  $this       setLastRequestDate(\DateTime $lastRequestDate)
  * @method  int         getMegabytesPerChunk()
  * @method  $this       setMegabytesPerChunk(int $megabytesPerChunk)
- * @method  string      getModels()
- * @method  $this       setModels(string $models)
+ * @method  string[]    getModels()
+ * @method  $this       setModels(string[] $models)
  * @method  string      getRenameFields()
  * @method  $this       setRenameFields(string $renameFields)
  * @method  string[]    getShippingZones()
  * @method  $this       setShippingZones(string[] $shippingZones)
- *
- * Example:
- *
- * <code>
- *
- * require 'vendor/autoload.php';
- *
- * use Mirakl\MMP\Common\Client\CommonApiClient as MiraklApiClient;
- * use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncRequest;
- *
- * // Environment parameters
- * $url = 'https://your.env/api';
- * $apiKey = '49936c2a-6b1a-4e0a-97c8-97bbf77630c0';
- *
- * try {
- * // Building request
- * $request = new OffersExportAsyncRequest();
- *
- * // Instantiating the Mirakl API Client
- * $api = new MiraklApiClient($url, $apiKey);
- *
- * // Set export parameters
- * $request->setExportType('application/json');
- * $request->setMegabytesPerChunk(10);
- * $request->setLastRequestDate(new \DateTime('2022-10-01 00:00:00'));
- *
- * // Calling the API
- * $result = $api->createOffersExportAsync($request);
- *
- * // \Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult
- * var_dump($result); // decorated response
- * $trackingId = $result->getTrackingId();
- *
- * } catch (\Exception $e) {
- * // An exception is thrown if object requested is not found or if an error occurs
- * var_dump($e->getTraceAsString());
- * }
- * </code>
  */
-class OffersExportAsyncRequest extends AbstractRequest
+abstract class AbstractOffersExportAsyncRequest extends AbstractRequest
 {
     use LocalizableTrait;
 

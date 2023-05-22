@@ -5,17 +5,18 @@ use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\Core\Response\Decorator\CsvTrait as CsvResponseDecorator;
 
 /**
- * @method  array   getChannelCodes()
- * @method  $this   setChannelCodes(array $channelCodes)
- * @method  bool    isIncludeInactiveOffers()
- * @method  $this   setIncludeInactiveOffers(bool $includeInactiveOffers)
- * @method  array   getShippingZones()
- * @method  $this   setShippingZones(array $shippingZones)
+ * @method  array     getChannelCodes()
+ * @method  $this     setChannelCodes(array $channelCodes)
+ * @method  bool      isIncludeInactiveOffers()
+ * @method  $this     setIncludeInactiveOffers(bool $includeInactiveOffers)
+ * @method  string[]  getModels()
+ * @method  $this     setModels(string[] $models)
+ * @method  string[]  getShippingZones()
+ * @method  $this     setShippingZones(string[] $shippingZones)
  *
  * setIncludeInactiveOffers method can be used only if last_request_date is not specified.
  * If true, active offers as well as inactive offers are returned.
  * If false or not specified, only active offers are returned.
- *
  * @method  \DateTime   getLastRequestDate()
  *
  * If the lastRequestDate param is not set the API returns all the active offers.
@@ -40,6 +41,7 @@ abstract class AbstractOffersExportFileRequest extends AbstractRequest
         'last_request_date',
         'channel_codes',
         'include_inactive_offers',
+        'models',
         'shipping_zones'
     ];
 
@@ -62,6 +64,10 @@ abstract class AbstractOffersExportFileRequest extends AbstractRequest
         $params = parent::getQueryParams();
         if (isset($params['shipping_zones'])) {
             $params['shipping_zones'] = \Mirakl\tuples_to_query_param($this->getShippingZones());
+        }
+
+        if (isset($params['models'])) {
+            $params['models'] = \Mirakl\tuples_to_query_param($this->getModels());
         }
 
         return $params;

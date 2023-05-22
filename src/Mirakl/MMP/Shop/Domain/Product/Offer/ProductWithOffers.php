@@ -19,13 +19,16 @@ class ProductWithOffers extends MiraklObject
      * @var array
      */
     protected static $mapping = [
-        'category_code'      => 'product/category/code',
-        'category_label'     => 'product/category/label',
-        'category_type'      => 'product/category/type',
-        'measurement'        => 'product/measurement',
-        'product_references' => 'product/references',
-        'product_sku'        => 'product/sku',
-        'product_title'      => 'product/title',
+        'category_code'       => 'product/category/code',
+        'category_label'      => 'product/category/label',
+        'category_type'       => 'product/category/type',
+        'measurement'         => 'product/measurement',
+        'product_references'  => 'product/references',
+        'product_sku'         => 'product/sku',
+        'product_title'       => 'product/title',
+        'product_brand'       => 'product/brand',
+        'product_description' => 'product/description',
+        'product_media'       => 'product/media',
     ];
 
     /**

@@ -6,6 +6,8 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @method float getAmount()
  * @method $this setAmount(float $amount)
+ * @method float getRate()
+ * @method $this setRate(float $rate)
  */
 class PurchaseTax extends MiraklObject
 {
@@ -14,5 +16,6 @@ class PurchaseTax extends MiraklObject
      */
     protected static $mapping = [
         'purchase_amount' => 'amount',
+        'purchase_rate'   => 'rate',
     ];
 }

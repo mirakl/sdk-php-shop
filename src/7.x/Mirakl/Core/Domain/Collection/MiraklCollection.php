@@ -2,23 +2,12 @@
 namespace Mirakl\Core\Domain\Collection;
 
 use Mirakl\Core\Domain\ArrayableInterface;
+use Mirakl\Core\Response\Decorator;
 
-class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAggregate, \Countable
+class MiraklCollection extends AbstractMiraklArray
 {
     /**
-     * Collection items
-     *
-     * @var array
-     */
-    protected $items = [];
-
-    /**
-     * @var string|null
-     */
-    protected $itemClass;
-
-    /**
-     * @var int
+     * @var int|null
      */
     protected $totalCount;
 
@@ -28,7 +17,7 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      */
     public function __construct(array $items = [], $totalCount = null)
     {
-        $this->setItems($items);
+        parent::__construct($items);
         if (null !== $totalCount) {
             $this->setTotalCount($totalCount);
         }
@@ -43,14 +32,6 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
         $this->items[] = !is_object($item) ? $this->newItem($item) : $item;
 
         return $this;
-    }
-
-    /**
-     * @return  int
-     */
-    public function count()
-    {
-        return count($this->items);
     }
 
     /**
@@ -75,20 +56,11 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
      * Useful method for requests returning collections
      *
      * @param   string|null $key
-     * @return  \Mirakl\Core\Response\Decorator\MiraklCollection
+     * @return  Decorator\MiraklCollection
      */
-    public static function decorator($key = null)
+    public static function decorator(?string $key = null)
     {
-        return new \Mirakl\Core\Response\Decorator\MiraklCollection(static::class, $key);
-    }
-
-    /**
-     * @param   mixed   $offset
-     * @return  bool
-     */
-    public function exists($offset)
-    {
-        return $this->offsetExists($offset);
+        return new Decorator\MiraklCollection(static::class, $key);
     }
 
     /**
@@ -117,35 +89,11 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     }
 
     /**
-     * @return  array
-     */
-    public function getItems()
-    {
-        return $this->items;
-    }
-
-    /**
      * @return  int
      */
     public function getTotalCount()
     {
         return $this->totalCount;
-    }
-
-    /**
-     * @return  \ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new \ArrayIterator($this->items);
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function isEmpty()
-    {
-        return empty($this->items);
     }
 
     /**
@@ -165,122 +113,11 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
     }
 
     /**
-     * @param   array   $item
-     * @return  array|object
-     */
-    public function newItem(array $item)
-    {
-        return strlen($this->itemClass) ? new $this->itemClass($item) : $item;
-    }
-
-    /**
-     * @param   mixed   $offset
-     * @return  bool
-     */
-    public function offsetExists($offset)
-    {
-        return isset($this->items[$offset]);
-    }
-
-    /**
-     * @param   mixed   $offset
-     * @return  mixed
-     */
-    public function offsetGet($offset)
-    {
-        return isset($this->items[$offset]) ? $this->items[$offset] : null;
-    }
-
-    /**
-     * @param   mixed   $key
-     * @param   mixed   $value
-     * @return  $this
-     */
-    public function offsetSet($key, $value)
-    {
-        $this->items[$key] = $value;
-
-        return $this;
-    }
-
-    /**
-     * @param   mixed   $offset
-     * @return  $this
-     */
-    public function offsetUnset($offset)
-    {
-        if (isset($this->items[$offset])) {
-            unset($this->items[$offset]);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return  mixed
      */
     public function prev()
     {
         return prev($this->items);
-    }
-
-    /**
-     * @param   mixed   $offset
-     * @return  $this
-     */
-    public function remove($offset)
-    {
-        return $this->offsetUnset($offset);
-    }
-
-    /**
-     * @return  $this
-     */
-    public function reset()
-    {
-        $this->items = [];
-
-        return $this;
-    }
-
-    /**
-     * @param   mixed   $key
-     * @param   mixed   $value
-     * @return  $this
-     */
-    public function set($key, $value)
-    {
-        return $this->offsetSet($key, $value);
-    }
-
-    /**
-     * @param   string  $class
-     * @return  $this
-     */
-    public function setItemClass($class)
-    {
-        $this->itemClass = $class;
-
-        return $this;
-    }
-
-    /**
-     * @param   array   $items
-     * @return  $this
-     */
-    public function setItems(array $items)
-    {
-        if ($this->itemClass) {
-            array_walk($items, function(&$item) {
-                if (is_array($item)) {
-                    $item = $this->newItem($item);
-                }
-            });
-        }
-
-        $this->items = $items;
-
-        return $this;
     }
 
     /**
@@ -292,36 +129,5 @@ class MiraklCollection implements ArrayableInterface, \ArrayAccess, \IteratorAgg
         $this->totalCount = $totalCount;
 
         return $this;
-    }
-
-    /**
-     * @return  array
-     */
-    public function toArray()
-    {
-        $result = [];
-        foreach ($this as $item) {
-            if (is_object($item) && $item instanceof ArrayableInterface) {
-                $item = $item->toArray();
-            }
-            $result[] = $item;
-        }
-
-        return $result;
-    }
-
-    /**
-     * @param   string  $method
-     * @param   array   $args
-     * @return  array
-     */
-    public function walk($method, array $args = [])
-    {
-        $result = [];
-        foreach ($this as $item) {
-            $result[] = call_user_func_array([$item, $method], $args);
-        }
-
-        return $result;
     }
 }

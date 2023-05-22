@@ -30,6 +30,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this               setLastUpdated(\DateTime $lastUpDated)
  * @method  string              getPaymentState()
  * @method  $this               setPaymentState(string $paymentState)
+ * @method  string              getPspName()
+ * @method  $this               setPspName(string $pspName)
  * @method  string              getType()
  * @method  $this               setType(string $type)
  */

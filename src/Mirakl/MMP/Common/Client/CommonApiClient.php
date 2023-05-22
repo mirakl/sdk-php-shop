@@ -14,7 +14,6 @@ use Mirakl\MMP\Common\Request\Locale\GetLocalesRequest;
 use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncFileCsvRequest;
 use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncFileJsonRequest;
 use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncFileRequest;
-use Mirakl\MMP\Common\Request\Offer\Async\Export\OffersExportAsyncRequest;
 use Mirakl\MMP\Common\Request\Offer\Async\Export\PollOffersExportAsyncRequest;
 use Mirakl\MMP\Common\Request\Payment\Transaction\ExportTransactionLinesAsyncFilesRequest;
 use Mirakl\MMP\Common\Request\Payment\Transaction\ExportTransactionLinesAsyncRequest;
@@ -22,7 +21,6 @@ use Mirakl\MMP\Common\Request\Payment\Transaction\ExportTransactionLinesAsyncSta
 use Mirakl\MMP\Common\Request\Version\GetVersionRequest;
 
 /**
- * @method OffersExportAsyncTrackingResult   createOffersExportAsync(OffersExportAsyncRequest $request)
  * @method AsyncExportOfferCollection        getOffersExportAsyncFile(OffersExportAsyncFileRequest $request)
  * @method FileWrapper                       getOffersExportAsyncFileCsv(OffersExportAsyncFileCsvRequest $request)
  * @method FileWrapper                       getOffersExportAsyncFileJson(OffersExportAsyncFileJsonRequest $request)

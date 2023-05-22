@@ -11,7 +11,7 @@ use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionTriggerCollection;
 /**
  * @method  float                                   getAmountOff()
  * @method  $this                                   setAmountOff(float $amountOff)
- * @method  PromotionChannelCollection              getChannels()
+ * @method  PromotionChannelCollection              getChannels() Channels on which the promotion applied. If none, promotion applied on all channels
  * @method  $this                                   setChannels(PromotionChannelCollection $channels)
  * @method  \DateTime                               getDateCreated()
  * @method  $this                                   setDateCreated(\DateTime $dateCreated)
@@ -23,6 +23,8 @@ use Mirakl\MMP\Common\Domain\Collection\Promotion\PromotionTriggerCollection;
  * @method  $this                                   setInternalId(string $internalId)
  * @method  \DateTime                               getLastUpdated()
  * @method  $this                                   setLastUpdated(\DateTime $lastUpdated)
+ * @method  int                                     getMaxQuantityToDiscount() Maximum quantity of items on which a percentage off discount applies. Only applicable when promotion is of type PERCENTAGE_OFF, null otherwise
+ * @method  $this                                   setMaxQuantityToDiscount(int $maxQuantityToDiscount)
  * @method  PromotionMediaCollection                getMedia()
  * @method  $this                                   setMedia(PromotionMediaCollection|array $media)
  * @method  float                                   getPercentageOff()
@@ -46,9 +48,11 @@ abstract class AbstractPromotion extends MiraklObject
     const TYPE_AMOUNT_OFF     = 'AMOUNT_OFF';
     const TYPE_FREE_ITEMS     = 'FREE_ITEMS';
 
-    const STATE_ACTIVE  = 'ACTIVE';  // The promotion is within its availability date
-    const STATE_PENDING = 'PENDING'; // The promotion is not yet active
-    const STATE_EXPIRED = 'EXPIRED'; // The promotion is not active anymore
+    const STATE_ACTIVE     = 'ACTIVE';  // The promotion is within its availability date
+    const STATE_PENDING    = 'PENDING'; // The promotion is not yet active
+    const STATE_EXPIRED    = 'EXPIRED'; // The promotion is not active anymore
+    const PENDING_APPROVAL = 'PENDING_APPROVAL'; // The promotion is waiting for approval
+    const REJECTED         = 'REJECTED'; // The promotion has been rejected
 
     /**
      * @var array

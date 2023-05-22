@@ -26,6 +26,8 @@ use Mirakl\MMP\Shop\Domain\Collection\Payment\Transaction\TransactionLineCollect
  * @method  $this       setOrderLineId(string $orderLineId)
  * @method  string      getPaymentState()
  * @method  $this       setPaymentState(string $paymentState)
+ * @method  string      getPspName()
+ * @method  $this       setPspName(string $pspName)
  * @method  \DateTime   getTransactionDateFrom()
  * @method  $this       setTransactionDateFrom(\DateTime $transactionDateFrom)
  * @method  \DateTime   getTransactionDateTo()
@@ -83,6 +85,7 @@ class TransactionLineRequest extends AbstractRequest
         'transaction_date_from',
         'transaction_date_to',
         'transaction_type',
+        'psp_name',
     ];
 
     /**

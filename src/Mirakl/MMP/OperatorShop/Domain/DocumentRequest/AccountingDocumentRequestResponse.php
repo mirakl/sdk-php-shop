@@ -47,7 +47,7 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\InitialDocumentCol
  * @method $this                                 setIssuer(Issuer|array $issuer)
  * @method Recipient                             getRecipient()
  * @method $this                                 setRecipient(Recipient|array $recipient)
- * @method DocumentRequestLineResponseCollection getLines()
+ * @method DocumentRequestLineResponseCollection getLines() @deprecated Please use DR12 to get lines instead.
  * @method $this                                 setLines(DocumentRequestLineResponseCollection|array $lines)
  * @method InitialDocumentCollection             getInitialDocuments()
  * @method $this                                 setInitialDocuments(InitialDocumentCollection|array $initialDocuments)

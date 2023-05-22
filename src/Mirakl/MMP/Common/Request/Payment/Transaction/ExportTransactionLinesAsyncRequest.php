@@ -37,6 +37,8 @@ use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsync;
  * @method $this     setPaymentState(string[] $paymentState)
  * @method string    getPaymentVoucherNumber()
  * @method $this     setPaymentVoucherNumber(string $paymentVoucherNumber)
+ * @method  string   getPspName()
+ * @method  $this    setPspName(string $pspName)
  * @method int       getShopId()
  * @method $this     setShopId(int $shopId)
  * @method \DateTime getTransactionDateFrom()
@@ -117,7 +119,8 @@ class ExportTransactionLinesAsyncRequest extends AbstractRequest
         'shop_model',
         'transaction_date_from',
         'transaction_date_to',
-        'transaction_type'
+        'transaction_type',
+        'psp_name',
     ];
 
     /**

@@ -19,16 +19,18 @@ use Mirakl\MMP\Common\Domain\Offer\Shipping\ShippingPriceByZoneAndType;
  * @method  $this                          setLogisticClassCode(string $logisticClassCode)
  * @method  int                            getMaxOrderQuantity()
  * @method  $this                          setMaxOrderQuantity(int $maxOrderQuantity)
+ * @method  ProductMeasurementCollection   getMeasurements()
+ * @method  $this                          setMeasurements(ProductMeasurementCollection $measurements)
  * @method  int                            getMinOrderQuantity()
  * @method  $this                          setMinOrderQuantity(int $minOrderQuantity)
  * @method  int                            getMinQuantityAlert()
  * @method  $this                          setMinQuantityAlert(int $minQuantityAlert)
- * @method  string                         getProductSku()
- * @method  $this                          setProductSku(string $sku)
  * @method  int                            getPackageQuantity()
  * @method  $this                          setPackageQuantity(int $packageQuantity)
- * @method  ProductMeasurementCollection   getMeasurements()
- * @method  $this                          setMeasurements(ProductMeasurementCollection $measurements)
+ * @method  string                         getProductSku()
+ * @method  $this                          setProductSku(string $sku)
+ * @method  string                         getShopSku()
+ * @method  $this                          setShopSku(string $shopSku)
  */
 abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
 {
@@ -47,6 +49,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
         'state-code'                    => 'state_code',
         'shop-id'                       => 'shop_id',
         'shop-name'                     => 'shop_name',
+        'shop-sku'                      => 'shop_sku',
         'logistic-class'                => 'logistic_class_code',
         'favorite-rank'                 => 'favorite_rank',
         'origin-price'                  => 'discount/origin_price',
@@ -221,7 +224,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
-     * @param array $data
+     * @param  array $data
      * @return array
      */
     public function getOfferEcoContributions(array $data)
@@ -240,6 +243,44 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
                 $ecoContribution->setEcoContributionAmount($ecoContributionAmount);
                 $ecoContributions[] = $ecoContribution;
             }
+        }
+
+        return $ecoContributions;
+    }
+
+    /**
+     * @param  array $data
+     * @return array
+     */
+    protected function getOfferEcoContributionsV2(array $data)
+    {
+        // Collect eco-contributions by EPR category code
+        $ecoContributions = [];
+        foreach ($data as $key => $value) {
+            $key = trim($key);
+
+            preg_match('/^eco-contribution-amount\[(.+)\]$/', $key, $matches);
+
+            if (empty($matches[1])) {
+                continue;
+            }
+
+            list (, $eprCode) = $matches;
+
+            $ecoContribution = new EcoContribution();
+            $ecoContribution->setEprCategoryCode($eprCode);
+
+            $ecoContributionAmountColumn = sprintf('eco-contribution-amount[%s]', $eprCode);
+            if (isset($data[$ecoContributionAmountColumn])) {
+                $ecoContribution->setEcoContributionAmount($data[$ecoContributionAmountColumn]);
+            }
+
+            $ecoContributionProducerIdColumn = sprintf('producer-id[%s]', $eprCode);
+            if (isset($data[$ecoContributionProducerIdColumn])) {
+                $ecoContribution->setProducerId($data[$ecoContributionProducerIdColumn]);
+            }
+
+            $ecoContributions[] = $ecoContribution;
         }
 
         return $ecoContributions;
@@ -281,7 +322,14 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
         $this->setMeasurements($measurementsCollection);
 
         $ecoContributionCollection = new EcoContributionCollection();
+
+        // Support eco-contributions V1 if provided
         foreach ($this->getOfferEcoContributions($key) as $ecoContribution) {
+            $ecoContributionCollection->add($ecoContribution);
+        }
+
+        // Support eco-contributions V2 if provided
+        foreach ($this->getOfferEcoContributionsV2($key) as $ecoContribution) {
             $ecoContributionCollection->add($ecoContribution);
         }
 

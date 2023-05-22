@@ -16,6 +16,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method  $this         setShippingPriceUnit(float $shippingPriceUnit)
  * @method  DeliveryTime  getDeliveryTime()
  * @method  $this         setDeliveryTime(DeliveryTime $deliveryTime)
+ * @method  string        getCutOffTime()
+ * @method  $this         setCutOffTime(string $cutOffTime)
  */
 class ShippingPriceByZoneAndType extends MiraklObject
 {

@@ -5,4 +5,5 @@ class AccountingDocumentPaymentStatus
 {
     const AWAITING_PAYMENT = 'AWAITING_PAYMENT';
     const PAID             = 'PAID';
+    const PENDING          = 'PENDING';
 }

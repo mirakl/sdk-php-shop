@@ -7,6 +7,8 @@ use Mirakl\MMP\Common\Domain\Collection\Product\Offer\ProductReferenceCollection
 /**
  * @method ProductReferenceCollection getReferences()
  * @method $this                      setReferences(ProductReferenceCollection|array $references)
+ * @method string                     getSku()
+ * @method $this                      setSku(string $sku)
  * @method string                     getTitle()
  * @method $this                      setTitle(string $title)
  */

@@ -58,6 +58,14 @@ use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceUser;
  * @method  $this                           setType(string $type)
  * @method  InvoiceUser                     getIssuingUser()
  * @method  $this                           setIssuingUser(array|InvoiceUser $issuingUser)
+ * @method  string                          getPspName()
+ * @method  $this                           setPspName(string $pspName)
+ * @method  string                          getShopModel()
+ * @method  $this                           setShopModel(string $shopModel)
+ * @method  \DateTime                       getStartDate()
+ * @method  $this                           setStartDate(\DateTime $startDate)
+ * @method  \DateTime                       getEndDate()
+ * @method  $this                           setEndDate(\DateTime $endDate)
  */
 class Invoice extends MiraklObject
 {

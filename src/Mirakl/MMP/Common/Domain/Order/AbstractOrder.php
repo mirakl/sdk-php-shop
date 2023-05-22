@@ -26,6 +26,8 @@ use Mirakl\MMP\Common\Domain\Promotion\OrderPromotionsSummary;
  * @method  $this                           setDeliveryDate(DeliveryDate $deliveryDate)
  * @method  Fulfillment                     getFulfillment()
  * @method  $this                           setFulfillment(Fulfillment $fulfillment)
+ * @method  bool                            getFullyRefunded()
+ * @method  $this                           setFullyRefunded(bool $fullyRefunded)
  * @method  bool                            getHasCustomerMessage()
  * @method  $this                           setHasCustomerMessage(bool $hasCustomerMessage)
  * @method  bool                            getHasIncident()

@@ -3,6 +3,7 @@ namespace Mirakl\MMP\Common\Domain\Order;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
+use Mirakl\MMP\Common\Domain\Collection\Order\EcoContribution\OrderLineEcoContributionCollection;
 use Mirakl\MMP\Common\Domain\Collection\Order\RefundCollection;
 use Mirakl\MMP\Common\Domain\Collection\Order\Tax\OrderTaxAmountCollection;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\AppliedPromotionCollection;
@@ -12,52 +13,54 @@ use Mirakl\MMP\Common\Domain\Collection\Product\ProductMediaCollection;
 use Mirakl\MMP\Common\Domain\Collection\Order\CancelationCollection;
 
 /**
- * @method  AdditionalFieldValueCollection  getAdditionalFields()
- * @method  $this                           setAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
- * @method  CancelationCollection           getCancelations()
- * @method  $this                           setCancelations(array|CancelationCollection $cancelations)
- * @method  bool                            getCanRefund()
- * @method  $this                           setCanRefund(bool $flag)
- * @method  OrderLineCommission             getCommission()
- * @method  $this                           setCommission(array|OrderLineCommission $commission)
- * @method  OrderLineHistory                getHistory()
- * @method  $this                           setHistory(array|OrderLineHistory $history)
- * @method  string                          getId()
- * @method  $this                           setId(string $id)
- * @method  int                             getIndex()
- * @method  $this                           setIndex(int $index)
- * @method  OrderLineMeasurement            getMeasurement()
- * @method  $this                           setMeasurement(array|OrderLineMeasurement $measurement)
- * @method  OrderLineOfferInfo              getOffer()
- * @method  $this                           setOffer(array|OrderLineOfferInfo $offer)
- * @method  float                           getPrice()
- * @method  $this                           setPrice(float $price)
- * @method  string                          getPriceAdditionalInfo()
- * @method  $this                           setPriceAdditionalInfo(string $priceAdditionalInfo)
- * @method  AmountBreakdown                 getPriceAmountBreakdown()
- * @method  $this                           setPriceAmountBreakdown(array|AmountBreakdown $priceAmountBreakdown)
- * @method  ProductMediaCollection          getProductMedia()
- * @method  $this                           setProductMedia(array|ProductMediaCollection $media)
- * @method  AppliedPromotionCollection      getPromotions()
- * @method  $this                           setPromotions(array|AppliedPromotionCollection $promotions)
- * @method  PurchaseInformation             getPurchaseInformation()
- * @method  $this                           setPurchaseInformation(PurchaseInformation $purchaseInformation)
- * @method  int                             getQuantity()
- * @method  $this                           setQuantity(int $qty)
- * @method  RefundCollection                getRefunds()
- * @method  $this                           setRefunds(array|RefundCollection $refunds)
- * @method  float                           getShippingPrice()
- * @method  $this                           setShippingPrice(float $price)
- * @method  AmountBreakdown                 getShippingPriceAmountBreakdown()
- * @method  $this                           setShippingPriceAmountBreakdown(array|AmountBreakdown $shippingPriceAmountBreakdown)
- * @method  OrderTaxAmountCollection        getShippingTaxes()
- * @method  $this                           setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
- * @method  OrderLineStatus                 getStatus()
- * @method  $this                           setStatus(array|OrderLineStatus $status)
- * @method  OrderTaxAmountCollection        getTaxes()
- * @method  $this                           setTaxes(array|OrderTaxAmountCollection $shippingTaxes)
- * @method  float                           getTotalPrice()
- * @method  $this                           setTotalPrice(float $price)
+ * @method AdditionalFieldValueCollection      getAdditionalFields()
+ * @method $this                               setAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
+ * @method CancelationCollection               getCancelations()
+ * @method $this                               setCancelations(array|CancelationCollection $cancelations)
+ * @method bool                                getCanRefund()
+ * @method $this                               setCanRefund(bool $flag)
+ * @method OrderLineCommission                 getCommission()
+ * @method $this                               setCommission(array|OrderLineCommission $commission)
+ * @method OrderLineEcoContributionCollection  getEcoContributions()
+ * @method $this                               setEcoContributions(array|OrderLineEcoContributionCollection $ecoContributions)
+ * @method OrderLineHistory                    getHistory()
+ * @method $this                               setHistory(array|OrderLineHistory $history)
+ * @method string                              getId()
+ * @method $this                               setId(string $id)
+ * @method int                                 getIndex()
+ * @method $this                               setIndex(int $index)
+ * @method OrderLineMeasurement                getMeasurement()
+ * @method $this                               setMeasurement(array|OrderLineMeasurement $measurement)
+ * @method OrderLineOfferInfo                  getOffer()
+ * @method $this                               setOffer(array|OrderLineOfferInfo $offer)
+ * @method float                               getPrice()
+ * @method $this                               setPrice(float $price)
+ * @method string                              getPriceAdditionalInfo()
+ * @method $this                               setPriceAdditionalInfo(string $priceAdditionalInfo)
+ * @method AmountBreakdown                     getPriceAmountBreakdown()
+ * @method $this                               setPriceAmountBreakdown(array|AmountBreakdown $priceAmountBreakdown)
+ * @method ProductMediaCollection              getProductMedia()
+ * @method $this                               setProductMedia(array|ProductMediaCollection $media)
+ * @method AppliedPromotionCollection          getPromotions()
+ * @method $this                               setPromotions(array|AppliedPromotionCollection $promotions)
+ * @method PurchaseInformation                 getPurchaseInformation()
+ * @method $this                               setPurchaseInformation(PurchaseInformation $purchaseInformation)
+ * @method int                                 getQuantity()
+ * @method $this                               setQuantity(int $qty)
+ * @method RefundCollection                    getRefunds()
+ * @method $this                               setRefunds(array|RefundCollection $refunds)
+ * @method float                               getShippingPrice()
+ * @method $this                               setShippingPrice(float $price)
+ * @method AmountBreakdown                     getShippingPriceAmountBreakdown()
+ * @method $this                               setShippingPriceAmountBreakdown(array|AmountBreakdown $shippingPriceAmountBreakdown)
+ * @method OrderTaxAmountCollection            getShippingTaxes()
+ * @method $this                               setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
+ * @method OrderLineStatus                     getStatus()
+ * @method $this                               setStatus(array|OrderLineStatus $status)
+ * @method OrderTaxAmountCollection            getTaxes()
+ * @method $this                               setTaxes(array|OrderTaxAmountCollection $shippingTaxes)
+ * @method float                               getTotalPrice()
+ * @method $this                               setTotalPrice(float $price)
  */
 class ShopOrderLine extends MiraklObject
 {
@@ -78,6 +81,7 @@ class ShopOrderLine extends MiraklObject
         'offer_state_code'              => 'offer/state_code',
         'description'                   => 'offer/description',
         'price_unit'                    => 'offer/price',
+        'origin_unit_price'             => 'offer/origin_price',
         'product_sku'                   => 'offer/product/sku',
         'product_title'                 => 'offer/product/title',
         'product_medias'                => 'product_media',
@@ -102,6 +106,7 @@ class ShopOrderLine extends MiraklObject
         'additional_fields'               => [AdditionalFieldValueCollection::class, 'create'],
         'cancelations'                    => [CancelationCollection::class, 'create'],
         'commission'                      => [OrderLineCommission::class, 'create'],
+        'eco_contributions'               => [OrderLineEcoContributionCollection::class, 'create'],
         'history'                         => [OrderLineHistory::class, 'create'],
         'measurement'                     => [OrderLineMeasurement::class, 'create'],
         'offer'                           => [OrderLineOfferInfo::class, 'create'],
