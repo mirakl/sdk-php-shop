@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.19.1 - 2023-08-02
+### Fixes
+- Removed explicit package requirement of `psr/http-message` to avoid potential version incompatibility
+
 ## v1.19.0 - 2023-05-22
 ### Features
 - Add OR13, OR14 and OR15 APIs

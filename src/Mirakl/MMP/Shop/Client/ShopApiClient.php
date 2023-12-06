@@ -154,7 +154,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method ExportOfferCollection                 exportOffers(OffersExportRequest $request)
  * @method FileWrapper                           exportOffersToFile(OffersExportFileRequest $request)
  * @method ExportOrdersAsyncSubmitResponse       exportOrdersAsync(ExportOrdersAsyncSubmitRequest $request)
- * @method SeekableCollection                   getAccountingDocumentLinesRequests(GetAccountingDocumentLinesRequest $request)
+ * @method SeekableCollection                    getAccountingDocumentLinesRequests(GetAccountingDocumentLinesRequest $request)
  * @method SeekableCollection                    getAccountingDocumentsRequests(GetAccountingDocumentsRequest $request)
  * @method AdditionalFieldCollection             getAdditionalFields(GetAdditionalFieldRequest $request)
  * @method ChannelCollection                     getChannels(GetChannelsRequest $request)

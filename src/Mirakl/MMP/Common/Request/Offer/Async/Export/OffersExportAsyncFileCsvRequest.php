@@ -1,9 +1,7 @@
 <?php
 namespace Mirakl\MMP\Common\Request\Offer\Async\Export;
 
-use Mirakl\Core\Client\ApiClientInterface;
 use Mirakl\Core\Request\AbstractFileUrlRequest;
-use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\Core\Response\Decorator\CsvTrait as CsvResponseDecorator;
 
 /**
