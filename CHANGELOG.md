@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.19.3 - 2024-02-22
+### Fixes
+- Fix class 'Mirakl\MMP\FrontOperator\Domain\Offer' not found error
+- Fix API DR73 does not have the right header for downloading accounting document
+- Removed explicit package requirement of `psr/http-message` to avoid potential version incompatibility
+
 ## v1.19.0 - 2023-05-22
 ### Features
 - Add OR13, OR14 and OR15 APIs

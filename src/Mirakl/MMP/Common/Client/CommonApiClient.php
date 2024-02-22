@@ -5,7 +5,6 @@ use Mirakl\Core\Client\AbstractApiClient;
 use Mirakl\Core\Domain\FileWrapper;
 use Mirakl\MMP\Common\Domain\Collection\Locale\LocaleCollection;
 use Mirakl\MMP\Common\Domain\Collection\Offer\Async\Export\AsyncExportOfferCollection;
-use Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult;
 use Mirakl\MMP\Common\Domain\Offer\Async\Export\PollOffersExportAsyncStatusResult;
 use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsync;
 use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsyncStatus;

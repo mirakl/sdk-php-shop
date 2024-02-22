@@ -45,7 +45,7 @@ class ProductImportResult extends MiraklObject
         'has_transformed_file'            => 'transformed_file',
         'transform_lines_in_error'        => 'transformed_lines_in_error',
         'transform_lines_with_warning'    => 'transformed_lines_with_warning',
-        'transform_lines_in_succes'       => 'transformed_lines_in_success',
+        'transform_lines_in_success'      => 'transformed_lines_in_success',
         'transform_lines_read'            => 'transformed_lines_read',
     ];
 

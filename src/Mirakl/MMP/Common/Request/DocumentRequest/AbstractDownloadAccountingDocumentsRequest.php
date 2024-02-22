@@ -60,6 +60,15 @@ abstract class AbstractDownloadAccountingDocumentsRequest extends AbstractReques
     ];
 
     /**
+     * @inheritdoc
+     */
+    protected function init()
+    {
+        parent::init();
+        $this->addOption('headers', ['Accept' => 'application/octet-stream']);
+    }
+
+    /**
      * @throws RequestValidationException
      */
     protected function checkParams()

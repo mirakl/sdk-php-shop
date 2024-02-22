@@ -11,7 +11,7 @@ use Mirakl\MMP\Common\Domain\Product\Offer\ProductWithOffers;
  * @method  ProductWithOffers   offsetGet($offset)
  * @method  ProductWithOffers   last()
  *
- * @deprecated Use FrontOperator or Shop class instead
+ * @deprecated Use one of below classes instead based on your role (FrontOperator or Shop)
  * @see \Mirakl\MMP\FrontOperator\Domain\Collection\Product\Offer\ProductWithOffersCollection
  * @see \Mirakl\MMP\Shop\Domain\Collection\Product\Offer\ProductWithOffersCollection
  */

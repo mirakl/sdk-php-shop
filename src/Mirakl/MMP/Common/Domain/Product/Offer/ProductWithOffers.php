@@ -13,7 +13,7 @@ use Mirakl\MMP\Common\Domain\Offer\ProductInfoWithRefs;
  * @method  int                         getTotalCount()
  * @method  int                         setTotalCount(int $totalCount)
  *
- * @deprecated Use FrontOperator or Shop class instead
+ * @deprecated Use one of below classes instead based on your role (FrontOperator or Shop)
  * @see \Mirakl\MMP\FrontOperator\Domain\Product\Offer\ProductWithOffers
  * @see \Mirakl\MMP\Shop\Domain\Product\Offer\ProductWithOffers
  */
