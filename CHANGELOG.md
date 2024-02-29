@@ -1,9 +1,19 @@
 # Changelog
 
+## v1.20.0 - 2024-02-29
+### Features
+- Add request for OAuth2 client_credentials flow
+
 ## v1.19.3 - 2024-02-22
 ### Fixes
 - Fix class 'Mirakl\MMP\FrontOperator\Domain\Offer' not found error
+
+## v1.19.2 - 2024-01-16
+### Fixes
 - Fix API DR73 does not have the right header for downloading accounting document
+
+## v1.19.1 - 2023-08-02
+### Fixes
 - Removed explicit package requirement of `psr/http-message` to avoid potential version incompatibility
 
 ## v1.19.0 - 2023-05-22

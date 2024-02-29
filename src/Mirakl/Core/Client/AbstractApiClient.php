@@ -89,13 +89,15 @@ abstract class AbstractApiClient implements ApiClientInterface
     public $queryParams = [];
 
     /**
-     * @param   string  $baseUrl
-     * @param   string  $apiKey
+     * @param   string      $baseUrl
+     * @param   string|null $apiKey
      */
-    public function __construct($baseUrl, $apiKey)
+    public function __construct($baseUrl, $apiKey = null)
     {
         $this->setBaseUrl($baseUrl);
-        $this->setApiKey($apiKey);
+        if ($apiKey) {
+            $this->setApiKey($apiKey);
+        }
     }
 
     /**
@@ -173,7 +175,6 @@ abstract class AbstractApiClient implements ApiClientInterface
         }
 
         $bodyParams = $request->getBodyParams();
-
         if (!empty($bodyParams)) {
             if ($request->isJSON()) {
                 $options['json'] = $this->formatBodyParamsJson($bodyParams);
@@ -184,6 +185,11 @@ abstract class AbstractApiClient implements ApiClientInterface
 
         if (!isset($options['headers'])) {
             $options['headers'] = [];
+        }
+
+        $formParams = $request->getFormParams();
+        if (!empty($formParams)) {
+            $options['form_params'] = $formParams;
         }
 
         $options['headers']['X-Mirakl-Sdk-Uuid'] = uniqid('sdk_php_', true);
@@ -341,7 +347,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  string
+     * @return  string|null
      */
     public function getApiKey()
     {
@@ -393,6 +399,14 @@ abstract class AbstractApiClient implements ApiClientInterface
      */
     protected function getDefaultClient()
     {
+        return new GuzzleHttp\Client($this->getDefaultClientParams());
+    }
+
+    /**
+     * @return  array
+     */
+    protected function getDefaultClientParams()
+    {
         $stack = GuzzleHttp\HandlerStack::create();
         $stack->push(GuzzleHttp\Middleware::history($this->history));
 
@@ -401,15 +415,20 @@ abstract class AbstractApiClient implements ApiClientInterface
             $stack->push(GuzzleHttp\Middleware::log($logger, $this->getMessageFormatter()));
         }
 
-        return new GuzzleHttp\Client([
-            'handler' => $stack,
+        $headers = [
+            'User-Agent' => $this->getUserAgent() ?: static::getDefaultUserAgent(),
+            'Accept'     => 'application/json',
+        ];
+
+        if ($this->getApiKey()) {
+            $headers['Authorization'] = $this->getApiKey();
+        }
+
+        return [
+            'handler'  => $stack,
             'base_uri' => rtrim($this->getBaseUrl(), '/') . '/',
-            'headers' => [
-                'User-Agent' => $this->getUserAgent() ?: static::getDefaultUserAgent(),
-                'Authorization' => $this->getApiKey(),
-                'Accept' => 'application/json',
-            ],
-        ]);
+            'headers'  => $headers,
+        ];
     }
 
     /**

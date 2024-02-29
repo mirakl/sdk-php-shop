@@ -82,6 +82,13 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     public $boolOrAllParams = [];
 
     /**
+     * Used to send an application/x-www-form-urlencoded POST request
+     *
+     * @var array
+     */
+    public $formParams = [];
+
+    /**
      * Request options
      *
      * @var array
@@ -178,6 +185,14 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     public function getBodyParams()
     {
         return $this->buildParams($this->bodyParams);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getFormParams()
+    {
+        return $this->buildParams($this->formParams);
     }
 
     /**

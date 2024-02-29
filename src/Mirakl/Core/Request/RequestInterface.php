@@ -20,6 +20,13 @@ interface RequestInterface
     public function getBodyParams();
 
     /**
+     * Get request form parameters
+     *
+     * @return  array
+     */
+    public function getFormParams();
+
+    /**
      * Get request query parameters that should be duplicated
      *
      * @return  array
