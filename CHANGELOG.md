@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.20.1 - 2024-04-29
+### Fixes
+- Fix error if OF51 contains special chars \"
+
 ## v1.20.0 - 2024-02-29
 ### Features
 - Add request for OAuth2 client_credentials flow
