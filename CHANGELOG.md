@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.20.2 - 2024-05-15
+### Fixes
+- Fixed Excel files are corrupted when downloaded through the SDK
+
 ## v1.20.1 - 2024-04-29
 ### Fixes
 - Fix error if OF51 contains special chars \"

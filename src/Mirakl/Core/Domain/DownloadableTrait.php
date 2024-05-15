@@ -29,6 +29,10 @@ trait DownloadableTrait
             ob_clean();
         }
 
+        // Remove flags used to read CSV files because they can cause corruption with other file types (e.g. Excel)
+        // when they are retrieved from Mirakl with a content type `text/csv`
+        $this->file->setFlags(0);
+
         $this->file->rewind();
         $this->file->fpassthru();
         exit;
