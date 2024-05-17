@@ -291,8 +291,6 @@ if (!function_exists('\Mirakl\parse_file_response')) {
 
         if ($extension == 'csv') {
             $file->setFlags(\SplFileObject::READ_CSV
-                | \SplFileObject::DROP_NEW_LINE
-                | \SplFileObject::READ_AHEAD
                 | \SplFileObject::SKIP_EMPTY
             );
             $file->setCsvControl(';', '"', "\x80");
