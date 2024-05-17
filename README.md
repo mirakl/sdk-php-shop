@@ -2,6 +2,12 @@
 
 This is the official Mirakl PHP API client for the `shop` role.
 
+### How to install
+
+```bash
+composer require mirakl/sdk-php-shop
+```
+
 ### How to use
 
 ```php
