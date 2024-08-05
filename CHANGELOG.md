@@ -1,9 +1,13 @@
 # Changelog
 
+## v1.20.4 2024-06-04
+### Fixes
+- Add missing field `date_created` in OF54 and fix `available_end_date` format
+
 ## v1.20.3 - 2024-05-17
 ### Fixes
 - CSV file is corrupted with DROP_NEW_LINE and READ_AHEAD option
-￼
+
 ## v1.20.2 - 2024-05-15
 ### Fixes
 - Fixed Excel files are corrupted when downloaded through the SDK
