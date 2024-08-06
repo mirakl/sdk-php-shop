@@ -1,20 +1,25 @@
 # Changelog
 
-## v1.20.4 2024-06-04
+## v1.20.5 - 2024-08-05
 ### Fixes
-- Add missing field `date_created` in OF54 and fix `available_end_date` format
+- Removed compatibility with PHP 7 and now require PHP 8.1 or higher
 
-## v1.20.3 - 2024-05-17
+## v1.20.4 - 2024-06-06
 ### Fixes
-- CSV file is corrupted with DROP_NEW_LINE and READ_AHEAD option
+- Added the `date_created` missing field in OF54 API.
+- Fixed `available_end_date` format.
+
+## v1.20.3 - 2024-05-15
+### Fixes
+- Fixed corrupted CSV files with `DROP_NEW_LINE` and `READ_AHEAD` options.
 
 ## v1.20.2 - 2024-05-15
 ### Fixes
-- Fixed Excel files are corrupted when downloaded through the SDK
+- Fixed corrupted Excel files that are downloaded through the SDK.
 
 ## v1.20.1 - 2024-04-29
 ### Fixes
-- Fix error if OF51 contains special chars \"
+- Fixed the error that occurred if API OF51 contains the following special characters together with no space between them: `\"`
 
 ## v1.20.0 - 2024-02-29
 ### Features
