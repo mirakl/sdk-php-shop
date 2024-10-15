@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Shipment;
 
 use Mirakl\MMP\Common\Request\Shipment\AbstractShipShipmentsRequest;
@@ -29,4 +32,5 @@ use Mirakl\MMP\Common\Request\Shipment\AbstractShipShipmentsRequest;
  * </code>
  */
 class ShipShipmentsRequest extends AbstractShipShipmentsRequest
-{}
+{
+}

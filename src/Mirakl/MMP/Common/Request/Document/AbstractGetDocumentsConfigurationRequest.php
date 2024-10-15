@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Document;
 
 use Mirakl\Core\Domain\LocalizableTrait;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Common\Domain\Collection\Document\DocumentsConfigurationCollectio
 /**
  * (DO01) Get the list of all document types
  *
- * @method  string[]    getEntities()
- * @method  $this       setEntities(string[] $entities)
+ * @method string[] getEntities()
+ * @method $this    setEntities(string[] $entities)
  */
 abstract class AbstractGetDocumentsConfigurationRequest extends AbstractRequest
 {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Document;
 
 use Mirakl\Core\Domain\Collection\DocumentCollection;
@@ -11,9 +14,9 @@ use Mirakl\MMP\Common\Request\Document\AbstractDocumentsUploadRequest;
  * csv, doc, xls, ppt, pdf, odt, ods, odp, txt, rtf, png, jpg, gif.
  * An order can have a maximum of 50 documents.
  *
- * @method  string  getOrderId()
- * @method  $this   setOrderId(string $orderId)
- * @method  bool    hasDocuments()
+ * @method string getOrderId()
+ * @method $this  setOrderId(string $orderId)
+ * @method bool   hasDocuments()
  */
 abstract class AbstractUploadOrdersDocumentsRequest extends AbstractDocumentsUploadRequest
 {
@@ -35,8 +38,8 @@ abstract class AbstractUploadOrdersDocumentsRequest extends AbstractDocumentsUpl
     ];
 
     /**
-     * @param   DocumentCollection  $documents
-     * @param   string              $orderId
+     * @param DocumentCollection $documents
+     * @param string             $orderId
      */
     public function __construct(DocumentCollection $documents, $orderId)
     {

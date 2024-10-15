@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Error;
 
 /**
- * @method  Error   current()
- * @method  Error   first()
- * @method  Error   get($offset)
- * @method  Error   offsetGet($offset)
- * @method  Error   last()
+ * @method Error current()
+ * @method Error first()
+ * @method Error get($offset)
+ * @method Error offsetGet($offset)
+ * @method Error last()
  */
 class ErrorCollection extends MiraklCollection
 {
@@ -19,8 +22,8 @@ class ErrorCollection extends MiraklCollection
     protected $itemClass = Error::class;
 
     /**
-     * @param   string  $value
-     * @return  Error
+     * @param string $value
+     * @return Error
      */
     public function getByField($value)
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Offer\Importer;
 
 use Mirakl\Core\Domain\DateRangeTrait;
@@ -12,13 +15,13 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Order\Importer\OfferImportCollecti
  * (OF04) Get offer imports information and stats
  *
  * @method string   getMode()
- * @method $this    setMode(string $mode)           One of \Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportMode
+ * @method $this    setMode(string $mode)         One of \Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportMode
  * @method string[] getOrigins()
- * @method $this    setOrigins(string[] $origins)   One or more among \Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportOrigin
+ * @method $this    setOrigins(string[] $origins) One or more among \Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportOrigin
  * @method string   getShopId()
  * @method $this    setShopId(string $shopId)
  * @method string   getStatus()
- * @method $this    setStatus(string $status)       One of \Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportStatus
+ * @method $this    setStatus(string $status)     One of \Mirakl\MMP\OperatorShop\Domain\Offer\Importer\ImportStatus
  */
 abstract class AbstractOffersImportsRequest extends AbstractRequest
 {

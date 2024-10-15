@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Payment\Invoice;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -7,8 +10,8 @@ use Mirakl\Core\Response\Decorator\PdfTrait as PdfResponseDecorator;
 /**
  * (IV02) Download an invoice
  *
- * @method  string  getInvoiceId()
- * @method  $this   setInvoiceId(string $invoiceId)
+ * @method string getInvoiceId()
+ * @method $this  setInvoiceId(string $invoiceId)
  */
 abstract class AbstractDownloadInvoiceRequest extends AbstractRequest
 {
@@ -27,11 +30,12 @@ abstract class AbstractDownloadInvoiceRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $invoiceId
+     * @param string $invoiceId
      */
     public function __construct($invoiceId)
     {
         parent::__construct();
+
         $this->setInvoiceId($invoiceId);
     }
 }

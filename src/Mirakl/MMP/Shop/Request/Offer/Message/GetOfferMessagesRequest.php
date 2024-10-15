@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer\Message;
 
 use Mirakl\MMP\OperatorShop\Request\Offer\Message\AbstractGetOfferMessagesRequest;
@@ -20,4 +23,5 @@ use Mirakl\MMP\OperatorShop\Request\Offer\Message\AbstractGetOfferMessagesReques
  * </code>
  */
 class GetOfferMessagesRequest extends AbstractGetOfferMessagesRequest
-{}
+{
+}

@@ -1,10 +1,13 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain;
 
 class AttributeRequirementLevel
 {
-    const OPTIONAL    = 'OPTIONAL';
-    const REQUIRED    = 'REQUIRED';
-    const RECOMMENDED = 'RECOMMENDED';
-    const DISABLED    = 'DISABLED';
+    public const OPTIONAL    = 'OPTIONAL';
+    public const REQUIRED    = 'REQUIRED';
+    public const RECOMMENDED = 'RECOMMENDED';
+    public const DISABLED    = 'DISABLED';
 }

@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain\Product;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MCI\Common\Domain\Collection\Product\ProductDataSheetChannelValidationStatusCollection;
 
 /**
- * @method ProductDataSheetChannelValidationStatusCollection  getChannels()
- * @method $this                                              setChannels(ProductDataSheetChannelValidationStatusCollection $channels)
- * @method string                                             getStatus()
- * @method $this                                              setStatus(string $status) One of \Mirakl\MCI\Common\Domain\Product\ProductDataSheetValidationStatus
+ * @method ProductDataSheetChannelValidationStatusCollection getChannels()
+ * @method $this                                             setChannels(ProductDataSheetChannelValidationStatusCollection $channels)
+ * @method string                                            getStatus()
+ * @method $this                                             setStatus(string $status) One of \Mirakl\MCI\Common\Domain\Product\ProductDataSheetValidationStatus
  */
 class ProductDataSheetValidation extends MiraklObject
 {

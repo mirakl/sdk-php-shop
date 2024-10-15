@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 interface ArrayableInterface
@@ -6,22 +9,21 @@ interface ArrayableInterface
     /**
      * Give the value for an empty object
      *
-     * @return  mixed
+     * @return mixed
      */
     public function getEmptyValue();
 
     /**
      * Check if current object is empty
      *
-     * @return  bool
+     * @return bool
      */
     public function isEmpty();
 
     /**
      * Converts object to array
      *
-     * @return  array
+     * @return array
      */
     public function toArray();
-
 }

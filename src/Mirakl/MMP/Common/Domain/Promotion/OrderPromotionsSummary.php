@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Promotion;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Promotion\AppliedPromotionCollection;
 
 /**
- * @method  float                       getTotalDeducedAmount()
- * @method  $this                       setTotalDeducedAmount(float $totalDeducedAmount)
- * @method  AppliedPromotionCollection  getAppliedPromotions()
- * @method  $this                       setAppliedPromotions(array|AppliedPromotionCollection $appliedPromotions)
+ * @method float                      getTotalDeducedAmount()
+ * @method $this                      setTotalDeducedAmount(float $totalDeducedAmount)
+ * @method AppliedPromotionCollection getAppliedPromotions()
+ * @method $this                      setAppliedPromotions(array|AppliedPromotionCollection $appliedPromotions)
  */
 class OrderPromotionsSummary extends MiraklObject
 {

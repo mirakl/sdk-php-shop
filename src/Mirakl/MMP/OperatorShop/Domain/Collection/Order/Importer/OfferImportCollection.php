@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Domain\Collection\Order\Importer;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;

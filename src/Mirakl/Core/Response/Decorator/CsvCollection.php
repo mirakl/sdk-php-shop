@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Psr\Http\Message\ResponseInterface;
@@ -11,7 +14,7 @@ class CsvCollection extends CsvArray
     protected $class;
 
     /**
-     * @param   string  $class
+     * @param string $class
      */
     public function __construct($class = \Mirakl\Core\Domain\Collection\MiraklCollection::class)
     {

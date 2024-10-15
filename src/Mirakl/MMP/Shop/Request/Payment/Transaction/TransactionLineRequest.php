@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Payment\Transaction;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -10,30 +13,34 @@ use Mirakl\MMP\Shop\Domain\Collection\Payment\Transaction\TransactionLineCollect
 /**
  * (TL02) Get a listing of transactions (this resource supports seek pagination)
  *
- * @method  string      getAccountingDocumentId()
- * @method  $this       setAccountingDocumentId(string $accountingDocumentId)
- * @method  string      getAccountingDocumentNumber()
- * @method  $this       setAccountingDocumentNumber(string $accountingDocumentNumber)
- * @method  \DateTime   getDateCreatedFrom()
- * @method  $this       setDateCreatedFrom(\DateTime $dateCreatedFrom)
- * @method  \DateTime   getDateCreatedTo()
- * @method  $this       setDateCreatedTo(\DateTime $dateCreatedTo)
- * @method  \DateTime   getLastUpdatedFrom()
- * @method  $this       setLastUpdatedFrom(\DateTime $lastUpdatedFrom)
- * @method  string      getOrderId()
- * @method  $this       setOrderId(string $orderId)
- * @method  string      getOrderLineId()
- * @method  $this       setOrderLineId(string $orderLineId)
- * @method  string      getPaymentState()
- * @method  $this       setPaymentState(string $paymentState)
- * @method  string      getPspName()
- * @method  $this       setPspName(string $pspName)
- * @method  \DateTime   getTransactionDateFrom()
- * @method  $this       setTransactionDateFrom(\DateTime $transactionDateFrom)
- * @method  \DateTime   getTransactionDateTo()
- * @method  $this       setTransactionDateTo(\DateTime $transactionDateTo)
- * @method  string      getTransactionType()
- * @method  $this       setTransactionType(string $transactionType)
+ * @method string    getAccountingDocumentId()
+ * @method $this     setAccountingDocumentId(string $accountingDocumentId)
+ * @method string    getAccountingDocumentNumber()
+ * @method $this     setAccountingDocumentNumber(string $accountingDocumentNumber)
+ * @method \DateTime getDateCreatedFrom()
+ * @method $this     setDateCreatedFrom(\DateTime $dateCreatedFrom)
+ * @method \DateTime getDateCreatedTo()
+ * @method $this     setDateCreatedTo(\DateTime $dateCreatedTo)
+ * @method \DateTime getLastUpdatedFrom()
+ * @method $this     setLastUpdatedFrom(\DateTime $lastUpdatedFrom)
+ * @method string[]  getOrderId()
+ * @method $this     setOrderId(string[] $orderId)
+ * @method string[]  getOrderLineId()
+ * @method $this     setOrderLineId(string[] $orderLineId)
+ * @method string[]  getOrderReferencesForCustomer()
+ * @method $this     setOrderReferencesForCustomer(string[] $orderReferenceForCustomer)
+ * @method string[]  getOrderReferencesForSeller()
+ * @method $this     setOrderReferencesForSeller(string[] $orderReferenceForSeller)
+ * @method string[]  getPaymentState()
+ * @method $this     setPaymentState(string[] $paymentState)
+ * @method string[]  getShopModels()
+ * @method $this     setShopModels(string[] $shopModel)
+ * @method \DateTime getTransactionDateFrom()
+ * @method $this     setTransactionDateFrom(\DateTime $transactionDateFrom)
+ * @method \DateTime getTransactionDateTo()
+ * @method $this     setTransactionDateTo(\DateTime $transactionDateTo)
+ * @method string[]  getTransactionType()
+ * @method $this     setTransactionType(string[] $transactionType)
  *
  * Example:
  *
@@ -81,11 +88,14 @@ class TransactionLineRequest extends AbstractRequest
         'last_updated_from',
         'order_id',
         'order_line_id',
+        'order_references_for_customer' => 'order_reference_for_customer',
+        'order_references_for_seller' => 'order_reference_for_seller',
         'payment_state',
+        'psp_name',
+        'shop_models' => 'shop_model',
         'transaction_date_from',
         'transaction_date_to',
         'transaction_type',
-        'psp_name',
     ];
 
     /**

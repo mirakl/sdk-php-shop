@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
 
 /**
- * @method  AdditionalFieldValueCollection  getOrderLineAdditionalFields()
- * @method  $this                           setOrderLineAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
- * @method  string                          getOrderLineId()
- * @method  $this                           setOrderLineId(string $orderLineId)
+ * @method AdditionalFieldValueCollection getOrderLineAdditionalFields()
+ * @method $this                          setOrderLineAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
+ * @method string                         getOrderLineId()
+ * @method $this                          setOrderLineId(string $orderLineId)
  */
 abstract class AbstractOrderLineWithAdditionalFields extends MiraklObject
 {

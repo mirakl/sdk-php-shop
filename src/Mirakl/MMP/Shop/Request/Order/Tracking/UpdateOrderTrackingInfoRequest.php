@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Tracking;
 
 use Mirakl\MMP\Common\Request\Order\Tracking\AbstractUpdateOrderTrackingInfoRequest;
@@ -23,4 +26,5 @@ use Mirakl\MMP\Common\Request\Order\Tracking\AbstractUpdateOrderTrackingInfoRequ
  * </code>
  */
 class UpdateOrderTrackingInfoRequest extends AbstractUpdateOrderTrackingInfoRequest
-{}
+{
+}

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shipment;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -10,14 +13,16 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\ShipmentCollection;
 /**
  * (ST11) List shipments (this resource supports seek pagination)
  *
- * @method  array     getShipmentStateCodes()
- * @method  $this     setShipmentStateCodes(array $shipmentStateCodes)
- * @method  array     getOrderIds()
- * @method  $this     setOrderIds(array $ids)
- * @method  \DateTime getLastUpdatedFrom()
- * @method  $this     setLastUpdatedFrom(\DateTime $lastUpdatedFrom)
- * @method  \DateTime getLastUpdatedTo()
- * @method  $this     setLastUpdatedTo(\DateTime $lastUpdatedTo)
+ * @method \DateTime getLastUpdatedFrom()
+ * @method $this     setLastUpdatedFrom(\DateTime $lastUpdatedFrom)
+ * @method \DateTime getLastUpdatedTo()
+ * @method $this     setLastUpdatedTo(\DateTime $lastUpdatedTo)
+ * @method string[]  getOrderIds()
+ * @method $this     setOrderIds(string[] $ids)
+ * @method string[]  getShipmentCustomerDebitStateCodes()
+ * @method $this     setShipmentCustomerDebitStateCodes(string[] $shipmentCustomerDebitStateCodes)
+ * @method string[]  getShipmentStateCodes()
+ * @method $this     setShipmentStateCodes(array $shipmentStateCodes)
  */
 abstract class AbstractGetShipmentsRequest extends AbstractRequest
 {
@@ -32,21 +37,22 @@ abstract class AbstractGetShipmentsRequest extends AbstractRequest
     /**
      * @var array
      */
-    protected $duplicatedQueryParams = ['order_id', 'shipment_state_code'];
+    protected $duplicatedQueryParams = ['order_id', 'shipment_customer_debit_state_codes', 'shipment_state_code'];
 
     /**
      * @var array
      */
     public $queryParams = [
-        'order_ids'            => 'order_id',
-        'shipment_state_codes' => 'shipment_state_code',
-        'last_updated_from'    => 'last_updated_from',
-        'last_updated_to'      => 'last_updated_to',
+        'last_updated_from'                   => 'last_updated_from',
+        'last_updated_to'                     => 'last_updated_to',
+        'order_ids'                           => 'order_id',
+        'shipment_customer_debit_state_codes' => 'shipment_customer_debit_state_code',
+        'shipment_state_codes'                => 'shipment_state_code',
     ];
 
     /**
-     * @param   string  $orderId
-     * @return  $this
+     * @param string $orderId
+     * @return $this
      */
     public function addOrderId($orderId)
     {
@@ -61,8 +67,8 @@ abstract class AbstractGetShipmentsRequest extends AbstractRequest
     }
 
     /**
-     * @param   string  $stateCode
-     * @return  $this
+     * @param string $stateCode
+     * @return $this
      */
     public function addShipmentStateCode($stateCode)
     {

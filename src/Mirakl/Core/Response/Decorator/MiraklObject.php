@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Mirakl\Core\Response\ResponseDecoratorInterface;
@@ -12,7 +15,7 @@ class MiraklObject implements ResponseDecoratorInterface
     protected $class;
 
     /**
-     * @param   string  $class
+     * @param string $class
      */
     public function __construct($class = \Mirakl\Core\Domain\MiraklObject::class)
     {

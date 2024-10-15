@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain\Product;
 
 class ProductDataSheetValidationStatus
 {
-    const VALID        = 'VALID';
-    const INVALID      = 'INVALID';
-    const NOT_ANALYZED = 'NOT_ANALYZED';
+    public const VALID        = 'VALID';
+    public const INVALID      = 'INVALID';
+    public const NOT_ANALYZED = 'NOT_ANALYZED';
 }

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Update;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdateOrderCollection;
 /**
  * (OR04) Patch update orders
  *
- * @method  UpdateOrderCollection   getOrders()
- * @method  $this                   setOrders(array|UpdateOrderCollection $orders)
+ * @method UpdateOrderCollection getOrders()
+ * @method $this                 setOrders(array|UpdateOrderCollection $orders)
  *
  * Example:
  *
@@ -64,11 +67,12 @@ class UpdateOrdersRequest extends AbstractRequest
     ];
 
     /**
-     * @param   array|UpdateOrderCollection $orders
+     * @param array|UpdateOrderCollection $orders
      */
     public function __construct($orders)
     {
         parent::__construct();
+
         $this->setOrders($orders);
     }
 

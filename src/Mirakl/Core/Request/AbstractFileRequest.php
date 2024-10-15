@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 use Mirakl\Core\Domain\FileTrait;
@@ -19,11 +22,12 @@ abstract class AbstractFileRequest extends AbstractRequest
     protected $json = false;
 
     /**
-     * @param   string|array|\SplFileObject $file
+     * @param string|array|\SplFileObject $file
      */
     public function __construct($file)
     {
         parent::__construct();
+
         $this->setFile($file);
     }
 

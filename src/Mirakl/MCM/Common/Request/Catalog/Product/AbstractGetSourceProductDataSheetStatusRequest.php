@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCM\Common\Request\Catalog\Product;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
@@ -9,7 +12,7 @@ use Mirakl\Core\Request\AbstractRequest;
  * (CM11) Downloads the source product data sheet status
  *
  * @method string    getStatus()
- * @method $this     setStatus(string $status)  Possible values: LIVE or NOT_LIVE
+ * @method $this     setStatus(string $status) Possible values: LIVE or NOT_LIVE
  * @method array     getProviderUniqueIdentifier()
  * @method $this     setProviderUniqueIdentifier(array $providerUniqueIdentifier)
  * @method array     getUniqueIdentifier()

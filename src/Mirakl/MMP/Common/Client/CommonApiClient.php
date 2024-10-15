@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Client;
 
 use Mirakl\Core\Client\AbstractApiClient;
@@ -33,7 +36,7 @@ class CommonApiClient extends AbstractApiClient
     /**
      * (L01) Get active locales
      *
-     * @return  LocaleCollection
+     * @return LocaleCollection
      */
     public function getLocales()
     {
@@ -43,7 +46,7 @@ class CommonApiClient extends AbstractApiClient
     /**
      * (V01) Retrieve Mirakl environment version
      *
-     * @return  Version
+     * @return Version
      */
     public function getVersion()
     {

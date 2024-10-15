@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCM\Shop\Client;
 
 use Mirakl\Core\Client\AbstractApiClient;

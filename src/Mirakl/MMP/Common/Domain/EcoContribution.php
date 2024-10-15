@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -13,6 +16,6 @@ use Mirakl\Core\Domain\MiraklObject;
  */
 class EcoContribution extends MiraklObject
 {
-    const LIST_SEPARATOR = ',';
-    const PRODUCERID_AND_AMOUNT_SEPARATOR = '|';
+    public const LIST_SEPARATOR = ',';
+    public const PRODUCERID_AND_AMOUNT_SEPARATOR = '|';
 }

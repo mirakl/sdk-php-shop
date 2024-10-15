@@ -1,12 +1,15 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Version;
 
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MMP\Common\Domain\Version;
 
 /**
- * @method  bool    getFull()
- * @method  $this   setFull(bool $full)
+ * @method bool  getFull()
+ * @method $this setFull(bool $full)
  */
 class GetVersionRequest extends AbstractRequest
 {
@@ -21,11 +24,12 @@ class GetVersionRequest extends AbstractRequest
     public $queryParams = ['full'];
 
     /**
-     * @param   bool    $full
+     * @param bool $full
      */
     public function __construct($full = true)
     {
         parent::__construct();
+
         $this->setFull((bool) $full);
     }
 

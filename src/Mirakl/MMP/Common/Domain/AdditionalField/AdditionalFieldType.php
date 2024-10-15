@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\AdditionalField;
 
 /**
@@ -6,13 +9,13 @@ namespace Mirakl\MMP\Common\Domain\AdditionalField;
  */
 class AdditionalFieldType
 {
-    const STRING       = 'STRING';
-    const DATE         = 'DATE';
-    const NUMERIC      = 'NUMERIC';
-    const BOOLEAN      = 'BOOLEAN';
-    const LINK         = 'LINK';
-    const REGEX        = 'REGEX';
-    const TYPE_LIST    = 'LIST';
-    const TEXTAREA     = 'TEXTAREA';
-    const MULTI_VALUES = 'MULTIPLE_VALUES_LIST';
+    public const STRING       = 'STRING';
+    public const DATE         = 'DATE';
+    public const NUMERIC      = 'NUMERIC';
+    public const BOOLEAN      = 'BOOLEAN';
+    public const LINK         = 'LINK';
+    public const REGEX        = 'REGEX';
+    public const TYPE_LIST    = 'LIST';
+    public const TEXTAREA     = 'TEXTAREA';
+    public const MULTI_VALUES = 'MULTIPLE_VALUES_LIST';
 }

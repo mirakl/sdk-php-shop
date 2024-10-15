@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\PlatformConfiguration;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -10,6 +13,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this                 setModules(ModulesConfiguration|array $modules)
  * @method PlatformConfiguration getPlatformConfiguration()
  * @method $this                 setPlatformConfiguration(PlatformConfiguration|array $platformConfiguration)
+ * @method string                getPlatformName()
+ * @method $this                 setPlatformName(string $platformName)
  * @method string                getTenantName()
  * @method $this                 setTenantName(string $tenantName)
  * @method string                getTimezone()

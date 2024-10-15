@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Tracking;
 
 use Mirakl\MMP\Common\Domain\Order\Tracking\OrderTrackingInfo;
@@ -7,8 +10,8 @@ use Mirakl\MMP\Common\Request\Order\AbstractOrderRequest;
 /**
  * (OR23) Update carrier tracking information of a given order
  *
- * @method  OrderTrackingInfo   getTrackingOrderInfo()
- * @method  $this               setTrackingOrderInfo(array|OrderTrackingInfo $trackingOrderInfo)
+ * @method OrderTrackingInfo getTrackingOrderInfo()
+ * @method $this             setTrackingOrderInfo(array|OrderTrackingInfo $trackingOrderInfo)
  */
 abstract class AbstractUpdateOrderTrackingInfoRequest extends AbstractOrderRequest
 {
@@ -35,8 +38,8 @@ abstract class AbstractUpdateOrderTrackingInfoRequest extends AbstractOrderReque
     ];
 
     /**
-     * @param   string                  $orderId
-     * @param   array|OrderTrackingInfo $trackingOrderInfo
+     * @param string                  $orderId
+     * @param array|OrderTrackingInfo $trackingOrderInfo
      */
     public function __construct($orderId, $trackingOrderInfo)
     {

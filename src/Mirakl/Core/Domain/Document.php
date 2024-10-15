@@ -1,20 +1,23 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 /**
- * @method  string  getDocumentName()
- * @method  $this   setDocumentName(string $documentName)
- * @method  string  getDocumentType()
- * @method  $this   setDocumentType(string $documentType)
+ * @method string getDocumentName()
+ * @method $this  setDocumentName(string $documentName)
+ * @method string getDocumentType()
+ * @method $this  setDocumentType(string $documentType)
  */
 class Document extends FileWrapper
 {
     use DataObjectTrait;
 
     /**
-     * @param   mixed   $file
-     * @param   string  $documentName
-     * @param   string  $documentType
+     * @param mixed  $file
+     * @param string $documentName
+     * @param string $documentType
      */
     public function __construct($file, $documentName, $documentType)
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Refund;
 
 use Mirakl\MMP\OperatorShop\Domain\Order\Refund\RefundsCreated;
@@ -37,7 +40,7 @@ use Mirakl\MMP\OperatorShop\Request\Order\Refund\AbstractCreateRefundRequest;
  * $collection->add($refund);
  * $request = new CreateRefundRequest($collection);
  *
- * $result = $api->refundOrder($request);
+ * $result = $api->requestRefundOrder($request);
  * // $result => @see \Mirakl\MMP\OperatorShop\Domain\Order\Refund\RefundsCreated
  * </code>
  */

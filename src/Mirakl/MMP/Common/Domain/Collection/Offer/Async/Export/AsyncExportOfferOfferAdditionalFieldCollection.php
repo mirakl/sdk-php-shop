@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Offer\Async\Export;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Offer\Async\Export\AsyncExportOfferOfferAdditionalField;
 
 /**
- * @method  AsyncExportOfferOfferAdditionalField  current()
- * @method  AsyncExportOfferOfferAdditionalField  first()
- * @method  AsyncExportOfferOfferAdditionalField  get($offset)
- * @method  AsyncExportOfferOfferAdditionalField  offsetGet($offset)
- * @method  AsyncExportOfferOfferAdditionalField  last()
+ * @method AsyncExportOfferOfferAdditionalField current()
+ * @method AsyncExportOfferOfferAdditionalField first()
+ * @method AsyncExportOfferOfferAdditionalField get($offset)
+ * @method AsyncExportOfferOfferAdditionalField offsetGet($offset)
+ * @method AsyncExportOfferOfferAdditionalField last()
  */
 class AsyncExportOfferOfferAdditionalFieldCollection extends MiraklCollection
 {

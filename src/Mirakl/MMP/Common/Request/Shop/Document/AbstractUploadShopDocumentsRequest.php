@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shop\Document;
 
 use Mirakl\Core\Domain\Collection\DocumentCollection;
@@ -11,8 +14,8 @@ use Mirakl\MMP\Common\Request\Document\AbstractDocumentsUploadRequest;
  * The following extensions are supported: csv, doc, xls, ppt, pdf, odt, ods, odp, txt, rtf, png, jpg, gif, zip.
  * NB. A shop can have a maximum of 50 documents.
  *
- * @method  string  getShopId()
- * @method  $this   setShopId(string $shopId)
+ * @method string getShopId()
+ * @method $this  setShopId(string $shopId)
  */
 abstract class AbstractUploadShopDocumentsRequest extends AbstractDocumentsUploadRequest
 {
@@ -27,8 +30,8 @@ abstract class AbstractUploadShopDocumentsRequest extends AbstractDocumentsUploa
     public $bodyParams = ['shop_id'];
 
     /**
-     * @param   DocumentCollection  $documents
-     * @param   string              $shopId
+     * @param DocumentCollection $documents
+     * @param string             $shopId
      */
     public function __construct(DocumentCollection $documents, $shopId)
     {

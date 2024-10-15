@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Offer\Async\Export;
 
 use Mirakl\Core\Request\AbstractFileUrlRequest;
@@ -40,8 +43,8 @@ use Mirakl\Core\Response\Decorator\JsonTrait as JsonResponseDecorator;
  * var_dump($streamFile); // returns \SplTempFileObject
  *
  * } catch (\Exception $e) {
- *  // An exception is thrown if object requested is not found or if an error occurs
- *  var_dump($e->getTraceAsString());
+ * // An exception is thrown if object requested is not found or if an error occurs
+ * var_dump($e->getTraceAsString());
  * }
  *
  * </code>

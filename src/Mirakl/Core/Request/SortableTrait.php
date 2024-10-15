@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 trait SortableTrait
@@ -14,7 +17,7 @@ trait SortableTrait
     protected $dir;
 
     /**
-     * @return  string
+     * @return string
      */
     public function getDir()
     {
@@ -22,8 +25,8 @@ trait SortableTrait
     }
 
     /**
-     * @param   string  $dir
-     * @return  $this
+     * @param string $dir
+     * @return $this
      */
     public function setDir($dir)
     {
@@ -33,7 +36,7 @@ trait SortableTrait
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getSortBy()
     {
@@ -41,8 +44,8 @@ trait SortableTrait
     }
 
     /**
-     * @param   string  $sortBy
-     * @return  $this
+     * @param string $sortBy
+     * @return $this
      */
     public function setSortBy($sortBy)
     {
@@ -52,7 +55,7 @@ trait SortableTrait
     }
 
     /**
-     * @return  $this
+     * @return $this
      */
     public function sortAsc()
     {
@@ -62,7 +65,7 @@ trait SortableTrait
     }
 
     /**
-     * @return  $this
+     * @return $this
      */
     public function sortDesc()
     {

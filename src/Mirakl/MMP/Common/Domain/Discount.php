@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain;
 
 use Mirakl\Core\Domain\DateRangeTrait;
@@ -6,21 +9,21 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\DiscountRangeCollection;
 
 /**
- * @method  float                   getDiscountPrice()
- * @method  $this                   setDiscountPrice(float $discountPrice)
- * @method  float                   getOriginPrice()
- * @method  $this                   setOriginPrice(float $originPrice)
- * @method  float                   getPrice()
- * @method  $this                   setPrice(float $price)
- * @method  DiscountRangeCollection getRanges()
+ * @method float                   getDiscountPrice()
+ * @method $this                   setDiscountPrice(float $discountPrice)
+ * @method float                   getOriginPrice()
+ * @method $this                   setOriginPrice(float $originPrice)
+ * @method float                   getPrice()
+ * @method $this                   setPrice(float $price)
+ * @method DiscountRangeCollection getRanges()
  */
 class Discount extends MiraklObject
 {
     use DateRangeTrait;
 
     /**
-     * @param   mixed   $ranges
-     * @return  $this
+     * @param mixed $ranges
+     * @return $this
      */
     public function setRanges($ranges)
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 trait FileTrait
@@ -26,7 +29,7 @@ trait FileTrait
     protected $fileExtension;
 
     /**
-     * @return  string|null
+     * @return string|null
      */
     public function getContentType()
     {
@@ -34,7 +37,7 @@ trait FileTrait
     }
 
     /**
-     * @return  \SplFileObject
+     * @return \SplFileObject
      */
     public function getFile()
     {
@@ -42,7 +45,7 @@ trait FileTrait
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getFileName()
     {
@@ -50,8 +53,8 @@ trait FileTrait
     }
 
     /**
-     * @param   string|null $contentType
-     * @return  $this
+     * @param string|null $contentType
+     * @return $this
      */
     public function setContentType($contentType = null)
     {
@@ -61,8 +64,8 @@ trait FileTrait
     }
 
     /**
-     * @param   mixed   $file
-     * @return  $this
+     * @param mixed $file
+     * @return $this
      */
     public function setFile($file)
     {
@@ -76,9 +79,9 @@ trait FileTrait
      * One of csv, json, xml, pdf, zip, ...
      * @see MimeTypesTrait::$mimeTypes
      *
-     * @param   string  $extension
-     * @param   bool    $updateContentType
-     * @return  $this
+     * @param string $extension
+     * @param bool   $updateContentType
+     * @return $this
      */
     public function setFileExtension($extension, $updateContentType = true)
     {
@@ -92,8 +95,8 @@ trait FileTrait
     }
 
     /**
-     * @param   string  $fileName
-     * @return  $this
+     * @param string $fileName
+     * @return $this
      */
     public function setFileName($fileName)
     {

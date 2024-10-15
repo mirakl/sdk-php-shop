@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Message;
 
 use Mirakl\MMP\Common\Request\Message\AbstractGetThreadsRequest;
@@ -21,4 +24,5 @@ use Mirakl\MMP\Common\Request\Message\AbstractGetThreadsRequest;
  * </code>
  */
 class GetThreadsRequest extends AbstractGetThreadsRequest
-{}
+{
+}

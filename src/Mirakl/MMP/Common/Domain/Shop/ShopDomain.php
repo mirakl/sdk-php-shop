@@ -1,8 +1,11 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shop;
 
 class ShopDomain
 {
-    const PRODUCT = 'PRODUCT';
-    const SERVICE = 'SERVICE';
+    public const PRODUCT = 'PRODUCT';
+    public const SERVICE = 'SERVICE';
 }

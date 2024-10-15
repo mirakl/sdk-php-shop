@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Mirakl\Core\Response\ResponseDecoratorInterface;
@@ -12,7 +15,7 @@ class Closure implements ResponseDecoratorInterface
     protected $closure;
 
     /**
-     * @param   \Closure    $closure
+     * @param \Closure $closure
      */
     public function __construct(\Closure $closure)
     {

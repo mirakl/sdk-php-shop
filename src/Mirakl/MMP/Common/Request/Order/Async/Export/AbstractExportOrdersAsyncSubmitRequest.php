@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Async\Export;
 
 use Mirakl\Core\Request\AbstractRequest;

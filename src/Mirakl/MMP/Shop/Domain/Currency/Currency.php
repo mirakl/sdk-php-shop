@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Currency;
 
 use Mirakl\Core\Domain\MiraklObject;

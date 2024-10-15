@@ -1,16 +1,19 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\PlatformConfiguration;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method bool  getIsLeadTimeToShip() // Allow sellers to inform a lead time to ship on their offers
+ * @method bool  getIsLeadTimeToShip()                                   // Allow sellers to inform a lead time to ship on their offers
  * @method $this setIsLeadTimeToShip(bool $isLeadTimeToShip)
- * @method bool  getIsMaximumOrderQuantity() // Allow sellers to request for a maximum order quantity
+ * @method bool  getIsMaximumOrderQuantity()                             // Allow sellers to request for a maximum order quantity
  * @method $this setIsMaximumOrderQuantity(bool $isMaximumOrderQuantity)
- * @method bool  getIsMinimumOrderQuantity() // Allow sellers to request for a minimum order quantity
+ * @method bool  getIsMinimumOrderQuantity()                             // Allow sellers to request for a minimum order quantity
  * @method $this setIsMinimumOrderQuantity(bool $isMinimumOrderQuantity)
- * @method bool  getIsPackageOrderQuantity() // Allow sellers to set an order quantity increment
+ * @method bool  getIsPackageOrderQuantity()                             // Allow sellers to set an order quantity increment
  * @method $this setIsPackageOrderQuantity(bool $isPackageOrderQuantity)
  */
 class OrderConditionsConfiguration extends MiraklObject

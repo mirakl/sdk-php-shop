@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Fulfillment;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  FulfillmentCenter   getCenter()
- * @method  $this               setCenter(FulfillmentCenter $center)
+ * @method FulfillmentCenter getCenter()
+ * @method $this             setCenter(FulfillmentCenter $center)
  */
 class Fulfillment extends MiraklObject
 {

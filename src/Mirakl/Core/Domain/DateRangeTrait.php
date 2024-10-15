@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 /**
@@ -7,8 +10,8 @@ namespace Mirakl\Core\Domain;
 trait DateRangeTrait
 {
     /**
-     * @param   mixed   $startDate
-     * @return  $this
+     * @param \DateTime|string $startDate
+     * @return $this
      */
     public function setStartDate($startDate)
     {
@@ -23,8 +26,8 @@ trait DateRangeTrait
     }
 
     /**
-     * @param   mixed   $endDate
-     * @return  $this
+     * @param \DateTime|string $endDate
+     * @return $this
      */
     public function setEndDate($endDate)
     {

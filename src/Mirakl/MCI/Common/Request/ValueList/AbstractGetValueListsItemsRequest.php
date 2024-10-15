@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Request\ValueList;
 
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MCI\Common\Domain\ValueLists;
 
 /**
- * (PM31) Get value list items
+ * (VL11) Get information about operator's value lists
  *
- * @method  string  getValueListCode()
- * @method  $this   setValueListCode(string $valueListCode)
+ * @method string getValueListCode()
+ * @method $this  setValueListCode(string $valueListCode)
  */
 abstract class AbstractGetValueListsItemsRequest extends AbstractRequest
 {

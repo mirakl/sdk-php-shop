@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Accounting\Document;
 
 class AccountingDocumentPaymentStatus
 {
-    const AWAITING_PAYMENT = 'AWAITING_PAYMENT';
-    const PAID             = 'PAID';
-    const PENDING          = 'PENDING';
+    public const AWAITING_PAYMENT = 'AWAITING_PAYMENT';
+    public const PAID             = 'PAID';
+    public const PENDING          = 'PENDING';
 }

@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 /**
- * @method  string  getImportId()
- * @method  $this   setImportId(string $importId)
+ * @method string getImportId()
+ * @method $this  setImportId(string $importId)
  */
 abstract class AbstractImportRequest extends AbstractRequest
 {
@@ -15,11 +18,12 @@ abstract class AbstractImportRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $importId
+     * @param string $importId
      */
     public function __construct($importId)
     {
         parent::__construct();
+
         $this->setImportId($importId);
     }
 }

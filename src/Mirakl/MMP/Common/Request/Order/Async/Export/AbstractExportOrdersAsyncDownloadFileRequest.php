@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Async\Export;
 
 use Mirakl\Core\Request\AbstractFileUrlRequest;
@@ -9,4 +12,5 @@ use Mirakl\Core\Request\AbstractFileUrlRequest;
  * Retrieve orders files once asynchronous export is complete (OR14).
  */
 abstract class AbstractExportOrdersAsyncDownloadFileRequest extends AbstractFileUrlRequest
-{}
+{
+}

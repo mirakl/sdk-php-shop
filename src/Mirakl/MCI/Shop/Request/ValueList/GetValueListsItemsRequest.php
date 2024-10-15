@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Shop\Request\ValueList;
 
 use Mirakl\MCI\Common\Request\ValueList\AbstractGetValueListsItemsRequest;
@@ -19,4 +22,5 @@ use Mirakl\MCI\Common\Request\ValueList\AbstractGetValueListsItemsRequest;
  * </code>
  */
 class GetValueListsItemsRequest extends AbstractGetValueListsItemsRequest
-{}
+{
+}

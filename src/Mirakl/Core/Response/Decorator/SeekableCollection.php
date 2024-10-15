@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Psr\Http\Message\ResponseInterface;

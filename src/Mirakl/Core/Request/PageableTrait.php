@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 trait PageableTrait
@@ -21,7 +24,7 @@ trait PageableTrait
     protected $paginate = true;
 
     /**
-     * @return  int
+     * @return int
      */
     public function getMax()
     {
@@ -29,7 +32,7 @@ trait PageableTrait
     }
 
     /**
-     * @return  int
+     * @return int
      */
     public function getOffset()
     {
@@ -37,7 +40,7 @@ trait PageableTrait
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function getPaginate()
     {
@@ -45,8 +48,8 @@ trait PageableTrait
     }
 
     /**
-     * @param   int $max
-     * @return  $this
+     * @param int $max
+     * @return $this
      */
     public function setMax($max)
     {
@@ -56,8 +59,8 @@ trait PageableTrait
     }
 
     /**
-     * @param   int $offset
-     * @return  $this
+     * @param int $offset
+     * @return $this
      */
     public function setOffset($offset)
     {
@@ -67,8 +70,8 @@ trait PageableTrait
     }
 
     /**
-     * @param   bool    $flag
-     * @return  $this
+     * @param bool $flag
+     * @return $this
      */
     public function setPaginate($flag)
     {

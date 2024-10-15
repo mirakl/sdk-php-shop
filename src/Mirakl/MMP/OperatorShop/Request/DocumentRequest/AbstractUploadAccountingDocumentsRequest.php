@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\DocumentRequest;
 
 use Mirakl\MMP\Common\Request\Document\AbstractFilesUploadRequest;
@@ -36,6 +39,7 @@ abstract class AbstractUploadAccountingDocumentsRequest extends AbstractFilesUpl
     public function __construct($documentsInput)
     {
         parent::__construct();
+
         $this->setDocumentsInput($documentsInput);
     }
 

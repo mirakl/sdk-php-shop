@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Message\Thread;
 
 use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadEntityCollection;
@@ -6,8 +9,8 @@ use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadMessageCollection;
 use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadParticipantCollection;
 
 /**
- * @method  ThreadMessageCollection getMessages()
- * @method  $this                   setMessages(ThreadMessageCollection|array $messages)
+ * @method ThreadMessageCollection getMessages()
+ * @method $this                   setMessages(ThreadMessageCollection|array $messages)
  */
 class ThreadDetails extends Thread
 {

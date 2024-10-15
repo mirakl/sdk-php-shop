@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Payment\Transaction;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -8,4 +11,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setId(string $id)
  */
 class TransactionDebit extends MiraklObject
-{}
+{
+}

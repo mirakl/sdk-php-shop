@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Offer;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -12,75 +15,75 @@ use Mirakl\MMP\Common\Domain\Fulfillment\Fulfillment;
 use Mirakl\MMP\Common\Domain\Offer\Price\OfferPricing;
 
 /**
- * @method  bool                                  getActive()
- * @method  $this                                 setActive(bool $active)
- * @method  bool                                  isActive()
- * @method  bool                                  getAllowQuoteRequests()
- * @method  $this                                 setAllowQuoteRequests(bool $allowQuoteRequests)
- * @method  OfferPricesCollection                 getAllPrices()
- * @method  $this                                 setAllPrices(array|OfferPricesCollection $Prices)
- * @method  OfferPricing                          getApplicablePricing()
- * @method  $this                                 setApplicablePricing(array|OfferPricing $Prices)
- * @method  OfferAvailability                     getAvailability()
- * @method  $this                                 setAvailability(array|OfferAvailability $availability)
- * @method  AdditionalFieldValueCollection        getAdditionalFields()
- * @method  $this                                 setAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
- * @method  array                                 getChannels()
- * @method  string                                getCurrencyIsoCode()
- * @method  $this                                 setCurrencyIsoCode(string $currencyIsoCode)
- * @method  string                                getDescription()
- * @method  $this                                 setDescription(string $description)
- * @method  Discount                              getDiscount()
- * @method  int                                   getFavoriteRank()
- * @method  $this                                 setFavoriteRank(int $favoriteRank)
- * @method  Fulfillment                           getFulfillment()
- * @method  $this                                 setFulfillment(Fulfillment $fulfillment)
- * @method  array                                 getInactivityReasons()
- * @method  $this                                 setInactivityReasons(array $inactivityReasons)
- * @method  int                                   getLeadtimeToShip() (in days)
- * @method  $this                                 setLeadtimeToShip(int $leadtimeToShip)
- * @method  LogisticClass                         getLogisticClass()
- * @method  $this                                 setLogisticClass(array|LogisticClass $logisticClass)
- * @method  int                                   getMaxOrderQuantity()
- * @method  $this                                 setMaxOrderQuantity(int $maxOrderQuantity)
- * @method  int                                   getMinOrderQuantity()
- * @method  $this                                 setMinOrderQuantity(int $minOrderQuantity)
- * @method  string                                getModel()
- * @method  $this                                 setModel(string $model)
- * @method  int                                   getPackageQuantity()
- * @method  $this                                 setPackageQuantity(int $packageQuantity)
- * @method  int                                   getMinQuantityAlert()
- * @method  $this                                 setMinQuantityAlert(int $minQuantityAlert)
- * @method  OfferMinimumShipping                  getMinShipping()
- * @method  $this                                 setMinShipping(array|OfferMinimumShipping $minShipping)
- * @method  string                                getOfferId()
- * @method  $this                                 setOfferId(string $id)
- * @method  bool                                  getPremium()
- * @method  $this                                 setPremium(bool $flag)
- * @method  bool                                  isPremium()
- * @method  bool                                  getProfessional()
- * @method  $this                                 setProfessional(bool $flag)
- * @method  bool                                  isProfessional()
- * @method  float                                 getPrice()
- * @method  $this                                 setPrice(float $price)
- * @method  string                                getPriceAdditionalInfo()
- * @method  $this                                 setPriceAdditionalInfo(string $priceAdditionalInfo)
- * @method  ProductInfoWithRefs                   getProduct()
- * @method  $this                                 setProduct(array|ProductInfoWithRefs $productInfoWithRefs)
- * @method  string                                getProductTaxCode()
- * @method  $this                                 setProductTaxCode(string $productTaxCode)
- * @method  int                                   getQuantity()
- * @method  $this                                 setQuantity(int $quantity)
- * @method  string                                getStateCode()
- * @method  $this                                 setStateCode(string $stateCode)
- * @method  float                                 getTotalPrice()
- * @method  $this                                 setTotalPrice(float $totalPrice)
- * @method  ShippingPriceByZoneAndTypeCollection  getShippingTypes()
- * @method  $this                                 setShippingTypes(ShippingPriceByZoneAndTypeCollection $shippingPricesByZoneAndType)
- * @method  \DateTime                             getShippingDeadline()
- * @method  $this                                 setShippingDeadline(\DateTime $shippingDeadline)
- * @method  EcoContributionCollection             getEcoContributions()
- * @method  $this                                 setEcoContributions(EcoContributionCollection $ecoContribution)
+ * @method bool                                 getActive()
+ * @method $this                                setActive(bool $active)
+ * @method bool                                 isActive()
+ * @method AdditionalFieldValueCollection       getAdditionalFields()
+ * @method $this                                setAdditionalFields(AdditionalFieldValueCollection|array $additionalFields)
+ * @method bool                                 getAllowQuoteRequests()
+ * @method $this                                setAllowQuoteRequests(bool $allowQuoteRequests)
+ * @method OfferPricesCollection                getAllPrices()
+ * @method $this                                setAllPrices(OfferPricesCollection|array $Prices)
+ * @method OfferPricing                         getApplicablePricing()
+ * @method $this                                setApplicablePricing(OfferPricing|array $Prices)
+ * @method OfferAvailability                    getAvailability()
+ * @method $this                                setAvailability(OfferAvailability|array $availability)
+ * @method array                                getChannels()
+ * @method string                               getCurrencyIsoCode()
+ * @method $this                                setCurrencyIsoCode(string $currencyIsoCode)
+ * @method string                               getDescription()
+ * @method $this                                setDescription(string $description)
+ * @method Discount                             getDiscount()
+ * @method EcoContributionCollection            getEcoContributions()
+ * @method $this                                setEcoContributions(EcoContributionCollection|array $ecoContribution)
+ * @method int                                  getFavoriteRank()
+ * @method $this                                setFavoriteRank(int $favoriteRank)
+ * @method Fulfillment                          getFulfillment()
+ * @method $this                                setFulfillment(Fulfillment|array $fulfillment)
+ * @method array                                getInactivityReasons()
+ * @method $this                                setInactivityReasons(array $inactivityReasons)
+ * @method int                                  getLeadtimeToShip() // (in days)
+ * @method $this                                setLeadtimeToShip(int $leadtimeToShip)
+ * @method LogisticClass                        getLogisticClass()
+ * @method $this                                setLogisticClass(LogisticClass|array $logisticClass)
+ * @method int                                  getMaxOrderQuantity()
+ * @method $this                                setMaxOrderQuantity(int $maxOrderQuantity)
+ * @method int                                  getMinOrderQuantity()
+ * @method $this                                setMinOrderQuantity(int $minOrderQuantity)
+ * @method int                                  getMinQuantityAlert()
+ * @method $this                                setMinQuantityAlert(int $minQuantityAlert)
+ * @method OfferMinimumShipping                 getMinShipping()
+ * @method $this                                setMinShipping(OfferMinimumShipping|array $minShipping)
+ * @method string                               getModel()
+ * @method $this                                setModel(string $model)
+ * @method int                                  getOfferId()
+ * @method $this                                setOfferId(int $id)
+ * @method int                                  getPackageQuantity()
+ * @method $this                                setPackageQuantity(int $packageQuantity)
+ * @method bool                                 getPremium()
+ * @method $this                                setPremium(bool $flag)
+ * @method bool                                 isPremium()
+ * @method float                                getPrice()
+ * @method $this                                setPrice(float $price)
+ * @method string                               getPriceAdditionalInfo()
+ * @method $this                                setPriceAdditionalInfo(string $priceAdditionalInfo)
+ * @method ProductInfoWithRefs                  getProduct()
+ * @method $this                                setProduct(array|ProductInfoWithRefs|array $productInfoWithRefs)
+ * @method string                               getProductTaxCode()
+ * @method $this                                setProductTaxCode(string $productTaxCode)
+ * @method bool                                 getProfessional()
+ * @method $this                                setProfessional(bool $professional)
+ * @method bool                                 isProfessional()
+ * @method int                                  getQuantity()
+ * @method $this                                setQuantity(int $quantity)
+ * @method ShippingPriceByZoneAndTypeCollection getShippingTypes()
+ * @method $this                                setShippingTypes(ShippingPriceByZoneAndTypeCollection|array $shippingType)
+ * @method \DateTime                            getShippingDeadline()
+ * @method $this                                setShippingDeadline(\DateTime $shippingDeadline)
+ * @method string                               getStateCode()
+ * @method $this                                setStateCode(string $stateCode)
+ * @method float                                getTotalPrice()
+ * @method $this                                setTotalPrice(float $totalPrice)
  */
 abstract class AbstractOffer extends MiraklObject
 {
@@ -89,6 +92,8 @@ abstract class AbstractOffer extends MiraklObject
      */
     protected static $mapping = [
         'id'                            => 'offer_id',
+        'product_brand'                 => 'product/brand',
+        'product_description'           => 'product/description',
         'product_sku'                   => 'product/sku',
         'product_title'                 => 'product/title',
         'product_references'            => 'product/references',
@@ -111,20 +116,20 @@ abstract class AbstractOffer extends MiraklObject
      */
     protected static $dataTypes = [
         'additional_fields'  => [AdditionalFieldValueCollection::class, 'create'],
+        'all_prices'         => [OfferPricesCollection::class, 'create'],
+        'applicable_pricing' => [OfferPricing::class, 'create'],
         'availability'       => [OfferAvailability::class, 'create'],
         'discount'           => [Discount::class, 'create'],
+        'eco_contributions'  => [EcoContributionCollection::class, 'create'],
+        'fulfillment'        => [Fulfillment::class, 'create'],
         'logistic_class'     => [LogisticClass::class, 'create'],
         'min_shipping'       => [OfferMinimumShipping::class, 'create'],
         'product'            => [ProductInfoWithRefs::class, 'create'],
-        'all_prices'         => [OfferPricesCollection::class, 'create'],
-        'applicable_pricing' => [OfferPricing::class, 'create'],
         'shipping_types'     => [ShippingPriceByZoneAndTypeCollection::class, 'create'],
-        'fulfillment'        => [Fulfillment::class, 'create'],
-        'eco_contributions'  => [EcoContributionCollection::class, 'create'],
     ];
 
     /**
-     * @return  string
+     * @return string
      */
     public function getId()
     {
@@ -132,8 +137,8 @@ abstract class AbstractOffer extends MiraklObject
     }
 
     /**
-     * @param   array|string  $channels
-     * @return  $this
+     * @param array|string $channels
+     * @return $this
      */
     public function setChannels($channels)
     {
@@ -145,12 +150,13 @@ abstract class AbstractOffer extends MiraklObject
     }
 
     /**
-     * @param   array|Discount  $discount
-     * @return  $this
+     * @param array|Discount $discount
+     * @return $this
      */
     public function setDiscount($discount)
     {
-        if (is_array($discount) &&
+        if (
+            is_array($discount) &&
             !(isset($discount['discount_price']) && $discount['discount_price']) &&
             !(isset($discount['ranges']) && $discount['ranges'])
         ) {
@@ -161,8 +167,8 @@ abstract class AbstractOffer extends MiraklObject
     }
 
     /**
-     * @param   mixed   $product
-     * @return  $this
+     * @param mixed $product
+     * @return $this
      */
     public function setProductReferences($product)
     {

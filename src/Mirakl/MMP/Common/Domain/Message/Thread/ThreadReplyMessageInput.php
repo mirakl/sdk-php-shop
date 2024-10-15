@@ -1,16 +1,19 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Message\Thread;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadRecipientCollection;
 
 /**
- * @method  string                      getBody()
- * @method  $this                       setBody(string $body)
- * @method  ThreadRecipientCollection   getTo()
- * @method  $this                       setTo(ThreadRecipientCollection|array $to)
- * @method  ThreadTopic                 getTopic()
- * @method  $this                       setTopic(ThreadTopic $topic)
+ * @method string                    getBody()
+ * @method $this                     setBody(string $body)
+ * @method ThreadRecipientCollection getTo()
+ * @method $this                     setTo(ThreadRecipientCollection|array $to)
+ * @method ThreadTopic               getTopic()
+ * @method $this                     setTopic(ThreadTopic $topic)
  */
 class ThreadReplyMessageInput extends MiraklObject
 {

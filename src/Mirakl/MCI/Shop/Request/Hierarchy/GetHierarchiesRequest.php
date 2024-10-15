@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Shop\Request\Hierarchy;
 
 use Mirakl\MCI\Common\Request\Hierarchy\AbstractGetHierarchiesRequest;
@@ -21,4 +24,5 @@ use Mirakl\MCI\Common\Request\Hierarchy\AbstractGetHierarchiesRequest;
  * </code>
  */
 class GetHierarchiesRequest extends AbstractGetHierarchiesRequest
-{}
+{
+}

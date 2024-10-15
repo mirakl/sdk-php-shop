@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shop\Bank;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -6,8 +9,8 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * Payment information that would be used to generate the invoice and the payment voucher info file
  *
- * @method  string  getOwner()
- * @method  $this   setOwner(string $owner)
+ * @method string getOwner()
+ * @method $this  setOwner(string $owner)
  */
 class PaymentInfo extends MiraklObject
 {
@@ -26,67 +29,32 @@ class PaymentInfo extends MiraklObject
     }
 
     /**
-     * @param   array $info
-     * @return  BankAccountInfo|PaymentInfo
+     * @param array $info
+     * @return BankAccountInfo|PaymentInfo
      */
     public static function factory(array $info)
     {
-        switch (@$info['@type']) {
-            case AbaBankAccountInfo::$type:
-                $info = new AbaBankAccountInfo($info);
-                break;
-            case AuBsbBankAccountInfo::$type:
-                $info = new AuBsbBankAccountInfo($info);
-                break;
-            case BrazilianBankAccountInfo::$type:
-                $info = new BrazilianBankAccountInfo($info);
-                break;
-            case CanadianBankAccountInfo::$type:
-                $info = new CanadianBankAccountInfo($info);
-                break;
-            case HKBankAccountInfo::$type:
-                $info = new HKBankAccountInfo($info);
-                break;
-            case IbanBankAccountInfo::$type:
-                $info = new IbanBankAccountInfo($info);
-                break;
-            case IndianBankAccountInfo::$type:
-                $info = new IndianBankAccountInfo($info);
-                break;
-            case JapaneseBankAccountInfo::$type:
-                $info = new JapaneseBankAccountInfo($info);
-                break;
-            case MexicanBankAccountInfo::$type:
-                $info = new MexicanBankAccountInfo($info);
-                break;
-            case NubanBankAccountInfo::$type:
-                $info = new NubanBankAccountInfo($info);
-                break;
-            case NzBsbBankAccountInfo::$type:
-                $info = new NzBsbBankAccountInfo($info);
-                break;
-            case TaiwaneseBankAccountInfo::$type:
-                $info = new TaiwaneseBankAccountInfo($info);
-                break;
-            case ThaiBankAccountInfo::$type:
-                $info = new ThaiBankAccountInfo($info);
-                break;
-            case UruguayanBankAccountInfo::$type:
-                $info = new UruguayanBankAccountInfo($info);
-                break;
-            case UkBankAccountInfo::$type:
-                $info = new UkBankAccountInfo($info);
-                break;
-            case ColombianBankAccountInfo::$type:
-                $info = new ColombianBankAccountInfo($info);
-                break;
-            case IsraeliBankAccountInfo::$type:
-                $info = new IsraeliBankAccountInfo($info);
-                break;
-            default:
-                $info = new PaymentInfo($info);
-        }
-
-        return $info;
+        return match (@$info['@type']) {
+            AbaBankAccountInfo::$type        => new AbaBankAccountInfo($info),
+            AuBsbBankAccountInfo::$type      => new AuBsbBankAccountInfo($info),
+            BrazilianBankAccountInfo::$type  => new BrazilianBankAccountInfo($info),
+            CanadianBankAccountInfo::$type   => new CanadianBankAccountInfo($info),
+            HKBankAccountInfo::$type         => new HKBankAccountInfo($info),
+            IbanBankAccountInfo::$type       => new IbanBankAccountInfo($info),
+            IndianBankAccountInfo::$type     => new IndianBankAccountInfo($info),
+            JapaneseBankAccountInfo::$type   => new JapaneseBankAccountInfo($info),
+            MexicanBankAccountInfo::$type    => new MexicanBankAccountInfo($info),
+            NubanBankAccountInfo::$type      => new NubanBankAccountInfo($info),
+            NzBsbBankAccountInfo::$type      => new NzBsbBankAccountInfo($info),
+            TaiwaneseBankAccountInfo::$type  => new TaiwaneseBankAccountInfo($info),
+            ThaiBankAccountInfo::$type       => new ThaiBankAccountInfo($info),
+            UruguayanBankAccountInfo::$type  => new UruguayanBankAccountInfo($info),
+            UkBankAccountInfo::$type         => new UkBankAccountInfo($info),
+            ColombianBankAccountInfo::$type  => new ColombianBankAccountInfo($info),
+            IsraeliBankAccountInfo::$type    => new IsraeliBankAccountInfo($info),
+            VietnameseBankAccountInfo::$type => new VietnameseBankAccountInfo($info),
+            SGBankAccountInfo::$type         => new SGBankAccountInfo($info),
+            default                          => new PaymentInfo($info),
+        };
     }
 }

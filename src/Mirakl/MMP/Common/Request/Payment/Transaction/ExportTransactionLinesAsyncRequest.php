@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Payment\Transaction;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -11,12 +14,12 @@ use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsync;
  * @method $this     setAccountingDocumentId(string $accountingDocumentId)
  * @method string    getAccountingDocumentNumber()
  * @method $this     setAccountingDocumentNumber(string $accountingDocumentNumber)
- * @method int       getItemsPerChunk()
- * @method $this     setItemsPerChunk(int $itemsPerChunk)
  * @method \DateTime getDateCreatedFrom()
  * @method $this     setDateCreatedFrom(\DateTime $dateCreatedFrom)
  * @method \DateTime getDateCreatedTo()
  * @method $this     setDateCreatedTo(\DateTime $dateCreatedTo)
+ * @method int       getItemsPerChunk()
+ * @method $this     setItemsPerChunk(int $itemsPerChunk)
  * @method \DateTime getLastUpdatedFrom()
  * @method $this     setLastUpdatedFrom(\DateTime $lastUpdatedFrom)
  * @method int       getMegabytesPerChunk()
@@ -29,25 +32,21 @@ use Mirakl\MMP\Common\Domain\Payment\Transaction\ExportTransactionLinesAsync;
  * @method $this     setOrderReferenceForCustomer(string[] $orderReferenceForCustomer)
  * @method string[]  getOrderReferenceForSeller()
  * @method $this     setOrderReferenceForSeller(string[] $orderReferenceForSeller)
- * @method string[]  getShopDomain()
- * @method $this     setShopDomain(string[] $shopDomain)
- * @method string[]  getShopModel()
- * @method $this     setShopModel(string[] $shopModel)
  * @method string[]  getPaymentState()
  * @method $this     setPaymentState(string[] $paymentState)
  * @method string    getPaymentVoucherNumber()
  * @method $this     setPaymentVoucherNumber(string $paymentVoucherNumber)
- * @method  string   getPspName()
- * @method  $this    setPspName(string $pspName)
+ * @method string[]  getShopDomain()
+ * @method $this     setShopDomain(string[] $shopDomain)
  * @method int       getShopId()
  * @method $this     setShopId(int $shopId)
+ * @method string[]  getShopModel()
+ * @method $this     setShopModel(string[] $shopModel)
  * @method \DateTime getTransactionDateFrom()
  * @method $this     setTransactionDateFrom(\DateTime $transactionDateFrom)
  * @method \DateTime getTransactionDateTo()
  * @method $this     setTransactionDateTo(\DateTime $transactionDateTo)
- * @method string[]  getTransactionState()
- * @method $this     setTransactionState(string[] $transactionState)
- * @method string[]  getTransactionType() // List of transaction types: \Mirakl\MMP\Common\Domain\Payment\Transaction\TransactionType
+ * @method string[]  getTransactionType() List of transaction types: \Mirakl\MMP\Common\Domain\Payment\Transaction\TransactionType
  * @method $this     setTransactionType(string[] $transactionType)
  *
  * Example:
@@ -120,7 +119,6 @@ class ExportTransactionLinesAsyncRequest extends AbstractRequest
         'transaction_date_from',
         'transaction_date_to',
         'transaction_type',
-        'psp_name',
     ];
 
     /**

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Order\Refund;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -7,10 +10,10 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Order\Refund\CreateRefundCollectio
 /**
  * (OR28) Demand refunds on order lines
  *
- * @method  string                  getOrderTaxMode()
- * @method  $this                   setOrderTaxMode(string $orderTaxMode)
- * @method  CreateRefundCollection  getRefunds()
- * @method  $this                   setRefunds(array|CreateRefundCollection $refunds)
+ * @method string                 getOrderTaxMode()
+ * @method $this                  setOrderTaxMode(string $orderTaxMode)
+ * @method CreateRefundCollection getRefunds()
+ * @method $this                  setRefunds(array|CreateRefundCollection $refunds)
  */
 abstract class AbstractCreateRefundRequest extends AbstractRequest
 {
@@ -37,11 +40,12 @@ abstract class AbstractCreateRefundRequest extends AbstractRequest
     ];
 
     /**
-     * @param   array|CreateRefundCollection    $refunds
+     * @param array|CreateRefundCollection $refunds
      */
     public function __construct($refunds)
     {
         parent::__construct();
+
         $this->setRefunds($refunds);
     }
 }

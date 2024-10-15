@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Promotion;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;

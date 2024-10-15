@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shipment;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Common\Domain\Shipment\DeletedShipments;
 /**
  * (ST06) Delete shipments in shipping status
  *
- * @method  DeleteShipmentCollection getShipments()
- * @method  $this                    setShipments(array|DeleteShipmentCollection $deleteShipments)
+ * @method DeleteShipmentCollection getShipments()
+ * @method $this                    setShipments(array|DeleteShipmentCollection $deleteShipments)
  */
 abstract class AbstractDeleteShipmentRequest extends AbstractRequest
 {
@@ -36,11 +39,12 @@ abstract class AbstractDeleteShipmentRequest extends AbstractRequest
     ];
 
     /**
-     * @param array|DeleteShipmentCollection  $deleteShipments
+     * @param array|DeleteShipmentCollection $deleteShipments
      */
     public function __construct($deleteShipments)
     {
         parent::__construct();
+
         $this->setShipments($deleteShipments);
     }
 

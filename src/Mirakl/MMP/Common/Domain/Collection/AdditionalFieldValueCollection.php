@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\AdditionalFieldValue;
 
 /**
- * @method  AdditionalFieldValue    current()
- * @method  AdditionalFieldValue    first()
- * @method  AdditionalFieldValue    get($offset)
- * @method  AdditionalFieldValue    offsetGet($offset)
- * @method  AdditionalFieldValue    last()
+ * @method AdditionalFieldValue current()
+ * @method AdditionalFieldValue first()
+ * @method AdditionalFieldValue get($offset)
+ * @method AdditionalFieldValue offsetGet($offset)
+ * @method AdditionalFieldValue last()
  */
 class AdditionalFieldValueCollection extends MiraklCollection
 {

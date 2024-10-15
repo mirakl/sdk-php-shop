@@ -1,13 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
+
+use Mirakl\Core\Response\ResponseDecoratorInterface;
+use Psr\Http\Message\ResponseInterface;
 
 use function Mirakl\ {
     parse_json_response,
     parse_xml_response,
     remove_null_values
 };
-use Mirakl\Core\Response\ResponseDecoratorInterface;
-use Psr\Http\Message\ResponseInterface;
 
 class AssocArray implements ResponseDecoratorInterface
 {

@@ -1,13 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Domain\Offer\Importer;
 
 class ImportOrigin
 {
-    const API            = 'API';
-    const FTP            = 'FTP';
-    const SFTP           = 'SFTP';
-    const HTTP           = 'HTTP';
-    const HTTPS          = 'HTTPS';
-    const FRONT          = 'FRONT';
-    const PENDING_OFFERS = 'PENDING_OFFERS';
+    public const API            = 'API';
+    public const FTP            = 'FTP';
+    public const SFTP           = 'SFTP';
+    public const HTTP           = 'HTTP';
+    public const HTTPS          = 'HTTPS';
+    public const FRONT          = 'FRONT';
+    public const PENDING_OFFERS = 'PENDING_OFFERS';
 }

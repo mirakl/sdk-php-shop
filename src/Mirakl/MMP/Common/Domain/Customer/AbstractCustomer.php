@@ -1,19 +1,22 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Customer;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getCustomerId()
- * @method  $this   setCustomerId(string $customerId)
- * @method  string  getCivility()
- * @method  $this   setCivility(string $civility)
- * @method  string  getFirstname()
- * @method  $this   setFirstname(string $firstname)
- * @method  string  getLastname()
- * @method  $this   setLastname(string $lastname)
- * @method  string  getLocale()
- * @method  $this   setLocale(string $locale)
+ * @method string getCivility()
+ * @method $this  setCivility(string $civility)
+ * @method string getCustomerId()
+ * @method $this  setCustomerId(string $customerId)
+ * @method string getFirstname()
+ * @method $this  setFirstname(string $firstname)
+ * @method string getLastname()
+ * @method $this  setLastname(string $lastname)
+ * @method string getLocale()
+ * @method $this  setLocale(string $locale)
  */
 abstract class AbstractCustomer extends MiraklObject
 {
@@ -25,7 +28,9 @@ abstract class AbstractCustomer extends MiraklObject
     ];
 
     /**
-     * @return  string
+     * Alias for getCustomerId()
+     *
+     * @return string
      */
     public function getId()
     {
@@ -33,8 +38,10 @@ abstract class AbstractCustomer extends MiraklObject
     }
 
     /**
-     * @param   string  $id
-     * @return  $this
+     * Alias for setCustomerId()
+     *
+     * @param string $id
+     * @return $this
      */
     public function setId($id)
     {

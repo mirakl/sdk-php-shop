@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Adjust;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Adjust\AdjustOrderLineCollection;
 /**
  * (OR32) List order's documents
  *
- * @method  AdjustOrderLineCollection   getOrderLines()
- * @method  $this                       setOrderLines(array|AdjustOrderLineCollection $orderLines)
+ * @method AdjustOrderLineCollection getOrderLines()
+ * @method $this                     setOrderLines(array|AdjustOrderLineCollection $orderLines)
  *
  * Example:
  *
@@ -57,11 +60,12 @@ class AdjustOrderLinesRequest extends AbstractRequest
     ];
 
     /**
-     * @param   array|AdjustOrderLineCollection $orderLines
+     * @param array|AdjustOrderLineCollection $orderLines
      */
     public function __construct($orderLines)
     {
         parent::__construct();
+
         $this->setOrderLines($orderLines);
     }
 

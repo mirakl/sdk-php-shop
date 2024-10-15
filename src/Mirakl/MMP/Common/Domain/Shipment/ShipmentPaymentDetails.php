@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shipment;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -12,4 +15,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this     setCustomerDebitedDate(\DateTime $customerDebitedDate)
  */
 class ShipmentPaymentDetails extends MiraklObject
-{}
+{
+}

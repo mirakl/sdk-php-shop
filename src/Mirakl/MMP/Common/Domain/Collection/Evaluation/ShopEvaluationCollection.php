@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Evaluation;
 
 use Mirakl\MMP\Common\Domain\Evaluation\ShopEvaluation;
 
 /**
- * @method  ShopEvaluation  current()
- * @method  ShopEvaluation  first()
- * @method  ShopEvaluation  get($offset)
- * @method  ShopEvaluation  offsetGet($offset)
- * @method  ShopEvaluation  last()
+ * @method ShopEvaluation current()
+ * @method ShopEvaluation first()
+ * @method ShopEvaluation get($offset)
+ * @method ShopEvaluation offsetGet($offset)
+ * @method ShopEvaluation last()
  */
 class ShopEvaluationCollection extends EvaluationCollection
 {

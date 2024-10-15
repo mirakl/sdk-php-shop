@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain\Product;
 
 class ProductImportStatus
 {
     // Represents a complete integration of the import with or without errors
-    const COMPLETE = 'COMPLETE';
+    public const COMPLETE = 'COMPLETE';
 
     // Represents a failed integration of the import
-    const FAILED   = 'FAILED';
+    public const FAILED   = 'FAILED';
 
     /** @deprecated */
-    const QUEUED   = 'QUEUED';
+    public const QUEUED   = 'QUEUED';
 }

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 /**
@@ -20,6 +23,7 @@ abstract class AbstractTrackingRequest extends AbstractRequest
     public function __construct($trackingId)
     {
         parent::__construct();
+
         $this->setTrackingId($trackingId);
     }
 }

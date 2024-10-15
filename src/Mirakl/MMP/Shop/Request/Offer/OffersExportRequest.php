@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer;
 
 use Mirakl\Core\Response\Decorator;
@@ -9,7 +12,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Offer\ExportOfferCollection;
  * (OF51) Get a list of offers that have been updated and deleted since the last request date
  *
  * NB: This is the same API call that
- * @see     OffersExportFileRequest
+ * @see OffersExportFileRequest
  * but with the CSV file having been parsed
  *
  * Example:

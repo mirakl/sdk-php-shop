@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Reason;
 
 use Mirakl\Core\Domain\LocalizableTrait;
@@ -47,11 +50,12 @@ class GetTypeReasonsRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $reasonType
+     * @param string $reasonType
      */
     public function __construct($reasonType = ReasonType::INCIDENT_OPEN)
     {
         parent::__construct();
+
         $this->setReasonType($reasonType);
     }
 

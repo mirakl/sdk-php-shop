@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain\Collection;
 
 use Mirakl\Core\Domain\FileWrapper;
 
 /**
- * @method  FileWrapper current()
- * @method  FileWrapper first()
- * @method  FileWrapper get($offset)
- * @method  FileWrapper offsetGet($offset)
- * @method  FileWrapper last()
+ * @method FileWrapper current()
+ * @method FileWrapper first()
+ * @method FileWrapper get($offset)
+ * @method FileWrapper offsetGet($offset)
+ * @method FileWrapper last()
  */
 class FileCollection extends MiraklCollection
 {

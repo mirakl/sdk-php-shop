@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Payment\Invoice;
 
 use Mirakl\MMP\OperatorShop\Request\Payment\Invoice\AbstractDownloadInvoiceRequest;
@@ -21,4 +24,5 @@ use Mirakl\MMP\OperatorShop\Request\Payment\Invoice\AbstractDownloadInvoiceReque
  * </code>
  */
 class DownloadInvoiceRequest extends AbstractDownloadInvoiceRequest
-{}
+{
+}

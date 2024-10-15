@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Client;
 
 /**
@@ -7,7 +10,7 @@ namespace Mirakl\Core\Client;
 trait ShopApiClientTrait
 {
     /**
-     * @return  $this
+     * @return $this
      */
     public function getShopId()
     {
@@ -17,8 +20,8 @@ trait ShopApiClientTrait
     /**
      * Handle shop_id global query parameter
      *
-     * @param   string  $shopId
-     * @return  $this
+     * @param string $shopId
+     * @return $this
      */
     public function setShopId($shopId)
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Shipping;
 
 use Mirakl\MMP\Common\Request\Shipping\AbstractGetShippingTypesRequest;
@@ -23,4 +26,5 @@ use Mirakl\MMP\Common\Request\Shipping\AbstractGetShippingTypesRequest;
  * </code>
  */
 class GetShippingTypesRequest extends AbstractGetShippingTypesRequest
-{}
+{
+}

@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Offer\Async\Export;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  AsyncExportOfferFulfillmentCenter   getCenter()
- * @method  $this                               setCenter(AsyncExportOfferFulfillmentCenter $center)
+ * @method AsyncExportOfferFulfillmentCenter getCenter()
+ * @method $this                             setCenter(AsyncExportOfferFulfillmentCenter $center)
  */
 class AsyncExportOfferFulfillment extends MiraklObject
 {

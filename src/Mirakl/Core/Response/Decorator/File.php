@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Mirakl\Core\Response\ResponseDecoratorInterface;
@@ -12,7 +15,7 @@ class File implements ResponseDecoratorInterface
     protected $extension;
 
     /**
-     * @param   string  $extension
+     * @param string $extension
      */
     public function __construct($extension = 'txt')
     {
@@ -28,7 +31,7 @@ class File implements ResponseDecoratorInterface
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getExtension()
     {
@@ -36,8 +39,8 @@ class File implements ResponseDecoratorInterface
     }
 
     /**
-     * @param   string  $extension
-     * @return  $this
+     * @param string $extension
+     * @return $this
      */
     public function setExtension($extension)
     {

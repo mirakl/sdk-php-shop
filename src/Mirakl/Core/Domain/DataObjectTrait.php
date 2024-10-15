@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 trait DataObjectTrait
@@ -13,10 +16,10 @@ trait DataObjectTrait
     /**
      * Set/Get attribute wrapper
      *
-     * @param   string  $method
-     * @param   array   $args
-     * @return  mixed
-     * @throws  \InvalidArgumentException
+     * @param string $method
+     * @param array  $args
+     * @return mixed
+     * @throws \InvalidArgumentException
      */
     public function __call($method, $args)
     {
@@ -45,7 +48,7 @@ trait DataObjectTrait
     /**
      * Proxy to toJSON() method
      *
-     * @return  string
+     * @return string
      */
     public function __toString()
     {
@@ -55,19 +58,19 @@ trait DataObjectTrait
     /**
      * Useful method to create object quickly
      *
-     * @param   array   $data
-     * @return  $this
+     * @param array $data
+     * @return $this
      */
     public static function create(array $data = [])
     {
-        return (new static)->setData($data);
+        return (new static())->setData($data);
     }
 
     /**
      * Get value from data array
      *
-     * @param   mixed   $key
-     * @return  mixed
+     * @param mixed $key
+     * @return mixed
      */
     public function getData($key = null)
     {
@@ -92,7 +95,7 @@ trait DataObjectTrait
     /**
      * Give the value for an empty object
      *
-     * @return  mixed
+     * @return mixed
      */
     public function getEmptyValue()
     {
@@ -102,8 +105,8 @@ trait DataObjectTrait
     /**
      * Checks if current object has a value for the given key
      *
-     * @param   string  $key
-     * @return  bool
+     * @param string $key
+     * @return bool
      */
     public function hasData($key)
     {
@@ -128,9 +131,9 @@ trait DataObjectTrait
      *
      * If $key is an array, it will overwrite all the data in the object
      *
-     * @param   string|array  $key
-     * @param   mixed         $value
-     * @return  $this
+     * @param string|array $key
+     * @param mixed        $value
+     * @return $this
      */
     public function setData($key, $value = null)
     {
@@ -146,7 +149,7 @@ trait DataObjectTrait
     /**
      * Converts object data to array
      *
-     * @return  array
+     * @return array
      */
     public function toArray()
     {
@@ -187,7 +190,7 @@ trait DataObjectTrait
     /**
      * Converts object data to JSON
      *
-     * @return  string
+     * @return string
      */
     public function toJSON()
     {
@@ -197,8 +200,8 @@ trait DataObjectTrait
     /**
      * Unset data from the object
      *
-     * @param   null|string|array $key
-     * @return  $this
+     * @param null|string|array $key
+     * @return $this
      */
     public function unsetData($key = null)
     {
@@ -218,11 +221,11 @@ trait DataObjectTrait
     /**
      * Loop through current object data and apply a callback function on each value
      *
-     * @param   callable    $callback
-     * @param   array       $keys
-     * @param   array       $args
-     * @param   bool        $notNull
-     * @return  array
+     * @param callable $callback
+     * @param array    $keys
+     * @param array    $args
+     * @param bool     $notNull
+     * @return array
      */
     public function walk(callable $callback, array $keys = [], array $args = [], $notNull = true)
     {

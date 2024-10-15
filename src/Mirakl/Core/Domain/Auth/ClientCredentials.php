@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Mirakl\Core\Domain\Auth;
@@ -16,4 +17,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setTokenType(string $tokenType)
  */
 class ClientCredentials extends MiraklObject
-{}
+{
+}

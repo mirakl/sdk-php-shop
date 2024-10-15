@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 use Mirakl\MMP\Common\Domain\Product\Offer\ProductReference;
@@ -21,9 +24,9 @@ trait ProductReferencesTrait
     protected $productReferences = [];
 
     /**
-     * @param   string  $typeId
-     * @param   string  $productId
-     * @return  $this
+     * @param string $typeId
+     * @param string $productId
+     * @return $this
      */
     public function addProductReference($typeId, $productId)
     {
@@ -36,7 +39,7 @@ trait ProductReferencesTrait
     }
 
     /**
-     * @return  array
+     * @return array
      */
     public function getProductReferences()
     {
@@ -44,8 +47,8 @@ trait ProductReferencesTrait
     }
 
     /**
-     * @param   array   $references
-     * @return  $this
+     * @param array $references
+     * @return $this
      */
     public function setProductReferences(array $references)
     {

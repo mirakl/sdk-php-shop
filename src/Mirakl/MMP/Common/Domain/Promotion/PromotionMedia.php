@@ -1,12 +1,15 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Promotion;
 
 use Mirakl\Core\Domain\LocalizableTrait;
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getUrl()
- * @method  $this   setUrl(string $url)
+ * @method string getUrl()
+ * @method $this  setUrl(string $url)
  */
 class PromotionMedia extends MiraklObject
 {

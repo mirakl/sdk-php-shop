@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Message;
 
 use Mirakl\MMP\Common\Domain\Message\Thread\ThreadReplyCreated;
@@ -8,10 +11,10 @@ use Mirakl\MMP\Common\Request\Document\AbstractFilesUploadRequest;
 /**
  * (M12) Reply to a thread
  *
- * @method  ThreadReplyMessageInput getMessageInput()
- * @method  $this                   setMessageInput(ThreadReplyMessageInput|array $messageInput)
- * @method  string                  getThreadId()
- * @method  $this                   setThreadId(string $threadId)
+ * @method ThreadReplyMessageInput getMessageInput()
+ * @method $this                   setMessageInput(ThreadReplyMessageInput|array $messageInput)
+ * @method string                  getThreadId()
+ * @method $this                   setThreadId(string $threadId)
  *
  * Example:
  *
@@ -72,12 +75,13 @@ class ThreadReplyRequest extends AbstractFilesUploadRequest
     ];
 
     /**
-     * @param  string                         $threadId
-     * @param  ThreadReplyMessageInput|array  $messageInput
+     * @param string                        $threadId
+     * @param ThreadReplyMessageInput|array $messageInput
      */
     public function __construct($threadId, $messageInput)
     {
         parent::__construct();
+
         $this->setThreadId($threadId);
         $this->setMessageInput($messageInput);
     }

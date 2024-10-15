@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCM\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -10,4 +13,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setMessage(string $message)
  */
 abstract class AbstractError extends MiraklObject
-{}
+{
+}

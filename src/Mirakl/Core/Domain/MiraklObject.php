@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Mirakl\Core\Domain;
@@ -45,7 +46,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     protected static $dataTypes = [];
 
     /**
-     * @param   array   $data
+     * @param array $data
      */
     public function __construct(array $data = [])
     {
@@ -61,12 +62,13 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
      * @see \Mirakl\Core\Request\AbstractRequest::$cleanup
      */
     public function cleanup()
-    {}
+    {
+    }
 
     /**
      * Useful method for requests returning domain objects
      *
-     * @return  \Mirakl\Core\Response\Decorator\MiraklObject
+     * @return \Mirakl\Core\Response\Decorator\MiraklObject
      */
     public static function decorator()
     {
@@ -76,8 +78,8 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * Creates a collection of current object
      *
-     * @param   array   $items
-     * @return  MiraklCollection
+     * @param array $items
+     * @return MiraklCollection
      */
     public static function getCollection(array $items = [])
     {
@@ -93,7 +95,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * Returns all merged $dataTypes properties
      *
-     * @return  array
+     * @return array
      */
     public static function getDataTypes()
     {
@@ -137,8 +139,8 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * Sets array of data to current object after doing a map on it
      *
-     * @param   array   $data
-     * @return  $this
+     * @param array $data
+     * @return $this
      */
     private function setDataArray(array $data)
     {
@@ -158,9 +160,9 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * Associates value to key after doing a map on key and validation on value
      *
-     * @param   string  $key
-     * @param   mixed   $value
-     * @return  $this
+     * @param string $key
+     * @param mixed  $value
+     * @return $this
      */
     private function setDataValue($key, $value)
     {
@@ -170,8 +172,8 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     }
 
     /**
-     * @param   array   $data
-     * @return  array
+     * @param array $data
+     * @return array
      */
     public static function map(array $data)
     {
@@ -179,8 +181,8 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     }
 
     /**
-     * @param   array   $data
-     * @return  array
+     * @param array $data
+     * @return array
      */
     public static function unmap(array $data)
     {
@@ -188,7 +190,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     }
 
     /**
-     * @return  array
+     * @return array
      */
     public function wrap()
     {
@@ -196,7 +198,7 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     }
 
     /**
-     * @return  array
+     * @return array
      */
     public function unwrap()
     {
@@ -206,9 +208,9 @@ class MiraklObject implements ArrayableInterface, \IteratorAggregate
     /**
      * Transforms data value according to $dataTypes and $dateFields properties
      *
-     * @param   string  $key
-     * @param   mixed   $value
-     * @return  mixed
+     * @param string $key
+     * @param mixed  $value
+     * @return mixed
      */
     public static function value($key, $value)
     {

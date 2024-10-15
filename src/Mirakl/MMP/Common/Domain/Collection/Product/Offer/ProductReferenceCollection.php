@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Product\Offer;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Product\Offer\ProductReference;
 
 /**
- * @method  ProductReference    current()
- * @method  ProductReference    first()
- * @method  ProductReference    get($offset)
- * @method  ProductReference    offsetGet($offset)
- * @method  ProductReference    last()
+ * @method ProductReference current()
+ * @method ProductReference first()
+ * @method ProductReference get($offset)
+ * @method ProductReference offsetGet($offset)
+ * @method ProductReference last()
  */
 class ProductReferenceCollection extends MiraklCollection
 {

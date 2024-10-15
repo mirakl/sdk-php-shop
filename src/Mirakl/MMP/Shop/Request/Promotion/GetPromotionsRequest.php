@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Promotion;
 
 use Mirakl\MMP\Common\Request\Promotion\AbstractGetPromotionsRequest;
@@ -7,8 +10,8 @@ use Mirakl\MMP\Shop\Domain\Collection\Promotion\PromotionCollection;
 /**
  * (PR01) List promotions information
  *
- * @method  array   getIds()
- * @method  $this   setIds(array $ids)
+ * @method string[] getIds()
+ * @method $this    setIds(string[] $ids)
  *
  * Example:
  *
@@ -28,6 +31,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Promotion\PromotionCollection;
  *  ->setDateCreatedTo($this->createDateTime('2017-10-12 15:45:12'))
  *  ->setEndingAfter($this->createDateTime('2018-10-12 15:45:12'))
  *  ->setStartingBefore($this->createDateTime('2019-10-12 15:45:12'))
+ *  ->setLastRequestDate($this->createDateTime('2017-10-12 15:45:12'))
  *  ->setLocale('en_US')
  *  ->setTriggerOfferIds(['1100', '1101'])
  *  ->setRewardOfferIds(['2200', '2201'])

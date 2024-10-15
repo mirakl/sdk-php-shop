@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Accept;
 
 use Mirakl\MMP\Common\Request\Order\Accept\AbstractAcceptOrderRequest;
@@ -21,4 +24,5 @@ use Mirakl\MMP\Common\Request\Order\Accept\AbstractAcceptOrderRequest;
  * </code>
  */
 class AcceptOrderRequest extends AbstractAcceptOrderRequest
-{}
+{
+}

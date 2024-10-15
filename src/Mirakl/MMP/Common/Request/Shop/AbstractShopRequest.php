@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shop;
 
 use Mirakl\Core\Request\AbstractRequest;
 
 /**
- * @method  string  getShopId()
- * @method  $this   setShopId(string $shopId)
+ * @method string getShopId()
+ * @method $this  setShopId(string $shopId)
  */
 abstract class AbstractShopRequest extends AbstractRequest
 {
@@ -17,11 +20,12 @@ abstract class AbstractShopRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $shopId
+     * @param string $shopId
      */
     public function __construct($shopId)
     {
         parent::__construct();
+
         $this->setShopId($shopId);
     }
 }

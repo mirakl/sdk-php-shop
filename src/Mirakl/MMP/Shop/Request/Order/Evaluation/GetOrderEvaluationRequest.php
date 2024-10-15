@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Evaluation;
 
 use Mirakl\MMP\Common\Request\Order\Evaluation\AbstractGetOrderEvaluationRequest;
@@ -19,4 +22,5 @@ use Mirakl\MMP\Common\Request\Order\Evaluation\AbstractGetOrderEvaluationRequest
  * </code>
  */
 class GetOrderEvaluationRequest extends AbstractGetOrderEvaluationRequest
-{}
+{
+}

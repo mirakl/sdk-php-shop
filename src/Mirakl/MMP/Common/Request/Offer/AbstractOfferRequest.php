@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Offer;
 
 use Mirakl\Core\Request\AbstractRequest;
 
 /**
- * @method  string  getOfferId()
- * @method  $this   setOfferId(string $offerId)
+ * @method string getOfferId()
+ * @method $this  setOfferId(string $offerId)
  */
 abstract class AbstractOfferRequest extends AbstractRequest
 {
@@ -17,11 +20,12 @@ abstract class AbstractOfferRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $offerId
+     * @param string $offerId
      */
     public function __construct($offerId)
     {
         parent::__construct();
+
         $this->setOfferId($offerId);
     }
 }

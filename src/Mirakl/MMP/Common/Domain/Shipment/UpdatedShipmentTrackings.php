@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shipment;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -6,10 +9,10 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\UpdatedShipmentTrackingErrorCol
 use Mirakl\MMP\Common\Domain\Collection\Shipment\UpdatedShipmentTrackingSuccessCollection;
 
 /**
- * @method  UpdatedShipmentTrackingErrorCollection      getShipmentErrors()
- * @method  $this                                       setShipmentErrors(array|UpdatedShipmentTrackingErrorCollection $errors)
- * @method  UpdatedShipmentTrackingSuccessCollection    getShipmentSuccess()
- * @method  $this                                       setShipmentSuccess(array|UpdatedShipmentTrackingSuccessCollection $shipments)
+ * @method UpdatedShipmentTrackingErrorCollection   getShipmentErrors()
+ * @method $this                                    setShipmentErrors(array|UpdatedShipmentTrackingErrorCollection $errors)
+ * @method UpdatedShipmentTrackingSuccessCollection getShipmentSuccess()
+ * @method $this                                    setShipmentSuccess(array|UpdatedShipmentTrackingSuccessCollection $shipments)
  */
 class UpdatedShipmentTrackings extends MiraklObject
 {

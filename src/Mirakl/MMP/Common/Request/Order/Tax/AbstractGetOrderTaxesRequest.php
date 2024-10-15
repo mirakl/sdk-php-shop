@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Tax;
 
 use Mirakl\Core\Domain\LocalizableTrait;

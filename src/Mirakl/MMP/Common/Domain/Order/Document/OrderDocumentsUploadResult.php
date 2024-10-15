@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order\Document;
 
 use Mirakl\MMP\Common\Domain\Document\DocumentsUploadResult;

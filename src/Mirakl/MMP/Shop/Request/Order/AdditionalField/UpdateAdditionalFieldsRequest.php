@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\AdditionalField;
 
 use Mirakl\Core\Response\Decorator;
@@ -14,10 +17,10 @@ use Psr\Http\Message\ResponseInterface;
  * In order to delete an additional field's value, set it to null or an empty string.
  * Note that you may not delete the value of a required additional field value.
  *
- * @method  UpdateAdditionalFields  getOrderAdditionalFields()
- * @method  $this                   setOrderAdditionalFields(array|UpdateAdditionalFields $orderAdditionalFields)
- * @method  int                     getOrderLines()
- * @method  $this                   setOrderLines(array|UpdateAdditionalFields $orderAdditionalFields)
+ * @method UpdateAdditionalFields getOrderAdditionalFields()
+ * @method $this                  setOrderAdditionalFields(array|UpdateAdditionalFields $orderAdditionalFields)
+ * @method int                    getOrderLines()
+ * @method $this                  setOrderLines(array|UpdateAdditionalFields $orderAdditionalFields)
  *
  * Example:
  *
@@ -111,7 +114,7 @@ class UpdateAdditionalFieldsRequest extends AbstractOrderRequest
      */
     public function getResponseDecorator()
     {
-        return new Decorator\Closure(function(ResponseInterface $response) {
+        return new Decorator\Closure(function (ResponseInterface $response) {
             $data = (new Decorator\AssocArray())->decorate($response);
 
             $result = new UpdateAdditionalFieldsResult();

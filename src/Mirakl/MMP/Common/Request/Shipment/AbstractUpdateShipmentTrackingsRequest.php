@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shipment;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -11,8 +14,8 @@ use Mirakl\MMP\Common\Domain\Shipment\UpdatedShipmentTrackings;
  * If the carrier is not registered, the complete tracking url can be provided.
  * Limited to 1000 shipments at a time.
  *
- * @method  UpdateShipmentTrackingCollection    getShipments()
- * @method  $this                               setShipments(array|UpdateShipmentTrackingCollection $updateShipmentTrackings)
+ * @method UpdateShipmentTrackingCollection getShipments()
+ * @method $this                            setShipments(array|UpdateShipmentTrackingCollection $updateShipmentTrackings)
  */
 abstract class AbstractUpdateShipmentTrackingsRequest extends AbstractRequest
 {
@@ -39,11 +42,12 @@ abstract class AbstractUpdateShipmentTrackingsRequest extends AbstractRequest
     ];
 
     /**
-     * @param   array|UpdateShipmentTrackingCollection  $updateShipmentTrackings
+     * @param array|UpdateShipmentTrackingCollection $updateShipmentTrackings
      */
     public function __construct($updateShipmentTrackings)
     {
         parent::__construct();
+
         $this->setShipments($updateShipmentTrackings);
     }
 

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Incident;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -7,12 +10,12 @@ use Mirakl\MMP\Shop\Domain\Order\Incident\IncidentReason;
 /**
  * (OR64) Mark an incident as resolved
  *
- * @method  IncidentReason  getIncidentReason()
- * @method  $this           setIncidentReason(array|IncidentReason $incidentReason)
- * @method  string          getOrderId()
- * @method  $this           setOrderId(string $orderId)
- * @method  string          getOrderLineId()
- * @method  $this           setOrderLineId(string $orderId)
+ * @method IncidentReason getIncidentReason()
+ * @method $this          setIncidentReason(array|IncidentReason $incidentReason)
+ * @method string         getOrderId()
+ * @method $this          setOrderId(string $orderId)
+ * @method string         getOrderLineId()
+ * @method $this          setOrderLineId(string $orderId)
  *
  * Example:
  *
@@ -58,13 +61,14 @@ class ResolveIncidentRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $orderId
-     * @param   String  $orderLineId
-     * @param   String  $reasonCode
+     * @param string $orderId
+     * @param string $orderLineId
+     * @param string $reasonCode
      */
     public function __construct($orderId, $orderLineId, $reasonCode)
     {
         parent::__construct();
+
         $this->setOrderId($orderId);
         $this->setOrderLineId($orderLineId);
         $this->setIncidentReason(['reason_code' => $reasonCode]);

@@ -1,18 +1,21 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Offer\Importer;
 
 use Mirakl\Core\Request\AbstractFileRequest;
-use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportTracking;
+use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferProductImportTracking;
 
 /**
  * (OF01) Import offers
  * NB. This API must be called with the OPERATOR role and the user must have the 'Shop modification' right
  *
- * @method  string  getImportMode()
- * @method  $this   setImportMode(string $mode)
- * @method  bool    getWithProducts()
- * @method  $this   setWithProducts(bool $flag)
- * @method  bool    isWithProducts()
+ * @method string getImportMode()
+ * @method $this  setImportMode(string $mode)
+ * @method bool   getWithProducts()
+ * @method $this  setWithProducts(bool $flag)
+ * @method bool   isWithProducts()
  */
 abstract class AbstractOfferImportRequest extends AbstractFileRequest
 {
@@ -31,6 +34,6 @@ abstract class AbstractOfferImportRequest extends AbstractFileRequest
      */
     public function getResponseDecorator()
     {
-        return OfferImportTracking::decorator();
+        return OfferProductImportTracking::decorator();
     }
 }

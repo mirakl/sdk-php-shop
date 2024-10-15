@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Client;
 
 use Mirakl\Core\Client\ShopApiClientTrait;
@@ -27,6 +30,8 @@ use Mirakl\MMP\Common\Domain\Offer\Async\Export\OffersExportAsyncTrackingResult;
 use Mirakl\MMP\Common\Domain\Order\Async\Export\ExportOrdersAsyncStatusResponse;
 use Mirakl\MMP\Common\Domain\Order\Async\Export\ExportOrdersAsyncSubmitResponse;
 use Mirakl\MMP\Common\Domain\Order\Document\OrderDocumentsUploadResult;
+use Mirakl\MMP\Common\Domain\Order\ShippingFrom\OrderLinesShippingFromUpdateResponse;
+use Mirakl\MMP\Common\Domain\Returns\ReturnWorkflowResponse;
 use Mirakl\MMP\Common\Domain\Shipment\CreatedShipments;
 use Mirakl\MMP\Common\Domain\Shipment\DeletedShipments;
 use Mirakl\MMP\Common\Domain\Shipment\UpdatedShipmentTrackings;
@@ -40,6 +45,7 @@ use Mirakl\MMP\OperatorShop\Domain\DocumentRequest\UploadedAccountingDocumentsRe
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportResult;
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportTracking;
 use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferProductImportTracking;
+use Mirakl\MMP\OperatorShop\Domain\Offer\Pricing\Importer\OfferPricingsImportTracking;
 use Mirakl\MMP\OperatorShop\Domain\Order\Refund\RefundsCreated;
 use Mirakl\MMP\OperatorShop\Request\Message\GetThreadDetailsRequest;
 use Mirakl\MMP\OperatorShop\Request\Message\GetThreadsRequest;
@@ -60,6 +66,8 @@ use Mirakl\MMP\Shop\Domain\Offer\ShopOffer;
 use Mirakl\MMP\Shop\Domain\Order\AdditionalField\UpdateAdditionalFieldsResult;
 use Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated;
 use Mirakl\MMP\Shop\Domain\PlatformConfiguration\PlatformConfigurationResponse;
+use Mirakl\MMP\Shop\Domain\Returns\ReturnAcceptOrRefuseResponse;
+use Mirakl\MMP\Shop\Domain\Returns\UpdateReturnsResponse;
 use Mirakl\MMP\Shop\Domain\Shop\ShopAccount;
 use Mirakl\MMP\Shop\Domain\Shop\UpdatedShopAndError;
 use Mirakl\MMP\Shop\Request\AdditionalField\GetAdditionalFieldRequest;
@@ -82,6 +90,9 @@ use Mirakl\MMP\Shop\Request\Offer\Message\AnswerOfferMessageRequest;
 use Mirakl\MMP\Shop\Request\Offer\Message\GetOfferMessagesRequest;
 use Mirakl\MMP\Shop\Request\Offer\OffersExportFileRequest;
 use Mirakl\MMP\Shop\Request\Offer\OffersExportRequest;
+use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportErrorReportRequest;
+use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportReportsRequest;
+use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportRequest;
 use Mirakl\MMP\Shop\Request\Offer\State\GetOfferStatesRequest;
 use Mirakl\MMP\Shop\Request\Offer\State\GetOfferStateListRequest;
 use Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest;
@@ -104,6 +115,7 @@ use Mirakl\MMP\Shop\Request\Order\Message\CreateOrderMessageRequest;
 use Mirakl\MMP\Shop\Request\Order\Message\GetOrderMessagesRequest;
 use Mirakl\MMP\Shop\Request\Order\Refund\CreateRefundRequest;
 use Mirakl\MMP\Shop\Request\Order\Ship\ShipOrderRequest;
+use Mirakl\MMP\Shop\Request\Order\ShippingFrom\UpdateOrderLinesShippingFromRequest;
 use Mirakl\MMP\Shop\Request\Order\Tax\GetOrderTaxesRequest;
 use Mirakl\MMP\Shop\Request\Order\Tracking\UpdateOrderTrackingInfoRequest;
 use Mirakl\MMP\Shop\Request\Order\Update\UpdateOrdersRequest;
@@ -117,6 +129,10 @@ use Mirakl\MMP\Shop\Request\Product\Offer\GetOffersOnProductsRequest;
 use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetReasonsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
+use Mirakl\MMP\Shop\Request\Returns\AcceptOrRefuseReturnsRequest;
+use Mirakl\MMP\Shop\Request\Returns\GetReturnsRequest;
+use Mirakl\MMP\Shop\Request\Returns\ReceiveReturnsRequest;
+use Mirakl\MMP\Shop\Request\Returns\UpdateReturnsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\CreateShipmentsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\DeleteShipmentsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\GetItemsToShipRequest;
@@ -136,6 +152,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
 
 /**
  * @method void                                  acceptOrder(AcceptOrderRequest $request)
+ * @method ReturnAcceptOrRefuseResponse          acceptOrRefuseReturns(AcceptOrRefuseReturnsRequest $request)
  * @method CreatedAdjustmentCollection           adjustOrderLines(AdjustOrderLinesRequest $request)
  * @method MessageCreated                        answerOfferMessage(AnswerOfferMessageRequest $request)
  * @method void                                  cancelOrder(CancelOrderRequest $request)
@@ -169,6 +186,8 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method OfferImportResult                     getOffersImportResult(OfferImportReportRequest $request)
  * @method SeekableCollection                    getOffersImports(OffersImportsRequest $request)
  * @method ProductWithOffersCollection           getOffersOnProducts(GetOffersOnProductsRequest $request)
+ * @method FileWrapper                           getOfferPricingsImportErrorReport(OfferPricingsImportErrorReportRequest $request)
+ * @method SeekableCollection                    getOfferPricingsImportReports(OfferPricingsImportReportsRequest $request)
  * @method CommonOfferStateCollection            getOfferStates(GetOfferStatesRequest $request) @deprecated Use getOfferStateList instead
  * @method OfferStateCollection                  getOfferStateList(GetOfferStateListRequest $request)
  * @method OrderDocumentCollection               getOrderDocuments(GetOrderDocumentsRequest $request)
@@ -180,6 +199,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method ProductCollection                     getProducts(GetProductsRequest $request)
  * @method PromotionCollection                   getPromotions(GetPromotionsRequest $request)
  * @method ReasonCollection                      getReasons(GetReasonsRequest $request)
+ * @method SeekableCollection                    getReturns(GetReturnsRequest $request)
  * @method SeekableCollection                    getShipments(GetShipmentsRequest $request)
  * @method ThreadDetails                         getThreadDetails(GetThreadDetailsRequest $request)
  * @method SeekableCollection                    getThreads(GetThreadsRequest $request)
@@ -189,21 +209,25 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method ShippingZoneDetailCollection          getShippingZones(GetShippingZonesRequest $request)
  * @method ShopDocumentCollection                getShopDocuments(GetShopDocumentsRequest $request)
  * @method OfferProductImportTracking            importOffers(OfferImportRequest $request)
+ * @method OfferPricingsImportTracking           importOfferPricings(OfferPricingsImportRequest $request)
  * @method void                                  markIncidentAsResolved(ResolveIncidentRequest $request)
  * @method ExportOrdersAsyncStatusResponse       pollExportOrdersAsyncStatus(ExportOrdersAsyncStatusRequest $request)
  * @method ShipmentWorkflowResponse              readyForPickUpShipments(ReadyForPickUpShipmentRequest $request)
+ * @method ReturnWorkflowResponse                receiveReturns(ReceiveReturnsRequest $request)
  * @method ThreadReplyCreated                    replyToThread(ThreadReplyRequest $request)
  * @method CancelationsCreated                   requestCancelOrderLines(CreateCancelationsRequest $request)
  * @method RefundsCreated                        requestRefundOrder(CreateRefundRequest $request)
  * @method ShopOrderCollection                   retrieveExportOrdersAsyncFile(ExportOrdersAsyncDownloadFileRequest $request)
  * @method FileWrapper                           retrieveExportOrdersAsyncFileJson(ExportOrdersAsyncDownloadFileJsonRequest $request)
  * @method void                                  shipOrder(ShipOrderRequest $request)
+ * @method OrderLinesShippingFromUpdateResponse  updateShippingFrom(UpdateOrderLinesShippingFromRequest $request)
  * @method ShipmentWorkflowResponse              shipShipments(ShipShipmentsRequest $request)
  * @method UpdatedShopAndError                   updateAccount(UpdateAccountRequest $request)
  * @method OfferImportTracking                   updateOffers(UpdateOffersRequest $request)
  * @method UpdateAdditionalFieldsResult          updateOrderAdditionalFields(UpdateAdditionalFieldsRequest $request)
  * @method UpdatedOrderAndErrorCollection        updateOrders(UpdateOrdersRequest $request)
  * @method void                                  updateOrderTrackingInfo(UpdateOrderTrackingInfoRequest $request)
+ * @method UpdateReturnsResponse                 updateReturns(UpdateReturnsRequest $request)
  * @method UpdatedShipmentTrackings              updateShipmentTrackings(UpdateShipmentTrackingsRequest $request)
  * @method UploadedAccountingDocumentsResponse   uploadAccountingDocuments(UploadAccountingDocumentsRequest $request)
  * @method OrderDocumentsUploadResult            uploadOrderDocuments(UploadOrdersDocumentsRequest $request)
@@ -214,9 +238,9 @@ class ShopApiClient extends CommonApiClient
     use ShopApiClientTrait;
 
     /**
-     * @param   string      $baseUrl
-     * @param   string      $apiKey
-     * @param   string|null $shopId
+     * @param string      $baseUrl
+     * @param string      $apiKey
+     * @param string|null $shopId
      */
     public function __construct($baseUrl, $apiKey, $shopId = null)
     {
@@ -229,8 +253,8 @@ class ShopApiClient extends CommonApiClient
 
     /**
      * @deprecated  Use requestCancelOrderLines instead
-     * @param   CreateCancelationsRequest   $request
-     * @return  CancelationCreatedCollection
+     * @param CreateCancelationsRequest $request
+     * @return CancelationCreatedCollection
      */
     public function cancelOrderLines(CreateCancelationsRequest $request)
     {
@@ -240,18 +264,23 @@ class ShopApiClient extends CommonApiClient
     /**
      * (A01) Get account information
      *
-     * @return  ShopAccount
+     * @param GetAccountRequest $request
+     * @return ShopAccount
      */
-    public function getAccount()
+    public function getAccount($request = null)
     {
-        return (new GetAccountRequest())->run($this);
+        if (!$request) {
+            $request = new GetAccountRequest();
+        }
+
+        return $request->run($this);
     }
 
     /**
      * (SH31) List all logistic classes
      *
-     * @param   null|string $locale
-     * @return  LogisticClassCollection
+     * @param null|string $locale
+     * @return LogisticClassCollection
      */
     public function getLogisticClasses($locale = null)
     {
@@ -267,7 +296,7 @@ class ShopApiClient extends CommonApiClient
     /**
      * (SH21) List all carriers (sorted by sortIndex, defined in the BO)
      *
-     * @return  CarrierCollection
+     * @return CarrierCollection
      */
     public function getShippingCarriers()
     {
@@ -276,8 +305,8 @@ class ShopApiClient extends CommonApiClient
 
     /**
      * @deprecated  Use requestRefundOrder instead
-     * @param   CreateRefundRequest $request
-     * @return  RefundCreatedCollection
+     * @param CreateRefundRequest $request
+     * @return RefundCreatedCollection
      */
     public function refundOrder(CreateRefundRequest $request)
     {

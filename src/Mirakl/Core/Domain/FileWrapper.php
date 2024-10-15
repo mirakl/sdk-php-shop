@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 class FileWrapper
@@ -9,7 +12,7 @@ class FileWrapper
      * string = file contents
      * array = CSV data
      *
-     * @param   string|array|\SplFileObject $file
+     * @param string|array|\SplFileObject $file
      */
     public function __construct($file)
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCM\Shop\Request\Catalog\Product;
 
 use Mirakl\MCM\Common\Request\Catalog\Product\AbstractGetSourceProductDataSheetStatusRequest;
@@ -35,4 +38,5 @@ use Mirakl\MCM\Common\Request\Catalog\Product\AbstractGetSourceProductDataSheetS
  * </code>
  */
 class GetSourceProductDataSheetStatusRequest extends AbstractGetSourceProductDataSheetStatusRequest
-{}
+{
+}

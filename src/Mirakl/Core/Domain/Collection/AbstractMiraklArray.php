@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Mirakl\Core\Domain\Collection;
@@ -20,7 +21,7 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     protected $itemClass;
 
     /**
-     * @param   array   $items
+     * @param array $items
      */
     public function __construct(array $items = [])
     {
@@ -36,8 +37,8 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   array       $items
-     * @return  $this
+     * @param array $items
+     * @return $this
      */
     public static function create(array $items = [])
     {
@@ -45,8 +46,8 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   mixed   $offset
-     * @return  bool
+     * @param mixed $offset
+     * @return bool
      */
     public function exists(mixed $offset): bool
     {
@@ -62,7 +63,7 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @return  array
+     * @return array
      */
     public function getItems(): array
     {
@@ -86,8 +87,8 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   array   $item
-     * @return  mixed
+     * @param array $item
+     * @return mixed
      */
     public function newItem(array $item)
     {
@@ -95,8 +96,8 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   mixed   $offset
-     * @return  bool
+     * @param mixed $offset
+     * @return bool
      */
     public function offsetExists($offset): bool
     {
@@ -120,7 +121,7 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   mixed   $offset
+     * @param mixed $offset
      */
     public function offsetUnset(mixed $offset): void
     {
@@ -130,7 +131,7 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   mixed   $offset
+     * @param mixed $offset
      */
     public function remove(mixed $offset): void
     {
@@ -138,7 +139,7 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @return  $this
+     * @return $this
      */
     public function reset(): self
     {
@@ -148,8 +149,8 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   mixed   $key
-     * @param   mixed   $value
+     * @param mixed $key
+     * @param mixed $value
      */
     public function set(mixed $key, mixed $value): void
     {
@@ -157,8 +158,8 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   string  $class
-     * @return  $this
+     * @param string $class
+     * @return $this
      */
     public function setItemClass(string $class): self
     {
@@ -168,13 +169,13 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   array   $items
-     * @return  $this
+     * @param array $items
+     * @return $this
      */
     public function setItems(array $items): self
     {
         if ($this->itemClass) {
-            array_walk($items, function(&$item) {
+            array_walk($items, function (&$item) {
                 if (is_array($item)) {
                     $item = $this->newItem($item);
                 }
@@ -203,9 +204,9 @@ abstract class AbstractMiraklArray implements ArrayableInterface, \ArrayAccess, 
     }
 
     /**
-     * @param   string  $method
-     * @param   array   $args
-     * @return  array
+     * @param string $method
+     * @param array  $args
+     * @return array
      */
     public function walk(string $method, array $args = []): array
     {

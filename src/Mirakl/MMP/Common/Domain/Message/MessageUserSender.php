@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Message;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getId()
- * @method  $this   setId(string $id)
- * @method  string  getName()
- * @method  $this   setName(string $name)
- * @method  string  getType()               One of UserType
- * @method  $this   setType(string $type)
+ * @method string getId()
+ * @method $this  setId(string $id)
+ * @method string getName()
+ * @method $this  setName(string $name)
+ * @method string getType()             One of UserType
+ * @method $this  setType(string $type)
  */
 class MessageUserSender extends MiraklObject
 {

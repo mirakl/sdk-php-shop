@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order;
 
 /**
@@ -8,7 +11,9 @@ namespace Mirakl\MMP\Common\Domain\Order;
 class CustomerOrganization extends AbstractCustomerOrganization
 {
     /**
-     * @return  string
+     * Alias for getOrganizationId()
+     *
+     * @return string
      */
     public function getId()
     {
@@ -16,8 +21,10 @@ class CustomerOrganization extends AbstractCustomerOrganization
     }
 
     /**
-     * @param   string  $id
-     * @return  $this
+     * Alias for setOrganizationId()
+     *
+     * @param string $id
+     * @return $this
      */
     public function setId($id)
     {

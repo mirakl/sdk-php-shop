@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\DocumentRequest;
 
 use Mirakl\Core\Exception\RequestValidationException;
@@ -22,6 +25,8 @@ use Mirakl\Core\Response\Decorator\FileTrait as FileResponseDecorator;
  * @method $this    setDocumentIds(array $documentIds)
  * @method string[] getDocumentFormats()
  * @method $this    setDocumentFormats(string[] $documentFormats)
+ * @method string[] getDocumentRequestIds()
+ * @method $this    setDocumentRequestIds(string[] $documentRequestId)
  * @method string[] getEntityIds()
  * @method $this    setEntityIds(array $entityIds)
  * @method string[] getEntityTypes()
@@ -42,6 +47,7 @@ abstract class AbstractDownloadAccountingDocumentsRequest extends AbstractReques
     protected $duplicatedQueryParams = [
         'document_id',
         'document_format',
+        'document_request_id',
         'entity_id',
         'entity_type',
     ];
@@ -50,13 +56,14 @@ abstract class AbstractDownloadAccountingDocumentsRequest extends AbstractReques
      * @var array
      */
     public $queryParams = [
-        'document_ids'     => 'document_id',     // Document identifiers. This parameter can be supplied multiple times.
-        'document_formats' => 'document_format', // Document formats. This parameter can be supplied multiple times.
-                                                 // One or more among: PDF, cXML
-        'entity_ids'       => 'entity_id',       // Entity identifiers related to the documents to download. This parameter can be supplied multiple times.
-                                                 // The entity_type must be specified to use this filter, otherwise an error 400 will be returned.
-        'entity_types'     => 'entity_type',     // Entity types related to the documents to download. This parameter can be supplied multiple times.
-                                                 // One or more among: PRODUCT_LOGISTIC_ORDER, SHOP_BILLING_CYCLE_PURCHASE_ORDER
+        'document_ids'     => 'document_id',             // Document identifiers. This parameter can be supplied multiple times.
+        'document_formats' => 'document_format',         // Document formats. This parameter can be supplied multiple times.
+                                                         // One or more among: PDF, cXML
+        'document_request_ids' => 'document_request_id', // The document request unique identifier. This parameter can be supplied multiple times.
+        'entity_ids'       => 'entity_id',               // Entity identifiers related to the documents to download. This parameter can be supplied multiple times.
+                                                         // The entity_type must be specified to use this filter, otherwise an error 400 will be returned.
+        'entity_types'     => 'entity_type',             // Entity types related to the documents to download. This parameter can be supplied multiple times.
+                                                         // One or more among: PRODUCT_LOGISTIC_ORDER, SHOP_BILLING_CYCLE_PURCHASE_ORDER
     ];
 
     /**

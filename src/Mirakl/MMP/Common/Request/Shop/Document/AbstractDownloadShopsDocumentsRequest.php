@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shop\Document;
 
 use Mirakl\Core\Exception\RequestValidationException;
@@ -49,8 +52,8 @@ abstract class AbstractDownloadShopsDocumentsRequest extends AbstractDocumentsDo
     public $queryParams = ['shop_ids', 'document_ids', 'type_codes'];
 
     /**
-     * @return  $this
-     * @throws  RequestValidationException
+     * @return $this
+     * @throws RequestValidationException
      */
     private function checkParams()
     {
@@ -62,9 +65,9 @@ abstract class AbstractDownloadShopsDocumentsRequest extends AbstractDocumentsDo
     }
 
     /**
-     * @param   array   $documentIds
-     * @return  $this
-     * @throws  RequestValidationException
+     * @param array $documentIds
+     * @return $this
+     * @throws RequestValidationException
      */
     public function setDocumentIds(array $documentIds)
     {
@@ -74,9 +77,9 @@ abstract class AbstractDownloadShopsDocumentsRequest extends AbstractDocumentsDo
     }
 
     /**
-     * @param   array   $shopIds
-     * @return  $this
-     * @throws  RequestValidationException
+     * @param array $shopIds
+     * @return $this
+     * @throws RequestValidationException
      */
     public function setShopIds(array $shopIds)
     {

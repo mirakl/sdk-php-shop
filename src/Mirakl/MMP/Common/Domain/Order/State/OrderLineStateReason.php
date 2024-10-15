@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order\State;
 
 class OrderLineStateReason extends AbstractOrderLineStateReason

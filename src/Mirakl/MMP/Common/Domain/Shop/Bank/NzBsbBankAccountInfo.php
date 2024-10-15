@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shop\Bank;
 
 /**
- * @method  string  getBsbCode()
- * @method  $this   setBsbCode(string $bsbCode)
- * @method  string  getBsbBan()
- * @method  $this   setBsbBan(string $bsbBan)
+ * @method string getBsbCode()
+ * @method $this  setBsbCode(string $bsbCode)
+ * @method string getBsbBan()
+ * @method $this  setBsbBan(string $bsbBan)
  */
 class NzBsbBankAccountInfo extends BankAccountInfo
 {

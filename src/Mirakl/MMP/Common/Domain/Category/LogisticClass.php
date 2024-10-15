@@ -1,23 +1,27 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Category;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getCode()
- * @method  $this   setCode(string $code)
- * @method  string  getLabel()
- * @method  $this   setLabel(string $label)
+ * @method string getCode()
+ * @method $this  setCode(string $code)
+ * @method string getLabel()
+ * @method $this  setLabel(string $label)
  */
 class LogisticClass extends MiraklObject
 {
     /**
-     * @param   string  $code
-     * @param   string  $label
+     * @param string $code
+     * @param string $label
      */
     public function __construct($code, $label)
     {
         parent::__construct();
+
         $this->setCode($code);
         $this->setLabel($label);
     }

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Request\Product;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -7,14 +10,14 @@ use Mirakl\Core\Request\SortableTrait;
 use Mirakl\MCI\Common\Domain\Collection\Product\ProductImportResultCollection;
 
 /**
- * @method  bool        getHasTransformedFile()
- * @method  $this       setHasTransformedFile(bool $hasTransformedFile)
- * @method  \DateTime   getLastRequestDate()
- * @method  $this       setLastRequestDate(\DateTime $lastRequestDate)
- * @method  string      getShopId()
- * @method  $this       setShopId(string $shopId)
- * @method  string      getStatus()
- * @method  $this       setStatus(string $status)
+ * @method bool      getHasTransformedFile()
+ * @method $this     setHasTransformedFile(bool $hasTransformedFile)
+ * @method \DateTime getLastRequestDate()
+ * @method $this     setLastRequestDate(\DateTime $lastRequestDate)
+ * @method int       getShopId()
+ * @method $this     setShopId(int $shopId)
+ * @method string    getStatus()
+ * @method $this     setStatus(string $status)
  */
 abstract class AbstractProductImportStatusesRequest extends AbstractRequest
 {
@@ -22,10 +25,10 @@ abstract class AbstractProductImportStatusesRequest extends AbstractRequest
     use SortableTrait;
 
     // (DEFAULT) Sort by date created
-    const SORT_BY_DATE_CREATED = 'dateCreated';
+    public const SORT_BY_DATE_CREATED = 'dateCreated';
 
     // Sort by last updated
-    const SORT_BY_LAST_UPDATED = 'lastUpdated';
+    public const SORT_BY_LAST_UPDATED = 'lastUpdated';
 
     /**
      * @var string

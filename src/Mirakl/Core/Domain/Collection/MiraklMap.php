@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Mirakl\Core\Domain\Collection;
@@ -6,7 +7,7 @@ namespace Mirakl\Core\Domain\Collection;
 class MiraklMap extends AbstractMiraklArray
 {
     /**
-     * @param  string $key
+     * @param string $key
      * @return mixed
      */
     public function get(string $key): mixed
@@ -15,8 +16,8 @@ class MiraklMap extends AbstractMiraklArray
     }
 
     /**
-     * @param  string $key
-     * @param  mixed  $item
+     * @param string $key
+     * @param mixed  $item
      * @return $this
      */
     public function put(string $key, mixed $item = null): self

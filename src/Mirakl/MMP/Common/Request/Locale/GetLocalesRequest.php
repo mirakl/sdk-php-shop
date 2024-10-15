@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Locale;
 
 use Mirakl\Core\Request\AbstractRequest;

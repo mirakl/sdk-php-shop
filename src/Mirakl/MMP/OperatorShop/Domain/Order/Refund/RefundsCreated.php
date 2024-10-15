@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Domain\Order\Refund;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Order\Refund\RefundCreatedCollection;
 
 /**
- * @method  RefundCreatedCollection getRefunds()
- * @method  $this                   setRefunds(array|RefundCreatedCollection $refunds)
- * @method  string                  getOrderTaxMode()
- * @method  $this                   setOrderTaxMode(string $orderTaxMode)
+ * @method RefundCreatedCollection getRefunds()
+ * @method $this                   setRefunds(array|RefundCreatedCollection $refunds)
+ * @method string                  getOrderTaxMode()
+ * @method $this                   setOrderTaxMode(string $orderTaxMode)
  */
 class RefundsCreated extends MiraklObject
 {

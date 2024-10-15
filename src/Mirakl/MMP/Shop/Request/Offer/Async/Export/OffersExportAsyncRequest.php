@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer\Async\Export;
 
 use Mirakl\MMP\Common\Request\Offer\Async\Export\AbstractOffersExportAsyncRequest;
@@ -45,4 +48,5 @@ use Mirakl\MMP\Common\Request\Offer\Async\Export\AbstractOffersExportAsyncReques
  * </code>
  */
 class OffersExportAsyncRequest extends AbstractOffersExportAsyncRequest
-{}
+{
+}

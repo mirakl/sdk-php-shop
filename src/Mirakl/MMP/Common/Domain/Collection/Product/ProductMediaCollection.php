@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Product;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Product\ProductMedia;
 
 /**
- * @method  ProductMedia    current()
- * @method  ProductMedia    first()
- * @method  ProductMedia    get($offset)
- * @method  ProductMedia    offsetGet($offset)
- * @method  ProductMedia    last()
+ * @method ProductMedia current()
+ * @method ProductMedia first()
+ * @method ProductMedia get($offset)
+ * @method ProductMedia offsetGet($offset)
+ * @method ProductMedia last()
  */
 class ProductMediaCollection extends MiraklCollection
 {

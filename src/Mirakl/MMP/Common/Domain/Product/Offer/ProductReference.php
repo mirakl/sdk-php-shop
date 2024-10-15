@@ -1,13 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Product\Offer;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getType()
- * @method  $this   setType(string $type)
- * @method  string  getValue()
- * @method  $this   setValue(string $value)
+ * @method string getType()
+ * @method $this  setType(string $type)
+ * @method string getValue()
+ * @method $this  setValue(string $value)
  */
 class ProductReference extends MiraklObject
 {
@@ -20,12 +23,13 @@ class ProductReference extends MiraklObject
     ];
 
     /**
-     * @param   string  $type
-     * @param   string  $value
+     * @param string $type
+     * @param string $value
      */
     public function __construct($type, $value)
     {
         parent::__construct();
+
         $this->setType($type);
         $this->setValue($value);
     }

@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Shipment\Workflow;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Shipment\Workflow\ShipmentWorkflowSuccess;
 
 /**
- * @method  ShipmentWorkflowSuccess current()
- * @method  ShipmentWorkflowSuccess first()
- * @method  ShipmentWorkflowSuccess get($offset)
- * @method  ShipmentWorkflowSuccess offsetGet($offset)
- * @method  ShipmentWorkflowSuccess last()
+ * @method ShipmentWorkflowSuccess current()
+ * @method ShipmentWorkflowSuccess first()
+ * @method ShipmentWorkflowSuccess get($offset)
+ * @method ShipmentWorkflowSuccess offsetGet($offset)
+ * @method ShipmentWorkflowSuccess last()
  */
 class ShipmentWorkflowSuccessCollection extends MiraklCollection
 {

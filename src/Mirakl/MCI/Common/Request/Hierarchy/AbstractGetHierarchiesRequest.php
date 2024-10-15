@@ -1,16 +1,19 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Request\Hierarchy;
 
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MCI\Common\Domain\Collection\HierarchyCollection;
 
 /**
- * @method  string  getHierarchy()
- * @method  $this   setHierarchy(string $hierarchyCode)
- * @method  string  getHierarchyCode()
- * @method  $this   setHierarchyCode(string $hierarchyCode)
- * @method  int     getMaxLevel()
- * @method  $this   setMaxLevel(int $maxLevel)
+ * @method string getHierarchy()
+ * @method $this  setHierarchy(string $hierarchyCode)
+ * @method string getHierarchyCode()
+ * @method $this  setHierarchyCode(string $hierarchyCode)
+ * @method int    getMaxLevel()
+ * @method $this  setMaxLevel(int $maxLevel)
  */
 abstract class AbstractGetHierarchiesRequest extends AbstractRequest
 {

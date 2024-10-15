@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Mirakl\Core\Response\ResponseDecoratorInterface;
@@ -17,8 +20,8 @@ class MiraklCollection implements ResponseDecoratorInterface
     protected $key;
 
     /**
-     * @param   string      $class
-     * @param   string|null $key
+     * @param string      $class
+     * @param string|null $key
      */
     public function __construct($class = \Mirakl\Core\Domain\Collection\MiraklCollection::class, $key = null)
     {

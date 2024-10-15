@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shipment;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -6,10 +9,10 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\DeletedShipmentSuccessCollectio
 use Mirakl\MMP\Common\Domain\Collection\Shipment\DeletedShipmentErrorCollection;
 
 /**
- * @method  DeletedShipmentErrorCollection    getShipmentErrors()
- * @method  $this                             setShipmentErrors(array|DeletedShipmentErrorCollection $errorCollection)
- * @method  DeletedShipmentSuccessCollection  getShipmentSuccess()
- * @method  $this                             setShipmentSuccess(array|DeletedShipmentSuccessCollection $shipmentCollection)
+ * @method DeletedShipmentErrorCollection   getShipmentErrors()
+ * @method $this                            setShipmentErrors(array|DeletedShipmentErrorCollection $errorCollection)
+ * @method DeletedShipmentSuccessCollection getShipmentSuccess()
+ * @method $this                            setShipmentSuccess(array|DeletedShipmentSuccessCollection $shipmentCollection)
  */
 class DeletedShipments extends MiraklObject
 {

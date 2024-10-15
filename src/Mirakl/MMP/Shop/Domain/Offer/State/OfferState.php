@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Offer\State;
 
 use Mirakl\MMP\Common\Domain\Offer\State\AbstractOfferState;
@@ -8,4 +11,5 @@ use Mirakl\MMP\Common\Domain\Offer\State\AbstractOfferState;
  * Example: New, Used...
  */
 class OfferState extends AbstractOfferState
-{}
+{
+}

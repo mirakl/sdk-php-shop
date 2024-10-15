@@ -1,16 +1,19 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Request\Attribute;
 
 use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MCI\Common\Domain\Collection\AttributeCollection;
 
 /**
- * @method  string  getHierarchyCode()
- * @method  $this   setHierarchyCode(string $hierarchyCode)
- * @method  int     getMaxLevel()
- * @method  $this   setMaxLevel(int $maxLevel)
- * @method  bool    getWithRoles()
- * @method  $this   setWithRoles(bool $withRoles)
+ * @method string getHierarchyCode()
+ * @method $this  setHierarchyCode(string $hierarchyCode)
+ * @method int    getMaxLevel()
+ * @method $this  setMaxLevel(int $maxLevel)
+ * @method bool   getWithRoles()
+ * @method $this  setWithRoles(bool $withRoles)
  */
 abstract class AbstractGetAttributesRequest extends AbstractRequest
 {

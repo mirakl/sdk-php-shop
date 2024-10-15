@@ -1,11 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Offer;
 
 use Mirakl\MMP\Common\Domain\Offer\AbstractOffer;
 
 /**
- * @method  string  getSku()
- * @method  $this   setSku(string $sku)
+ * @method string getInternalDescription()
+ * @method $this  setInternalDescription(string $internalDescription)
+ * @method string getSku()
+ * @method $this  setSku(string $sku)
  */
 class ShopOffer extends AbstractOffer
 {
@@ -13,6 +18,8 @@ class ShopOffer extends AbstractOffer
      * @var array
      */
     protected static $mapping = [
+        'product_brand'                 => 'product/brand',
+        'product_description'           => 'product/description',
         'product_sku'                   => 'product/sku',
         'product_title'                 => 'product/title',
         'product_references'            => 'product/references',

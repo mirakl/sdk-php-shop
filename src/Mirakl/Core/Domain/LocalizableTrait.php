@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 trait LocalizableTrait
@@ -9,7 +12,7 @@ trait LocalizableTrait
     protected $locale;
 
     /**
-     * @return  string|null
+     * @return string|null
      */
     public function getLocale()
     {
@@ -17,8 +20,8 @@ trait LocalizableTrait
     }
 
     /**
-     * @param   string  $locale
-     * @return  $this
+     * @param string $locale
+     * @return $this
      */
     public function setLocale($locale)
     {

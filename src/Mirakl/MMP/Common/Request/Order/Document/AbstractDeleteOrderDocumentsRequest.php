@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Document;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -6,8 +9,8 @@ use Mirakl\Core\Request\AbstractRequest;
 /**
  * (OR76) Delete order document
  *
- * @method  string  getDocumentId()
- * @method  string  setDocumentId(string $documentId)
+ * @method int   getDocumentId()
+ * @method $this setDocumentId(int $documentId)
  */
 abstract class AbstractDeleteOrderDocumentsRequest extends AbstractRequest
 {
@@ -15,11 +18,6 @@ abstract class AbstractDeleteOrderDocumentsRequest extends AbstractRequest
      * @var string
      */
     protected $method = 'DELETE';
-
-    /**
-     * @var string
-     */
-    protected $documentId;
 
     /**
      * @var array
@@ -34,11 +32,12 @@ abstract class AbstractDeleteOrderDocumentsRequest extends AbstractRequest
     protected $endpoint = '/orders/documents/{document_id}';
 
     /**
-     * @param   string  $documentId
+     * @param int $documentId
      */
     public function __construct($documentId)
     {
         parent::__construct();
+
         $this->setDocumentId($documentId);
     }
 }

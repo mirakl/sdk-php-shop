@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\DiscountRange;
 
 /**
- * @method  DiscountRange   current()
- * @method  DiscountRange   first()
- * @method  DiscountRange   get($offset)
- * @method  DiscountRange   offsetGet($offset)
- * @method  DiscountRange   last()
+ * @method DiscountRange current()
+ * @method DiscountRange first()
+ * @method DiscountRange get($offset)
+ * @method DiscountRange offsetGet($offset)
+ * @method DiscountRange last()
  */
 class DiscountRangeCollection extends MiraklCollection
 {
@@ -21,7 +24,7 @@ class DiscountRangeCollection extends MiraklCollection
     /**
      * Returns ranges as string
      *
-     * @return  string
+     * @return string
      */
     public function __toString()
     {

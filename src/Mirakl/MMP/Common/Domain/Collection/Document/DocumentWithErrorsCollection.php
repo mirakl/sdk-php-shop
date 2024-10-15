@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Document;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Document\DocumentWithErrors;
 
 /**
- * @method  DocumentWithErrors  current()
- * @method  DocumentWithErrors  first()
- * @method  DocumentWithErrors  get($offset)
- * @method  DocumentWithErrors  offsetGet($offset)
- * @method  DocumentWithErrors  last()
+ * @method DocumentWithErrors current()
+ * @method DocumentWithErrors first()
+ * @method DocumentWithErrors get($offset)
+ * @method DocumentWithErrors offsetGet($offset)
+ * @method DocumentWithErrors last()
  */
 class DocumentWithErrorsCollection extends MiraklCollection
 {

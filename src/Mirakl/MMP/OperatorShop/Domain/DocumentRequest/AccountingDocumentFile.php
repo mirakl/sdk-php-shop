@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Domain\DocumentRequest;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -10,4 +13,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setFormat(string $format)
  */
 class AccountingDocumentFile extends MiraklObject
-{}
+{
+}

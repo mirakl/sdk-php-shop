@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\DocumentRequest;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -34,11 +37,12 @@ abstract class AbstractGetAccountingDocumentLinesRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $documentRequestId
+     * @param string $documentRequestId
      */
     public function __construct($documentRequestId)
     {
         parent::__construct();
+
         $this->setDocumentRequestId($documentRequestId);
     }
 

@@ -1,13 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  float   getPrice()
- * @method  $this   setPrice(float $price)
- * @method  int     getQuantityThreshold()
- * @method  $this   setQuantityThreshold(int $quantityThreshold)
+ * @method float getPrice()
+ * @method $this setPrice(float $price)
+ * @method int   getQuantityThreshold()
+ * @method $this setQuantityThreshold(int $quantityThreshold)
  */
 class DiscountRange extends MiraklObject
 {
@@ -15,7 +18,7 @@ class DiscountRange extends MiraklObject
      * Need to return exactly 2 elements in this order
      * Useful for method @see DiscountRangeCollection::__toString()
      *
-     * @return  array
+     * @return array
      */
     public function toArray()
     {

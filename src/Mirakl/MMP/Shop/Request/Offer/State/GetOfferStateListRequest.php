@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer\State;
 
 use Mirakl\Core\Domain\LocalizableTrait;

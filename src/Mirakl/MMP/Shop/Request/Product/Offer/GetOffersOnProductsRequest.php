@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Product\Offer;
 
 use Mirakl\MMP\Common\Request\Product\Offer\AbstractGetOffersOnProductsRequest;

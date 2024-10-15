@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\AdditionalField;
 
 use Mirakl\Core\Domain\LocalizableTrait;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldCollection;
 /**
  * (AF01) Get the list of any additional fields
  *
- * @method  array   getEntities()                   Array of AdditionalFieldLinkedEntity
- * @method  $this   setEntities(array $entities)
+ * @method array getEntities() Array of AdditionalFieldLinkedEntity
+ * @method $this setEntities(array $entities)
  */
 abstract class AbstractGetAdditionalFieldRequest extends AbstractRequest
 {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -7,8 +10,8 @@ use Mirakl\MMP\Common\Domain\Product\ProductInfo;
 /**
  * @method string      getDescription()
  * @method $this       setDescription(string $description)
- * @method string      getId()
- * @method $this       setId(string $id)
+ * @method int         getId()
+ * @method $this       setId(int $id)
  * @method float       getOriginPrice()
  * @method $this       setOriginPrice(float $originPrice)
  * @method float       getPrice()

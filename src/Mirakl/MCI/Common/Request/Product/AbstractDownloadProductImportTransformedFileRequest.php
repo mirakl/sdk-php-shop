@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Request\Product;
 
 use Mirakl\Core\Response\Decorator\CsvTrait as CsvResponseDecorator;

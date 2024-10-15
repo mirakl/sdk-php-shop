@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MCI\Common\Domain\Collection\ValueTranslationCollection;
 
 /**
- * @method  string                      getCode()
- * @method  $this                       setCode(string $code)
- * @method  string                      getLabel()
- * @method  $this                       setLabel(string $label)
- * @method  ValueTranslationCollection  getLabelTranslations()
+ * @method string                     getCode()
+ * @method $this                      setCode(string $code)
+ * @method string                     getLabel()
+ * @method $this                      setLabel(string $label)
+ * @method ValueTranslationCollection getLabelTranslations()
  */
 class ValueListItem extends MiraklObject
 {

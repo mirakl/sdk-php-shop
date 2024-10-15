@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Document;
 
 use Mirakl\Core\Exception\RequestValidationException;
@@ -36,9 +39,10 @@ use Mirakl\MMP\Common\Request\Document\AbstractDocumentsDownloadRequest;
  * </pre>
  * </p>
  *
- * @method  array   getDocumentCodes()
- * @method  $this   setDocumentCodes(array $codes)
- * @method  array   getOrderIds()
+ * @method string[] getDocumentCodes()
+ * @method $this    setDocumentCodes(string[] $codes)
+ * @method string[] getDocumentIds()
+ * @method string[] getOrderIds()
  */
 abstract class AbstractDownloadOrdersDocumentsRequest extends AbstractDocumentsDownloadRequest
 {
@@ -53,8 +57,8 @@ abstract class AbstractDownloadOrdersDocumentsRequest extends AbstractDocumentsD
     public $queryParams = ['order_ids', 'document_ids', 'document_codes'];
 
     /**
-     * @return  $this
-     * @throws  RequestValidationException
+     * @return $this
+     * @throws RequestValidationException
      */
     private function checkParams()
     {
@@ -66,8 +70,8 @@ abstract class AbstractDownloadOrdersDocumentsRequest extends AbstractDocumentsD
     }
 
     /**
-     * @param   array   $documentIds
-     * @return  $this
+     * @param string[] $documentIds
+     * @return $this
      */
     public function setDocumentIds(array $documentIds)
     {
@@ -77,8 +81,8 @@ abstract class AbstractDownloadOrdersDocumentsRequest extends AbstractDocumentsD
     }
 
     /**
-     * @param   array   $orderIds
-     * @return  $this
+     * @param string[] $orderIds
+     * @return $this
      */
     public function setOrderIds(array $orderIds)
     {

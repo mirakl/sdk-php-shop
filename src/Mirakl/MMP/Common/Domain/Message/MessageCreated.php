@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Message;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -6,8 +9,9 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @deprecated
  *
- * @method  string  getId()
- * @method  $this   setId(string $id)
+ * @method int   getId()
+ * @method $this setId(int $id)
  */
 class MessageCreated extends MiraklObject
-{}
+{
+}

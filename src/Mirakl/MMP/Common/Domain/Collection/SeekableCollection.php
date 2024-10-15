@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
@@ -21,7 +24,7 @@ class SeekableCollection
     protected $nextPageToken;
 
     /**
-     * @return  MiraklCollection
+     * @return MiraklCollection
      */
     public function getCollection()
     {
@@ -29,8 +32,8 @@ class SeekableCollection
     }
 
     /**
-     * @param   MiraklCollection    $collection
-     * @return  $this
+     * @param MiraklCollection $collection
+     * @return $this
      */
     public function setCollection(MiraklCollection $collection)
     {
@@ -40,7 +43,7 @@ class SeekableCollection
     }
 
     /**
-     * @return  string|null
+     * @return string|null
      */
     public function getPreviousPageToken()
     {
@@ -48,8 +51,8 @@ class SeekableCollection
     }
 
     /**
-     * @param   string|null $token
-     * @return  $this
+     * @param string|null $token
+     * @return $this
      */
     public function setPreviousPageToken($token)
     {
@@ -59,7 +62,7 @@ class SeekableCollection
     }
 
     /**
-     * @return  string|null
+     * @return string|null
      */
     public function getNextPageToken()
     {
@@ -67,8 +70,8 @@ class SeekableCollection
     }
 
     /**
-     * @param   string|null $token
-     * @return  $this
+     * @param string|null $token
+     * @return $this
      */
     public function setNextPageToken($token)
     {

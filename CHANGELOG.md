@@ -1,5 +1,35 @@
 # Changelog
-
+## v1.21.0 - 2024-10-14
+### Features
+- Add last_request_date to PR01
+- Remove product feeds from PM11
+- Remove deprecated API PF11
+- Add Vietnamese bank account information
+- Add missing fields to API DR11
+- Add promotion campaign identifiers in API PR01 and PR02
+- Remove deprecated API PM31
+- Add Returns APIs: RT01, RT04, RT11, RT12, RT21, RT25, RT26, RT30 and RT31
+- Add shipping_from to API OR01, OR11 and OR07
+- Add date_created to API OF54 and change available_end_date format
+- Update APIs ST01 & ST11
+- Update API PR01
+- Add API S09
+- Update API PM11
+- Update API CA11
+- Update APIs RT04/11/26
+- Update APIs OF01/21/22/42/51/52
+- Update APIs P11/13/31/42 and SH02
+- Add APIs PRI01, PRI02 and PRI03
+- Add API OR08
+- Add API S51
+- Add API DR07
+- Add APIs US01/03/11 and RO01
+- Update APIs DR11/12/72/73, IV01/03/07 and TL02/03/05
+- Update APIs OR01/04/05/11/23/28/30/72/73, Q01/04/07 and add Q08
+- Update APIs A01/02 and S04/06/07/20
+- Update code to comply with PSR-12 coding standards
+### Fixes
+- Remove useless query params formatting in API OF51
 ## v1.20.5 - 2024-08-05
 ### Fixes
 - Removed compatibility with PHP 7 and now require PHP 8.1 or higher
@@ -280,71 +310,71 @@
 
 ## v1.12.1 - 2020-08-04
 ### Fixes
- - Fix missing payment_voucher param and retro compatibility problem on TL01
+- Fix missing payment_voucher param and retro compatibility problem on TL01
 
 ## v1.12.0 - 2020-07-28
 ### Features
- - Add requirement level for attributes (PM11)
- - Add KYC information for A01, S06, S07 & S20 API clients
- - Add M10, M11, M12, M13 AN OR43 in SDK
+- Add requirement level for attributes (PM11)
+- Add KYC information for A01, S06, S07 & S20 API clients
+- Add M10, M11, M12, M13 AN OR43 in SDK
 
 ## v1.11.1 - 2020-01-16
 ### Fixes
- - Fix XML responses that may not be parsed correctly
+- Fix XML responses that may not be parsed correctly
 
 ## v1.11.0 - 2019-11-04
 ### Features
- - Add all multi shipments APIs
- - Add operator classes on API OR75, SH21 and OR51
- - Add unique_code field to API PM11
- - Add incident reasons for MPS
- - Add shipping deadline on API OR01, OR11 and Q07
+- Add all multi shipments APIs
+- Add operator classes on API OR75, SH21 and OR51
+- Add unique_code field to API PM11
+- Add incident reasons for MPS
+- Add shipping deadline on API OR01, OR11 and Q07
 
 ### Fixes
- - Fix another backward compatibility for the method getOriginPrice()
+- Fix another backward compatibility for the method getOriginPrice()
 
 ## v1.10.3 - 2019-11-04
 ### Fixes
- - Fix another backward compatibility for the method getOriginPrice()
+- Fix another backward compatibility for the method getOriginPrice()
 
 ## v1.10.2 - 2019-09-27
 ### Fixes
- - Fix different SDK roles could not be used together
+- Fix different SDK roles could not be used together
 
 ## v1.10.1 - 2019-08-12
 ### Fixes
- - Fix potential error 400 when Q01 is called
- - Fix broken backwards compatibility of getOriginPrice() method on ExportOffer object during OF51 API usage
+- Fix potential error 400 when Q01 is called
+- Fix broken backwards compatibility of getOriginPrice() method on ExportOffer object during OF51 API usage
 
 ## v1.10.0 - 2019-08-06
 ### Features
- - Add Thai, Taiwanese and Japanese Bank account information
- - Add domains in Shop API outputs
+- Add Thai, Taiwanese and Japanese Bank account information
+- Add domains in Shop API outputs
 
 ### Fixes
- - Remove S03 customer sort fields
- - Fix bad charset declaration in multipart requests header
+- Remove S03 customer sort fields
+- Fix bad charset declaration in multipart requests header
 
 ## v1.9.4 - 2019-07-04
 ### Fixes
- - Fix API OR31 that generates error 400
+- Fix API OR31 that generates error 400
 
 ## v1.9.3 - 2019-06-20
 ### Fixes
- - Fix bad discount declaration on UpdateOffer object for API OF24
+- Fix bad discount declaration on UpdateOffer object for API OF24
 
 ## v1.9.2 - 2019-03-25
 ### Features
- - Add "has_incident" query param to OR11 API
+- Add "has_incident" query param to OR11 API
 
 ## v1.9.1 - 2018-10-10
 ### Fixes
- - Add the missing endpoints for the new API OF61 implementation
+- Add the missing endpoints for the new API OF61 implementation
 
 ## v1.9.0 - 2018-08-27
 ### Features
- - Add S40 in SDK 
- - Add S33 and OR76 in SDK
+- Add S40 in SDK
+- Add S33 and OR76 in SDK
 
 ## v1.8.0 - 2018-03-16
 
@@ -358,7 +388,7 @@
 - Added Order conditions offer fields in OF01, OF24 and OF51
 - Added product tax code in OF21, OF22, OF51, P11
 - Added Mirakl Catalog Management API (CM51, CM21, CM22, CM23)
- 
+
 ## v1.7.2 - 2018-01-02
 
 ### Fixes
@@ -375,9 +405,9 @@
 ### Features
 
 - Added logging request and response
-- Added offerRanking to P11 
+- Added offerRanking to P11
 - Added channels to promotion in PR01 query params
-- Added include_inactive_offers to OF51 input 
+- Added include_inactive_offers to OF51 input
 - Added P13 API : Retrieve all products of the marketplace. The API supports JSON, XML and CSV.
 - Added taxes computation fields to SH02
 

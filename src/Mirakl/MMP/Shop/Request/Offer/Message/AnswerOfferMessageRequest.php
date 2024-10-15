@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer\Message;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -11,13 +14,13 @@ use Mirakl\MMP\Shop\Domain\Offer\Message\OfferMessageAnswer;
  * @deprecated Use API M12 instead
  * @see \Mirakl\MMP\Common\Request\Message\ThreadReplyRequest
  *
- * @method  OfferMessageAnswer  getAnswer()
- * @method  $this               setAnswer(array|OfferMessageAnswer $answer)
- * @method  string              getMessageId()
- * @method  $this               setMessageId(string $id)
- * @method  string              getOfferId()
- * @method  $this               setOfferId(string $id)
- * @method  $this               setShopId(string $shopId)
+ * @method OfferMessageAnswer getAnswer()
+ * @method $this              setAnswer(array|OfferMessageAnswer $answer)
+ * @method string             getMessageId()
+ * @method $this              setMessageId(string $id)
+ * @method string             getOfferId()
+ * @method $this              setOfferId(string $id)
+ * @method $this              setShopId(string $shopId)
  *
  * Example:
  *
@@ -67,13 +70,14 @@ class AnswerOfferMessageRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string                      $offerId
-     * @param   string                      $messageId
-     * @param   array|OfferMessageAnswer    $answer
+     * @param string                   $offerId
+     * @param string                   $messageId
+     * @param array|OfferMessageAnswer $answer
      */
     public function __construct($offerId, $messageId, $answer)
     {
         parent::__construct();
+
         $this->setOfferId($offerId);
         $this->setMessageId($messageId);
         $this->setAnswer($answer);

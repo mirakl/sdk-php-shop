@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Message;
 
 use Mirakl\MMP\Common\Domain\Message\MessageCreated;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Common\Request\Order\AbstractOrderRequest;
 /**
  * (OR42) Post a message on an order
  *
- * @method  CreateOrderMessage  getMessage()
- * @method  $this               setMessage(array|CreateOrderMessage $message)
+ * @method CreateOrderMessage getMessage()
+ * @method $this              setMessage(array|CreateOrderMessage $message)
  */
 abstract class AbstractCreateOrderMessageRequest extends AbstractOrderRequest
 {
@@ -36,8 +39,8 @@ abstract class AbstractCreateOrderMessageRequest extends AbstractOrderRequest
     ];
 
     /**
-     * @param   string                      $orderId
-     * @param   array|CreateOrderMessage    $message
+     * @param string                   $orderId
+     * @param array|CreateOrderMessage $message
      */
     public function __construct($orderId, $message)
     {

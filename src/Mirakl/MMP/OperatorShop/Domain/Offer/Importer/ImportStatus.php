@@ -1,14 +1,17 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Domain\Offer\Importer;
 
 class ImportStatus
 {
-    const WAITING_SYNCHRONIZATION_PRODUCT = 'WAITING_SYNCHRONIZATION_PRODUCT';
-    const WAITING                         = 'WAITING';
-    const RUNNING                         = 'RUNNING';
-    const COMPLETE                        = 'COMPLETE';
-    const FAILED                          = 'FAILED';
+    public const WAITING_SYNCHRONIZATION_PRODUCT = 'WAITING_SYNCHRONIZATION_PRODUCT';
+    public const WAITING                         = 'WAITING';
+    public const RUNNING                         = 'RUNNING';
+    public const COMPLETE                        = 'COMPLETE';
+    public const FAILED                          = 'FAILED';
 
     /** @deprecated */
-    const QUEUED                          = 'QUEUED';
+    public const QUEUED                          = 'QUEUED';
 }

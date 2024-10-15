@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getCode()
- * @method  $this   setCode(string $code)
- * @method  string  getType()
- * @method  $this   setType(string $type)
- * @method  string  getValue()
- * @method  $this   setValue(string $value)
+ * @method string getCode()
+ * @method $this  setCode(string $code)
+ * @method string getType()
+ * @method $this  setType(string $type)
+ * @method string getValue()
+ * @method $this  setValue(string $value)
  */
 class AdditionalFieldValue extends MiraklObject
 {
@@ -19,13 +22,14 @@ class AdditionalFieldValue extends MiraklObject
     protected static $mapping = ['values' => 'value'];
 
     /**
-     * @param   string  $code
-     * @param   string  $value
-     * @param   string  $type
+     * @param string $code
+     * @param string $value
+     * @param string $type
      */
     public function __construct($code, $value, $type = null)
     {
         parent::__construct();
+
         $this->setCode($code);
         $this->setValue($value);
         if (null !== $type) {

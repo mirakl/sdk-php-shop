@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer;
 
 use Mirakl\MMP\Common\Request\Offer\AbstractGetOffersRequest;
@@ -8,12 +11,12 @@ use Mirakl\MMP\Shop\Domain\Collection\Offer\ShopOfferCollection;
  * (OF21) List offers for a shop
  * This API uses pagination by default and will return 10 offers
  *
- * @method  string  getShopId()
- * @method  $this   setShopId(string $shopId)
- * @method  string  getSku()
- * @method  $this   setSku(string $sku)
- * @method  string  getProductId()
- * @method  $this   setProductId(string $productId)
+ * @method string getShopId()
+ * @method $this  setShopId(string $shopId)
+ * @method string getSku()
+ * @method $this  setSku(string $sku)
+ * @method string getProductId()
+ * @method $this  setProductId(string $productId)
  *
  * Example:
  *
@@ -41,14 +44,23 @@ class GetOffersRequest extends AbstractGetOffersRequest
     /**
      * @var array
      */
-    public $queryParams = ['shop_id', 'sku', 'offer_state_codes', 'product_id', 'favorite', 'pricing_channel_code'];
+    public $queryParams = [
+        'favorite',
+        'offer_state_codes',
+        'pricing_channel_code',
+        'pricing_customer_organization_id',
+        'product_id',
+        'shop_id',
+        'sku',
+    ];
 
     /**
-     * @param   string  $shopId
+     * @param string $shopId
      */
     public function __construct($shopId)
     {
         parent::__construct();
+
         $this->setShopId($shopId);
     }
 

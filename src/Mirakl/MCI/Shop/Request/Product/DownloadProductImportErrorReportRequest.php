@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Shop\Request\Product;
 
 use Mirakl\MCI\Common\Request\Product\AbstractDownloadProductImportErrorReportRequest;
@@ -21,4 +24,5 @@ use Mirakl\MCI\Common\Request\Product\AbstractDownloadProductImportErrorReportRe
  * </code>
  */
 class DownloadProductImportErrorReportRequest extends AbstractDownloadProductImportErrorReportRequest
-{}
+{
+}

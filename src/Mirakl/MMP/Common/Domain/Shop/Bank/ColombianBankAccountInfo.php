@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shop\Bank;
 
 /**
- * @method  string  getBankAccountNumber()
- * @method  $this   setBankAccountNumber(string $accountNumber)
- * @method  string  getBankAccountType()
- * @method  $this   setBankAccountType(string $accountType)
+ * @method string getBankAccountNumber()
+ * @method $this  setBankAccountNumber(string $accountNumber)
+ * @method string getBankAccountType()
+ * @method $this  setBankAccountType(string $accountType)
  */
 class ColombianBankAccountInfo extends BankAccountInfo
 {

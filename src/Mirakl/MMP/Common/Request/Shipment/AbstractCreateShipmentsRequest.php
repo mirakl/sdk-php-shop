@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shipment;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Common\Domain\Shipment\CreatedShipments;
 /**
  * (ST01) Create shipments (limited to 1000 shipments at a time)
  *
- * @method  CreateShipmentCollection    getShipments()
- * @method  $this                       setShipments(array|CreateShipmentCollection $createShipments)
+ * @method CreateShipmentCollection getShipments()
+ * @method $this                    setShipments(array|CreateShipmentCollection $createShipments)
  */
 abstract class AbstractCreateShipmentsRequest extends AbstractRequest
 {
@@ -36,11 +39,12 @@ abstract class AbstractCreateShipmentsRequest extends AbstractRequest
     ];
 
     /**
-     * @param   array|CreateShipmentCollection  $createShipments
+     * @param array|CreateShipmentCollection $createShipments
      */
     public function __construct($createShipments)
     {
         parent::__construct();
+
         $this->setShipments($createShipments);
     }
 

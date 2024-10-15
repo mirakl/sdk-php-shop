@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Message;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -7,8 +10,8 @@ use Mirakl\MMP\Common\Domain\Message\Thread\ThreadDetails;
 /**
  * (M10) Retrieve a thread
  *
- * @method  string  getThreadId()
- * @method  $this   setThreadId(string $threadId)
+ * @method string getThreadId()
+ * @method $this  setThreadId(string $threadId)
  */
 abstract class AbstractGetThreadDetailsRequest extends AbstractRequest
 {
@@ -25,11 +28,12 @@ abstract class AbstractGetThreadDetailsRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $threadId
+     * @param string $threadId
      */
     public function __construct($threadId)
     {
         parent::__construct();
+
         $this->setThreadId($threadId);
     }
 

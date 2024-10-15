@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Document;
 
 use Mirakl\Core\Domain\Collection\DocumentCollection;
@@ -7,13 +10,13 @@ use Mirakl\Core\Request\AbstractRequest;
 use Mirakl\MMP\Common\Domain\Document\DocumentsUploadResult;
 
 /**
- * @method  bool                hasDocuments()
- * @method  DocumentCollection  getDocuments()
- * @method  $this               setDocuments(array|DocumentCollection $documents)
+ * @method bool               hasDocuments()
+ * @method DocumentCollection getDocuments()
+ * @method $this              setDocuments(array|DocumentCollection $documents)
  */
 abstract class AbstractDocumentsUploadRequest extends AbstractRequest
 {
-    const FILES_PARAM = 'files';
+    public const FILES_PARAM = 'files';
 
     /**
      * @var string
@@ -33,7 +36,7 @@ abstract class AbstractDocumentsUploadRequest extends AbstractRequest
     ];
 
     /**
-     * @param   DocumentCollection  $documents
+     * @param DocumentCollection $documents
      */
     public function __construct(DocumentCollection $documents = null)
     {
@@ -46,9 +49,9 @@ abstract class AbstractDocumentsUploadRequest extends AbstractRequest
     /**
      * Formats documents upload details when uploading documents
      *
-     * @param   string  $listName
-     * @param   string  $itemName
-     * @return  \SimpleXMLElement
+     * @param string $listName
+     * @param string $itemName
+     * @return \SimpleXMLElement
      */
     protected function formatUploadDetails($listName = 'documents', $itemName = 'document')
     {

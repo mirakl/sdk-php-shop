@@ -1,13 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  bool    getErrorReport()
- * @method  $this   setErrorReport(bool $flag)
- * @method  string  getImportStatus()
- * @method  $this   setImportStatus(string $importStatus)
+ * @method bool   getErrorReport()
+ * @method $this  setErrorReport(bool $flag)
+ * @method string getImportStatus()
+ * @method $this  setImportStatus(string $importStatus)
  */
 abstract class AbstractCatalogImportResult extends MiraklObject
 {
@@ -19,7 +22,7 @@ abstract class AbstractCatalogImportResult extends MiraklObject
     ];
 
     /**
-     * @return  string
+     * @return string
      */
     public function getStatus()
     {
@@ -27,7 +30,7 @@ abstract class AbstractCatalogImportResult extends MiraklObject
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function hasErrorReport()
     {

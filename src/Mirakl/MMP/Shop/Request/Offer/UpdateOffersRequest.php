@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer;
 
 use Mirakl\MMP\OperatorShop\Request\Offer\AbstractUpdateOffersRequest;
@@ -24,4 +27,5 @@ use Mirakl\MMP\OperatorShop\Request\Offer\AbstractUpdateOffersRequest;
  * </code>
  */
 class UpdateOffersRequest extends AbstractUpdateOffersRequest
-{}
+{
+}

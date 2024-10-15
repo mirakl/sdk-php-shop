@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shop;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -7,8 +10,8 @@ use Mirakl\MMP\Common\Domain\Collection\Shop\Document\ShopDocumentCollection;
 /**
  * (S30) List shop's documents
  *
- * @method  array   getShopIds()
- * @method  $this   setShopIds(array $shopIds)
+ * @method array getShopIds()
+ * @method $this setShopIds(array $shopIds)
  */
 abstract class AbstractGetShopDocumentsRequest extends AbstractRequest
 {
@@ -23,11 +26,12 @@ abstract class AbstractGetShopDocumentsRequest extends AbstractRequest
     public $queryParams = ['shop_ids'];
 
     /**
-     * @param   array   $shopIds
+     * @param array $shopIds
      */
     public function __construct(array $shopIds)
     {
         parent::__construct();
+
         $this->setShopIds($shopIds);
     }
 

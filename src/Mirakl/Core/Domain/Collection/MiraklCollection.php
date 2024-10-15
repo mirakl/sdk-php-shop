@@ -1,9 +1,9 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Mirakl\Core\Domain\Collection;
 
-use Mirakl\Core\Domain\ArrayableInterface;
 use Mirakl\Core\Response\Decorator;
 
 class MiraklCollection extends AbstractMiraklArray
@@ -14,8 +14,8 @@ class MiraklCollection extends AbstractMiraklArray
     protected $totalCount;
 
     /**
-     * @param   array       $items
-     * @param   int|null    $totalCount
+     * @param array    $items
+     * @param int|null $totalCount
      */
     public function __construct(array $items = [], ?int $totalCount = null)
     {
@@ -26,8 +26,8 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @param   mixed   $item
-     * @return  $this
+     * @param mixed $item
+     * @return $this
      */
     public function add(mixed $item): self
     {
@@ -37,9 +37,9 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @param   array       $items
-     * @param   int|null    $totalCount
-     * @return  $this
+     * @param array    $items
+     * @param int|null $totalCount
+     * @return $this
      */
     public static function create(array $items = [], ?int $totalCount = null)
     {
@@ -47,7 +47,7 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @return  mixed
+     * @return mixed
      */
     public function current(): mixed
     {
@@ -57,8 +57,8 @@ class MiraklCollection extends AbstractMiraklArray
     /**
      * Useful method for requests returning collections
      *
-     * @param   string|null $key
-     * @return  Decorator\MiraklCollection
+     * @param string|null $key
+     * @return Decorator\MiraklCollection
      */
     public static function decorator(?string $key = null): Decorator\MiraklCollection
     {
@@ -66,7 +66,7 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @return  mixed
+     * @return mixed
      */
     public function first(): mixed
     {
@@ -74,8 +74,8 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @param   $offset
-     * @return  mixed
+     * @param mixed $offset
+     * @return mixed
      */
     public function get($offset): mixed
     {
@@ -83,7 +83,7 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @return  int|null
+     * @return int|null
      */
     public function getTotalCount(): ?int
     {
@@ -91,7 +91,7 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @return  mixed
+     * @return mixed
      */
     public function last(): mixed
     {
@@ -99,7 +99,7 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @return  mixed
+     * @return mixed
      */
     public function next(): mixed
     {
@@ -107,7 +107,7 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @return  mixed
+     * @return mixed
      */
     public function prev(): mixed
     {
@@ -115,8 +115,8 @@ class MiraklCollection extends AbstractMiraklArray
     }
 
     /**
-     * @param   int     $totalCount
-     * @return  $this
+     * @param int $totalCount
+     * @return $this
      */
     public function setTotalCount(int $totalCount): self
     {

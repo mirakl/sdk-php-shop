@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Channel;
 
 use Mirakl\MMP\Common\Request\Channel\AbstractGetChannelsRequest;
@@ -23,4 +26,5 @@ use Mirakl\MMP\Common\Request\Channel\AbstractGetChannelsRequest;
  * </code>
  */
 class GetChannelsRequest extends AbstractGetChannelsRequest
-{}
+{
+}

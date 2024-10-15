@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Domain\Offer\Importer;
 
 /**
@@ -8,4 +11,5 @@ namespace Mirakl\MMP\OperatorShop\Domain\Offer\Importer;
  * @method $this  setShopId(string $shopId)
  */
 class OfferImport extends OfferImportResult
-{}
+{
+}

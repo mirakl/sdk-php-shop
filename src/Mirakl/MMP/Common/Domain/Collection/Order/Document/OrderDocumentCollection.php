@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Order\Document;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Order\Document\OrderDocument;
 
 /**
- * @method  OrderDocument   current()
- * @method  OrderDocument   first()
- * @method  OrderDocument   get($offset)
- * @method  OrderDocument   offsetGet($offset)
- * @method  OrderDocument   last()
+ * @method OrderDocument current()
+ * @method OrderDocument first()
+ * @method OrderDocument get($offset)
+ * @method OrderDocument offsetGet($offset)
+ * @method OrderDocument last()
  */
 class OrderDocumentCollection extends MiraklCollection
 {

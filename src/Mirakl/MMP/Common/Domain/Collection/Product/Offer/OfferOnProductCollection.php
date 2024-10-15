@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Product\Offer;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Common\Domain\Product\Offer\OfferOnProduct;
 
 /**
- * @method  OfferOnProduct  current()
- * @method  OfferOnProduct  first()
- * @method  OfferOnProduct  get($offset)
- * @method  OfferOnProduct  offsetGet($offset)
- * @method  OfferOnProduct  last()
+ * @method OfferOnProduct current()
+ * @method OfferOnProduct first()
+ * @method OfferOnProduct get($offset)
+ * @method OfferOnProduct offsetGet($offset)
+ * @method OfferOnProduct last()
  *
  * @deprecated Use one of below classes instead based on your role (FrontOperator or Shop)
  * @see \Mirakl\MMP\FrontOperator\Domain\Collection\Product\Offer\OfferOnProductCollection

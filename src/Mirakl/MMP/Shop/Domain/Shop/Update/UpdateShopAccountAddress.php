@@ -1,27 +1,30 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Shop\Update;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string  getCivility()
- * @method  $this   setCivility(string $civility)
- * @method  string  getFirstname()
- * @method  $this   setFirstname(string $firstname)
- * @method  string  getLastname()
- * @method  $this   setLastname(string $lastname)
- * @method  string  getZipCode()
- * @method  $this   setZipCode(string $zipCode)
- * @method  string  getCity()
- * @method  $this   setCity(string $city)
- * @method  string  getCountry()
- * @method  $this   setCountry(string $country)
- * @method  string  getState()
- * @method  $this   setState(string $state)
- * @method  string  getPhone()
- * @method  $this   setPhone(string $phone)
- * @method  string  getPhoneSecondary()
- * @method  $this   setPhoneSecondary(string $phoneSecondary)
+ * @method string getCivility()
+ * @method $this  setCivility(string $civility)
+ * @method string getFirstname()
+ * @method $this  setFirstname(string $firstname)
+ * @method string getLastname()
+ * @method $this  setLastname(string $lastname)
+ * @method string getZipCode()
+ * @method $this  setZipCode(string $zipCode)
+ * @method string getCity()
+ * @method $this  setCity(string $city)
+ * @method string getCountry()
+ * @method $this  setCountry(string $country)
+ * @method string getState()
+ * @method $this  setState(string $state)
+ * @method string getPhone()
+ * @method $this  setPhone(string $phone)
+ * @method string getPhoneSecondary()
+ * @method $this  setPhoneSecondary(string $phoneSecondary)
  */
 class UpdateShopAccountAddress extends MiraklObject
 {
@@ -34,7 +37,7 @@ class UpdateShopAccountAddress extends MiraklObject
     ];
 
     /**
-     * @return  string
+     * @return string
      */
     public function getStreet1()
     {
@@ -42,8 +45,8 @@ class UpdateShopAccountAddress extends MiraklObject
     }
 
     /**
-     * @param   string  $street1
-     * @return  $this
+     * @param string $street1
+     * @return $this
      */
     public function setStreet1($street1)
     {
@@ -51,7 +54,7 @@ class UpdateShopAccountAddress extends MiraklObject
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getStreet2()
     {
@@ -59,8 +62,8 @@ class UpdateShopAccountAddress extends MiraklObject
     }
 
     /**
-     * @param   string  $street2
-     * @return  $this
+     * @param string $street2
+     * @return $this
      */
     public function setStreet2($street2)
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Shop\Document;
 
 use Mirakl\MMP\Common\Request\Shop\Document\AbstractDeleteShopDocumentRequest;
@@ -41,8 +44,8 @@ use Mirakl\MMP\Common\Request\Shop\Document\AbstractDeleteShopDocumentRequest;
  * }
  * </code>
  *
- * @method  string  getShopId()
- * @method  $this   setShopId(string $shopId)
+ * @method string getShopId()
+ * @method $this  setShopId(string $shopId)
  */
 class DeleteShopDocumentRequest extends AbstractDeleteShopDocumentRequest
 {
@@ -52,8 +55,8 @@ class DeleteShopDocumentRequest extends AbstractDeleteShopDocumentRequest
     public $queryParams = ['shop_id'];
 
     /**
-     * @param   string  $documentId
-     * @param   string  $shopId
+     * @param string $documentId
+     * @param string $shopId
      */
     public function __construct($documentId, $shopId = null)
     {

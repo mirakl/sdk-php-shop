@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\AdditionalField;
 
 use Mirakl\MMP\Shop\Domain\Collection\AdditionalFieldCollection;

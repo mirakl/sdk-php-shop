@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Product\Offer;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -6,12 +9,12 @@ use Mirakl\MMP\Common\Domain\Collection\Product\Offer\OfferOnProductCollection;
 use Mirakl\MMP\Common\Domain\Offer\ProductInfoWithRefs;
 
 /**
- * @method  OfferOnProductCollection    getOffers()
- * @method  $this                       setOffers(array|OfferOnProductCollection $offers)
- * @method  ProductInfoWithRefs         getProduct()
- * @method  $this                       setProduct(array|ProductInfoWithRefs $productInfoWithRefs)
- * @method  int                         getTotalCount()
- * @method  int                         setTotalCount(int $totalCount)
+ * @method OfferOnProductCollection getOffers()
+ * @method $this                    setOffers(array|OfferOnProductCollection $offers)
+ * @method ProductInfoWithRefs      getProduct()
+ * @method $this                    setProduct(array|ProductInfoWithRefs $productInfoWithRefs)
+ * @method int                      getTotalCount()
+ * @method int                      setTotalCount(int $totalCount)
  *
  * @deprecated Use one of below classes instead based on your role (FrontOperator or Shop)
  * @see \Mirakl\MMP\FrontOperator\Domain\Product\Offer\ProductWithOffers

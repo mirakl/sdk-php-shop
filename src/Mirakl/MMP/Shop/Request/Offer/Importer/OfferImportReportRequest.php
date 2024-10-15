@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer\Importer;
 
 use Mirakl\MMP\OperatorShop\Request\Offer\Importer\AbstractOfferImportReportRequest;
@@ -19,4 +22,5 @@ use Mirakl\MMP\OperatorShop\Request\Offer\Importer\AbstractOfferImportReportRequ
  * </code>
  */
 class OfferImportReportRequest extends AbstractOfferImportReportRequest
-{}
+{
+}

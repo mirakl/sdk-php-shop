@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shipment;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -6,8 +9,8 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\ShipmentIdentifierCollection;
 use Mirakl\MMP\Common\Domain\Shipment\Workflow\ShipmentWorkflowResponse;
 
 /**
- * @method  ShipmentIdentifierCollection    getShipments()
- * @method  $this                           setShipments(array|ShipmentIdentifierCollection $shipments)
+ * @method ShipmentIdentifierCollection getShipments()
+ * @method $this                        setShipments(array|ShipmentIdentifierCollection $shipments)
  */
 abstract class AbstractShipmentsWorkflowRequest extends AbstractRequest
 {
@@ -29,11 +32,12 @@ abstract class AbstractShipmentsWorkflowRequest extends AbstractRequest
     ];
 
     /**
-     * @param   array|ShipmentIdentifierCollection  $shipments
+     * @param array|ShipmentIdentifierCollection $shipments
      */
     public function __construct($shipments)
     {
         parent::__construct();
+
         $this->setShipments($shipments);
     }
 

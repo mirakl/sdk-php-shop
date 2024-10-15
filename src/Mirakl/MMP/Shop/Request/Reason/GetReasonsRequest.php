@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Reason;
 
 use Mirakl\Core\Domain\LocalizableTrait;

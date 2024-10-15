@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain\Collection;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MCI\Common\Domain\AttributeRoleParameter;
 
 /**
- * @method  AttributeRoleParameter   current()
- * @method  AttributeRoleParameter   first()
- * @method  AttributeRoleParameter   get($offset)
- * @method  AttributeRoleParameter   offsetGet($offset)
- * @method  AttributeRoleParameter   last()
+ * @method AttributeRoleParameter current()
+ * @method AttributeRoleParameter first()
+ * @method AttributeRoleParameter get($offset)
+ * @method AttributeRoleParameter offsetGet($offset)
+ * @method AttributeRoleParameter last()
  */
 class AttributeRoleParameterCollection extends MiraklCollection
 {

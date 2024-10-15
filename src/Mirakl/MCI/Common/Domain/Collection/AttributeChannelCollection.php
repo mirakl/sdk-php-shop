@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain\Collection;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MCI\Common\Domain\AttributeChannel;
 
 /**
- * @method  AttributeChannel   current()
- * @method  AttributeChannel   first()
- * @method  AttributeChannel   get($offset)
- * @method  AttributeChannel   offsetGet($offset)
- * @method  AttributeChannel   last()
+ * @method AttributeChannel current()
+ * @method AttributeChannel first()
+ * @method AttributeChannel get($offset)
+ * @method AttributeChannel offsetGet($offset)
+ * @method AttributeChannel last()
  */
 class AttributeChannelCollection extends MiraklCollection
 {

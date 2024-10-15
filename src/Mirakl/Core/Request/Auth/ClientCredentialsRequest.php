@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Mirakl\Core\Request\Auth;
@@ -39,7 +40,7 @@ use Mirakl\Core\Request\AbstractRequest;
  */
 class ClientCredentialsRequest extends AbstractRequest
 {
-    const GRANT_TYPE = 'client_credentials';
+    public const GRANT_TYPE = 'client_credentials';
 
     /**
      * @var string
@@ -72,6 +73,7 @@ class ClientCredentialsRequest extends AbstractRequest
     public function __construct(string $clientId, string $clientSecret)
     {
         parent::__construct();
+
         $this->setClientId($clientId);
         $this->setClientSecret($clientSecret);
         $this->setGrantType(self::GRANT_TYPE);

@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order;
 
 use Mirakl\Core\Request\AbstractRequest;
 
 /**
- * @method  string  getOrderId()
- * @method  $this   setOrderId(string $orderId)
+ * @method string getOrderId()
+ * @method $this  setOrderId(string $orderId)
  */
 abstract class AbstractOrderRequest extends AbstractRequest
 {
@@ -17,11 +20,12 @@ abstract class AbstractOrderRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $orderId
+     * @param string $orderId
      */
     public function __construct($orderId)
     {
         parent::__construct();
+
         $this->setOrderId($orderId);
     }
 }

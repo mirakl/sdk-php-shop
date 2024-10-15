@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\AdditionalField;
 
 /**
@@ -6,7 +9,7 @@ namespace Mirakl\MMP\Common\Domain\AdditionalField;
  */
 class AdditionalFieldLinkedEntity
 {
-    const SHOP       = 'SHOP';
-    const OFFER      = 'OFFER';
-    const ORDER_LINE = 'ORDER_LINE';
+    public const SHOP       = 'SHOP';
+    public const OFFER      = 'OFFER';
+    public const ORDER_LINE = 'ORDER_LINE';
 }

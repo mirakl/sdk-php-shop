@@ -1,17 +1,22 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Order\OrderLineCommissionTaxCollection;
 
 /**
- * @method  OrderLineCommissionTaxCollection    getCommissionTaxes()
- * @method  $this                               setCommissionTaxes(array|OrderLineCommissionTaxCollection $commissionTaxes)
- * @method  bool                                hasCommissionTaxes()
- * @method  float                               getFee()
- * @method  $this                               setFee(float $fee)
- * @method  float                               getTotal()
- * @method  $this                               setTotal(float $total)
+ * @method OrderLineCommissionTaxCollection getCommissionTaxes()
+ * @method $this                            setCommissionTaxes(array|OrderLineCommissionTaxCollection $commissionTaxes)
+ * @method bool                             hasCommissionTaxes()
+ * @method float                            getFee()
+ * @method $this                            setFee(float $fee)
+ * @method float                            getTaxRate()
+ * @method $this                            setTaxRate(float $taxRate)
+ * @method float                            getTotal()
+ * @method $this                            setTotal(float $total)
  */
 class OrderLineCommission extends MiraklObject
 {
@@ -19,8 +24,9 @@ class OrderLineCommission extends MiraklObject
      * @var array
      */
     protected static $mapping = [
-        'commission_fee'   => 'fee',
-        'total_commission' => 'total',
+        'commission_fee'      => 'fee',
+        'commission_rate_vat' => 'tax_rate',
+        'total_commission'    => 'total',
     ];
 
     /**
@@ -31,8 +37,8 @@ class OrderLineCommission extends MiraklObject
     ];
 
     /**
-     * @param   mixed   $commissionTax
-     * @return  $this
+     * @param mixed $commissionTax
+     * @return $this
      */
     public function addCommissionTax($commissionTax)
     {

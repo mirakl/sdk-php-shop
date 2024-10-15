@@ -1,13 +1,16 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Document;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Document\DocumentWithErrorsCollection;
 
 /**
- * @method  DocumentWithErrorsCollection    getDocuments()
- * @method  int                             getErrorsCount()
- * @method  $this                           setErrorsCount(int $errorsCount)
+ * @method DocumentWithErrorsCollection getDocuments()
+ * @method int                          getErrorsCount()
+ * @method $this                        setErrorsCount(int $errorsCount)
  */
 class DocumentsUploadResult extends MiraklObject
 {

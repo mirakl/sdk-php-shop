@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Message;
 
 use Mirakl\MMP\Common\Domain\Collection\Message\OrderMessageCollection;
@@ -9,17 +12,18 @@ use Mirakl\MMP\Common\Request\Message\AbstractGetMessagesRequest;
  * By default, all sent and received messages are listed
  * Note: this resource supports pagination and will return 10 messages
  *
- * @method  string  getOrderId()
- * @method  $this   setOrderId(string $orderId)
+ * @method string getOrderId()
+ * @method $this  setOrderId(string $orderId)
  */
 abstract class AbstractGetOrderMessagesRequest extends AbstractGetMessagesRequest
 {
     /**
-     * @param   string  $orderId
+     * @param string $orderId
      */
     public function __construct($orderId)
     {
         parent::__construct();
+
         $this->setOrderId($orderId);
     }
 

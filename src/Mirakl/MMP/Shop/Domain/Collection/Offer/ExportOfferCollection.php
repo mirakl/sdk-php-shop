@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Collection\Offer;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Shop\Domain\Offer\ExportOffer;
 
 /**
- * @method  ExportOffer current()
- * @method  ExportOffer first()
- * @method  ExportOffer get($offset)
- * @method  ExportOffer offsetGet($offset)
- * @method  ExportOffer last()
+ * @method ExportOffer current()
+ * @method ExportOffer first()
+ * @method ExportOffer get($offset)
+ * @method ExportOffer offsetGet($offset)
+ * @method ExportOffer last()
  */
 class ExportOfferCollection extends MiraklCollection
 {

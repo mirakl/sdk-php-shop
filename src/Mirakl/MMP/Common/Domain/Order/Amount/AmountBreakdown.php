@@ -1,12 +1,15 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order\Amount;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Order\Amount\AmountBreakdownPartCollection;
 
 /**
- * @method  AmountBreakdownPartCollection   getParts()
- * @method  $this                           setParts(AmountBreakdownPartCollection $amountBreakdownPartCollection)
+ * @method AmountBreakdownPartCollection getParts()
+ * @method $this                         setParts(AmountBreakdownPartCollection $amountBreakdownPartCollection)
  */
 class AmountBreakdown extends MiraklObject
 {

@@ -1,15 +1,18 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Collection\Order\Tax;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
 use Mirakl\MMP\Front\Domain\Order\Tax\OrderTaxEstimation;
 
 /**
- * @method  OrderTaxEstimation  current()
- * @method  OrderTaxEstimation  first()
- * @method  OrderTaxEstimation  get($offset)
- * @method  OrderTaxEstimation  offsetGet($offset)
- * @method  OrderTaxEstimation  last()
+ * @method OrderTaxEstimation current()
+ * @method OrderTaxEstimation first()
+ * @method OrderTaxEstimation get($offset)
+ * @method OrderTaxEstimation offsetGet($offset)
+ * @method OrderTaxEstimation last()
  */
 class OrderTaxEstimationCollection extends MiraklCollection
 {

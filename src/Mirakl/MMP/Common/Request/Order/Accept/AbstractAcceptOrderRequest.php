@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Accept;
 
 use Mirakl\MMP\Common\Domain\Collection\Order\Accept\AcceptOrderLineCollection;
@@ -7,8 +10,8 @@ use Mirakl\MMP\Common\Request\Order\AbstractOrderRequest;
 /**
  * (OR21) Accept or refuse order lines of an order which are in @see AbstractOrderStatus::WAITING_ACCEPTANCE state
  *
- * @method  AcceptOrderLineCollection   getOrderLines()
- * @method  $this                       setOrderLines(array|AcceptOrderLineCollection $orderLines)
+ * @method AcceptOrderLineCollection getOrderLines()
+ * @method $this                     setOrderLines(array|AcceptOrderLineCollection $orderLines)
  */
 abstract class AbstractAcceptOrderRequest extends AbstractOrderRequest
 {
@@ -35,8 +38,8 @@ abstract class AbstractAcceptOrderRequest extends AbstractOrderRequest
     ];
 
     /**
-     * @param   string                          $orderId
-     * @param   array|AcceptOrderLineCollection $orderLines
+     * @param string                          $orderId
+     * @param array|AcceptOrderLineCollection $orderLines
      */
     public function __construct($orderId, $orderLines)
     {

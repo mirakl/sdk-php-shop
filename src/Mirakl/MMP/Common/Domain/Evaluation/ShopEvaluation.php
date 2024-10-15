@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Evaluation;
 
 use Mirakl\MMP\Common\Domain\Evaluation;
 
 /**
- * @method  EvaluationEntity    getEntity()
- * @method  $this               setEntity(EvaluationEntity $entity)
+ * @method EvaluationEntity getEntity()
+ * @method $this            setEntity(EvaluationEntity $entity)
  */
 class ShopEvaluation extends Evaluation
 {

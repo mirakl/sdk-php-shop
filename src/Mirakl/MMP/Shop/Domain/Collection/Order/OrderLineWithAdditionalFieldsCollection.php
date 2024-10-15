@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Collection\Order;
 
 use Mirakl\Core\Domain\Collection\MiraklCollection;
@@ -6,11 +9,11 @@ use Mirakl\MMP\Common\Domain\AdditionalFieldValue;
 use Mirakl\MMP\Shop\Domain\Order\OrderLineWithAdditionalFields;
 
 /**
- * @method  AdditionalFieldValue    current()
- * @method  AdditionalFieldValue    first()
- * @method  AdditionalFieldValue    get($offset)
- * @method  AdditionalFieldValue    offsetGet($offset)
- * @method  AdditionalFieldValue    last()
+ * @method AdditionalFieldValue current()
+ * @method AdditionalFieldValue first()
+ * @method AdditionalFieldValue get($offset)
+ * @method AdditionalFieldValue offsetGet($offset)
+ * @method AdditionalFieldValue last()
  */
 
 class OrderLineWithAdditionalFieldsCollection extends MiraklCollection

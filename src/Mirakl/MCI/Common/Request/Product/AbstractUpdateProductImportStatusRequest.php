@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Request\Product;
 
 use Mirakl\Core\Domain\FileWrapper;
@@ -10,14 +13,14 @@ use Mirakl\MCI\Common\Domain\Product\ProductImportStatus;
  * (P43) Update the integration status of the product import file and upload the integration
  * and error reports from the operator information system
  *
- * @method  FileWrapper         getErrorsFile()
- * @method  string              getImportId()
- * @method  $this               setImportId(string $importId)
- * @method  IntegrationDetails  getIntegrationDetails()
- * @method  $this               setIntegrationDetails(array|IntegrationDetails $integrationDetails)
- * @method  FileWrapper         getProductsFile()
- * @method  string              getStatus()
- * @method  $this               setStatus(string $status)
+ * @method FileWrapper        getErrorsFile()
+ * @method string             getImportId()
+ * @method $this              setImportId(string $importId)
+ * @method IntegrationDetails getIntegrationDetails()
+ * @method $this              setIntegrationDetails(array|IntegrationDetails $integrationDetails)
+ * @method FileWrapper        getProductsFile()
+ * @method string             getStatus()
+ * @method $this              setStatus(string $status)
  *
  */
 abstract class AbstractUpdateProductImportStatusRequest extends AbstractImportRequest
@@ -50,8 +53,8 @@ abstract class AbstractUpdateProductImportStatusRequest extends AbstractImportRe
     ];
 
     /**
-     * @param   string  $importId
-     * @param   string  $status
+     * @param string $importId
+     * @param string $status
      */
     public function __construct($importId, $status = ProductImportStatus::COMPLETE)
     {
@@ -60,8 +63,8 @@ abstract class AbstractUpdateProductImportStatusRequest extends AbstractImportRe
     }
 
     /**
-     * @param   mixed   $errorsFile
-     * @return  $this
+     * @param mixed $errorsFile
+     * @return $this
      */
     public function setErrorsFile($errorsFile)
     {
@@ -73,8 +76,8 @@ abstract class AbstractUpdateProductImportStatusRequest extends AbstractImportRe
     }
 
     /**
-     * @param   mixed   $productsFile
-     * @return  $this
+     * @param mixed $productsFile
+     * @return $this
      */
     public function setProductsFile($productsFile)
     {

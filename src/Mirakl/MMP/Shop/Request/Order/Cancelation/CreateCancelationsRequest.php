@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Cancelation;
 
 use Mirakl\MMP\Common\Request\Order\Cancelation\AbstractCreateCancelationsRequest;
@@ -8,8 +11,8 @@ use Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated;
 /**
  * (OR30) Demand cancelations on order lines
  *
- * @method  CreateCancelationCollection   getCancelations()
- * @method  $this                         setCancelations(array|CreateCancelationCollection $cancelations)
+ * @method CreateCancelationCollection getCancelations()
+ * @method $this                       setCancelations(array|CreateCancelationCollection $cancelations)
  *
  * Example:
  *
@@ -33,7 +36,7 @@ use Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated;
  *
  * $request = new CreateCancelationsRequest([$createCancelation]);
  *
- * $result = $api->cancelOrderLines($request);
+ * $result = $api->requestCancelOrderLines($request);
  * // $result => @see \Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated
  * </code>
  */
@@ -47,11 +50,12 @@ class CreateCancelationsRequest extends AbstractCreateCancelationsRequest
     ];
 
     /**
-     * @param   array|CreateCancelationCollection   $cancelations
+     * @param CreateCancelationCollection|array $cancelations
      */
     public function __construct($cancelations)
     {
         parent::__construct();
+
         $this->setCancelations($cancelations);
     }
 

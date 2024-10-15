@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Channel;
 
 use Mirakl\Core\Domain\LocalizableTrait;

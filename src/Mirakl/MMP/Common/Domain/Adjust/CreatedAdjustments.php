@@ -1,12 +1,15 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Adjust;
 
 use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Adjust\CreatedAdjustmentCollection;
 
 /**
- * @method  CreatedAdjustmentCollection getAdjustments()
- * @method  $this                       setAdjustments(array|CreatedAdjustmentCollection $adjustments)
+ * @method CreatedAdjustmentCollection getAdjustments()
+ * @method $this                       setAdjustments(array|CreatedAdjustmentCollection $adjustments)
  */
 class CreatedAdjustments extends MiraklObject
 {

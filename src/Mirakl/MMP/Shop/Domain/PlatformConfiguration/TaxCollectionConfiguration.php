@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\PlatformConfiguration;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -13,9 +16,9 @@ use Mirakl\Core\Domain\MiraklObject;
  */
 class TaxCollectionConfiguration extends MiraklObject
 {
-    const TAX_COLLECTION_ACTIVATED_NO = 'NO';
-    const TAX_COLLECTION_ACTIVATED_YES = 'YES';
-    const TAX_COLLECTION_ACTIVATED_YES_PER_STORE = 'YES_PER_STORE';
+    public const TAX_COLLECTION_ACTIVATED_NO = 'NO';
+    public const TAX_COLLECTION_ACTIVATED_YES = 'YES';
+    public const TAX_COLLECTION_ACTIVATED_YES_PER_STORE = 'YES_PER_STORE';
 
     /**
      * @var array

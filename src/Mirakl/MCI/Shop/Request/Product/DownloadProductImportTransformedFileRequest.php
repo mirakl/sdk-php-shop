@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Shop\Request\Product;
 
 use Mirakl\MCI\Common\Request\Product\AbstractDownloadProductImportTransformedFileRequest;
@@ -21,4 +24,5 @@ use Mirakl\MCI\Common\Request\Product\AbstractDownloadProductImportTransformedFi
  * </code>
  */
 class DownloadProductImportTransformedFileRequest extends AbstractDownloadProductImportTransformedFileRequest
-{}
+{
+}

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Offer\Shipping;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -14,4 +17,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this     setLatestDeliveryDate(\DateTime $latestDeliveryDate)
  */
 class DeliveryTime extends MiraklObject
-{}
+{
+}

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Async\Export;
 
 use Mirakl\MMP\Common\Request\Order\Async\Export\AbstractExportOrdersAsyncStatusRequest;
@@ -25,4 +28,5 @@ use Mirakl\MMP\Common\Request\Order\Async\Export\AbstractExportOrdersAsyncStatus
  * </code>
  */
 class ExportOrdersAsyncStatusRequest extends AbstractExportOrdersAsyncStatusRequest
-{}
+{
+}

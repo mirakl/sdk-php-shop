@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 use Mirakl\Core\Client\ApiClientInterface;
@@ -16,6 +19,7 @@ abstract class AbstractFileUrlRequest extends AbstractRequest
     public function __construct($fileUrl)
     {
         parent::__construct();
+
         $this->setFileUrl($fileUrl);
     }
 

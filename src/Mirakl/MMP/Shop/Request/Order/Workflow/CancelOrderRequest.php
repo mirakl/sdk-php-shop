@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Workflow;
 
 use Mirakl\MMP\Common\Request\Order\AbstractOrderRequest;

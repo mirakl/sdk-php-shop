@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shop;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -10,4 +13,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setProducerId(string $producerId)
  */
 class ProducerIdentifier extends MiraklObject
-{}
+{
+}

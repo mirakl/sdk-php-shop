@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Offer;
 
 use Mirakl\MMP\Common\Domain\Collection\EcoContributionCollection;
@@ -11,26 +14,26 @@ use Mirakl\MMP\Common\Domain\Offer\Shipping\DeliveryTime;
 use Mirakl\MMP\Common\Domain\Offer\Shipping\ShippingPriceByZoneAndType;
 
 /**
- * @method  bool                           getDeleted()
- * @method  $this                          setDeleted(bool $flag)
- * @method  bool                           isDeleted()
- * @method  $this                          setId(string $id)
- * @method  string                         getLogisticClassCode()
- * @method  $this                          setLogisticClassCode(string $logisticClassCode)
- * @method  int                            getMaxOrderQuantity()
- * @method  $this                          setMaxOrderQuantity(int $maxOrderQuantity)
- * @method  ProductMeasurementCollection   getMeasurements()
- * @method  $this                          setMeasurements(ProductMeasurementCollection $measurements)
- * @method  int                            getMinOrderQuantity()
- * @method  $this                          setMinOrderQuantity(int $minOrderQuantity)
- * @method  int                            getMinQuantityAlert()
- * @method  $this                          setMinQuantityAlert(int $minQuantityAlert)
- * @method  int                            getPackageQuantity()
- * @method  $this                          setPackageQuantity(int $packageQuantity)
- * @method  string                         getProductSku()
- * @method  $this                          setProductSku(string $sku)
- * @method  string                         getShopSku()
- * @method  $this                          setShopSku(string $shopSku)
+ * @method bool                         getDeleted()
+ * @method $this                        setDeleted(bool $flag)
+ * @method bool                         isDeleted()
+ * @method $this                        setId(string $id)
+ * @method string                       getLogisticClassCode()
+ * @method $this                        setLogisticClassCode(string $logisticClassCode)
+ * @method int                          getMaxOrderQuantity()
+ * @method $this                        setMaxOrderQuantity(int $maxOrderQuantity)
+ * @method ProductMeasurementCollection getMeasurements()
+ * @method $this                        setMeasurements(ProductMeasurementCollection $measurements)
+ * @method int                          getMinOrderQuantity()
+ * @method $this                        setMinOrderQuantity(int $minOrderQuantity)
+ * @method int                          getMinQuantityAlert()
+ * @method $this                        setMinQuantityAlert(int $minQuantityAlert)
+ * @method int                          getPackageQuantity()
+ * @method $this                        setPackageQuantity(int $packageQuantity)
+ * @method string                       getProductSku()
+ * @method $this                        setProductSku(string $sku)
+ * @method string                       getShopSku()
+ * @method $this                        setShopSku(string $shopSku)
  */
 abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
 {
@@ -96,7 +99,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
      * Return origin price directly from offer to keep backwards compatibility
      *
      * @deprecated use getDiscount()->getOriginPrice()
-     * @return  float
+     * @return float
      */
     public function getOriginPrice()
     {
@@ -108,9 +111,9 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
-     * @param   array       $data
-     * @param   string|null $channelCode
-     * @return  array|null
+     * @param array       $data
+     * @param string|null $channelCode
+     * @return array|null
      */
     protected function getOfferPricingData($data, $channelCode = null)
     {
@@ -155,7 +158,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
-     * @param  array $data
+     * @param array $data
      * @return array
      */
     protected function getOfferShippingPricingData(array $data)
@@ -199,7 +202,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
-     * @param  array $data
+     * @param array $data
      * @return array
      */
     protected function getOfferMeasurements(array $data)
@@ -224,7 +227,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
-     * @param  array $data
+     * @param array $data
      * @return array
      */
     public function getOfferEcoContributions(array $data)
@@ -249,7 +252,7 @@ abstract class AbstractExportOffer extends AbstractOfferWithShopInfo
     }
 
     /**
-     * @param  array $data
+     * @param array $data
      * @return array
      */
     protected function getOfferEcoContributionsV2(array $data)

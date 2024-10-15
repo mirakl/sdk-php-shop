@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Product;
 
 /**
- * @method  string  getId()
- * @method  $this   setId(string $id)
- * @method  string  getIdType()
- * @method  $this   setIdType(string $idType)
+ * @method string getId()
+ * @method $this  setId(string $id)
+ * @method string getIdType()
+ * @method $this  setIdType(string $idType)
  */
 abstract class AbstractProduct extends ProductInfo
 {

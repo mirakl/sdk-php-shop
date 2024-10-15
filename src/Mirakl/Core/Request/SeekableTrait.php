@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 trait SeekableTrait
@@ -19,7 +22,7 @@ trait SeekableTrait
     protected $pageToken;
 
     /**
-     * @return  int
+     * @return int
      */
     public function getLimit()
     {
@@ -27,7 +30,7 @@ trait SeekableTrait
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function getPageToken()
     {
@@ -35,8 +38,8 @@ trait SeekableTrait
     }
 
     /**
-     * @param   int $limit
-     * @return  $this
+     * @param int $limit
+     * @return $this
      */
     public function setLimit($limit)
     {
@@ -46,8 +49,8 @@ trait SeekableTrait
     }
 
     /**
-     * @param   string  $pageToken
-     * @return  $this
+     * @param string $pageToken
+     * @return $this
      */
     public function setPageToken($pageToken)
     {

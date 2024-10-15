@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Offer;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -8,8 +11,8 @@ use Mirakl\MMP\OperatorShop\Domain\Offer\Importer\OfferImportTracking;
 /**
  * (OF24) Update offers
  *
- * @method  UpdateOfferCollection   getOffers()
- * @method  $this                   setOffers(array|UpdateOfferCollection $offers)
+ * @method UpdateOfferCollection getOffers()
+ * @method $this                 setOffers(array|UpdateOfferCollection $offers)
  */
 abstract class AbstractUpdateOffersRequest extends AbstractRequest
 {

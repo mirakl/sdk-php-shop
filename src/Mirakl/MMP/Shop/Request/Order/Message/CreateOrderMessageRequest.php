@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Order\Message;
 
 use Mirakl\MMP\Common\Request\Order\Message\AbstractCreateOrderMessageRequest;
@@ -29,4 +32,5 @@ use Mirakl\MMP\Common\Request\Order\Message\AbstractCreateOrderMessageRequest;
  * </code>
  */
 class CreateOrderMessageRequest extends AbstractCreateOrderMessageRequest
-{}
+{
+}

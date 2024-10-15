@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\OperatorShop\Request\Message;
 
 use Mirakl\MMP\Common\Request\Message\AbstractGetThreadDetailsRequest;
@@ -19,4 +22,5 @@ use Mirakl\MMP\Common\Request\Message\AbstractGetThreadDetailsRequest;
  * </code>
  */
 class GetThreadDetailsRequest extends AbstractGetThreadDetailsRequest
-{}
+{
+}

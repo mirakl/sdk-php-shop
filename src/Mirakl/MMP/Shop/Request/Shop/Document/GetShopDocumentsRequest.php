@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Shop\Document;
 
 use Mirakl\MMP\Common\Request\Shop\AbstractGetShopDocumentsRequest;
@@ -18,4 +21,5 @@ use Mirakl\MMP\Common\Request\Shop\AbstractGetShopDocumentsRequest;
  * </code>
  */
 class GetShopDocumentsRequest extends AbstractGetShopDocumentsRequest
-{}
+{
+}

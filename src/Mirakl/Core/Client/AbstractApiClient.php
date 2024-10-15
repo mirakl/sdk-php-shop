@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Client;
 
 use GuzzleHttp;
@@ -89,8 +92,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     public $queryParams = [];
 
     /**
-     * @param   string      $baseUrl
-     * @param   string|null $apiKey
+     * @param string      $baseUrl
+     * @param string|null $apiKey
      */
     public function __construct($baseUrl, $apiKey = null)
     {
@@ -101,10 +104,10 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   string  $name
-     * @param   array   $args
-     * @return  mixed
-     * @throws  \Exception
+     * @param string $name
+     * @param array  $args
+     * @return mixed
+     * @throws \Exception
      */
     public function __call($name, $args)
     {
@@ -120,8 +123,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Proxy to run() method
      *
-     * @param   RequestInterface    $request
-     * @return  ResponseInterface
+     * @param RequestInterface $request
+     * @return ResponseInterface
      */
     public function __invoke(RequestInterface $request)
     {
@@ -131,9 +134,9 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Add a request option
      *
-     * @param   string  $key
-     * @param   mixed   $value
-     * @return  $this
+     * @param string $key
+     * @param mixed  $value
+     * @return $this
      */
     public function addOption($key, $value)
     {
@@ -143,8 +146,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   bool    $flag
-     * @return  $this
+     * @param bool $flag
+     * @return $this
      */
     public function async($flag = true)
     {
@@ -154,8 +157,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   RequestInterface    $request
-     * @return  array
+     * @param RequestInterface $request
+     * @return array
      */
     public function buildRequestOptions(RequestInterface $request)
     {
@@ -203,8 +206,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   bool    $flag
-     * @return  $this
+     * @param bool $flag
+     * @return $this
      */
     public function disable($flag = true)
     {
@@ -216,8 +219,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Executes specified request taking raw and async parameters into account
      *
-     * @param   RequestInterface    $request
-     * @return  mixed
+     * @param RequestInterface $request
+     * @return mixed
      */
     private function execute(RequestInterface $request)
     {
@@ -231,8 +234,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Formats body parameters for JSON requests
      *
-     * @param   array   $bodyParams
-     * @return  array
+     * @param array $bodyParams
+     * @return array
      */
     private function formatBodyParamsJson(array $bodyParams)
     {
@@ -253,8 +256,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Formats body parameters for multipart requests
      *
-     * @param   array   $bodyParams
-     * @return  array
+     * @param array $bodyParams
+     * @return array
      */
     private function formatBodyParamsMultipart(array $bodyParams)
     {
@@ -269,7 +272,7 @@ abstract class AbstractApiClient implements ApiClientInterface
 
             // Handle single file in a file collection to use just after
             if ($value instanceof FileWrapper) {
-                $value = (new FileCollection)->add($value);
+                $value = (new FileCollection())->add($value);
             }
 
             // Handle files upload
@@ -305,9 +308,9 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Formats file information for request
      *
-     * @param   string      $name
-     * @param   FileWrapper $file
-     * @return  array
+     * @param string      $name
+     * @param FileWrapper $file
+     * @return array
      */
     private function formatPostFile($name, FileWrapper $file)
     {
@@ -324,8 +327,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Formats params as query string params
      *
-     * @param   array   $params
-     * @return  array
+     * @param array $params
+     * @return array
      */
     private function formatQueryParams(array $params)
     {
@@ -347,7 +350,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  string|null
+     * @return string|null
      */
     public function getApiKey()
     {
@@ -355,7 +358,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getBaseUrl()
     {
@@ -363,7 +366,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  LoggerInterface
+     * @return LoggerInterface
      */
     public function getLogger()
     {
@@ -371,7 +374,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  GuzzleHttp\MessageFormatter
+     * @return GuzzleHttp\MessageFormatter
      */
     public function getMessageFormatter()
     {
@@ -383,7 +386,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  GuzzleHttp\Client
+     * @return GuzzleHttp\Client
      */
     public function getClient()
     {
@@ -395,7 +398,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  GuzzleHttp\Client
+     * @return GuzzleHttp\Client
      */
     protected function getDefaultClient()
     {
@@ -403,7 +406,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  array
+     * @return array
      */
     protected function getDefaultClientParams()
     {
@@ -432,7 +435,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public static function getDefaultUserAgent()
     {
@@ -442,7 +445,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Returns last request as a string for debugging purpose
      *
-     * @return  string
+     * @return string
      */
     public function getLastRequestString()
     {
@@ -452,7 +455,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Returns all request options
      *
-     * @return  array
+     * @return array
      */
     public function getOptions()
     {
@@ -460,7 +463,7 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @return  string
+     * @return string
      */
     public function getUserAgent()
     {
@@ -470,19 +473,21 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Prepares and builds request promise before being executed
      *
-     * @param   RequestInterface    $request
-     * @return  GuzzleHttp\Promise\PromiseInterface
+     * @param RequestInterface $request
+     * @return GuzzleHttp\Promise\PromiseInterface
      */
     private function prepareRequest(RequestInterface $request)
     {
         return $this->getClient()->requestAsync(
-            $request->getMethod(), $request->getUri(), $this->buildRequestOptions($request)
+            $request->getMethod(),
+            $request->getUri(),
+            $this->buildRequestOptions($request)
         );
     }
 
     /**
-     * @param   bool    $flag
-     * @return  $this
+     * @param bool $flag
+     * @return $this
      */
     public function raw($flag = true)
     {
@@ -494,8 +499,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Removes a specific option by key
      *
-     * @param   string  $key
-     * @return  $this
+     * @param string $key
+     * @return $this
      */
     public function removeOption($key)
     {
@@ -509,8 +514,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Prepares and executes given request
      *
-     * @param   RequestInterface    $request
-     * @return  ResponseInterface
+     * @param RequestInterface $request
+     * @return ResponseInterface
      */
     public function run(RequestInterface $request)
     {
@@ -520,9 +525,9 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Prepares given request without executing it
      *
-     * @param   RequestInterface    $request
-     * @return  GuzzleHttp\Promise\PromiseInterface
-     * @throws  ClientDisabledException
+     * @param RequestInterface $request
+     * @return GuzzleHttp\Promise\PromiseInterface
+     * @throws ClientDisabledException
      */
     public function runAsync(RequestInterface $request)
     {
@@ -534,8 +539,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   string  $apiKey
-     * @return  $this
+     * @param string $apiKey
+     * @return $this
      */
     public function setApiKey($apiKey)
     {
@@ -545,8 +550,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   string  $baseUrl
-     * @return  $this
+     * @param string $baseUrl
+     * @return $this
      */
     public function setBaseUrl($baseUrl)
     {
@@ -556,9 +561,9 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   LoggerInterface               $logger
-     * @param   GuzzleHttp\MessageFormatter   $messageFormatter
-     * @return  $this
+     * @param LoggerInterface             $logger
+     * @param GuzzleHttp\MessageFormatter $messageFormatter
+     * @return $this
      */
     public function setLogger(LoggerInterface $logger, GuzzleHttp\MessageFormatter $messageFormatter = null)
     {
@@ -569,8 +574,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   GuzzleHttp\MessageFormatter $messageFormatter
-     * @return  $this
+     * @param GuzzleHttp\MessageFormatter $messageFormatter
+     * @return $this
      */
     public function setMessageFormatter(GuzzleHttp\MessageFormatter $messageFormatter)
     {
@@ -580,8 +585,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   GuzzleHttp\ClientInterface $client
-     * @return  $this
+     * @param GuzzleHttp\ClientInterface $client
+     * @return $this
      */
     public function setClient(GuzzleHttp\ClientInterface $client)
     {
@@ -593,8 +598,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     /**
      * Overrides all request options by specified ones
      *
-     * @param   array   $options
-     * @return  $this
+     * @param array $options
+     * @return $this
      */
     public function setOptions(array $options)
     {
@@ -604,8 +609,8 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param   string  $userAgent
-     * @return  $this
+     * @param string $userAgent
+     * @return $this
      */
     public function setUserAgent($userAgent)
     {

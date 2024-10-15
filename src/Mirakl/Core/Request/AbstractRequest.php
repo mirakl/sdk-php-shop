@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Request;
 
 use Mirakl\Core\Client\ApiClientInterface;
@@ -120,7 +123,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     }
 
     /**
-     * @return  bool
+     * @return bool
      * @deprecated use haveQueryParamsDuplicated()
      */
     public function areQueryParamsDuplicated()
@@ -129,7 +132,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function haveQueryParamsDuplicated()
     {
@@ -137,8 +140,8 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     }
 
     /**
-     * @param   array   $params
-     * @return  array
+     * @param array $params
+     * @return array
      */
     protected function buildParams(array $params)
     {
@@ -166,8 +169,8 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Verify that all required URI vars are present
      *
-     * @return  void
-     * @throws  RequestValidationException
+     * @return void
+     * @throws RequestValidationException
      */
     protected function validateRequiredUriVars()
     {
@@ -198,7 +201,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Get request query parameters that should be duplicated
      *
-     * @return  array
+     * @return array
      */
     public function getDuplicatedQueryParams()
     {
@@ -208,7 +211,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Returns the request endpoint to access an API
      *
-     * @return  string
+     * @return string
      */
     public function getEndpoint()
     {
@@ -218,7 +221,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Returns the HTTP method used for current request
      *
-     * @return  string
+     * @return string
      */
     public function getMethod()
     {
@@ -291,7 +294,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
         /**
          * Format boolean values as strings
          */
-        array_walk($params, function(&$val) {
+        array_walk($params, function (&$val) {
             if (is_bool($val)) {
                 $val = $val ? 'true' : 'false';
             }
@@ -311,8 +314,8 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Overrides all request options by specified ones
      *
-     * @param   array   $options
-     * @return  $this
+     * @param array $options
+     * @return $this
      */
     public function setOptions(array $options)
     {
@@ -324,8 +327,8 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Removes a specific option by key
      *
-     * @param   string  $key
-     * @return  $this
+     * @param string $key
+     * @return $this
      */
     public function removeOption($key)
     {
@@ -339,9 +342,9 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     /**
      * Add a request option
      *
-     * @param   string  $key
-     * @param   mixed   $value
-     * @return  $this
+     * @param string $key
+     * @param mixed  $value
+     * @return $this
      */
     public function addOption($key, $value)
     {
@@ -377,7 +380,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     {
         $this->validateRequiredUriVars();
 
-        $vars = array_map(function($var) {
+        $vars = array_map(function ($var) {
             return $this->getData($var);
         }, $this->uriVars);
 
@@ -403,7 +406,7 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function getCleanup()
     {
@@ -411,8 +414,8 @@ abstract class AbstractRequest extends MiraklObject implements RequestInterface
     }
 
     /**
-     * @param   bool    $flag
-     * @return  $this
+     * @param bool $flag
+     * @return $this
      */
     public function setCleanup($flag)
     {

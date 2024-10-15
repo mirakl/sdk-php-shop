@@ -1,24 +1,27 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\PlatformConfiguration;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method bool                    getIsMiraklCatalogIntegrator() // Is Mirakl Catalog Integrator activated
+ * @method bool                    getIsMiraklCatalogIntegrator()                                // Is Mirakl Catalog Integrator activated
  * @method $this                   setIsMiraklCatalogIntegrator(bool $isMiraklCatalogIntegrator)
- * @method bool                    getIsMiraklCatalogManager() // Is Mirakl Catalog Manager activated
+ * @method bool                    getIsMiraklCatalogManager()                                   // Is Mirakl Catalog Manager activated
  * @method $this                   setIsMiraklCatalogManager(bool $isMiraklCatalogManager)
- * @method bool                    getIsMiraklPlatformService() // Is Mirakl Platform for Services activated
+ * @method bool                    getIsMiraklPlatformService()                                  // Is Mirakl Platform for Services activated
  * @method $this                   setIsMiraklPlatformService(bool $isMiraklPlatformService)
- * @method bool                    getIsOfferManagement() // Is offer management available on the platform
+ * @method bool                    getIsOfferManagement()                                        // Is offer management available on the platform
  * @method $this                   setIsOfferManagement(bool $isOfferManagement)
- * @method bool                    getIsOrderManagement() // Is order management available on the platform
+ * @method bool                    getIsOrderManagement()                                        // Is order management available on the platform
  * @method $this                   setIsOrderManagement(bool $isOrderManagement)
- * @method bool                    getIsPromotions() // Is promotion module activated
+ * @method bool                    getIsPromotions()                                             // Is promotion module activated
  * @method $this                   setIsPromotions(bool $isPromotions)
- * @method bool                    getIsQuotes() // Is quote module activated
+ * @method bool                    getIsQuotes()                                                 // Is quote module activated
  * @method $this                   setIsQuotes(bool $isQuotes)
- * @method TaxManagerConfiguration getTaxManager() // Is promotion module activated
+ * @method TaxManagerConfiguration getTaxManager()                                               // Is promotion module activated
  * @method $this                   setTaxManager(TaxManagerConfiguration|array $taxManager)
  */
 class ModulesConfiguration extends MiraklObject

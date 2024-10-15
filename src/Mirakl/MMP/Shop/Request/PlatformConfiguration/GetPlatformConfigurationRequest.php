@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\PlatformConfiguration;
 
 use Mirakl\Core\Request\AbstractRequest;

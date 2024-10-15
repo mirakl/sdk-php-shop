@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Domain;
 
 /**
@@ -6,10 +9,10 @@ namespace Mirakl\Core\Domain;
  */
 class ProcessTrackingStatus
 {
-    const WAITING   = 'WAITING';
-    const RUNNING   = 'RUNNING';
-    const COMPLETE  = 'COMPLETE';
-    const FAILED    = 'FAILED';
-    const CANCELLED = 'CANCELLED';
-    const QUEUED    = 'QUEUED';
+    public const WAITING   = 'WAITING';
+    public const RUNNING   = 'RUNNING';
+    public const COMPLETE  = 'COMPLETE';
+    public const FAILED    = 'FAILED';
+    public const CANCELLED = 'CANCELLED';
+    public const QUEUED    = 'QUEUED';
 }

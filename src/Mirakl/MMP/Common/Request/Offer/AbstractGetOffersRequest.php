@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Offer;
 
 use Mirakl\Core\Domain\LocalizableTrait;
@@ -7,15 +10,15 @@ use Mirakl\Core\Request\PageableTrait;
 use Mirakl\Core\Request\SortableTrait;
 
 /**
- * @method  bool    getFavorite()
- * @method  $this   setFavorite(bool $flag)
- * @method  bool    isFavorite()
- * @method  array   getOfferStateCodes()
- * @method  $this   setOfferStateCodes(array $offerStateCodes)
- * @method  string  getPricingChannelCode()
- * @method  $this   setPricingChannelCode(string $pricingChannelCode)
- * @method  string  getPricingCustomerOrganizationId()
- * @method  $this   setPricingCustomerOrganizationId(string $pricingCustomerOrganizationId)
+ * @method bool     getFavorite()
+ * @method $this    setFavorite(bool $flag)
+ * @method bool     isFavorite()
+ * @method string[] getOfferStateCodes()
+ * @method $this    setOfferStateCodes(string[] $offerStateCodes)
+ * @method string   getPricingChannelCode()
+ * @method $this    setPricingChannelCode(string $pricingChannelCode)
+ * @method string   getPricingCustomerOrganizationId()
+ * @method $this    setPricingCustomerOrganizationId(string $pricingCustomerOrganizationId)
  */
 abstract class AbstractGetOffersRequest extends AbstractRequest
 {
@@ -26,17 +29,17 @@ abstract class AbstractGetOffersRequest extends AbstractRequest
     /**
      * (DEFAULT) Sort by total price
      */
-    const SORT_BY_TOTAL_PRICE   = 'totalPrice';
+    public const SORT_BY_TOTAL_PRICE   = 'totalPrice';
 
     /**
      * Sort by price, total price
      */
-    const SORT_BY_PRICE         = 'price';
+    public const SORT_BY_PRICE         = 'price';
 
     /**
      * Sort by product title, total price
      */
-    const SORT_BY_PRODUCT_TITLE = 'productTitle';
+    public const SORT_BY_PRODUCT_TITLE = 'productTitle';
 
     /**
      * @var array

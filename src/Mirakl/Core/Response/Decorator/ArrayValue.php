@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\Core\Response\Decorator;
 
 use Mirakl\Core\Response\ResponseDecoratorInterface;
@@ -12,7 +15,7 @@ class ArrayValue implements ResponseDecoratorInterface
     protected $key;
 
     /**
-     * @param   string  $key
+     * @param string $key
      */
     public function __construct($key)
     {

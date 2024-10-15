@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shop;
 
 class ShopKycStatus
 {
-    const PENDING_SUBMISSION = 'PENDING_SUBMISSION';
-    const PENDING_APPROVAL   = 'PENDING_APPROVAL';
-    const REFUSED            = 'REFUSED';
-    const APPROVED           = 'APPROVED';
-    const NOT_REQUIRED       = 'NOT_REQUIRED';
+    public const PENDING_SUBMISSION = 'PENDING_SUBMISSION';
+    public const PENDING_APPROVAL   = 'PENDING_APPROVAL';
+    public const REFUSED            = 'REFUSED';
+    public const APPROVED           = 'APPROVED';
+    public const NOT_REQUIRED       = 'NOT_REQUIRED';
 }

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Order\Message;
 
 use Mirakl\MMP\Common\Domain\Message\Thread\ThreadCreated;
@@ -8,10 +11,10 @@ use Mirakl\MMP\Common\Request\Document\AbstractFilesUploadRequest;
 /**
  * (OR43) Create a thread on an order
  *
- * @method  string                  getOrderId()
- * @method  $this                   setOrderId(string $orderId)
- * @method  CreateOrderThread       getThread()
- * @method  $this                   setThread(string $thread)
+ * @method string            getOrderId()
+ * @method $this             setOrderId(string $orderId)
+ * @method CreateOrderThread getThread()
+ * @method $this             setThread(CreateOrderThread $thread)
  *
  * Example:
  *
@@ -65,12 +68,13 @@ class CreateOrderThreadRequest extends AbstractFilesUploadRequest
     ];
 
     /**
-     * @param  string                   $orderId
-     * @param  CreateOrderThread|array  $thread
+     * @param string                  $orderId
+     * @param CreateOrderThread|array $thread
      */
     public function __construct($orderId, $thread)
     {
         parent::__construct();
+
         $this->setOrderId($orderId);
         $this->setThread($thread);
     }

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Request\Shipment;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -8,14 +11,14 @@ use Mirakl\Core\Request\SortableTrait;
 /**
  * (ST12) List items to ship (this resource supports seek pagination)
  *
- * @method  array     getOrderIds()
- * @method  $this     setOrderIds(array $orderIds)
- * @method  string[]  getFulfillmentCenterCodes()
- * @method  $this     setFulfillmentCenterCodes(string[] $fulfillmentCenterCodes)
- * @method  \DateTime getShippingDateFrom()
- * @method  $this     setShippingDateFrom(\DateTime $shippingDateFrom)
- * @method  \DateTime getShippingDateTo()
- * @method  $this     setShippingDateTo(\DateTime $shippingDateTo)
+ * @method array     getOrderIds()
+ * @method $this     setOrderIds(array $orderIds)
+ * @method string[]  getFulfillmentCenterCodes()
+ * @method $this     setFulfillmentCenterCodes(string[] $fulfillmentCenterCodes)
+ * @method \DateTime getShippingDateFrom()
+ * @method $this     setShippingDateFrom(\DateTime $shippingDateFrom)
+ * @method \DateTime getShippingDateTo()
+ * @method $this     setShippingDateTo(\DateTime $shippingDateTo)
  */
 abstract class AbstractGetItemsToShipRequest extends AbstractRequest
 {
@@ -46,8 +49,8 @@ abstract class AbstractGetItemsToShipRequest extends AbstractRequest
     ];
 
     /**
-     * @param   string  $orderId
-     * @return  $this
+     * @param string $orderId
+     * @return $this
      */
     public function addOrderId($orderId)
     {
@@ -62,8 +65,8 @@ abstract class AbstractGetItemsToShipRequest extends AbstractRequest
     }
 
     /**
-     * @param   string  $fulfillmentCenterCode
-     * @return  $this
+     * @param string $fulfillmentCenterCode
+     * @return $this
      */
     public function addFulfillmentCenterCode($fulfillmentCenterCode)
     {

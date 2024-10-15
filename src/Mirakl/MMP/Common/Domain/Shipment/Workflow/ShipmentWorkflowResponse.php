@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Shipment\Workflow;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -6,10 +9,10 @@ use Mirakl\MMP\Common\Domain\Collection\Shipment\Workflow\ShipmentWorkflowErrorC
 use Mirakl\MMP\Common\Domain\Collection\Shipment\Workflow\ShipmentWorkflowSuccessCollection;
 
 /**
- * @method  ShipmentWorkflowErrorCollection     getShipmentErrors()
- * @method  $this                               setShipmentErrors(array|ShipmentWorkflowErrorCollection $errors)
- * @method  ShipmentWorkflowSuccessCollection   getShipmentSuccess()
- * @method  $this                               setShipmentSuccess(array|ShipmentWorkflowSuccessCollection $shipments)
+ * @method ShipmentWorkflowErrorCollection   getShipmentErrors()
+ * @method $this                             setShipmentErrors(array|ShipmentWorkflowErrorCollection $errors)
+ * @method ShipmentWorkflowSuccessCollection getShipmentSuccess()
+ * @method $this                             setShipmentSuccess(array|ShipmentWorkflowSuccessCollection $shipments)
  */
 class ShipmentWorkflowResponse extends MiraklObject
 {

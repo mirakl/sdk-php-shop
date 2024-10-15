@@ -1,9 +1,12 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Order\State;
 
 /**
- * @method  OrderStateReason    getReason()
- * @method  $this               setReason(array|OrderStateReason $reason)
+ * @method OrderStateReason getReason()
+ * @method $this            setReason(array|OrderStateReason $reason)
  */
 class OrderStatus extends AbstractOrderStatus
 {

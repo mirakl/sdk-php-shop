@@ -1,37 +1,42 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MCI\Common\Domain\Product;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  \DateTime   getDateCreated()
- * @method  $this       setDateCreated(\DateTime $dateCreated)
- * @method  bool        getErrorReport()
- * @method  $this       setErrorReport(bool $flag)
- * @method  string      getImportId()
- * @method  $this       setImportId(string $importId)
- * @method  string      getImportStatus()
- * @method  $this       setImportStatus(string $importStatus)
- * @method  bool        getNewProductReport()
- * @method  $this       setNewProductReport(bool $flag)
- * @method  string      getReasonStatus()
- * @method  $this       setReasonStatus(string $reasonStatus)
- * @method  string      getShopId()
- * @method  $this       setShopId(string $shopId)
- * @method  string      getSynchroId()
- * @method  $this       setSynchroId(string $synchroId)
- * @method  bool        getTransformationErrorReport()
- * @method  $this       setTransformationErrorReport(bool $flag)
- * @method  bool        getTransformedFile()
- * @method  $this       setTransformedFile(bool $flag)
- * @method  int         getTransformedLinesInError()
- * @method  $this       setTransformedLinesInError(int $linesInError)
- * @method  int         getTransformedLinesInSuccess()
- * @method  $this       setTransformedLinesInSuccess(int $linesInSuccess)
- * @method  int         getTransformedLinesRead()
- * @method  $this       setTransformedLinesRead(int $linesRead)
- * @method  int         getTransformedLinesWithWarning()
- * @method  $this       setTransformedLinesWithWarning(int $linesWithWarning)
+ * @method \DateTime          getDateCreated()
+ * @method $this              setDateCreated(\DateTime $dateCreated)
+ * @method bool               getErrorReport()
+ * @method $this              setErrorReport(bool $flag)
+ * @method int                getImportId()
+ * @method $this              setImportId(int $importId)
+ * @method string             getImportStatus()
+ * @method $this              setImportStatus(string $importStatus)
+ * @method IntegrationDetails getIntegrationDetails()
+ * @method $this              setIntegrationDetails(IntegrationDetails|array $integrationDetails)
+ * @method bool               getNewProductReport()
+ * @method $this              setNewProductReport(bool $flag)
+ * @method string             getReasonStatus()
+ * @method $this              setReasonStatus(string $reasonStatus)
+ * @method int                getShopId()
+ * @method $this              setShopId(int $shopId)
+ * @method string             getSynchroId()
+ * @method $this              setSynchroId(string $synchroId)
+ * @method bool               getTransformationErrorReport()
+ * @method $this              setTransformationErrorReport(bool $flag)
+ * @method bool               getTransformedFile()
+ * @method $this              setTransformedFile(bool $flag)
+ * @method int                getTransformedLinesInError()
+ * @method $this              setTransformedLinesInError(int $linesInError)
+ * @method int                getTransformedLinesInSuccess()
+ * @method $this              setTransformedLinesInSuccess(int $linesInSuccess)
+ * @method int                getTransformedLinesRead()
+ * @method $this              setTransformedLinesRead(int $linesRead)
+ * @method int                getTransformedLinesWithWarning()
+ * @method $this              setTransformedLinesWithWarning(int $linesWithWarning)
  */
 class ProductImportResult extends MiraklObject
 {
@@ -50,7 +55,14 @@ class ProductImportResult extends MiraklObject
     ];
 
     /**
-     * @return  bool
+     * @var array
+     */
+    protected static $dataTypes = [
+        'integration_details' => [IntegrationDetails::class, 'create'],
+    ];
+
+    /**
+     * @return bool
      */
     public function hasErrorReport()
     {
@@ -58,7 +70,7 @@ class ProductImportResult extends MiraklObject
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function hasNewProductReport()
     {
@@ -66,7 +78,7 @@ class ProductImportResult extends MiraklObject
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function hasTransformedFile()
     {
@@ -74,7 +86,7 @@ class ProductImportResult extends MiraklObject
     }
 
     /**
-     * @return  bool
+     * @return bool
      */
     public function hasTransformationErrorReport()
     {

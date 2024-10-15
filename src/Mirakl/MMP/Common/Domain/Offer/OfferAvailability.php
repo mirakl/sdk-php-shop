@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Offer;
 
 use Mirakl\Core\Domain\DateRangeTrait;

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Shop\Document;
 
 use Mirakl\MMP\Common\Request\Shop\Document\AbstractDownloadShopsDocumentsRequest;
@@ -48,17 +51,18 @@ use Mirakl\MMP\Common\Request\Shop\Document\AbstractDownloadShopsDocumentsReques
 class DownloadShopDocumentsRequest extends AbstractDownloadShopsDocumentsRequest
 {
     /**
-     * @param   string  $shopId
+     * @param string $shopId
      */
     public function __construct($shopId)
     {
         parent::__construct();
+
         $this->setShopId($shopId);
     }
 
     /**
-     * @param   string  $shopId
-     * @return  $this
+     * @param string $shopId
+     * @return $this
      */
     public function setShopId($shopId)
     {

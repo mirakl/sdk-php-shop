@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Domain\Shop\Update;
 
 use Mirakl\Core\Domain\MiraklObject;
@@ -12,4 +15,5 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setTaxIdentificationNumber(string $number)
  */
 class UpdateShopAccountProDetails extends MiraklObject
-{}
+{
+}

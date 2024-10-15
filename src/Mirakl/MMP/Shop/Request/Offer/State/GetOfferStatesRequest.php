@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Offer\State;
 
 use Mirakl\MMP\Common\Request\Offer\State\AbstractGetOfferStatesRequest;
@@ -18,8 +21,9 @@ use Mirakl\MMP\Common\Request\Offer\State\AbstractGetOfferStatesRequest;
  * // $result => @see \Mirakl\MMP\Common\Domain\Collection\Offer\State\OfferStateCollection
  * </code>
  *
- * @deprecated  Class deprecated since 1.6.0
- * @see         \Mirakl\MMP\Shop\Request\Offer\State\GetOfferStateListRequest
+ * @deprecated Class deprecated since 1.6.0
+ * @see \Mirakl\MMP\Shop\Request\Offer\State\GetOfferStateListRequest
  */
 class GetOfferStatesRequest extends AbstractGetOfferStatesRequest
-{}
+{
+}

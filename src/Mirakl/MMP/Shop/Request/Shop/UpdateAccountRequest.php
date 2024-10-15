@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\Shop;
 
 use Mirakl\Core\Request\AbstractRequest;
@@ -79,6 +82,20 @@ class UpdateAccountRequest extends AbstractRequest
     protected $endpoint = '/account';
 
     /**
+     * @var array
+     */
+    public $bodyParams = [
+        'update_shop_account',
+    ];
+
+    /**
+     * @var array
+     */
+    protected static $dataTypes = [
+        'update_shop_account' => [UpdateShopAccount::class, 'create'],
+    ];
+
+    /**
      * @var bool
      */
     protected $cleanup = false;
@@ -89,6 +106,7 @@ class UpdateAccountRequest extends AbstractRequest
     public function __construct($updateShopAccount)
     {
         parent::__construct();
+
         $this->setUpdateShopAccount($updateShopAccount);
     }
 

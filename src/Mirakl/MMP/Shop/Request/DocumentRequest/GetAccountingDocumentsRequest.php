@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Shop\Request\DocumentRequest;
 
 use Mirakl\MMP\OperatorShop\Request\DocumentRequest\AbstractGetAccountingDocumentsRequest;
@@ -33,4 +36,5 @@ use Mirakl\MMP\OperatorShop\Request\DocumentRequest\AbstractGetAccountingDocumen
  * </code>
  */
 class GetAccountingDocumentsRequest extends AbstractGetAccountingDocumentsRequest
-{}
+{
+}

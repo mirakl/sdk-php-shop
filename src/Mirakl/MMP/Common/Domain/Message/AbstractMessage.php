@@ -1,22 +1,25 @@
 <?php
+
+declare(strict_types=1);
+
 namespace Mirakl\MMP\Common\Domain\Message;
 
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
- * @method  string                      getBody()
- * @method  $this                       setBody(string $body)
- * @method  MessageCustomerRecipient    getCustomerRecipient()
- * @method  \DateTime                   getDateCreated()
- * @method  string                      getId()
- * @method  $this                       setId(string $id)
- * @method  MessageShopRecipient        getShopRecipient()
- * @method  string                      getSubject()
- * @method  $this                       setSubject(string $subject)
- * @method  bool                        getToOperator()
- * @method  $this                       setToOperator(bool $flag)
- * @method  bool                        isToOperator()
- * @method  MessageUserSender           getUserSender()
+ * @method string                   getBody()
+ * @method $this                    setBody(string $body)
+ * @method MessageCustomerRecipient getCustomerRecipient()
+ * @method \DateTime                getDateCreated()
+ * @method string                   getId()
+ * @method $this                    setId(string $id)
+ * @method MessageShopRecipient     getShopRecipient()
+ * @method string                   getSubject()
+ * @method $this                    setSubject(string $subject)
+ * @method bool                     getToOperator()
+ * @method $this                    setToOperator(bool $flag)
+ * @method bool                     isToOperator()
+ * @method MessageUserSender        getUserSender()
  */
 abstract class AbstractMessage extends MiraklObject
 {
