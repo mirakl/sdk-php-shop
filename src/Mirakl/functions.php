@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mirakl;
 
 use Mirakl\Core\Domain\FileWrapper;
+use Mirakl\Core\Response\FilenameParser;
 use Mirakl\Core\Stream\SplFileStream;
 use Psr\Http\Message\ResponseInterface;
 
@@ -311,11 +312,10 @@ if (!function_exists('\Mirakl\parse_file_response')) {
         }
 
         if ($contentDisposition = $response->getHeaderLine('Content-Disposition')) {
-            preg_match('#.*filename="(.*)"$#i', $contentDisposition, $matches);
-
-            if (!empty($matches) && isset($matches[1])) {
-                $fileWrapper->setFileName($matches[1]);
-                $fileWrapper->setFileExtension(pathinfo($matches[1], PATHINFO_EXTENSION), false);
+            $filename = (new FilenameParser())->parse($contentDisposition);
+            if ($filename) {
+                $fileWrapper->setFileName($filename);
+                $fileWrapper->setFileExtension(pathinfo($filename, PATHINFO_EXTENSION), false);
             }
         }
 

@@ -443,6 +443,14 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
+     * @return array
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+
+    /**
      * Returns last request as a string for debugging purpose
      *
      * @return string

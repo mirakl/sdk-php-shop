@@ -1,4 +1,8 @@
 # Changelog
+## v1.21.1 - 2024-11-22
+### Fixes
+- Fix filename not parsed correctly in Content-Disposition header when downloading files
+
 ## v1.21.0 - 2024-10-14
 ### Features
 - Add last_request_date to PR01

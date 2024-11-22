@@ -20,7 +20,7 @@ class AssocArray implements ResponseDecoratorInterface
      */
     public function decorate(ResponseInterface $response)
     {
-        if (strpos($response->getHeaderLine('Content-Type'), 'application/xml') === 0) {
+        if (str_starts_with($response->getHeaderLine('Content-Type'), 'application/xml')) {
             $data = parse_xml_response($response);
         } else {
             $data = parse_json_response($response);
