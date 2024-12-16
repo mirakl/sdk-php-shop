@@ -1,4 +1,9 @@
 # Changelog
+## v1.21.2 - 2024-12-16
+### Fixes
+- Fix missing PHPDoc in Carrier class (API SH21)
+
+# Changelog
 ## v1.21.1 - 2024-11-22
 ### Fixes
 - Fix filename not parsed correctly in Content-Disposition header when downloading files

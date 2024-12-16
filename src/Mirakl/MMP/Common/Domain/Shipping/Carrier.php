@@ -11,6 +11,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setCode(string $code)
  * @method string getLabel()
  * @method $this  setLabel(string $label)
+ * @method string getStandardCode()
+ * @method $this  setStandardCode(string $standardCode)
  * @method string getTrackingUrl()
  * @method $this  setTrackingUrl(string $url)
  */
