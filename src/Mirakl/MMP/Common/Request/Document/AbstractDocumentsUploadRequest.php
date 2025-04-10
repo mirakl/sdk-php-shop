@@ -36,11 +36,12 @@ abstract class AbstractDocumentsUploadRequest extends AbstractRequest
     ];
 
     /**
-     * @param DocumentCollection $documents
+     * @param DocumentCollection|null $documents
      */
-    public function __construct(DocumentCollection $documents = null)
+    public function __construct(?DocumentCollection $documents = null)
     {
         parent::__construct();
+
         if (null !== $documents) {
             $this->setDocuments($documents);
         }

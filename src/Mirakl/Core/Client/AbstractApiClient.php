@@ -569,11 +569,11 @@ abstract class AbstractApiClient implements ApiClientInterface
     }
 
     /**
-     * @param LoggerInterface             $logger
-     * @param GuzzleHttp\MessageFormatter $messageFormatter
+     * @param LoggerInterface                  $logger
+     * @param GuzzleHttp\MessageFormatter|null $messageFormatter
      * @return $this
      */
-    public function setLogger(LoggerInterface $logger, GuzzleHttp\MessageFormatter $messageFormatter = null)
+    public function setLogger(LoggerInterface $logger, ?GuzzleHttp\MessageFormatter $messageFormatter = null)
     {
         $this->logger = $logger;
         $this->messageFormatter = $messageFormatter;

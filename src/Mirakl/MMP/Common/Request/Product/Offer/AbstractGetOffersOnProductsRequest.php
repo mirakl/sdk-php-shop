@@ -76,7 +76,7 @@ abstract class AbstractGetOffersOnProductsRequest extends AbstractRequest
      * @param array|null $productIds
      * @param array|null $offerStateCodes
      */
-    public function __construct(array $productIds = null, array $offerStateCodes = null)
+    public function __construct(?array $productIds = null, ?array $offerStateCodes = null)
     {
         parent::__construct();
 
