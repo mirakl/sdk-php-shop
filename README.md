@@ -18,12 +18,13 @@ use Mirakl\MMP\Shop\Client\ShopApiClient;
 use Mirakl\MMP\Shop\Request\Offer\GetOfferRequest;
 
 // Environment parameters
-$url = 'https://your.env/api';
+$apiUrl = 'https://your.env/api';
 $apiKey = 'your_api_key';
+$shopId = 'your_shop_id';
 
 try {
     // Instantiating the Mirakl API Client
-    $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
+    $api = new ShopApiClient($apiUrl, $apiKey, $shopId);
 
     // Building request
     $request = new GetOfferRequest('OFFER_ID');
