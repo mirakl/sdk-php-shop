@@ -12,7 +12,8 @@ use Mirakl\MMP\Common\Request\Order\Document\AbstractUploadOrdersDocumentsReques
  * Documents filenames must be distinct. Only documents of the following types are supported:
  * csv, doc, xls, ppt, pdf, odt, ods, odp, txt, rtf, png, jpg, gif.
  * An order can have a maximum of 50 documents.
- *
+ * Also make sure file and filename match.
+ * 
  * Example:
  *
  * <code>
@@ -24,7 +25,7 @@ use Mirakl\MMP\Common\Request\Order\Document\AbstractUploadOrdersDocumentsReques
  * $api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
  * $file = new \SplFileObject('/path/to/invoice.pdf');
  * $docs = new DocumentCollection();
- * $docs->add(new Document($file, 'invoice.pdf', 'CUSTOMER_INVOICE'));
+ * $docs->add(new Document($file, $file->getFilename(), 'customer-invoice'));
  * $request = new UploadOrdersDocumentsRequest($docs, 'ORDER_ID');
  * $result = $api->uploadOrderDocuments($request);
  * // $result => @see \Mirakl\MMP\Common\Domain\Order\Document\OrderDocumentsUploadResult
