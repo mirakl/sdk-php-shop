@@ -93,7 +93,7 @@ use Mirakl\MMP\Shop\Request\Offer\OffersExportRequest;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportErrorReportRequest;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportReportsRequest;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportRequest;
-use Mirakl\MMP\Shop\Request\Offer\Stocks\Importer\OfferStocksImportRequest;
+use Mirakl\MMP\Shop\Request\Offer\Stock\Importer\OfferStocksImportRequest;
 use Mirakl\MMP\Shop\Request\Offer\State\GetOfferStatesRequest;
 use Mirakl\MMP\Shop\Request\Offer\State\GetOfferStateListRequest;
 use Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest;
