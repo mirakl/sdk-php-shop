@@ -93,6 +93,7 @@ use Mirakl\MMP\Shop\Request\Offer\OffersExportRequest;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportErrorReportRequest;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportReportsRequest;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportRequest;
+use Mirakl\MMP\Shop\Request\Offer\Stocks\Importer\OfferStocksImportRequest;
 use Mirakl\MMP\Shop\Request\Offer\State\GetOfferStatesRequest;
 use Mirakl\MMP\Shop\Request\Offer\State\GetOfferStateListRequest;
 use Mirakl\MMP\Shop\Request\Offer\UpdateOffersRequest;
@@ -210,6 +211,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method ShopDocumentCollection                getShopDocuments(GetShopDocumentsRequest $request)
  * @method OfferProductImportTracking            importOffers(OfferImportRequest $request)
  * @method OfferPricingsImportTracking           importOfferPricings(OfferPricingsImportRequest $request)
+ * @method OfferStocksImportTracking             importOfferStocks(OfferStocksImportRequest $request)
  * @method void                                  markIncidentAsResolved(ResolveIncidentRequest $request)
  * @method ExportOrdersAsyncStatusResponse       pollExportOrdersAsyncStatus(ExportOrdersAsyncStatusRequest $request)
  * @method ShipmentWorkflowResponse              readyForPickUpShipments(ReadyForPickUpShipmentRequest $request)
