@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mirakl\MMP\Shop\Request\Offer\Pricing\Importer;
+namespace Mirakl\MMP\Shop\Request\Offer\Stock\Importer;
 
 use Mirakl\MMP\OperatorShop\Request\Offer\Stock\Importer\AbstractOfferStocksImportRequest;
 
