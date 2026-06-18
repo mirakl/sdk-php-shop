@@ -1,4 +1,16 @@
 # Changelog
+## v1.26.0 - 2026-06-18
+### Features
+- Add Promotion APIs: PR03 (create a promotion), PR04 (update a promotion)
+- Add Seller Billing Cycle API: SBC11 (list seller billing cycles)
+### Improvements
+- Add enhanced seller invoicing to platform configuration (PC01)
+- Add seller billing cycle references and filters to invoices and accounting document requests (IV01, DR11)
+- Add channels and models to custom additional fields (AF01)
+- Add additional-unit shipping price to async offer export (OF54)
+- Add active state to offers (OF21)
+- Add reason code to return lines (RT11)
+
 ## v1.25.1 - 2026-05-27
 ### Fixes
 - Fix `TypeError` in `MiraklCollection` decorator when the API response does not contain the expected collection key

@@ -43,6 +43,8 @@ use Mirakl\MMP\OperatorShop\Domain\Invoice\InvoiceUser;
  * @method $this                         setPaymentVoucherNumber(string $paymentVoucherNumber)
  * @method string                        getPayOutPspCode()
  * @method $this                         setPayOutPspCode(string $payOutPspCode)
+ * @method string                        getSellerBillingCycleId()
+ * @method $this                         setSellerBillingCycleId(string $sellerBillingCycleId)
  * @method InvoiceAddress                getShopAddress()
  * @method $this                         setShopAddress(InvoiceAddress|array $shopAddress)
  * @method string                        getShopCorporateName()

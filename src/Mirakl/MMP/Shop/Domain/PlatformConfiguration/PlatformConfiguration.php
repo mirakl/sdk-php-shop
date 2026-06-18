@@ -8,9 +8,11 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method CustomerModelConfiguration getCustomerModelConfiguration()
- * @method $this                      setCustomerModelConfiguration(CustomerModelConfiguration|array $customerModelConfiguration)
+ * @method $this                      setCustomerModelConfiguration(array|CustomerModelConfiguration $customerModelConfiguration)
+ * @method EnhancedSellerInvoicing    getEnhancedSellerInvoicing()
+ * @method $this                      setEnhancedSellerInvoicing(array|EnhancedSellerInvoicing $enhancedSellerInvoicing)
  * @method PlatformModelConfiguration getPlatformModelConfiguration()
- * @method $this                      setPlatformModelConfiguration(PlatformModelConfiguration|array $platformModelConfiguration)
+ * @method $this                      setPlatformModelConfiguration(array|PlatformModelConfiguration $platformModelConfiguration)
  */
 class PlatformConfiguration extends MiraklObject
 {
@@ -19,6 +21,7 @@ class PlatformConfiguration extends MiraklObject
      */
     protected static $dataTypes = [
         'customer_model_configuration' => [CustomerModelConfiguration::class, 'create'],
+        'enhanced_seller_invoicing'    => [EnhancedSellerInvoicing::class, 'create'],
         'platform_model_configuration' => [PlatformModelConfiguration::class, 'create'],
     ];
 

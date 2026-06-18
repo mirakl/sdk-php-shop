@@ -20,12 +20,16 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Invoice\InvoiceCollection;
  *
  * @method string   getCurrency()
  * @method $this    setCurrency(string $currency) Currency ISO code for filtering
+ * @method int[]    getInvoiceId()
+ * @method $this    setInvoiceId(int[] $invoiceId)
  * @method string[] getIssuingUserTypes() Any of OPERATOR, BATCH, PARTNER
  * @method $this    setIssuingUserTypes(string[] $issuingUserTypes)
  * @method string   getPaymentStatus()
  * @method $this    setPaymentStatus(string $paymentStatus)
  * @method string[] getPayOutPspCodes()
  * @method $this    setPayOutPspCodes(string[] $payOutPspCodes)
+ * @method string[] getSellerBillingCycleId()
+ * @method $this    setSellerBillingCycleId(string[] $sellerBillingCycleId)
  * @method string   getType()
  * @method $this    setType(string $type) One of ALL, AUTO_INVOICE, MANUAL_INVOICE, MANUAL_CREDIT
  */
@@ -47,9 +51,11 @@ abstract class AbstractGetInvoicesRequest extends AbstractRequest
     public $queryParams = [
         'currency',
         'end_date',
+        'invoice_id',
         'issuing_user_types',
         'pay_out_psp_codes',
         'payment_status',
+        'seller_billing_cycle_id',
         'start_date',
         'type'
     ];

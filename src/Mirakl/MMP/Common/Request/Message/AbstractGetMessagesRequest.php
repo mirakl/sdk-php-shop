@@ -41,9 +41,4 @@ abstract class AbstractGetMessagesRequest extends AbstractRequest
      * @var array
      */
     public $queryParams = ['offer_id', 'shop_id', 'customer_id', 'order_id', 'received', 'user_type'];
-
-    /**
-     * @var array
-     */
-    public $boolOrAllParams = ['visible', 'received'];
 }

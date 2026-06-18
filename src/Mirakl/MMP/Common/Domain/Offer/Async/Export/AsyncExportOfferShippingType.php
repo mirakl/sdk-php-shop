@@ -11,6 +11,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this                                setCode(string $code)
  * @method AsyncExportOfferShippingDeliveryTime getDeliveryTime()
  * @method $this                                setDeliveryTime(array|AsyncExportOfferShippingDeliveryTime $deliveryTime)
+ * @method float                                getShippingPriceAdditionalUnit()
+ * @method $this                                setShippingPriceAdditionalUnit(float $shippingPriceAdditionalUnit)
  * @method string                               getShippingPriceType()
  * @method $this                                setShippingPriceType(string $shippingPriceType)
  * @method float                                getShippingPriceUnit()

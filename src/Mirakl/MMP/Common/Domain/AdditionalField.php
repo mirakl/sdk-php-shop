@@ -9,6 +9,8 @@ use Mirakl\Core\Domain\MiraklObject;
 /**
  * @method array  getAcceptedValues()
  * @method $this  setAcceptedValues(array $acceptedValues) This list populated with the accepted values of additional fields when the type is LIST
+ * @method array  getChannels()
+ * @method $this  setChannels(array $channels)
  * @method string getCode()                                Code of the additional field
  * @method $this  setCode(string $code)
  * @method string getDefaultValue()
@@ -22,6 +24,8 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method $this  setEntity(string $entity)                One of AdditionalFieldLinkedEntity
  * @method string getLabel()                               Label of the additional field
  * @method $this  setLabel(string $label)
+ * @method array  getModels()
+ * @method $this  setModels(array $models)
  * @method string getRegex()                               The regular expression that is used to validate
  * @method $this  setRegex(string $regex)
  * @method bool   getRequired()

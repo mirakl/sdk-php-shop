@@ -23,8 +23,9 @@ trait DateFieldsTrait
         'invoice_creation_date', 'issue_date', 'issue_date_from', 'last_request_date', 'last_update', 'last_updated',
         'last_updated_date', 'last_updated_from', 'last_updated_to', 'latest', 'latest_delivery_date', 'operation_date',
         'ordering_end_date', 'payin_psp_transaction_date', 'pickup_date', 'received_date', 'return_creation_date_from', 'return_creation_date_to',
-        'return_last_updated_from', 'return_last_updated_to', 'shipped_date', 'shipping_date', 'shipping_deadline', 'shop_reply_needed_since',
-        'start_date', 'start_refund_creation_date', 'start_update_date', 'starting_before', 'subscription_free_from', 'subscription_free_to',
-        'transaction_date', 'transaction_date_from', 'transaction_date_to', 'update_date', 'updated_since',
+        'return_last_updated_from', 'return_last_updated_to', 'shipped_date', 'shipping_date', 'shipping_deadline', 'shop_billing_cycle_from',
+        'shop_billing_cycle_to', 'shop_reply_needed_since', 'start_date', 'start_refund_creation_date', 'start_update_date', 'starting_before',
+        'subscription_free_from', 'subscription_free_to', 'transaction_date', 'transaction_date_from', 'transaction_date_to', 'update_date',
+        'updated_since',
     ];
 }

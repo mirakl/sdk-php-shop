@@ -22,12 +22,12 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\AccountingDocument
  * @method $this     setBillingCycleFrom(\DateTime $billingCycleFrom)
  * @method \DateTime getBillingCycleTo()
  * @method $this     setBillingCycleTo(\DateTime $billingCycleTo)
- * @method string    getDocumentNumber()
- * @method $this     setDocumentNumber(string $documentNumber)
  * @method \DateTime getDateCreatedFrom()
  * @method $this     setDateCreatedFrom(\DateTime $dateCreatedFrom)
  * @method \DateTime getDateCreatedTo()
  * @method $this     setDateCreatedTo(\DateTime $dateCreatedTo)
+ * @method string    getDocumentNumber()
+ * @method $this     setDocumentNumber(string $documentNumber)
  * @method string[]  getEntityIds()
  * @method $this     setEntityIds(string[] $entityIds)
  * @method string[]  getEntityTypes()
@@ -46,6 +46,12 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\AccountingDocument
  * @method $this     setLastUpdatedTo(\DateTime $lastUpdatedTo)
  * @method string    getPaymentState()
  * @method $this     setPaymentState(string $paymentState)
+ * @method \DateTime getShopBillingCycleFrom()
+ * @method $this     setShopBillingCycleFrom(\DateTime $shopBillingCycleFrom)
+ * @method string    getShopBillingCycleId()
+ * @method $this     setShopBillingCycleId(string $shopBillingCycleId)
+ * @method \DateTime getShopBillingCycleTo()
+ * @method $this     setShopBillingCycleTo(\DateTime $shopBillingCycleTo)
  * @method string[]  getStates()
  * @method $this     setStates(string[] $states)
  * @method string[]  getTypes()
@@ -97,6 +103,9 @@ abstract class AbstractGetAccountingDocumentsRequest extends AbstractRequest
         'last_updated_from',
         'last_updated_to',
         'payment_state',
+        'shop_billing_cycle_from',
+        'shop_billing_cycle_id',
+        'shop_billing_cycle_to',
         'states'       => 'state',       // One or more among: STAGING, TO_PROCESS, ISSUED
         'types'        => 'type',        // One or more among: INVOICE, CREDIT_NOTE
     ];

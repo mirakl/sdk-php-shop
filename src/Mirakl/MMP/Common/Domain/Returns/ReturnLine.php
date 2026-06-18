@@ -8,12 +8,14 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\Returns\ReturnLineComplianceCollection;
 
 /**
+ * @method ReturnLineComplianceCollection getCompliance()
+ * @method $this                          setCompliance(ReturnLineComplianceCollection|array $compliance)
  * @method string                         getOrderLineId()
  * @method $this                          setOrderLineId(string $orderLineId)
  * @method int                            getQuantity()
  * @method $this                          setQuantity(int $quantity)
- * @method ReturnLineComplianceCollection getCompliance()
- * @method $this                          setCompliance(ReturnLineComplianceCollection|array $compliance)
+ * @method string                         getReasonCode()
+ * @method $this                          setReasonCode(string $reasonCode)
  */
 class ReturnLine extends MiraklObject
 {
