@@ -13,7 +13,7 @@ use Mirakl\MMP\Common\Domain\Message\Thread\ThreadTopic;
  * @method array       getTo()
  * @method $this       setTo(array $email)
  * @method ThreadTopic getTopic()
- * @method $this       setTopic(ThreadTopic|array $topic)
+ * @method $this       setTopic(array|ThreadTopic $topic)
  */
 class CreateOrderThread extends MiraklObject
 {

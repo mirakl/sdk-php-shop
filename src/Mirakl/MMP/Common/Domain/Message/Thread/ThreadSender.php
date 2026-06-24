@@ -10,7 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string             getDisplayName()
  * @method $this              setDisplayName(string $displayName)
  * @method ThreadOrganization getOrganizationDetails()
- * @method $this              setOrganizationDetails(ThreadOrganization|array $organizationDetails)
+ * @method $this              setOrganizationDetails(array|ThreadOrganization $organizationDetails)
  * @method string             getType()
  * @method $this              setType(string $type)
  */

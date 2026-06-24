@@ -16,7 +16,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string          getReferenceForSeller()
  * @method $this           setReferenceForSeller(string $referenceForSeller)
  * @method TransactionInfo getTransactionInfo()
- * @method $this           setTransactionInfo(TransactionInfo|array $transactionInfo)
+ * @method $this           setTransactionInfo(array|TransactionInfo $transactionInfo)
  */
 class OrderRelatedToDocumentRequest extends MiraklObject
 {

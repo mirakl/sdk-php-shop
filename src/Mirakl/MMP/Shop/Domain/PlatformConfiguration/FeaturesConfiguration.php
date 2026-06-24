@@ -10,7 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method Catalog                                 getCatalog()
  * @method $this                                   setCatalog(array|Catalog $catalog)
  * @method DirectPaymentCustomerStoreConfiguration getDirectPaymentCustomerStore() // Allow transactions taking place outside of Mirakl between customers and sellers
- * @method $this                                   setDirectPaymentCustomerStore(DirectPaymentCustomerStoreConfiguration|array $directPaymentCustomerStore)
+ * @method $this                                   setDirectPaymentCustomerStore(array|DirectPaymentCustomerStoreConfiguration $directPaymentCustomerStore)
  * @method Dropship                                getDropship()
  * @method $this                                   setDropship(array|Dropship $dropship)
  * @method bool                                    getIsCircularEconomyDataCollection() // Allow operators to collect data related to the circular economy regulation
@@ -38,28 +38,28 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string                                  getOperatorCsvDelimiter() // The delimiter used in the CSV files exported from the back office. COMMA: ',' delimiter. SEMICOLON: ';' delimiter
  * @method $this                                   setOperatorCsvDelimiter(string $operatorCsvDelimiter)
  * @method OrderConditionsConfiguration            getOrderConditions() // Order conditions related features activated
- * @method $this                                   setOrderConditions(OrderConditionsConfiguration|array $orderConditions)
+ * @method $this                                   setOrderConditions(array|OrderConditionsConfiguration $orderConditions)
  * @method string                                  getOrderTaxMode() // Prices with tax included or excluded in order
  * @method $this                                   setOrderTaxMode(string $orderTaxMode)
  * @method OrderWorkflowsConfiguration             getOrderWorkflows() // Order workflows activated
- * @method $this                                   setOrderWorkflows(OrderWorkflowsConfiguration|array $orderWorkflows)
+ * @method $this                                   setOrderWorkflows(array|OrderWorkflowsConfiguration $orderWorkflows)
  * @method bool                                    getPaymentConfirmation()
  * @method bool                                    isPaymentConfirmation()
  * @method $this                                   setPaymentConfirmation(bool $paymentConfirmation)
  * @method PricingConfiguration                    getPricing() // Pricing related features activated
- * @method $this                                   setPricing(PricingConfiguration|array $pricing)
+ * @method $this                                   setPricing(array|PricingConfiguration $pricing)
  * @method Promotion                               getPromotion()
  * @method $this                                   setPromotion(array|Promotion $promotion)
  * @method Returns                                 getReturns()
  * @method $this                                   setReturns(array|Returns $returns)
  * @method ShipmentConfiguration                   getShipment() // Shipment related features activated
- * @method $this                                   setShipment(ShipmentConfiguration|array $shipmentConfiguration)
+ * @method $this                                   setShipment(array|ShipmentConfiguration $shipmentConfiguration)
  * @method ShopTaxOptionsConfiguration             getShopTaxOptions() // Tax-related options for professional shops
- * @method $this                                   setShopTaxOptions(ShopTaxOptionsConfiguration|array $shopTaxOptions)
+ * @method $this                                   setShopTaxOptions(array|ShopTaxOptionsConfiguration $shopTaxOptions)
  * @method TaxCollectionConfiguration              getTaxCollection() // Allows the collection of information required to calculate taxes, with or without the tax connector
- * @method $this                                   setTaxCollection(TaxCollectionConfiguration|array $taxCollectionConfiguration)
+ * @method $this                                   setTaxCollection(array|TaxCollectionConfiguration $taxCollectionConfiguration)
  * @method TaxIdNumberConfiguration                getTaxIdNumber() // Unique identifier used to conduct tax-related formalities
- * @method $this                                   setTaxIdNumber(TaxIdNumberConfiguration|array $taxIdNumber) // Allows the collection of information required to calculate taxes, with or without the tax connector
+ * @method $this                                   setTaxIdNumber(array|TaxIdNumberConfiguration $taxIdNumber) // Allows the collection of information required to calculate taxes, with or without the tax connector
  * @method Warehouses                              getWarehouses()
  * @method $this                                   setWarehouses(array|Warehouses $warehouses)
  */

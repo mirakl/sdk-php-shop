@@ -68,6 +68,7 @@ use Mirakl\MMP\Shop\Domain\Order\AdditionalField\UpdateAdditionalFieldsResult;
 use Mirakl\MMP\Shop\Domain\Order\Cancelation\CancelationsCreated;
 use Mirakl\MMP\Shop\Domain\PlatformConfiguration\PlatformConfigurationResponse;
 use Mirakl\MMP\Shop\Domain\Returns\ReturnAcceptOrRefuseResponse;
+use Mirakl\MMP\Shop\Domain\Returns\ReturnCreationResponse;
 use Mirakl\MMP\Shop\Domain\Returns\UpdateReturnsResponse;
 use Mirakl\MMP\Shop\Domain\Shipping\ShippingChargesShopResponse;
 use Mirakl\MMP\Shop\Domain\Shipping\ShippingConfigurationShopResponse;
@@ -127,6 +128,7 @@ use Mirakl\MMP\Shop\Request\Order\Workflow\CancelOrderRequest;
 use Mirakl\MMP\Shop\Request\Payment\Invoice\DownloadInvoiceRequest;
 use Mirakl\MMP\Shop\Request\Payment\Invoice\GetInvoicesRequest;
 use Mirakl\MMP\Shop\Request\Payment\Transaction\TransactionLineRequest;
+use Mirakl\MMP\Shop\Request\Picklist\PicklistSearchRequest;
 use Mirakl\MMP\Shop\Request\PlatformConfiguration\GetPlatformConfigurationRequest;
 use Mirakl\MMP\Shop\Request\Product\GetProductsRequest;
 use Mirakl\MMP\Shop\Request\Product\Offer\GetOffersOnProductsRequest;
@@ -134,7 +136,10 @@ use Mirakl\MMP\Shop\Request\Promotion\GetPromotionsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetReasonsRequest;
 use Mirakl\MMP\Shop\Request\Reason\GetTypeReasonsRequest;
 use Mirakl\MMP\Shop\Request\Returns\AcceptOrRefuseReturnsRequest;
+use Mirakl\MMP\Shop\Request\Returns\CreateReturnsRequest;
+use Mirakl\MMP\Shop\Request\Returns\GetItemsToReturnRequest;
 use Mirakl\MMP\Shop\Request\Returns\GetReturnsRequest;
+use Mirakl\MMP\Shop\Request\Returns\MarkReturnsComplianceRequest;
 use Mirakl\MMP\Shop\Request\Returns\ReceiveReturnsRequest;
 use Mirakl\MMP\Shop\Request\Returns\UpdateReturnsRequest;
 use Mirakl\MMP\Shop\Request\Shipment\CreateShipmentsRequest;
@@ -165,6 +170,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method OffersExportAsyncTrackingResult       createOffersExportAsync(OffersExportAsyncRequest $request)
  * @method MessageCreated                        createOrderMessage(CreateOrderMessageRequest $request)
  * @method ThreadCreated                         createOrderThread(CreateOrderThreadRequest $request)
+ * @method ReturnCreationResponse                createReturns(CreateReturnsRequest $request)
  * @method CreatedShipments                      createShipments(CreateShipmentsRequest $request)
  * @method void                                  deleteOrderDocument(DeleteOrderDocumentRequest $request)
  * @method DeletedShipments                      deleteShipments(DeleteShipmentsRequest $request)
@@ -185,6 +191,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method CurrencyCollection                    getCurrencies(GetCurrenciesRequest $request)
  * @method DocumentsConfigurationCollection      getDocumentsConfiguration(GetDocumentsConfigurationRequest $request)
  * @method InvoiceCollection                     getInvoices(GetInvoicesRequest $request)
+ * @method SeekableCollection                    getItemsToReturn(GetItemsToReturnRequest $request)
  * @method SeekableCollection                    getItemsToShip(GetItemsToShipRequest $request)
  * @method ShopOffer                             getOffer(GetOfferRequest $request)
  * @method OfferMessageCollection                getOfferMessages(GetOfferMessagesRequest $request)
@@ -202,6 +209,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method OrderMessageCollection                getOrderMessages(GetOrderMessagesRequest $request)
  * @method ShopOrderCollection                   getOrders(GetOrdersRequest $request)
  * @method OrderTaxCollection                    getOrderTaxes(GetOrderTaxesRequest $request)
+ * @method SeekableCollection                    getPicklists(PicklistSearchRequest $request)
  * @method PlatformConfigurationResponse         getPlatformConfiguration(GetPlatformConfigurationRequest $request)
  * @method ProductCollection                     getProducts(GetProductsRequest $request)
  * @method PromotionCollection                   getPromotions(GetPromotionsRequest $request)
@@ -220,6 +228,7 @@ use Mirakl\MMP\Shop\Request\Shop\UpdateAccountRequest;
  * @method OfferPricingsImportTracking           importOfferPricings(OfferPricingsImportRequest $request)
  * @method OfferProductImportTracking            importOffers(OfferImportRequest $request)
  * @method void                                  markIncidentAsResolved(ResolveIncidentRequest $request)
+ * @method ReturnWorkflowResponse                markReturnsCompliance(MarkReturnsComplianceRequest $request)
  * @method ExportOrdersAsyncStatusResponse       pollExportOrdersAsyncStatus(ExportOrdersAsyncStatusRequest $request)
  * @method ShipmentWorkflowResponse              readyForPickUpShipments(ReadyForPickUpShipmentRequest $request)
  * @method ReturnWorkflowResponse                receiveReturns(ReceiveReturnsRequest $request)

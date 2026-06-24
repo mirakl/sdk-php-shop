@@ -16,7 +16,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string             getImportStatus()
  * @method $this              setImportStatus(string $importStatus)
  * @method IntegrationDetails getIntegrationDetails()
- * @method $this              setIntegrationDetails(IntegrationDetails|array $integrationDetails)
+ * @method $this              setIntegrationDetails(array|IntegrationDetails $integrationDetails)
  * @method bool               getNewProductReport()
  * @method $this              setNewProductReport(bool $flag)
  * @method string             getReasonStatus()

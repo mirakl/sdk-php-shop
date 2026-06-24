@@ -6,9 +6,9 @@ namespace Mirakl\MMP\OperatorShop\Domain\DocumentRequest;
 
 /**
  * @method FiscalRepresentative getFiscalRepresentative($fiscalRepresentative)
- * @method $this                setFiscalRepresentative(FiscalRepresentative|array $fiscalRepresentative)
+ * @method $this                setFiscalRepresentative(array|FiscalRepresentative $fiscalRepresentative)
  * @method PersonalInformation  getPersonalInformation()
- * @method $this                setPersonalInformation(PersonalInformation|array $personalInformation)
+ * @method $this                setPersonalInformation(array|PersonalInformation $personalInformation)
  * @method bool                 getSoleTrader()
  * @method $this                setSoleTrader(bool $soleTrader)
  */

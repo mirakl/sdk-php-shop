@@ -8,7 +8,7 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method DocumentRequestShippingFromAddress getAddress()
- * @method $this                              setAddress(DocumentRequestShippingFromAddress|array $address)
+ * @method $this                              setAddress(array|DocumentRequestShippingFromAddress $address)
  */
 class DocumentRequestShippingFrom extends MiraklObject
 {

@@ -11,13 +11,13 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method float           getAmount()
  * @method $this           setAmount(float $amount)
  * @method AmountBreakdown getAmountBreakdown() @deprecated for OR28 and OR30 requests
- * @method $this           setAmountBreakdown(AmountBreakdown|array $amountBreakdown) @deprecated for OR28 and OR30 requests
+ * @method $this           setAmountBreakdown(array|AmountBreakdown $amountBreakdown) @deprecated for OR28 and OR30 requests
  * @method string          getCode()
  * @method $this           setCode(string $code)
  * @method float           getOriginUnitAmount()
  * @method $this           setOriginUnitAmount(float $originUnitAmount)
  * @method PurchaseTax     getPurchaseTax()
- * @method $this           setPurchaseTax(PurchaseTax|array $purchaseTax)
+ * @method $this           setPurchaseTax(array|PurchaseTax $purchaseTax)
  * @method float           getRate()
  * @method $this           setRate(float $rate)
  * @method string          getTaxCalculationRule()
@@ -36,11 +36,11 @@ class OrderTaxAmount extends MiraklObject
     /**
      * @param float                      $amount
      * @param string                     $code
-     * @param AmountBreakdown|array|null $amountBreakdown
+     * @param array|AmountBreakdown|null $amountBreakdown
      * @param float|null                 $rate
      * @param string|null                $taxCalculationRule
      * @param float|null                 $originUnitAmount
-     * @param PurchaseTax|array|null     $purchaseTax
+     * @param array|PurchaseTax|null     $purchaseTax
      */
     public function __construct(
         $amount,

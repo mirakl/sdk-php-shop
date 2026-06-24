@@ -26,7 +26,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method \DateTime         getDateCreated()
  * @method $this             setDateCreated(\DateTime $dateCreated)
  * @method TransactionEntity getEntities()
- * @method $this             setEntities(TransactionEntity|array $entities)
+ * @method $this             setEntities(array|TransactionEntity $entities)
  * @method string            getId()
  * @method $this             setId(string $id)
  * @method \DateTime         getLastUpdated()

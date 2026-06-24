@@ -15,12 +15,12 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method float                                getAmount()
  * @method $this                                setAmount(float $amount)
  * @method AmountBreakdown                      getAmountBreakdown()
- * @method $this                                setAmountBreakdown(AmountBreakdown|array $amountBreakdown)
+ * @method $this                                setAmountBreakdown(array|AmountBreakdown $amountBreakdown)
  * @method float                                getCommissionAmount()
  * @method $this                                setCommissionAmount(float $commissionAmount)
  * @method CommissionTaxCollection              getCommissionTaxes()
  * @method bool                                 hasCommissionTaxes()
- * @method $this                                setCommissionTaxes(CommissionTaxCollection|array $commissionTaxes)
+ * @method $this                                setCommissionTaxes(array|CommissionTaxCollection $commissionTaxes)
  * @method float                                getCommissionTotalAmount()
  * @method $this                                setCommissionTotalAmount(float $commissionTotalAmount)
  * @method \DateTime                            getCreatedDate()
@@ -30,9 +30,9 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method \DateTime                            getDateCreated()
  * @method $this                                setDateCreated(\DateTime $dateCreated)
  * @method CancelationEcoContributionCollection getEcoContributions()
- * @method $this                                setEcoContributions(CancelationEcoContributionCollection|array $ecoContributions)
+ * @method $this                                setEcoContributions(array|CancelationEcoContributionCollection $ecoContributions)
  * @method CancelationFeeCollection             getFees()
- * @method $this                                setFees(CancelationFeeCollection|array $fees)
+ * @method $this                                setFees(array|CancelationFeeCollection $fees)
  * @method Funding                              getFunding()
  * @method $this                                setFunding(array|Funding $funding)
  * @method string                               getId()
@@ -40,7 +40,7 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method string                               getOrderLineId()
  * @method $this                                setOrderLineId(string $orderLineId)
  * @method DiscardPurchaseInformation           getPurchaseInformation()
- * @method $this                                setPurchaseInformation(DiscardPurchaseInformation|array $purchaseInformation)
+ * @method $this                                setPurchaseInformation(array|DiscardPurchaseInformation $purchaseInformation)
  * @method int                                  getQuantity()
  * @method $this                                setQuantity(int $quantity)
  * @method string                               getReasonCode()
@@ -48,11 +48,11 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method float                                getShippingAmount()
  * @method $this                                setShippingAmount(float $shippingAmount)
  * @method AmountBreakdown                      getShippingAmountBreakdown()
- * @method $this                                setShippingAmountBreakdown(AmountBreakdown|array $shippingAmountBreakdown)
+ * @method $this                                setShippingAmountBreakdown(array|AmountBreakdown $shippingAmountBreakdown)
  * @method OrderTaxAmountCollection             getShippingTaxes()
- * @method $this                                setShippingTaxes(OrderTaxAmountCollection|array $shippingTaxes)
+ * @method $this                                setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
  * @method OrderTaxAmountCollection             getTaxes()
- * @method $this                                setTaxes(OrderTaxAmountCollection|array $taxes)
+ * @method $this                                setTaxes(array|OrderTaxAmountCollection $taxes)
  */
 class Cancelation extends MiraklObject
 {
@@ -72,7 +72,7 @@ class Cancelation extends MiraklObject
     ];
 
     /**
-     * @param CommissionTax|array $commissionTax
+     * @param array|CommissionTax $commissionTax
      * @return $this
      */
     public function addCommissionTax($commissionTax)

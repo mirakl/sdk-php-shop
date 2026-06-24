@@ -13,11 +13,11 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdatedRefundCollection;
  * @method string                                    getOrderLineId()
  * @method $this                                     setOrderLineId(string $orderLineId)
  * @method UpdatedOrderlineEcoContributionCollection getEcoContributions()
- * @method $this                                     setEcoContributions(UpdatedOrderlineEcoContributionCollection|array $ecoContributions)
+ * @method $this                                     setEcoContributions(array|UpdatedOrderlineEcoContributionCollection $ecoContributions)
  * @method UpdatedCancelationCollection              getCancelations()
- * @method $this                                     setCancelations(UpdatedCancelationCollection|array $cancelations)
+ * @method $this                                     setCancelations(array|UpdatedCancelationCollection $cancelations)
  * @method UpdatedRefundCollection                   getRefunds()
- * @method $this                                     setRefunds(UpdatedRefundCollection|array $refunds)
+ * @method $this                                     setRefunds(array|UpdatedRefundCollection $refunds)
  */
 class UpdatedOrderLine extends MiraklObject
 {

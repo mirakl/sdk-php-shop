@@ -10,7 +10,7 @@ use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadParticipantCollecti
 
 /**
  * @method ThreadMessageCollection getMessages()
- * @method $this                   setMessages(ThreadMessageCollection|array $messages)
+ * @method $this                   setMessages(array|ThreadMessageCollection $messages)
  */
 class ThreadDetails extends Thread
 {

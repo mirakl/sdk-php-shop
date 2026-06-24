@@ -29,7 +29,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string                  getOrderManagementMode()
  * @method $this                   setOrderManagementMode(string $orderManagementMode)
  * @method TaxManagerConfiguration getTaxManager()                                               // Is promotion module activated
- * @method $this                   setTaxManager(TaxManagerConfiguration|array $taxManager)
+ * @method $this                   setTaxManager(array|TaxManagerConfiguration $taxManager)
  */
 class ModulesConfiguration extends MiraklObject
 {

@@ -8,7 +8,7 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method CustomerOrganizationAddress getAddress()
- * @method $this                       setAddress(CustomerOrganizationAddress|array $address)
+ * @method $this                       setAddress(array|CustomerOrganizationAddress $address)
  * @method string                      getIdentificationNumber()
  * @method $this                       setIdentificationNumber(string $identificationNumber)
  * @method string                      getName()

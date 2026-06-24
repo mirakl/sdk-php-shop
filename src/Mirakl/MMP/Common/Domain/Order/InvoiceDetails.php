@@ -10,9 +10,9 @@ use Mirakl\MMP\Common\Domain\Order\InvoiceDetails\PaymentTerms;
 
 /**
  * @method DocumentDetailsCollection getDocumentDetails()
- * @method $this                     setDocumentDetails(DocumentDetailsCollection|array $documentDetails)
+ * @method $this                     setDocumentDetails(array|DocumentDetailsCollection $documentDetails)
  * @method PaymentTerms              getPaymentTerms()
- * @method $this                     setPaymentTerms(PaymentTerms|array $paymentTerms)
+ * @method $this                     setPaymentTerms(array|PaymentTerms $paymentTerms)
  */
 class InvoiceDetails extends MiraklObject
 {

@@ -11,7 +11,7 @@ use Mirakl\MMP\Common\Domain\Collection\Returns\Workflow\MarkReturnLineComplianc
  * @method string                             getId()
  * @method $this                              setId(string $id)
  * @method MarkReturnLineComplianceCollection getReturnLines()
- * @method $this                              setReturnLines(MarkReturnLineComplianceCollection|array $returnLines)
+ * @method $this                              setReturnLines(array|MarkReturnLineComplianceCollection $returnLines)
  */
 class MarkReturnCompliance extends MiraklObject
 {

@@ -27,7 +27,7 @@ class CreateCancelationsRequest extends AbstractCreateCancelationsRequest
     ];
 
     /**
-     * @param CreateCancelationCollection|array $cancelations
+     * @param array|CreateCancelationCollection $cancelations
      */
     public function __construct($cancelations)
     {

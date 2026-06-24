@@ -10,9 +10,9 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Returns\ReturnUpdateErrorCollectio
 
 /**
  * @method MiraklReturnCollection      getReturnSuccess()
- * @method $this                       setReturnSuccess(MiraklReturnCollection|array $returnSuccess)
+ * @method $this                       setReturnSuccess(array|MiraklReturnCollection $returnSuccess)
  * @method ReturnUpdateErrorCollection getReturnErrors()
- * @method $this                       setReturnErrors(ReturnUpdateErrorCollection|array $returnErrors)
+ * @method $this                       setReturnErrors(array|ReturnUpdateErrorCollection $returnErrors)
  */
 abstract class AbstractUpdateReturnsResponse extends MiraklObject
 {

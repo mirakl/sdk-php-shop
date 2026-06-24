@@ -42,7 +42,7 @@ class CreateOrderThreadRequest extends AbstractFilesUploadRequest
 
     /**
      * @param string                  $orderId
-     * @param CreateOrderThread|array $thread
+     * @param array|CreateOrderThread $thread
      */
     public function __construct($orderId, $thread)
     {

@@ -8,25 +8,25 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method TransactionDebit                    getDebit()
- * @method $this                               setDebit(TransactionDebit|array $debit)
+ * @method $this                               setDebit(array|TransactionDebit $debit)
  * @method string                              getDomain()
  * @method $this                               setDomain(string $domain)
  * @method TransactionManualAccountingDocument getManualAccountingDocument()
- * @method $this                               setManualAccountingDocument(TransactionManualAccountingDocument|array $manualAccountingDocument)
+ * @method $this                               setManualAccountingDocument(array|TransactionManualAccountingDocument $manualAccountingDocument)
  * @method TransactionInfo                     getTransactionInfo()
- * @method $this                               setTransactionInfo(TransactionInfo|array $transactionInfo)
+ * @method $this                               setTransactionInfo(array|TransactionInfo $transactionInfo)
  * @method TransactionOrder                    getOrder()
- * @method $this                               setOrder(TransactionOrder|array $order)
+ * @method $this                               setOrder(array|TransactionOrder $order)
  * @method TransactionOrderFee                 getOrderFee();
- * @method $this                setOrderFee(TransactionPaymentInfo|array $orderFee)
+ * @method $this                setOrderFee(array|TransactionPaymentInfo $orderFee)
  * @method TransactionOrderLine getOrderLine()
- * @method $this                setOrderLine(TransactionOrderLine|array $orderLine)
+ * @method $this                setOrderLine(array|TransactionOrderLine $orderLine)
  * @method TransactionOrderTax  getOrderTax()
- * @method $this                setOrderTax(TransactionOrderTax|array $orderTax)
+ * @method $this                setOrderTax(array|TransactionOrderTax $orderTax)
  * @method TransactionRefund    getRefund()
- * @method $this                setRefund(TransactionRefund|array $refund)
+ * @method $this                setRefund(array|TransactionRefund $refund)
  * @method TransactionShopTax   getShopTax()
- * @method $this                setShopTax(TransactionShopTax|array $shopTax)
+ * @method $this                setShopTax(array|TransactionShopTax $shopTax)
  */
 class TransactionEntity extends MiraklObject
 {

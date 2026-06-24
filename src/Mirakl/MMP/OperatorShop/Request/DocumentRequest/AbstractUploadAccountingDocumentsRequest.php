@@ -19,7 +19,7 @@ use Mirakl\MMP\OperatorShop\Domain\DocumentRequest\UploadedAccountingDocumentsRe
  * A maximum of 50 documents can be uploaded simultaneously.
  *
  * @method UploadAccountingDocumentCollection getDocumentsInput()
- * @method $this                              setDocumentsInput(UploadAccountingDocumentCollection|array $documentsInput)
+ * @method $this                              setDocumentsInput(array|UploadAccountingDocumentCollection $documentsInput)
  */
 #[ApiOperation('DR74')]
 abstract class AbstractUploadAccountingDocumentsRequest extends AbstractFilesUploadRequest
@@ -37,7 +37,7 @@ abstract class AbstractUploadAccountingDocumentsRequest extends AbstractFilesUpl
     ];
 
     /**
-     * @param UploadAccountingDocumentCollection|array $documentsInput
+     * @param array|UploadAccountingDocumentCollection $documentsInput
      */
     public function __construct($documentsInput)
     {

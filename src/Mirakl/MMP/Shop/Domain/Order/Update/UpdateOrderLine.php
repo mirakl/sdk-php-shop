@@ -11,7 +11,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdateOrderlineEcoContributio
  * @method string                                   getOrderLineId()
  * @method $this                                    setOrderLineId(string $orderLineId)
  * @method UpdateOrderlineEcoContributionCollection getEcoContributions()
- * @method $this                                    setEcoContributions(UpdateOrderlineEcoContributionCollection|array $ecoContributions)
+ * @method $this                                    setEcoContributions(array|UpdateOrderlineEcoContributionCollection $ecoContributions)
  */
 class UpdateOrderLine extends MiraklObject
 {

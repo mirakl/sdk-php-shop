@@ -7,6 +7,8 @@ namespace Mirakl\MMP\Common\Domain\Inbox\CreateInboxThreads;
 use Mirakl\Core\Domain\MiraklObject;
 
 /**
+ * @method string getType()
+ * @method $this  setType(string $type)
  * @method string getValue()
  * @method $this  setValue(string $value)
  */

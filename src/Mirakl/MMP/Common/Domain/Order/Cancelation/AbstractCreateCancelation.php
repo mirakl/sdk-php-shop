@@ -17,7 +17,7 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method string          getCurrencyIsoCode()
  * @method $this                    setCurrencyIsoCode(string $currencyIsoCode)`
  * @method CancelationFeeCollection getFees()
- * @method $this                    setFees(CancelationFeeCollection|array $fees)
+ * @method $this                    setFees(array|CancelationFeeCollection $fees)
  * @method string                   getOrderLineId()
  * @method $this                    setOrderLineId(string $orderLineId)
  * @method int                      getQuantity()
@@ -27,11 +27,11 @@ use Mirakl\MMP\Common\Domain\Order\Amount\AmountBreakdown;
  * @method float                    getShippingAmount()
  * @method $this                    setShippingAmount(float $shippingAmount)
  * @method AmountBreakdown          getShippingAmountBreakdown() @deprecated
- * @method $this                    setShippingAmountBreakdown(AmountBreakdown|array $shippingAmountBreakdown) @deprecated
+ * @method $this                    setShippingAmountBreakdown(array|AmountBreakdown $shippingAmountBreakdown) @deprecated
  * @method OrderTaxAmountCollection getShippingTaxes()
- * @method $this                    setShippingTaxes(OrderTaxAmountCollection|array $shippingTaxes)
+ * @method $this                    setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
  * @method OrderTaxAmountCollection getTaxes()
- * @method $this                    setTaxes(OrderTaxAmountCollection|array $taxes)
+ * @method $this                    setTaxes(array|OrderTaxAmountCollection $taxes)
  */
 abstract class AbstractCreateCancelation extends MiraklObject
 {

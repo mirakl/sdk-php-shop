@@ -14,17 +14,17 @@ use Mirakl\MMP\Common\Domain\Order\DiscardPurchaseInformation;
  * @method float                      getAmount()
  * @method $this                      setAmount(float $amount)
  * @method AmountBreakdown            getAmountBreakdown() @deprecated
- * @method $this                      setAmountBreakdown(AmountBreakdown|array $amountBreakdown) @deprecated
+ * @method $this                      setAmountBreakdown(array|AmountBreakdown $amountBreakdown) @deprecated
  * @method string                     getCurrencyIsoCode()
  * @method $this                      setCurrencyIsoCode(string $currencyIsoCode)
  * @method bool                       getExcludedFromShipment()
  * @method $this                      setExcludedFromShipment(bool $excludedFromShipment)
  * @method RefundFeeCollection        getFees()
- * @method $this                      setFees(RefundFeeCollection|array $fees)
+ * @method $this                      setFees(array|RefundFeeCollection $fees)
  * @method string                     getOrderLineId()
  * @method $this                      setOrderLineId(string $orderLineId)
  * @method DiscardPurchaseInformation getPurchaseInformation()
- * @method $this                      setPurchaseInformation(DiscardPurchaseInformation|array $purchaseInformation)
+ * @method $this                      setPurchaseInformation(array|DiscardPurchaseInformation $purchaseInformation)
  * @method int                        getQuantity()
  * @method $this                      setQuantity(int $quantity)
  * @method string                     getReasonCode()
@@ -34,9 +34,9 @@ use Mirakl\MMP\Common\Domain\Order\DiscardPurchaseInformation;
  * @method AmountBreakdown            getShippingAmountBreakdown() @deprecated
  * @method $this                      setShippingAmountBreakdown(AmountBreakdown $shippingAmountBreakdown) @deprecated
  * @method OrderTaxAmountCollection   getShippingTaxes()
- * @method $this                      setShippingTaxes(OrderTaxAmountCollection|array $shippingTaxes)
+ * @method $this                      setShippingTaxes(array|OrderTaxAmountCollection $shippingTaxes)
  * @method OrderTaxAmountCollection   getTaxes()
- * @method $this                      setTaxes(OrderTaxAmountCollection|array $taxes)
+ * @method $this                      setTaxes(array|OrderTaxAmountCollection $taxes)
  * @method \DateTime                  getTransactionDate()
  * @method $this                      setTransactionDate(\DateTime $transactionDate)
  */

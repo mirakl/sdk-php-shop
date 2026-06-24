@@ -19,19 +19,19 @@ use Mirakl\MMP\Shop\Domain\Shop\Billing\DefaultBillingInformation;
 
 /**
  * @method DefaultBillingInformation            getDefaultBillingInformation()
- * @method $this                                setDefaultBillingInformation(DefaultBillingInformation|array $defaultBillingInformation)
+ * @method $this                                setDefaultBillingInformation(array|DefaultBillingInformation $defaultBillingInformation)
  * @method Dropship                             getDropship()
  * @method $this                                setDropship(array|Dropship $dropship)
  * @method ShopPaymentDetails                   getPaymentDetails()
- * @method $this                                setPaymentDetails(ShopPaymentDetails|array $paymentDetails)
+ * @method $this                                setPaymentDetails(array|ShopPaymentDetails $paymentDetails)
  * @method ShopShipping                         getShipping()
- * @method $this                                setShipping(ShopShipping|array $shipping)
+ * @method $this                                setShipping(array|ShopShipping $shipping)
  * @method array                                getShippingTypes()
  * @method $this                                setShippingTypes(array $shippingTypes)
  * @method array                                getShippingZones()
  * @method $this                                setShippingZones(array $shippingZones)
  * @method SpecificBillingInformationCollection getSpecificBillingInformations()
- * @method $this                                setSpecificBillingInformations(SpecificBillingInformationCollection|array $specificBillingInformations)
+ * @method $this                                setSpecificBillingInformations(array|SpecificBillingInformationCollection $specificBillingInformations)
  */
 class ShopAccount extends AbstractShop
 {

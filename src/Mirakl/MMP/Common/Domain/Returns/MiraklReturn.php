@@ -20,7 +20,7 @@ use Mirakl\MMP\Common\Domain\Collection\Returns\ReturnLineCollection;
  * @method \DateTime                getLastUpdated()
  * @method $this                    setLastUpdated(\DateTime $lastUpdated)
  * @method ReturnLineCollection     getReturnLines()
- * @method $this                    setReturnLines(ReturnLineCollection|array $returnLines)
+ * @method $this                    setReturnLines(array|ReturnLineCollection $returnLines)
  * @method string                   getReasonCode()
  * @method $this                    setReasonCode(string $reasonCode)
  * @method string                   getLabelUrl()
@@ -38,7 +38,7 @@ use Mirakl\MMP\Common\Domain\Collection\Returns\ReturnLineCollection;
  * @method ReturnTracking           getTracking()
  * @method $this                    setTracking(ReturnTracking $tracking)
  * @method ReturnDocumentCollection getDocuments()
- * @method $this                    setDocuments(ReturnDocumentCollection|array $documents)
+ * @method $this                    setDocuments(array|ReturnDocumentCollection $documents)
  * @method string                   getRma()
  * @method $this                    setRma(string $rma)
  */

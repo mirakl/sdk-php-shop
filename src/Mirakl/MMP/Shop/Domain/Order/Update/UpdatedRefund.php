@@ -11,7 +11,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdatedRefundEcoContributionC
  * @method string                                 getRefundId()
  * @method $this                                  setRefundId(string $refundId)
  * @method UpdatedRefundEcoContributionCollection getEcoContributions()
- * @method $this                                  setEcoContributions(UpdatedRefundEcoContributionCollection|array $ecoContributions)
+ * @method $this                                  setEcoContributions(array|UpdatedRefundEcoContributionCollection $ecoContributions)
  */
 class UpdatedRefund extends MiraklObject
 {

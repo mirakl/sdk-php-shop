@@ -14,7 +14,7 @@ use Mirakl\MMP\Shop\Domain\Returns\UpdateReturnsResponse;
  * (RT04) Patch update returns
  *
  * @method UpdateReturnCollection getUpdateReturns()
- * @method $this                  setUpdateReturns(UpdateReturnCollection|array $updateReturns)
+ * @method $this                  setUpdateReturns(array|UpdateReturnCollection $updateReturns)
  */
 #[ApiOperation('RT04')]
 class UpdateReturnsRequest extends AbstractUpdateReturnsRequest

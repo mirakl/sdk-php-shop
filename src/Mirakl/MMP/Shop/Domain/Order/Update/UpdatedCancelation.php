@@ -11,7 +11,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdatedCancelationEcoContribu
  * @method string                                      getCancelationId()
  * @method $this                                       setCancelationId(string $cancelationId)
  * @method UpdatedCancelationEcoContributionCollection getEcoContributions()
- * @method $this                                       setEcoContributions(UpdatedCancelationEcoContributionCollection|array $ecoContributions)
+ * @method $this                                       setEcoContributions(array|UpdatedCancelationEcoContributionCollection $ecoContributions)
  */
 class UpdatedCancelation extends MiraklObject
 {

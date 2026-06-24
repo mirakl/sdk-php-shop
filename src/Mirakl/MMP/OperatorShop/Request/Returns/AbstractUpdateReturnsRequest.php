@@ -12,7 +12,7 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Returns\UpdateReturnCollection;
  * (RT04) Patch update returns
  *
  * @method UpdateReturnCollection getUpdateReturns()
- * @method $this                  setUpdateReturns(UpdateReturnCollection|array $updateReturns)
+ * @method $this                  setUpdateReturns(array|UpdateReturnCollection $updateReturns)
  */
 #[ApiOperation('RT04')]
 abstract class AbstractUpdateReturnsRequest extends AbstractRequest
@@ -38,7 +38,7 @@ abstract class AbstractUpdateReturnsRequest extends AbstractRequest
     protected $cleanup = false;
 
     /**
-     * @param UpdateReturnCollection|array $updateReturns
+     * @param array|UpdateReturnCollection $updateReturns
      */
     public function __construct($updateReturns)
     {

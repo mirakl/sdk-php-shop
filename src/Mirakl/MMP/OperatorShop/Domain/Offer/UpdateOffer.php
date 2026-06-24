@@ -9,13 +9,14 @@ use Mirakl\Core\Domain\MiraklObject;
 use Mirakl\MMP\Common\Domain\Collection\AdditionalFieldValueCollection;
 use Mirakl\MMP\Common\Domain\Collection\EcoContributionCollection;
 use Mirakl\MMP\Common\Domain\Discount;
+use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\RetailPriceCollection;
 use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
 
 /**
- * @method UpdateOfferPricesCollection    getAllPrices()
- * @method $this                          setAllPrices(array|UpdateOfferPricesCollection $prices)
  * @method bool                           getAllowQuoteRequests()
  * @method $this                          setAllowQuoteRequests(bool $allowQuoteRequests)
+ * @method UpdateOfferPricesCollection    getAllPrices()
+ * @method $this                          setAllPrices(array|UpdateOfferPricesCollection $prices)
  * @method \DateTime                      getAvailableEnded()
  * @method $this                          setAvailableEnded(\DateTime $availableEnded)
  * @method \DateTime                      getAvailableStarted()
@@ -25,7 +26,7 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
  * @method Discount                       getDiscount()
  * @method $this                          setDiscount(array|Discount $discount)
  * @method EcoContributionCollection      getEcoContributions()
- * @method $this                          setEcoContributions(EcoContributionCollection|array $ecoContributions)
+ * @method $this                          setEcoContributions(array|EcoContributionCollection $ecoContributions)
  * @method string                         getInternalDescription()
  * @method $this                          setInternalDescription(string $internalDescription)
  * @method int                            getLeadtimeToShip() (in days)
@@ -34,10 +35,12 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
  * @method $this                          setLogisticClass(string $logisticClass)
  * @method int                            getMaxOrderQuantity()
  * @method $this                          setMaxOrderQuantity(int $maxOrderQuantity)
- * @method int                            getMinOrderQuantityx()
+ * @method int                            getMinOrderQuantity()
  * @method $this                          setMinOrderQuantity(int $minOrderQuantity)
  * @method int                            getMinQuantityAlert()
  * @method $this                          setMinQuantityAlert(int $minQuantityAlert)
+ * @method float                          getMsrp()
+ * @method $this                          setMsrp(float $msrp)
  * @method AdditionalFieldValueCollection getOfferAdditionalFields()
  * @method $this                          setOfferAdditionalFields(array|AdditionalFieldValueCollection $additionalFields)
  * @method int                            getPackageQuantity()
@@ -56,6 +59,8 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\Offer\UpdateOfferPricesCollection;
  * @method $this                          setProductTaxCode(string $productTaxCode)
  * @method int                            getQuantity()
  * @method $this                          setQuantity(int $qty)
+ * @method RetailPriceCollection          getRetailPrices()
+ * @method $this                          setRetailPrices(array|RetailPriceCollection $retailPrices)
  * @method string                         getShopSku()
  * @method $this                          setShopSku(string $shopSku)
  * @method string                         getStateCode()
@@ -82,5 +87,6 @@ class UpdateOffer extends MiraklObject
         'discount'                => [Discount::class, 'create'],
         'all_prices'              => [UpdateOfferPricesCollection::class, 'create'],
         'eco_contributions'       => [EcoContributionCollection::class, 'create'],
+        'retail_prices'           => [RetailPriceCollection::class, 'create'],
     ];
 }

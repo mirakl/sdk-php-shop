@@ -9,9 +9,9 @@ use Mirakl\MMP\Common\Domain\Collection\ErrorCollection;
 
 /**
  * @method ErrorCollection    getErrors()
- * @method $this              setErrors(ErrorCollection|array $errors)
+ * @method $this              setErrors(array|ErrorCollection $errors)
  * @method UpdatedShopAccount getUpdated()
- * @method $this              setUpdated(UpdatedShopAccount|array $updated)
+ * @method $this              setUpdated(array|UpdatedShopAccount $updated)
  */
 class UpdatedShopAndError extends MiraklObject
 {

@@ -11,7 +11,7 @@ use Mirakl\MMP\Shop\Domain\Collection\Order\Update\UpdatedOrderLineCollection;
  * @method UpdatedReferences          getReferences()
  * @method $this                      setReferences(UpdatedReferences $references)
  * @method UpdatedOrderLineCollection getOrderLines()
- * @method $this                      setOrderLines(UpdatedOrderLineCollection|array $orderLines)
+ * @method $this                      setOrderLines(array|UpdatedOrderLineCollection $orderLines)
  */
 class UpdatedOrder extends MiraklObject
 {

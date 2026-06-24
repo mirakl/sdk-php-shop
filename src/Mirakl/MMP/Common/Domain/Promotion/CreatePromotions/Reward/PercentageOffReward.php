@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Mirakl\MMP\Common\Domain\Promotion\CreatePromotions;
+namespace Mirakl\MMP\Common\Domain\Promotion\CreatePromotions\Reward;
+
+use Mirakl\MMP\Common\Domain\Promotion\CreatePromotions\Reward;
 
 /**
  * @method int   getMaxQuantityToDiscount()

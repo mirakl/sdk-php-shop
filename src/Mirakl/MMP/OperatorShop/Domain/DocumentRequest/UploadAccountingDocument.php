@@ -13,7 +13,7 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\AccountingDocument
  * @method \DateTime                        getDueDate()
  * @method $this                            setDueDate(\DateTime $dueDate)
  * @method AccountingDocumentFileCollection getFiles()
- * @method $this                            setFiles(AccountingDocumentFileCollection|array $files)
+ * @method $this                            setFiles(array|AccountingDocumentFileCollection $files)
  * @method \DateTime                        getIssueDate()
  * @method $this                            setIssueDate(\DateTime $issueDate)
  * @method string                           getRequestId()

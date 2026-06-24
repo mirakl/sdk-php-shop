@@ -8,7 +8,7 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method OrganizationAddress getAddress()
- * @method $this               setAddress(OrganizationAddress|array $address)
+ * @method $this               setAddress(array|OrganizationAddress $address)
  * @method string              getBusinessActivityCode()
  * @method $this               setBusinessActivityCode(string $businessActivityCode)
  * @method string              getCompanyShareholders()

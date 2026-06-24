@@ -10,7 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method bool                     getIsActivated()                                            // Is Tax Manager activated
  * @method $this                    setIsActivated(bool $isActivated)
  * @method TaxProviderConfiguration getTaxProvider()                                            // The tax provider processing tax estimation
- * @method $this                    setTaxProvider(TaxProviderConfiguration|array $taxProvider)
+ * @method $this                    setTaxProvider(array|TaxProviderConfiguration $taxProvider)
  */
 class TaxManagerConfiguration extends MiraklObject
 {

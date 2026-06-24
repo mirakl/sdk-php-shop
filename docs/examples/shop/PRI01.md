@@ -4,7 +4,7 @@
 use Mirakl\MMP\Shop\Client\ShopApiClient;
 use Mirakl\MMP\Shop\Request\Offer\Pricing\Importer\OfferPricingsImportRequest;
 
-$api = new ShopApiClient('API_URL', 'API_KEY', 'SHOP_ID');
+$api = new ShopApiClient('https://your-marketplace.mirakl.net/api', 'your-api-key', 'your-shop-id');
 
 $csv = <<<CSV
 offer-sku;price;price-ranges;discount-price;discount-ranges;discount-start-date;discount-end-date

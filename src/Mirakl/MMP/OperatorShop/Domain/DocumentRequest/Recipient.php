@@ -8,15 +8,15 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method RecipientAddress      getBillingAddress()
- * @method $this                 setBillingAddress(RecipientAddress|array $billingAddress)
+ * @method $this                 setBillingAddress(array|RecipientAddress $billingAddress)
  * @method string                getId()
  * @method $this                 setId(string $id)
  * @method string                getLocale()
  * @method $this                 setLocale(string $locale)
  * @method RecipientOrganization getOrganization()
- * @method $this                 setOrganization(RecipientOrganization|array $organization)
+ * @method $this                 setOrganization(array|RecipientOrganization $organization)
  * @method RecipientAddress      getShippingAddress()
- * @method $this                 setShippingAddress(RecipientAddress|array $shippingAddress)
+ * @method $this                 setShippingAddress(array|RecipientAddress $shippingAddress)
  */
 class Recipient extends MiraklObject
 {

@@ -9,11 +9,11 @@ use Mirakl\MMP\Common\Domain\Collection\ErrorCollection;
 
 /**
  * @method ErrorCollection getErrors()
- * @method $this           setErrors(ErrorCollection|array $errors)
+ * @method $this           setErrors(array|ErrorCollection $errors)
  * @method string          getOrderId()
  * @method $this           setOrderId(string $orderId)
  * @method UpdatedOrder    getUpdated()
- * @method $this           setUpdated(UpdatedOrder|array $updated)
+ * @method $this           setUpdated(array|UpdatedOrder $updated)
  */
 class UpdatedOrderAndError extends MiraklObject
 {

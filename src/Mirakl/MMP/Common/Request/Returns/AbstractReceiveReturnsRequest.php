@@ -14,7 +14,7 @@ use Mirakl\MMP\Common\Domain\Returns\ReturnWorkflowResponse;
  * (RT25) Validate returns as received
  *
  * @method ReturnIdentifierCollection getReturns()
- * @method $this                      setReturns(ReturnIdentifierCollection|array $returns)
+ * @method $this                      setReturns(array|ReturnIdentifierCollection $returns)
  */
 #[ApiOperation('RT25')]
 abstract class AbstractReceiveReturnsRequest extends AbstractRequest

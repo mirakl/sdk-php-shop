@@ -1,4 +1,19 @@
 # Changelog
+
+## v1.27.0 - 2026-06-24
+### Features
+- Add `RT01` (create returns), `RT12` (list items to return), `RT26` (mark returns compliant/non compliant)
+- Add `PL11` (list picklists)
+### Improvements
+- Fix and enrich the Markdown documentation examples across all operations (correct class/method/constructor references, realistic values, response usage)
+- Complete missing request-body fields on several write APIs:
+  - `RT01`: required reason code per return line, plus return description and label URL
+  - `OR04`: order lines on order update
+  - `M14`: topic type on thread creation
+  - `OF24`: MSRP and retail prices on offer update
+  - `PR03`: typed reward/trigger selection
+  - `ST01`: shipment additional information and ship-from on shipment creation
+
 ## v1.26.0 - 2026-06-18
 ### Features
 - Add Promotion APIs: PR03 (create a promotion), PR04 (update a promotion)

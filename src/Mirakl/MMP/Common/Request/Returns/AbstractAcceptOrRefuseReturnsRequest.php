@@ -12,7 +12,7 @@ use Mirakl\MMP\Common\Domain\Collection\Returns\Workflow\AcceptOrRefuseReturnCol
  * (RT21) Accept or refuse a return request
  *
  * @method AcceptOrRefuseReturnCollection getReturns()
- * @method $this                          setReturns(AcceptOrRefuseReturnCollection|array $returns)
+ * @method $this                          setReturns(array|AcceptOrRefuseReturnCollection $returns)
  */
 #[ApiOperation('RT21')]
 abstract class AbstractAcceptOrRefuseReturnsRequest extends AbstractRequest

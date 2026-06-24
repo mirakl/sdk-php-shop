@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Mirakl\MMP\Common\Domain\Promotion\UpdatePromotion;
 
 use Mirakl\Core\Domain\MiraklObject;
+use Mirakl\MMP\Common\Domain\Promotion\Selection;
 
 /**
  * @method Selection getSelection()

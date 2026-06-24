@@ -14,9 +14,9 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * A shop is a legal entity or individual who is able to sell products on the Mirakl Marketplace.
  *
  * @method AdditionalFieldValueCollection getAdditionalFieldValues() // List of additional fields
- * @method $this                          setAdditionalFieldValues(AdditionalFieldValueCollection|array $additionalFieldValues)
+ * @method $this                          setAdditionalFieldValues(array|AdditionalFieldValueCollection $additionalFieldValues)
  * @method ShopApplicableTaxCollection    getApplicableTaxes()
- * @method $this                          setApplicableTaxes(ShopApplicableTaxCollection|array $applicableTaxes)
+ * @method $this                          setApplicableTaxes(array|ShopApplicableTaxCollection $applicableTaxes)
  * @method int                            getApprovalDelay()
  * @method $this                          setApprovalDelay(int $approvalDelay)
  * @method float                          getApprovalRate()
@@ -24,7 +24,7 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method string                         getBanner()
  * @method $this                          setBanner(string $banner)
  * @method BillingInfo                    getBillingInfo()
- * @method $this                          setBillingInfo(BillingInfo|array $billingInfo)
+ * @method $this                          setBillingInfo(array|BillingInfo $billingInfo)
  * @method array                          getChannels() // List of the channel codes
  * @method $this                          setChannels(array $channels)
  * @method \DateTime                      getClosedFrom() // Date from which the shop will be closed for business and it's offers deactivated
@@ -32,7 +32,7 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method \DateTime                      getClosedTo() // Date from which the shop will be opened for business
  * @method $this                          setClosedTo(\DateTime $closedTo)
  * @method ContactInfo                    getContactInfo()
- * @method $this                          setContactInfo(ContactInfo|array $contactInfo)
+ * @method $this                          setContactInfo(array|ContactInfo $contactInfo)
  * @method string                         getCurrencyIsoCode()
  * @method $this                          setCurrencyIsoCode(string $currencyIsoCode)
  * @method string[]                       getDomains()
@@ -52,7 +52,7 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method string                         getLogo()
  * @method $this                          setLogo(string $logo)
  * @method MediaInfo                      getMediaInfo()
- * @method $this                          setMediaInfo(MediaInfo|array $mediaInfo)
+ * @method $this                          setMediaInfo(array|MediaInfo $mediaInfo)
  * @method string                         getModel()
  * @method $this                          setModel(string $model)
  * @method string                         getName()
@@ -64,7 +64,7 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method int                            getOrdersCount()
  * @method $this                          setOrdersCount(int $ordersCount)
  * @method PaymentInfo                    getPaymentInfo()
- * @method $this                          setPaymentInfo(PaymentInfo|array $paymentInfo)
+ * @method $this                          setPaymentInfo(array|PaymentInfo $paymentInfo)
  * @method bool                           getPaymentMethodMandatory()
  * @method $this                          setPaymentMethodMandatory(bool $paymentMethodMandatory)
  * @method bool                           getPremium() // Indicates whether the shop is premium or not
@@ -78,7 +78,7 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method array                          getProducerIds() @deprecated Use getProducerIdentifiers() instead
  * @method $this                          setProducerIds(array $producerIds) @deprecated Use setProducerIdentifiers() instead
  * @method ProducerIdentifierCollection   getProducerIdentifiers()
- * @method $this                          setProducerIdentifiers(ProducerIdentifierCollection|array $producerIdentifiers)
+ * @method $this                          setProducerIdentifiers(array|ProducerIdentifierCollection $producerIdentifiers)
  * @method string                         getRecyclingPolicy()
  * @method $this                          setRecyclingPolicy(string $recyclingPolicy)
  * @method string                         getReturnPolicy()
@@ -86,9 +86,9 @@ use Mirakl\MMP\Common\Domain\Shop\Bank\PaymentInfo;
  * @method string                         getShippingCountry()
  * @method $this                          setShippingCountry(string $shippingCountry)
  * @method ShippingInfo                   getShippingInfo()
- * @method $this                          setShippingInfo(ShippingInfo|array $shippingInfo)
+ * @method $this                          setShippingInfo(array|ShippingInfo $shippingInfo)
  * @method ShopStats                      getShopStats()
- * @method $this                          setShopStats(ShopStats|array $shopStats)
+ * @method $this                          setShopStats(array|ShopStats $shopStats)
  * @method string                         getState()
  * @method $this                          setState(string $state)
  * @method string                         getSuspensionType()

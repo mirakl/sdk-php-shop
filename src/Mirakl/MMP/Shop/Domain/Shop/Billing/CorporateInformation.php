@@ -12,7 +12,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string                   getCompanyRegistrationNumber()
  * @method $this                    setCompanyRegistrationNumber(string $companyRegistrationNumber)
  * @method ComplementaryInformation getComplementaryInformation()
- * @method $this                    setComplementaryInformation(ComplementaryInformation|array $complementaryInformation)
+ * @method $this                    setComplementaryInformation(array|ComplementaryInformation $complementaryInformation)
  */
 class CorporateInformation extends MiraklObject
 {

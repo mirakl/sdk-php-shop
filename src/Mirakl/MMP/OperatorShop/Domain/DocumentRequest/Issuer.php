@@ -12,7 +12,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string             getType()
  * @method $this              setType(string $type)
  * @method IssuerOrganization getOrganization()
- * @method $this              setOrganization(IssuerOrganization|array $organization)
+ * @method $this              setOrganization(array|IssuerOrganization $organization)
  */
 class Issuer extends MiraklObject
 {

@@ -9,7 +9,7 @@ use Mirakl\MMP\OperatorShop\Domain\Collection\DocumentRequest\UploadedAccounting
 
 /**
  * @method UploadedAccountingDocumentsWithErrorsCollection getRequests()
- * @method $this                                           setRequests(UploadedAccountingDocumentsWithErrorsCollection|array $requests)
+ * @method $this                                           setRequests(array|UploadedAccountingDocumentsWithErrorsCollection $requests)
  */
 class UploadedAccountingDocumentsResponse extends MiraklObject
 {

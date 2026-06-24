@@ -8,9 +8,9 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method ShipmentTrackingTag            getAdditionalInfo()
- * @method $this                          setAdditionalInfo(ShipmentTrackingTag|array $additionalInfo)
+ * @method $this                          setAdditionalInfo(array|ShipmentTrackingTag $additionalInfo)
  * @method ShipmentTrackingOccurrenceDate getOccurrenceDate()
- * @method $this                          setOccurrenceDate(ShipmentTrackingOccurrenceDate|array $occurrenceDate)
+ * @method $this                          setOccurrenceDate(array|ShipmentTrackingOccurrenceDate $occurrenceDate)
  * @method string                         getType()
  * @method $this                          setType(string $type)
  */

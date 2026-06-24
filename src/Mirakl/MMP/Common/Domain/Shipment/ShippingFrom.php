@@ -8,9 +8,9 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method ShippingFromAddress   getAddress()
- * @method $this                 setAddress(ShippingFromAddress|array $shippingFromAddress)
+ * @method $this                 setAddress(array|ShippingFromAddress $shippingFromAddress)
  * @method ShippingFromWarehouse getWarehouse()
- * @method $this                 setWarehouse(ShippingFromWarehouse|array $shippingFromWarehouse)
+ * @method $this                 setWarehouse(array|ShippingFromWarehouse $shippingFromWarehouse)
  */
 class ShippingFrom extends MiraklObject
 {

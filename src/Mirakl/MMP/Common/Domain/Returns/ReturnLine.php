@@ -9,7 +9,7 @@ use Mirakl\MMP\Common\Domain\Collection\Returns\ReturnLineComplianceCollection;
 
 /**
  * @method ReturnLineComplianceCollection getCompliance()
- * @method $this                          setCompliance(ReturnLineComplianceCollection|array $compliance)
+ * @method $this                          setCompliance(array|ReturnLineComplianceCollection $compliance)
  * @method string                         getOrderLineId()
  * @method $this                          setOrderLineId(string $orderLineId)
  * @method int                            getQuantity()

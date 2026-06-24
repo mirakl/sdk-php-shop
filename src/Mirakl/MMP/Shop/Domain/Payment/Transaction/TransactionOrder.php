@@ -16,7 +16,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method TransactionPaymentInfo getPaymentInfo()
  * @method $this                  setPaymentInfo(TransactionPaymentInfo $paymentInfo)
  * @method TransactionOrderReference getReferences();
- * @method $this                     setReferences(TransactionOrderReference|array $references);
+ * @method $this                     setReferences(array|TransactionOrderReference $references);
  */
 class TransactionOrder extends MiraklObject
 {

@@ -22,9 +22,9 @@ use Mirakl\MMP\Common\Domain\Collection\Order\EcoContribution\CancelationEcoCont
  * @method float                                getShippingAmount()
  * @method $this                                setShippingAmount(float $shippingAmount)
  * @method AdjustmentTaxCollection              getShippingTaxes()
- * @method $this                                setShippingTaxes(AdjustmentTaxCollection|array $shippingTaxes)
+ * @method $this                                setShippingTaxes(array|AdjustmentTaxCollection $shippingTaxes)
  * @method AdjustmentTaxCollection              getTaxes()
- * @method $this                                setTaxes(AdjustmentTaxCollection|array $taxes)
+ * @method $this                                setTaxes(array|AdjustmentTaxCollection $taxes)
  */
 class AdjustmentCancelation extends MiraklObject
 {

@@ -8,11 +8,11 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method FeaturesConfiguration getFeatures()
- * @method $this                 setFeatures(FeaturesConfiguration|array $features)
+ * @method $this                 setFeatures(array|FeaturesConfiguration $features)
  * @method ModulesConfiguration  getModules()
- * @method $this                 setModules(ModulesConfiguration|array $modules)
+ * @method $this                 setModules(array|ModulesConfiguration $modules)
  * @method PlatformConfiguration getPlatformConfiguration()
- * @method $this                 setPlatformConfiguration(PlatformConfiguration|array $platformConfiguration)
+ * @method $this                 setPlatformConfiguration(array|PlatformConfiguration $platformConfiguration)
  * @method string                getPlatformName()
  * @method $this                 setPlatformName(string $platformName)
  * @method string                getTenantName()

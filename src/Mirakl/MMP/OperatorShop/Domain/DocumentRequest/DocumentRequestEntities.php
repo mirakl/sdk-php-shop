@@ -10,7 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string                 getShipToIsoCountryCode()
  * @method $this                  setShipToIsoCountryCode(string $shipToIsoCountryCode)
  * @method ShopBillingCycleEntity getShopBillingCycle()
- * @method $this                  setShopBillingCycle(ShopBillingCycleEntity|array $shopBillingCycle)
+ * @method $this                  setShopBillingCycle(array|ShopBillingCycleEntity $shopBillingCycle)
  */
 class DocumentRequestEntities extends MiraklObject
 {

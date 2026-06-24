@@ -10,9 +10,9 @@ use Mirakl\MMP\Common\Domain\Collection\Returns\Workflow\ReturnWorkflowSuccessCo
 
 /**
  * @method ReturnWorkflowSuccessCollection getReturnSuccess()
- * @method $this                           setReturnSuccess(ReturnWorkflowSuccessCollection|array $returnSuccess)
+ * @method $this                           setReturnSuccess(array|ReturnWorkflowSuccessCollection $returnSuccess)
  * @method ReturnWorkflowErrorCollection   getReturnErrors()
- * @method $this                           setReturnErrors(ReturnWorkflowErrorCollection|array $returnErrors)
+ * @method $this                           setReturnErrors(array|ReturnWorkflowErrorCollection $returnErrors)
  */
 class ReturnWorkflowResponse extends MiraklObject
 {

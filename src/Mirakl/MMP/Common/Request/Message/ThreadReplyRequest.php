@@ -14,7 +14,7 @@ use Mirakl\MMP\Common\Request\Document\AbstractFilesUploadRequest;
  * (M12) Reply to a thread
  *
  * @method ThreadReplyMessageInput getMessageInput()
- * @method $this                   setMessageInput(ThreadReplyMessageInput|array $messageInput)
+ * @method $this                   setMessageInput(array|ThreadReplyMessageInput $messageInput)
  * @method string                  getThreadId()
  * @method $this                   setThreadId(string $threadId)
  */
@@ -42,7 +42,7 @@ class ThreadReplyRequest extends AbstractFilesUploadRequest
 
     /**
      * @param string                        $threadId
-     * @param ThreadReplyMessageInput|array $messageInput
+     * @param array|ThreadReplyMessageInput $messageInput
      */
     public function __construct($threadId, $messageInput)
     {

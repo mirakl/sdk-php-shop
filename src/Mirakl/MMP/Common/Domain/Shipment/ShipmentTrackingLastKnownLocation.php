@@ -10,7 +10,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string                         getLocation()
  * @method $this                          setLocation(string $location)
  * @method ShipmentTrackingOccurrenceDate getOccurrenceDate()
- * @method $this                          setOccurrenceDate(ShipmentTrackingOccurrenceDate|array $occurrenceDate)
+ * @method $this                          setOccurrenceDate(array|ShipmentTrackingOccurrenceDate $occurrenceDate)
  */
 class ShipmentTrackingLastKnownLocation extends MiraklObject
 {

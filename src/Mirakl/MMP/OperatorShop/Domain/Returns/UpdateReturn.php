@@ -14,7 +14,7 @@ use Mirakl\Core\Domain\MiraklObject;
  * @method string               getRma()
  * @method $this                setRma(string $rma)
  * @method UpdateReturnTracking getTracking()
- * @method $this                setTracking(UpdateReturnTracking|array $tracking)
+ * @method $this                setTracking(array|UpdateReturnTracking $tracking)
  */
 class UpdateReturn extends MiraklObject
 {

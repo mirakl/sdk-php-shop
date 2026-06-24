@@ -4,7 +4,7 @@
 use Mirakl\MMP\Shop\Client\ShopApiClient;
 use Mirakl\MMP\Shop\Request\Currency\GetCurrenciesRequest;
 
-$api = new ShopApiClient('API_URL', 'API_KEY');
+$api = new ShopApiClient('https://your-marketplace.mirakl.net/api', 'your-api-key');
 
 $request = new GetCurrenciesRequest();
 

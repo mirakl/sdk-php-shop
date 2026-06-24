@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Mirakl\MMP\Common\Domain\Promotion\CreatePromotions;
+namespace Mirakl\MMP\Common\Domain\Promotion\CreatePromotions\Trigger;
+
+use Mirakl\MMP\Common\Domain\Promotion\CreatePromotions\Trigger;
 
 /**
  * @method float getAmountPurchased()

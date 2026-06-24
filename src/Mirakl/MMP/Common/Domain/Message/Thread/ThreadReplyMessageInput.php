@@ -11,7 +11,7 @@ use Mirakl\MMP\Common\Domain\Collection\Message\Thread\ThreadRecipientCollection
  * @method string                    getBody()
  * @method $this                     setBody(string $body)
  * @method ThreadRecipientCollection getTo()
- * @method $this                     setTo(ThreadRecipientCollection|array $to)
+ * @method $this                     setTo(array|ThreadRecipientCollection $to)
  * @method ThreadTopic               getTopic()
  * @method $this                     setTopic(ThreadTopic $topic)
  */

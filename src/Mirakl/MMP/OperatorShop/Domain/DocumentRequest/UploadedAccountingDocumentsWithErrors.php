@@ -9,9 +9,9 @@ use Mirakl\MMP\Common\Domain\Collection\ErrorCollection;
 
 /**
  * @method ErrorCollection          getErrors()
- * @method $this                    setErrors(ErrorCollection|array $errors)
+ * @method $this                    setErrors(array|ErrorCollection $errors)
  * @method UploadAccountingDocument getInput()
- * @method $this                    setInput(UploadAccountingDocument|array $input)
+ * @method $this                    setInput(array|UploadAccountingDocument $input)
  */
 class UploadedAccountingDocumentsWithErrors extends MiraklObject
 {

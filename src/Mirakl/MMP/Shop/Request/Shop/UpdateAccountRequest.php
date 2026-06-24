@@ -14,7 +14,7 @@ use Mirakl\MMP\Shop\Domain\Shop\UpdatedShopAndError;
  * (A02) Update shop information
  *
  * @method UpdateShopAccount getUpdateShopAccount()
- * @method $this             setUpdateShopAccount(UpdateShopAccount|array $updateShopAccount)
+ * @method $this             setUpdateShopAccount(array|UpdateShopAccount $updateShopAccount)
  */
 #[ApiOperation('A02')]
 class UpdateAccountRequest extends AbstractRequest
@@ -49,7 +49,7 @@ class UpdateAccountRequest extends AbstractRequest
     protected $cleanup = false;
 
     /**
-     * @param UpdateShopAccount|array $updateShopAccount
+     * @param array|UpdateShopAccount $updateShopAccount
      */
     public function __construct($updateShopAccount)
     {

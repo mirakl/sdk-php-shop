@@ -8,17 +8,17 @@ use Mirakl\Core\Domain\MiraklObject;
 
 /**
  * @method CorporateInformation getCorporateInformation()
- * @method $this                setCorporateInformation(CorporateInformation|array $corporateInformation)
+ * @method $this                setCorporateInformation(array|CorporateInformation $corporateInformation)
  * @method FiscalInformation    getFiscalInformation()
- * @method $this                setFiscalInformation(FiscalInformation|array $fiscalInformation)
+ * @method $this                setFiscalInformation(array|FiscalInformation $fiscalInformation)
  * @method FiscalRepresentative getFiscalRepresentative()
- * @method $this                setFiscalRepresentative(FiscalRepresentative|array $fiscalRepresentative)
+ * @method $this                setFiscalRepresentative(array|FiscalRepresentative $fiscalRepresentative)
  * @method string               getId()
  * @method $this                setId(string $id)
  * @method PersonalInformation  getPersonalInformation()
- * @method $this                setPersonalInformation(PersonalInformation|array $personalInformation)
+ * @method $this                setPersonalInformation(array|PersonalInformation $personalInformation)
  * @method RegistrationAddress  getRegistrationAddress()
- * @method $this                setRegistrationAddress(RegistrationAddress|array $registrationAddress)
+ * @method $this                setRegistrationAddress(array|RegistrationAddress $registrationAddress)
  */
 class SpecificBillingInformation extends MiraklObject
 {
